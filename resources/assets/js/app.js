@@ -1,3 +1,12 @@
+import User from './store/User'
+import Watcher from './store/Watcher'
+
+var user = new User({ id: 1, name: 'Diego' })
+var user2 = new User({ id: 1, name: 'Liz' })
+
+user = null
+
+console.debug('WATCHER', Watcher)
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -15,7 +24,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('example', require('./components/example.vue'));
 
 const app = new Vue({
     el: '#app'
