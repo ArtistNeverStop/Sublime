@@ -26,7 +26,7 @@ export default class PrivatePropertiesHandler {
   }
 
   static set (target, property, value, receiver) {
-    console.debug('SET!!', property, value)
+    // console.debug('SET!!', property, value)
     if (!property.startsWith('$')) {
       return target[property] = value
     }    

@@ -14,8 +14,9 @@ export default class Model {
     this.definePrivateProperties({
       '$key': 'id'
     })
-    Watcher.add(this)
-    return new Proxy(this, PrivatePropertiesHandler.make())
+    let proxy = new Proxy(this, PrivatePropertiesHandler.make())
+    Watcher.add(proxy)
+    return proxy
   }
 
   definePrivateProperties (properties) {
@@ -43,5 +44,9 @@ export default class Model {
 
   save () {
     Watcher.notify(this)
+  }
+
+  destroy () {
+    Watcher.remove(this)
   }
 }

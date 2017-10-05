@@ -1,12 +1,26 @@
-import User from './store/User'
-import Watcher from './store/Watcher'
+// import User from './store/User'
+// import Watcher from './store/Watcher'
+// import router from './routes/router'
 
-var user = new User({ id: 1, name: 'Diego' })
-var user2 = new User({ id: 1, name: 'Liz' })
+// var user = new User({
+//   id: 1,
+//   name: 'Diego'
+// })
 
-user = null
+// var user2 = new User({
+//   id: 1,
+//   name: 'Liz'
+// })
 
-console.debug('WATCHER', Watcher)
+// user.save()
+// user.name = 'FOO'
+// user.destroy()
+// user2.destroy()
+// user.addEventListener('update', () => null)
+// user = null
+// user2 = null
+
+// console.debug('WATCHER', Watcher)
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -14,18 +28,16 @@ console.debug('WATCHER', Watcher)
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+import '@/bootstrap'
+import '@/components'
+import router from '@/routes/router'
+import App from '@/components/Sections/App'
+import Vue from 'vue'
 
-window.Vue = require('vue');
+window.Vue = Vue
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-Vue.component('example', require('./components/example.vue'));
-
-const app = new Vue({
-    el: '#app'
-});
+new Vue({
+  el: '#app',
+  render: h => h(App),
+  router
+})

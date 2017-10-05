@@ -46,12 +46,36 @@ class Watcher {
    * ------------------------------
    * @param model {Model}
    */
-  notify (model) {
-    this.models[model.constructor.name].forEach(toUpdate => {
-      if (model.is(toUpdate)) {
-        Object.assign(toUpdate, model)
+  remove (model) {
+    for (var i = this.models[model.constructor.name].length - 1; i >= 0; i--) {
+      if (model === this.models[model.constructor.name][i]) {
+        return this.models[model.constructor.name].splice(i, 1)
       }
-    })
+    }
+  }
+
+  /**
+   * Update the instances on the
+   * instance array.
+   * ------------------------------
+   * @param model {Model}
+   */
+  notify (model) {
+    for (var i = this.models[model.constructor.name].length - 1; i >= 0; i--) {
+      if (model.is(this.models[model.constructor.name][i])) {
+        Object.assign(this.models[model.constructor.name][i], model)
+      }
+    }
+  }
+
+  /**
+   * Update the instances on the
+   * instance array.
+   * ------------------------------
+   * @param model {Model}
+   */
+  destroy () {
+
   }
 
   get models () {
