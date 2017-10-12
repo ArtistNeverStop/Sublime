@@ -117,7 +117,8 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                'users' => 'App\GraphQL\Query\UsersQuery'
+                'users' => 'App\GraphQL\Query\UsersQuery',
+                'user' => 'App\GraphQL\Query\UserQuery'
             ],
             'mutation' => [
             ]

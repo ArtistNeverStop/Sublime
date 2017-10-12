@@ -2,10 +2,10 @@
 
 namespace App\GraphQL\Query;
 
-use GraphQL;
-use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Query;
+use GraphQL\Type\Definition\Type;
 use App\User;
+use GraphQL;
 
 class UsersQuery extends Query {
 
@@ -21,24 +21,32 @@ class UsersQuery extends Query {
   public function args()
   {
     return [
-      'id' => ['name' => 'id', 'type' => Type::string()],
-      'email' => ['name' => 'email', 'type' => Type::string()]
+      'id' => [
+        'name' => 'id',
+        'type' => Type::int()
+      ],
+      'email' => [
+        'name' => 'email',
+        'type' => Type::string()
+      ],
+      'name' => [
+        'name' => 'name',
+        'type' => Type::string()
+      ]
     ];
   }
 
   public function resolve($root, $args)
   {
-    if(isset($args['id']))
-    {
-      return User::where('id' , $args['id'])->get();
+    return $this->getUsers($args);
+  }
+
+  public function getUsers($args, $method = 'get', $operator = '=', $modifier = '') {
+    $key = key($args);
+    $users = User::query();
+    if ($key) {
+      $users->where($key, $operator, $modifier . $args[$key] . $modifier);
     }
-    else if(isset($args['email']))
-    {
-      return User::where('email', $args['email'])->get();
-    }
-    else
-    {
-      return User::all();
-    }
+    return $users->{$method}();
   }
 }
