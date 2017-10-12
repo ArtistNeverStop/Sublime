@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="navbar">
     <h2>nav site</h2>
   </nav>
 </template>
@@ -19,3 +19,9 @@
     }
   }
 </script>
+<style>
+  .navbar {
+    /*position: static;*/
+    z-index: 999999;
+  }
+</style>
