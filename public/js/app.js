@@ -70,8 +70,8 @@
 "use strict";
 
 
-var bind = __webpack_require__(4);
-var isBuffer = __webpack_require__(15);
+var bind = __webpack_require__(5);
+var isBuffer = __webpack_require__(14);
 
 /*global toString:true*/
 
@@ -375,106 +375,6 @@ module.exports = {
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-var utils = __webpack_require__(0);
-var normalizeHeaderName = __webpack_require__(18);
-
-var DEFAULT_CONTENT_TYPE = {
-  'Content-Type': 'application/x-www-form-urlencoded'
-};
-
-function setContentTypeIfUnset(headers, value) {
-  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
-    headers['Content-Type'] = value;
-  }
-}
-
-function getDefaultAdapter() {
-  var adapter;
-  if (typeof XMLHttpRequest !== 'undefined') {
-    // For browsers use XHR adapter
-    adapter = __webpack_require__(5);
-  } else if (typeof process !== 'undefined') {
-    // For node use HTTP adapter
-    adapter = __webpack_require__(5);
-  }
-  return adapter;
-}
-
-var defaults = {
-  adapter: getDefaultAdapter(),
-
-  transformRequest: [function transformRequest(data, headers) {
-    normalizeHeaderName(headers, 'Content-Type');
-    if (utils.isFormData(data) ||
-      utils.isArrayBuffer(data) ||
-      utils.isBuffer(data) ||
-      utils.isStream(data) ||
-      utils.isFile(data) ||
-      utils.isBlob(data)
-    ) {
-      return data;
-    }
-    if (utils.isArrayBufferView(data)) {
-      return data.buffer;
-    }
-    if (utils.isURLSearchParams(data)) {
-      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
-      return data.toString();
-    }
-    if (utils.isObject(data)) {
-      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
-      return JSON.stringify(data);
-    }
-    return data;
-  }],
-
-  transformResponse: [function transformResponse(data) {
-    /*eslint no-param-reassign:0*/
-    if (typeof data === 'string') {
-      try {
-        data = JSON.parse(data);
-      } catch (e) { /* Ignore */ }
-    }
-    return data;
-  }],
-
-  timeout: 0,
-
-  xsrfCookieName: 'XSRF-TOKEN',
-  xsrfHeaderName: 'X-XSRF-TOKEN',
-
-  maxContentLength: -1,
-
-  validateStatus: function validateStatus(status) {
-    return status >= 200 && status < 300;
-  }
-};
-
-defaults.headers = {
-  common: {
-    'Accept': 'application/json, text/plain, */*'
-  }
-};
-
-utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
-  defaults.headers[method] = {};
-});
-
-utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
-  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
-});
-
-module.exports = defaults;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10671,10 +10571,10 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(35)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)))
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -10771,7 +10671,165 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+var utils = __webpack_require__(0);
+var normalizeHeaderName = __webpack_require__(17);
+
+var DEFAULT_CONTENT_TYPE = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+};
+
+function setContentTypeIfUnset(headers, value) {
+  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
+    headers['Content-Type'] = value;
+  }
+}
+
+function getDefaultAdapter() {
+  var adapter;
+  if (typeof XMLHttpRequest !== 'undefined') {
+    // For browsers use XHR adapter
+    adapter = __webpack_require__(6);
+  } else if (typeof process !== 'undefined') {
+    // For node use HTTP adapter
+    adapter = __webpack_require__(6);
+  }
+  return adapter;
+}
+
+var defaults = {
+  adapter: getDefaultAdapter(),
+
+  transformRequest: [function transformRequest(data, headers) {
+    normalizeHeaderName(headers, 'Content-Type');
+    if (utils.isFormData(data) ||
+      utils.isArrayBuffer(data) ||
+      utils.isBuffer(data) ||
+      utils.isStream(data) ||
+      utils.isFile(data) ||
+      utils.isBlob(data)
+    ) {
+      return data;
+    }
+    if (utils.isArrayBufferView(data)) {
+      return data.buffer;
+    }
+    if (utils.isURLSearchParams(data)) {
+      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
+      return data.toString();
+    }
+    if (utils.isObject(data)) {
+      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
+      return JSON.stringify(data);
+    }
+    return data;
+  }],
+
+  transformResponse: [function transformResponse(data) {
+    /*eslint no-param-reassign:0*/
+    if (typeof data === 'string') {
+      try {
+        data = JSON.parse(data);
+      } catch (e) { /* Ignore */ }
+    }
+    return data;
+  }],
+
+  timeout: 0,
+
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
+
+  maxContentLength: -1,
+
+  validateStatus: function validateStatus(status) {
+    return status >= 200 && status < 300;
+  }
+};
+
+defaults.headers = {
+  common: {
+    'Accept': 'application/json, text/plain, */*'
+  }
+};
+
+utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+  defaults.headers[method] = {};
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+});
+
+module.exports = defaults;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
+
+/***/ }),
 /* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/**
+ * We'll load the axios HTTP library which allows us to easily issue requests
+ * to our Laravel back-end. This library automatically handles sending the
+ * CSRF token as a header based on the value of the "XSRF" token cookie.
+ */
+
+
+/**
+ * Next we will register the CSRF Token as a common header with Axios so that
+ * all outgoing HTTP requests automatically have it attached. This is just
+ * a simple convenience so we don't have to attach every token manually.
+ */
+var token = document.head.querySelector('meta[name="csrf-token"]');
+if (token) {
+  __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+} else {
+  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+}
+
+/**
+ * Set the basic API config to
+ * axios.
+ * ------------------------------
+ * @function api
+ */
+__WEBPACK_IMPORTED_MODULE_0_axios___default.a.api = function api() {
+  __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+  __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['Accept'] = 'application/json'; // Content-Type: application/json
+  __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = '/api/';
+};
+
+/**
+ * Set the basic WEB config to
+ * axios and excecute the given
+ * callback and return to API
+ * basic config.
+ * ------------------------------
+ * @function api
+ * @param {Function} callback - The acttions to excecuted with the axios WEB config
+ */
+__WEBPACK_IMPORTED_MODULE_0_axios___default.a.web = function web(callback) {
+  __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['Accept'] = 'text/html,application/xhtml+xml,application/xmlq=0.9,image/webp,*/*q=0.8';
+  __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = '/';
+  callback();
+  __WEBPACK_IMPORTED_MODULE_0_axios___default.a.api();
+};
+// Set the default axios configuration on API
+__WEBPACK_IMPORTED_MODULE_0_axios___default.a.api();
+
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_axios___default.a);
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10789,19 +10847,19 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var settle = __webpack_require__(19);
-var buildURL = __webpack_require__(21);
-var parseHeaders = __webpack_require__(22);
-var isURLSameOrigin = __webpack_require__(23);
-var createError = __webpack_require__(6);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(24);
+var settle = __webpack_require__(18);
+var buildURL = __webpack_require__(20);
+var parseHeaders = __webpack_require__(21);
+var isURLSameOrigin = __webpack_require__(22);
+var createError = __webpack_require__(7);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(23);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -10898,7 +10956,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(25);
+      var cookies = __webpack_require__(24);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -10976,13 +11034,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(20);
+var enhanceError = __webpack_require__(19);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -11001,7 +11059,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11013,7 +11071,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11039,57 +11097,11 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(3)
-/* script */
-var __vue_script__ = __webpack_require__(51)
-/* template */
-var __vue_template__ = __webpack_require__(52)
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/Sections/App.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] App.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6ddece3d", Component.options)
-  } else {
-    hotAPI.reload("data-v-6ddece3d", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(11);
-module.exports = __webpack_require__(53);
+module.exports = __webpack_require__(60);
 
 
 /***/ }),
@@ -11098,38 +11110,14 @@ module.exports = __webpack_require__(53);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrap__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__bootstrap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes_router__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Sections_App__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Sections_App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_Sections_App__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vue__);
-// import User from './store/User'
-// import Watcher from './store/Watcher'
-// import router from './routes/router'
-
-// var user = new User({
-//   id: 1,
-//   name: 'Diego'
-// })
-
-// var user2 = new User({
-//   id: 1,
-//   name: 'Liz'
-// })
-
-// user.save()
-// user.name = 'FOO'
-// user.destroy()
-// user2.destroy()
-// user.addEventListener('update', () => null)
-// user = null
-// user2 = null
-
-// console.debug('WATCHER', Watcher)
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Http__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Prototype__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Components_Globals__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Router__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Components_Sections_App__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Components_Sections_App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__Components_Sections_App__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_vue__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -11137,94 +11125,67 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 
 
+// import '@/Components/Directives'
 
 
 
+// import store from '@/Store'
+// import { mapState, mapMutations } from 'vuex'
+// import App from '@/sections/App.vue'
 
 
-window.Vue = __WEBPACK_IMPORTED_MODULE_4_vue___default.a;
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+new __WEBPACK_IMPORTED_MODULE_5_vue___default.a({
 
-new __WEBPACK_IMPORTED_MODULE_4_vue___default.a({
+  /**
+   * The VueRouter Instance.
+   * ------------------------------
+   * @var router
+   */
+  router: __WEBPACK_IMPORTED_MODULE_3__Router__["a" /* default */],
+
+  /**
+   * The Dom element where the
+   * root instance wil be render.
+   * ------------------------------
+   * @var el
+   */
   el: '#app',
+
+  /**
+   * The render function
+   * of the Vue App.
+   * ------------------------------
+   * @function
+   * @param h {createElement}
+   * @return {createElement}
+   */
   render: function render(h) {
-    return h(__WEBPACK_IMPORTED_MODULE_3__components_Sections_App___default.a);
-  },
-  router: __WEBPACK_IMPORTED_MODULE_2__routes_router__["a" /* default */]
+    return h(__WEBPACK_IMPORTED_MODULE_4__Components_Sections_App___default.a);
+  }
 });
 
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-
-// window._ = require('lodash')
-
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
-
-// try {
-//   window.$ = window.jQuery = require('jquery')
-//   require('bootstrap-sass')
-// } catch (e) {}
-
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
-
-window.axios = __webpack_require__(13);
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-/**
- * Next we will register the CSRF Token as a common header with Axios so that
- * all outgoing HTTP requests automatically have it attached. This is just
- * a simple convenience so we don't have to attach every token manually.
- */
-
-var token = document.head.querySelector('meta[name="csrf-token"]');
-
-if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-} else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-}
-
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
-
-// import Echo from 'laravel-echo'
-
-// window.Pusher = require('pusher-js')
-
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
-// })
+module.exports = __webpack_require__(13);
 
 /***/ }),
 /* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(14);
-
-/***/ }),
-/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var bind = __webpack_require__(4);
-var Axios = __webpack_require__(16);
-var defaults = __webpack_require__(1);
+var bind = __webpack_require__(5);
+var Axios = __webpack_require__(15);
+var defaults = __webpack_require__(3);
 
 /**
  * Create an instance of Axios
@@ -11257,15 +11218,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(8);
-axios.CancelToken = __webpack_require__(31);
-axios.isCancel = __webpack_require__(7);
+axios.Cancel = __webpack_require__(9);
+axios.CancelToken = __webpack_require__(30);
+axios.isCancel = __webpack_require__(8);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(32);
+axios.spread = __webpack_require__(31);
 
 module.exports = axios;
 
@@ -11274,7 +11235,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports) {
 
 /*!
@@ -11301,18 +11262,18 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(1);
+var defaults = __webpack_require__(3);
 var utils = __webpack_require__(0);
-var InterceptorManager = __webpack_require__(26);
-var dispatchRequest = __webpack_require__(27);
-var isAbsoluteURL = __webpack_require__(29);
-var combineURLs = __webpack_require__(30);
+var InterceptorManager = __webpack_require__(25);
+var dispatchRequest = __webpack_require__(26);
+var isAbsoluteURL = __webpack_require__(28);
+var combineURLs = __webpack_require__(29);
 
 /**
  * Create a new instance of Axios
@@ -11394,7 +11355,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -11584,7 +11545,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11603,13 +11564,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(6);
+var createError = __webpack_require__(7);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -11636,7 +11597,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11664,7 +11625,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11739,7 +11700,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11783,7 +11744,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11858,7 +11819,7 @@ module.exports = (
 
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11901,7 +11862,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11961,7 +11922,7 @@ module.exports = (
 
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12020,16 +11981,16 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var transformData = __webpack_require__(28);
-var isCancel = __webpack_require__(7);
-var defaults = __webpack_require__(1);
+var transformData = __webpack_require__(27);
+var isCancel = __webpack_require__(8);
+var defaults = __webpack_require__(3);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -12106,7 +12067,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12133,7 +12094,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12154,7 +12115,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12175,13 +12136,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(8);
+var Cancel = __webpack_require__(9);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -12239,7 +12200,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12273,32 +12234,34 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Global__ = __webpack_require__(34);
-
-
-/***/ }),
-/* 34 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Http__ = __webpack_require__(4);
+
 
 
 /**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
+ * Set the Helpers on Vue instances Adding Instance Properties.
  */
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.$http = __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* default */];
 
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('navbar', __webpack_require__(36));
+/**
+ * Return true if the current route
+ * is an admin route.
+ * ------------------------------
+ * @member {Function}
+ * @return {boolean}
+ */
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.$adminRoute = function () {
+  return this.$route.name && this.$route.name.includes('admin');
+};
 
 /***/ }),
-/* 35 */
+/* 33 */
 /***/ (function(module, exports) {
 
 var g;
@@ -12325,19 +12288,39 @@ module.exports = g;
 
 
 /***/ }),
-/* 36 */
+/* 34 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Globals_Navbar__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Globals_Navbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Components_Globals_Navbar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Helpers__ = __webpack_require__(43);
+
+
+
+
+var _arr = [__WEBPACK_IMPORTED_MODULE_1__Components_Globals_Navbar___default.a];
+for (var _i = 0; _i < _arr.length; _i++) {
+  var c = _arr[_i];
+  __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(Object(__WEBPACK_IMPORTED_MODULE_2__Helpers__["a" /* kebapizeCamel */])(c.__file.substring(c.__file.lastIndexOf('/') + 1)).slice(0, -4), c);
+}
+
+/***/ }),
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(37)
+  __webpack_require__(36)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(42)
+var __vue_script__ = __webpack_require__(41)
 /* template */
-var __vue_template__ = __webpack_require__(43)
+var __vue_template__ = __webpack_require__(42)
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
@@ -12351,7 +12334,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/Global/Navbar.vue"
+Component.options.__file = "resources/assets/js/Components/Globals/Navbar.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Navbar.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -12362,9 +12345,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0409884f", Component.options)
+    hotAPI.createRecord("data-v-44b19cac", Component.options)
   } else {
-    hotAPI.reload("data-v-0409884f", Component.options)
+    hotAPI.reload("data-v-44b19cac", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -12375,23 +12358,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(38);
+var content = __webpack_require__(37);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(40)("9b75ea94", content, false);
+var update = __webpack_require__(39)("6629211c", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0409884f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Navbar.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0409884f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Navbar.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-44b19cac\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Navbar.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-44b19cac\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Navbar.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -12401,10 +12384,10 @@ if(false) {
 }
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(39)(undefined);
+exports = module.exports = __webpack_require__(38)(undefined);
 // imports
 
 
@@ -12415,7 +12398,7 @@ exports.push([module.i, "\n.navbar {\n  /*position: static;*/\n  z-index: 999999
 
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports) {
 
 /*
@@ -12497,7 +12480,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -12516,7 +12499,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(41)
+var listToStyles = __webpack_require__(40)
 
 /*
 type StyleObject = {
@@ -12718,7 +12701,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports) {
 
 /**
@@ -12751,7 +12734,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12766,25 +12749,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+
+  /**
+   * The main instance reactive
+   * properties of the component.
+   * ------------------------------
+   * @member {Function}
+   * @return {Object}
+   */
   data: function data() {
     return {};
-  },
-
-
-  methods: {},
-
-  mounted: function mounted() {}
+  }
 });
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -12802,7 +12783,6 @@ var staticRenderFns = [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-md-12" }, [
           _c("h2", [_vm._v("nav site")]),
-          _vm._v(" "),
           _c("ul", { staticClass: "navbar-site-menu" }, [
             _c("li", [_c("a", { attrs: { href: "" } }, [_vm._v("Login")])])
           ])
@@ -12816,23 +12796,42 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-0409884f", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-44b19cac", module.exports)
   }
 }
+
+/***/ }),
+/* 43 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return kebapizeCamel; });
+/**
+ * Kebapize a CamelCase String.
+ * ------------------------------
+ * @function kebapizeCamel
+ * @param {string} str
+ * @return {string}
+*/
+var kebapizeCamel = function kebapizeCamel(str) {
+  return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+};
 
 /***/ }),
 /* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(__dirname) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(2);
+/* WEBPACK VAR INJECTION */(function(__dirname) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Router_Routes__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Store_Modules_User__ = __webpack_require__(56);
 
 
 
-// import axios from 'axios'
+
+// import store from '@/Store'
 
 // Set the router to the Vue Singleton.
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
@@ -12845,7 +12844,24 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
   mode: 'history',
   base: __dirname,
   linkActiveClass: 'active',
-  routes: __WEBPACK_IMPORTED_MODULE_2__routes__["a" /* default */]
+  routes: __WEBPACK_IMPORTED_MODULE_2__Router_Routes__["a" /* default */]
+});
+
+/**
+ * Check in the metadata if the current
+ * route needs auth and handle it.
+ * ----------------------------------------
+ * @function
+ */
+router.beforeEach(function (to, from, next) {
+  // store.commit('status', 200)
+  var is = function is(n) {
+    return function (r) {
+      return r.meta[n];
+    };
+  };
+  var route = [].some.bind(to.matched);
+  next(__WEBPACK_IMPORTED_MODULE_3__Store_Modules_User__["a" /* default */].state.me ? route(is('guest')) || route(is('admin')) && !__WEBPACK_IMPORTED_MODULE_3__Store_Modules_User__["a" /* default */].isAdmin() ? '/' : true : route(is('auth')) ? '/login' : true);
 });
 
 /* harmony default export */ __webpack_exports__["a"] = (router);
@@ -15368,56 +15384,38 @@ if (inBrowser && window.Vue) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Sections__ = __webpack_require__(47);
-/**
- * Site sections
- */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Components_Sections__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__ = __webpack_require__(55);
 
 
-/**
- * Shortcut function to make a new
- * route object.
- * ------------------------------
- * @const route {Function}
- * @param path {string}
- * @param component {VueComponent}
- * @param meta {Object}
- * @param name {string}
- * @param children {array}
- * @param beforeEnter @function
- * @return {Object}
- */
-var route = function route(path, component, name, meta, children, beforeEnter) {
-  return Object.assign({
-    path: path, name: name, meta: meta, children: children, beforeEnter: beforeEnter
-  }, typeof component === 'string' ? { redirect: component } : { component: component });
-};
 
 /**
- * The routes of the app in a
- * route object.
+ * The Routes of the app in a
+ * Route object.
  * ------------------------------
  * @const {Array}
  */
-var routes = [route('/', __WEBPACK_IMPORTED_MODULE_0__components_Sections__["a" /* default */].Home)];
-
-/* harmony default export */ __webpack_exports__["a"] = (routes);
+/* harmony default export */ __webpack_exports__["a"] = ([Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Home)]);
 
 /***/ }),
 /* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Home__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Home___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Home__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__App__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Home_vue__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Home_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Errors__ = __webpack_require__(51);
 
+// import Login from './Auth/Login.vue'
+// import Register from './Auth/Register.vue'
+// import Users from './Users'
+// import Products from './Products'
+// import Admin from './Admin'
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  Home: __WEBPACK_IMPORTED_MODULE_0__Home___default.a,
-  App: __WEBPACK_IMPORTED_MODULE_1__App___default.a
+  Home: __WEBPACK_IMPORTED_MODULE_0__Home_vue___default.a,
+  Errors: __WEBPACK_IMPORTED_MODULE_1__Errors__["a" /* default */]
 });
 
 /***/ }),
@@ -15425,7 +15423,7 @@ var routes = [route('/', __WEBPACK_IMPORTED_MODULE_0__components_Sections__["a" 
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(49)
 /* template */
@@ -15443,7 +15441,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/Sections/Home.vue"
+Component.options.__file = "resources/assets/js/Components/Sections/Home.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Home.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -15454,9 +15452,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-23f6731a", Component.options)
+    hotAPI.createRecord("data-v-58384ada", Component.options)
   } else {
-    hotAPI.reload("data-v-23f6731a", Component.options)
+    hotAPI.reload("data-v-58384ada", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -15487,15 +15485,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+
+  /**
+   * The main instance reactive
+   * properties of the component.
+   * ------------------------------
+   * @member {Function}
+   * @return {Object}
+   */
   data: function data() {
     return {
       showTitle: true,
@@ -15504,18 +15503,48 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
 
 
+  /**
+   * The main instance methods of
+   * the component.
+   * ------------------------------
+   * @member {Object} methods
+   * @return {Object}
+   */
   methods: {
+
+    /**
+     * The main instance reactive
+     * properties of the component.
+     * ------------------------------
+     * @member {Function}
+     * @return {Object}
+     */
     onscroll: function onscroll() {
       this.showTitle = window.scrollY <= 0;
       this.showVideo = !this.showTitle;
     },
+
+
+    /**
+     * The main instance reactive
+     * properties of the component.
+     * ------------------------------
+     * @member {Function}
+     * @return {Object}
+     */
     scrollTo: function scrollTo(n) {
       window.scrollTo(0, n);
     }
   },
 
+  /**
+   * The mounted hook life-cycle of
+   * the component instance.
+   * ------------------------------
+   * @member {Function}
+   */
   mounted: function mounted() {
-    console.log('Component mounted.');
+    console.log(this.$options.__file.split('/').slice(-1).pop() + ' Component Mounted!');
     // window.setTimeout(() => {
     //   this.$refs['home-section-title'].style.backgroundColor = 'black'
     //   this.$refs.title.style.color = 'white'
@@ -15554,8 +15583,7 @@ var render = function() {
         },
         [_vm._m(0)]
       ),
-      _vm._v(" "),
-      _c("transition", { attrs: { appear: "", name: "fade-down" } }, [
+      _c("transition", { attrs: { appear: "appear", name: "fade-down" } }, [
         _vm.showTitle
           ? _c(
               "section",
@@ -15568,7 +15596,6 @@ var render = function() {
                 _c("h1", { ref: "title", staticClass: "title" }, [
                   _vm._v("Sublime")
                 ]),
-                _vm._v(" "),
                 _c("div", {
                   staticClass: "arrow-down",
                   on: {
@@ -15581,7 +15608,6 @@ var render = function() {
             )
           : _vm._e()
       ]),
-      _vm._v(" "),
       _c("section", {
         ref: "home-section-description",
         staticClass: "home-section-description",
@@ -15598,7 +15624,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "video",
-      { staticClass: "video", attrs: { loop: "", muted: "", autoplay: "" } },
+      {
+        staticClass: "video",
+        attrs: { loop: "loop", muted: "muted", autoplay: "autoplay" }
+      },
       [_c("source", { attrs: { src: "/home-video.mp4", type: "video/mp4" } })]
     )
   }
@@ -15608,12 +15637,394 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-23f6731a", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-58384ada", module.exports)
   }
 }
 
 /***/ }),
 /* 51 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Components_Sections_Errors_404__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Components_Sections_Errors_404___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Components_Sections_Errors_404__);
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  _404: __WEBPACK_IMPORTED_MODULE_0__Components_Sections_Errors_404___default.a
+});
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(53)
+/* template */
+var __vue_template__ = __webpack_require__(54)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/Components/Sections/Errors/_404.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] _404.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-544c3e99", Component.options)
+  } else {
+    hotAPI.reload("data-v-544c3e99", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("h1", [_vm._v("Error 404")]),
+      _c("p", [
+        _vm._v("Lo sentimos no pudimos encontrar lo que estas buscando")
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-544c3e99", module.exports)
+  }
+}
+
+/***/ }),
+/* 55 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+/**
+ * Shortcut function to make a new
+ * route object.
+ * ------------------------------
+ * @function route
+ * @param path {string}
+ * @param component {VueComponent}
+ * @param meta {Object}
+ * @param name {string}
+ * @param children {array}
+ * @param beforeEnter @function
+ * @return {Object}
+ */
+var route = function route(path, component, name, meta, children, beforeEnter) {
+  return Object.assign({
+    path: path, name: name, meta: meta, children: children, beforeEnter: beforeEnter
+  }, typeof component === 'string' ? { redirect: component } : { component: component });
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (route);
+
+/***/ }),
+/* 56 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// import Vue from 'vue'
+// import categories from '@/api/categories'
+// import entityMap from '@/store/EntityMap'
+// import storeState from '@/store/state'
+// import router from '@/routes/router'
+// import auth from '@/api/auth'
+
+/**
+ * The User module state.
+ * ------------------------------
+ * @const state {Object}
+ */
+var state = {
+
+  /**
+   * The current logged user.
+   * ------------------------------
+   * @var me {Object}
+   */
+  me: null,
+
+  /**
+   * All the Products
+   * loaded on the plataform.
+   * ------------------------------
+   * @var all {Object}
+  */
+  all: {},
+
+  /**
+   * The array of Products id's.
+   * ------------------------------
+   * @var {array}
+   */
+  list: [],
+
+  /**
+   * The selected Product.
+   * ------------------------------
+   * @var {int}
+   */
+  selected: null
+
+  // /**
+  //  * The Actions related to the
+  //  * Users Entities.
+  //  * ------------------------------
+  //  * @const
+  //  * @function
+  //  * @return {bool}
+  //  */
+  // const isAdmin = () => state.me && state.me.is_admin
+
+  // /**
+  //  * The Actions related to the Users Entities.
+  //  *
+  //  * @const action {Object}
+  //  */
+  // const actions = {
+
+  //   /**
+  //    * Make the login request and commit the 'login' mutation on success.
+  //    *
+  //    * @param {commit} | the mutation dispatcher of the state.
+  //    * @param {credentials} | The user and pass to make the login request.
+  //    * @return {Promise}
+  //    */
+  //   login ({ commit }, credentials) {
+  //     return new Promise((resolve, reject) => {
+  //       // Call to axios web and send a callback to quit the accept-JSON headers
+  //       axios.web(() => {
+  //         auth.login(credentials).then(({ data }) => {
+  //           // Commit the login mutation to store the User Object
+  //           commit('login', data)
+  //           resolve(data)
+  //         }).catch(err => reject(err))
+  //       })
+  //     })
+  //   },
+
+  //   /**
+  //    * Make the regirster request and commit the 'login' mutation on success.
+  //    *
+  //    * @param {commit} | the mutation dispatcher of the state.
+  //    * @param {user} | The user to register.
+  //    * @return {Promise}
+  //    */
+  //   register: ({ commit }, user) => new Promise((resolve, reject) => {
+  //     axios.web(() => {
+  //       auth.register(user).then(({ data }) => {
+  //         commit('login', data)
+  //         resolve(data)
+  //       }).catch(error => reject(error))
+  //     })
+  //   }),
+
+  //   /**
+  //    * Make a 'me' request to the api and update the 'me' object
+  //    * to the data on succes or a empty object on error 401.
+  //    *
+  //    * @param {commit} | the mutation dispatcher of the state.
+  //    * @return {Promise}
+  //    */
+  //   me: ({ commit, dispatch }, load = []) => new Promise((resolve, reject) => {
+  //     axios.web(() => {
+  //       auth.me(load).then(({ data }) => {
+  //         // On Success action update the user
+  //         dispatch('loadEntities', data)
+  //         commit('login', data)
+  //         resolve(data)
+  //       }).catch(error => {
+  //         // On Unauthorized action clean the user
+  //         commit('logout')
+  //         resolve(error)
+  //       })//.then(() => dispatch('auth').then(to => console.debug(to)))//router.push(to)
+  //     })
+  //   }),
+
+  //   /**
+  //    * Make the logout request and commit the 'logout' mutation on success.
+  //    *
+  //    * @param {commit} | the mutation dispatcher of the state.
+  //    * @param {credentials} | The user and pass to make the login request.
+  //    * @return {Promise}
+  //    */
+  //   logout ({ commit }) {
+  //     axios.web(() => {
+  //       auth.logout().then(() => {
+  //         commit('logout')
+  //       })
+  //     })
+  //   },
+
+  //   /**
+  //    * Make the logout request and commit the 'logout' mutation on success.
+  //    *
+  //    * @param {commit} | the mutation dispatcher of the state.
+  //    * @param {credentials} | The user and pass to make the login request.
+  //    * @return {Promise}
+  //    */
+  //   loadUser: ({ dispatch }, { load = [], id }) =>
+  //   new Promise((resolve, reject) => {
+  //     auth.loadUser(id, load).then(({ data }) => {
+  //       dispatch('loadEntities', data)
+  //       resolve(data)
+  //     })
+  //   })
+  // }
+
+  // const mutations = {
+
+  //    /**
+  //    * Update the User.me and the User on localstorage.
+  //    *
+  //    * @param state {Object} The User module state.
+  //    * @param user {Object} The current logged user data.
+  //    */
+  //   login (state, user) {
+  //     state.me = user
+  //     localStorage.setItem('User', JSON.stringify(user))
+  //     if (user && user.id) {
+  //       Vue.set(state.all, user.id, user)
+  //       state.list.push(user.id)
+  //     }
+  //   },
+
+  //   /**
+  //    * Clean the User.me and the User on localstorage.
+  //    *
+  //    * @param state {Object} The User module state.
+  //    * @param redirect {String} The route to redirect the page.
+  //    */
+  //   logout (state, redirect = null) {
+  //     if (state.me && state.me.id) {
+  //       Vue.delete(state.me, state.me.id)
+  //       state.list.splice(state.list.indexOf(state.me.id), 1)
+  //     }
+  //     state.me = null
+  //     localStorage.removeItem('User')
+  //     router.push(redirect ? redirect : '/')
+  //   }
+  // }
+
+  // /**
+  //  * The getters of the User module.
+  //  * @const {Object}
+  //  */
+  // const getters = {
+  // }
+
+};/* harmony default export */ __webpack_exports__["a"] = ({
+  state: state
+  // actions,
+  // getters,
+  // mutations,
+  // isAdmin,
+});
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(58)
+/* template */
+var __vue_template__ = __webpack_require__(59)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/Components/Sections/App.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] App.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-43bcb61d", Component.options)
+  } else {
+    hotAPI.reload("data-v-43bcb61d", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 58 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15627,20 +16038,52 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+
+  /**
+   * The main instance reactive
+   * properties of the component.
+   * ------------------------------
+   * @member {Function}
+   * @return {Object}
+   */
   data: function data() {
     return {};
   },
 
 
-  methods: {},
+  /**
+   * The main instance methods of
+   * the component.
+   * ------------------------------
+   * @member {Object} methods
+   * @return {Object}
+   */
+  methods: {
 
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
+    /**
+     * The main instance reactive
+     * properties of the component.
+     * ------------------------------
+     * @member {Function}
+     * @return {Object}
+     */
+    test: function test() {
+      console.debug('Test');
+    }
+  },
+
+  /**
+   * The main instance computed
+   * properties of the component.
+   * ------------------------------
+   * @member {Object} computed
+   * @return {Object}
+   */
+  computed: {}
 });
 
 /***/ }),
-/* 52 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -15649,8 +16092,8 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "app", attrs: { id: "app" } },
-    [_c("navbar"), _vm._v(" "), _c("router-view")],
+    { staticClass: "app site-wrapper", attrs: { id: "app" } },
+    [_c("navbar"), _c("router-view")],
     1
   )
 }
@@ -15660,12 +16103,12 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-6ddece3d", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-43bcb61d", module.exports)
   }
 }
 
 /***/ }),
-/* 53 */
+/* 60 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

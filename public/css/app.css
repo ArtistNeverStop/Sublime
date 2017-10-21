@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
+@charset "UTF-8";
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 
@@ -2178,9 +2178,7 @@ there.
   margin-top: 2px;
   height: 16px;
   background-color: currentColor;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin-top: -80px;
+  margin-top: 80px;
 }
 
 .arrow-down:before {

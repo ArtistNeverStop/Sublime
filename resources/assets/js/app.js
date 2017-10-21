@@ -1,43 +1,48 @@
-// import User from './store/User'
-// import Watcher from './store/Watcher'
-// import router from './routes/router'
-
-// var user = new User({
-//   id: 1,
-//   name: 'Diego'
-// })
-
-// var user2 = new User({
-//   id: 1,
-//   name: 'Liz'
-// })
-
-// user.save()
-// user.name = 'FOO'
-// user.destroy()
-// user2.destroy()
-// user.addEventListener('update', () => null)
-// user = null
-// user2 = null
-
-// console.debug('WATCHER', Watcher)
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
-import '@/bootstrap'
-import '@/components'
-import router from '@/routes/router'
-import App from '@/components/Sections/App'
+import '@/Http'
+import '@/Components/Prototype'
+// import '@/Components/Directives'
+import '@/Components/Globals'
+import router from '@/Router'
+import App from '@/Components/Sections/App'
+// import store from '@/Store'
+// import { mapState, mapMutations } from 'vuex'
+// import App from '@/sections/App.vue'
 import Vue from 'vue'
 
-window.Vue = Vue
-
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
 new Vue({
+
+  /**
+   * The VueRouter Instance.
+   * ------------------------------
+   * @var router
+   */
+  router,
+
+  /**
+   * The Dom element where the
+   * root instance wil be render.
+   * ------------------------------
+   * @var el
+   */
   el: '#app',
-  render: h => h(App),
-  router
+
+  /**
+   * The render function
+   * of the Vue App.
+   * ------------------------------
+   * @function
+   * @param h {createElement}
+   * @return {createElement}
+   */
+  render: h => h(App)
 })
