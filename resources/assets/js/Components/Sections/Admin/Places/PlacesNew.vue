@@ -107,8 +107,8 @@
           ...this.$data,
           latitude: this.position.lat,
           longitude: this.position.lng
-        }).then(user => {
-          this.$router.push(!user.is_admin ? '/Dashboard' : '/Admin/Dashboard')
+        }).then(() => {
+          this.$router.push('/Admin/Places')
         }).catch(({ response }) => {
           this.errors = response.data
         })

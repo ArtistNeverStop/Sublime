@@ -69,6 +69,21 @@ const actions = {
       commit('fetchPlace', data)
       resolve(data)
     }).catch(err => reject(err))
+  }),
+
+  /**
+   * Make the login Place and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Place and pass to make the login Place.
+   * @return {Promise}
+   */
+  deletePlace: ({ commit }, id) =>
+  new Promise((resolve, reject) => {
+    Places.delete(id).then(({ data }) => {
+      commit('deletePlace', id)
+      resolve(data)
+    }).catch(err => reject(err))
   })
 }
 
@@ -95,6 +110,17 @@ const mutations = {
     for (var Place of Places) {
       Vue.set(state.all, Place.id, Place)
     }
+  },
+
+  /**
+   * Update the Place.me and the Place on localstorage.
+   *
+   * @param state {Object} The Place module state.
+   * @param Place {Object} The current logged Place data.
+   */
+  deletePlace (state, id) {
+    state.list = state.list.filter(_id => id !== id)
+    Vue.delete(state.all, id)
   }
 }
 

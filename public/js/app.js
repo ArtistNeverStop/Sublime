@@ -29210,7 +29210,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['getPlaces', 'updatePlace'])),
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['getPlaces', 'updatePlace', 'deletePlace'])),
 
   /**
    * The mounted hook life-cycle of
@@ -29287,7 +29287,7 @@ var render = function() {
                         attrs: { "aria-hidden": "true" },
                         on: {
                           click: function($event) {
-                            _vm.updatePlace({ id: Place.id, status: 2 })
+                            _vm.deletePlace(Place.id)
                           }
                         }
                       })
@@ -29528,8 +29528,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       this.storePlace(_extends({}, this.$data, {
         latitude: this.position.lat,
         longitude: this.position.lng
-      })).then(function (user) {
-        _this.$router.push(!user.is_admin ? '/Dashboard' : '/Admin/Dashboard');
+      })).then(function () {
+        _this.$router.push('/Admin/Places');
       }).catch(function (_ref) {
         var response = _ref.response;
 
@@ -30619,6 +30619,27 @@ var state = {
         return reject(err);
       });
     });
+  },
+
+  /**
+   * Make the login Place and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Place and pass to make the login Place.
+   * @return {Promise}
+   */
+  deletePlace: function deletePlace(_ref5, id) {
+    var commit = _ref5.commit;
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Places__["a" /* default */].delete(id).then(function (_ref6) {
+        var data = _ref6.data;
+
+        commit('deletePlace', id);
+        resolve(data);
+      }).catch(function (err) {
+        return reject(err);
+      });
+    });
   }
 };
 
@@ -30669,6 +30690,20 @@ var mutations = {
         }
       }
     }
+  },
+
+
+  /**
+   * Update the Place.me and the Place on localstorage.
+   *
+   * @param state {Object} The Place module state.
+   * @param Place {Object} The current logged Place data.
+   */
+  deletePlace: function deletePlace(state, id) {
+    state.list = state.list.filter(function (_id) {
+      return id !== id;
+    });
+    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.delete(state.all, id);
   }
 };
 
@@ -30704,6 +30739,9 @@ var mutations = {
   },
   update: function update(place) {
     return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].put('/places/' + place.id, place);
+  },
+  delete: function _delete(id) {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].delete('/places/' + id);
   }
 });
 

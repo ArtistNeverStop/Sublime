@@ -23,7 +23,7 @@
           span
             i.fa.fa-commenting.fa-fw(@click='updatePlace({id: Place.id, status: 0})' aria-hidden="true")
           span
-            i.fa.fa-trash.fa-fw(@click='updatePlace({id: Place.id, status: 2})' aria-hidden="true")
+            i.fa.fa-trash.fa-fw(@click='deletePlace(Place.id)' aria-hidden="true")
 </template>
 
 <script>
@@ -70,6 +70,7 @@
       ...mapActions([
         'getPlaces',
         'updatePlace',
+        'deletePlace'
       ])
     },
 
