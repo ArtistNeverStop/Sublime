@@ -18,4 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('/users', 'UsersController');
+Route::apiResource('/requests', 'RequestsController')->middleware(['auth:api,web']);
 Route::get('/me', 'UsersController@me')->middleware(['auth'])->name('users.me.api');

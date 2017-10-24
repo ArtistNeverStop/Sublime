@@ -1,5 +1,9 @@
-import AdminDashboard from './AdminDashboard.vue'
+import Dashboard from './AdminDashboard'
+import Requests from './ArtistRequests'
+import Section from './AdminSection'
 
 export default {
-  AdminDashboard
+  Section,
+  Dashboard,
+  Requests
 }

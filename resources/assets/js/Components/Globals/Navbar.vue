@@ -2,17 +2,28 @@
   nav.container-fluid.navbar
     .row.end-xs
       .col-md-6
-        ul.navbar-site-menu.flex.end-xs
-          li(v-if='!User.me')
+      transition(appear mode='out-in' name='fade')
+        ul.navbar-site-menu.flex.end-xs(v-if='!User.me')
+          li
+            router-link(to='/') Home
+          li
             router-link(to='/Login') Login
-          li(v-if='!User.me')
+          li
             router-link(to='/Register') Register
-          li(v-if='User.me')
-            router-link(to='/Dashboard') {{ User.me.name }}
-          li(v-if='User.me')
+      transition(appear mode='out-in' name='fade')
+        ul.navbar-site-menu.flex.end-xs(v-if='User.me && User.me.is_user')
+          li
+            router-link(to='/') Home
+          li
+            router-link(to='/Become-an-artist') Become an Artist
+          li
+            router-link(to='/Dashboard') {{ User.me.name.substring(0, 6) }}
+          li
             router-link(to='/Logout') Logout
-          //- li
-          //-   a(href='') Logout
+      transition(appear mode='out-in' name='fade')
+        ul.navbar-site-menu.flex.end-xs(v-if='User.me && !User.me.is_user')
+          li
+            router-link(to='/Logout') Logout
 </template>
 
 <script>

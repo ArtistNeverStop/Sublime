@@ -2,7 +2,8 @@
   //- Site Wrapper
   #app.app.site-wrapper
     navbar
-    router-view
+    transition(appear mode='out-in' name='fade')
+      router-view
 </template>
 
 <script>

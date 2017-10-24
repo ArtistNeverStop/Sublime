@@ -1,7 +1,4 @@
 import Vue from 'vue'
-// import categories from '@/api/categories'
-// import entityMap from '@/store/EntityMap'
-// import storeState from '@/store/state'
 import router from '@/Router'
 import Auth from '@/Http/API/Auth'
 import Users from '@/Http/API/Users'
@@ -22,7 +19,7 @@ const state = {
   me: null,
 
   /**
-   * All the Products
+   * All the Users
    * loaded on the plataform.
    * ------------------------------
    * @var all {Object}
@@ -30,29 +27,19 @@ const state = {
   all: {},
 
   /**
-   * The array of Products id's.
+   * The array of Users id's.
    * ------------------------------
    * @var {array}
    */
   list: [],
 
   /**
-   * The selected Product.
+   * The selected User.
    * ------------------------------
    * @var {int}
    */
   selected: null
 }
-
-// /**
-//  * The Actions related to the
-//  * Users Entities.
-//  * ------------------------------
-//  * @const
-//  * @function
-//  * @return {bool}
-//  */
-// const isAdmin = () => state.me && state.me.is_admin
 
 /**
  * The Actions related to the

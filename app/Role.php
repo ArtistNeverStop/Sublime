@@ -29,8 +29,10 @@ class Role extends Model
      */
     const STAFF = 'staff';
 
+    # ------------------------------ RELATIONS ------------------------------ #
+
     /**
-     * The user belongsToMany roles
+     * The user belongs to many roles
      *
      * @return Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
@@ -38,4 +40,5 @@ class Role extends Model
     {
         return $this->belongsToMany('App\User', 'user_has_role');
     }
+
 }

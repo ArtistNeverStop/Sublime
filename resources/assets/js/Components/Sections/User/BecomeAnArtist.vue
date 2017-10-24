@@ -2,19 +2,17 @@
   .container-fluid
     .row.center-xs
       .col-md-12
-        h1 Login
-        form.container-fluid(@submit.prevent='loginAttempt' role='form')
+        h1 Become An Artist
+        p Sennd us a request to manage the name, places and prices of an "Artist Account".
+        form.container-fluid(@submit.prevent='registerAttempt' role='form')
           .row
             .col-md-12
-              label(for='email-input') Email
-              input#email-input(v-model='email' name='email' placeholder='E-mail' type='email')
-              span.center-xs.error-message(v-if='errors.errors' v-for='error in errors.errors.email') {{ error }}
-            .col-md-12
-              label(for='password-input') Password
-              input#password-input(v-model='password' name='password' placeholder='Password' type='password')
+              label(for='name-input') Artistic Name
+              input#name-input(v-model='name' name='name' placeholder='Name' type='text')
+              span.center-xs.error-message(v-if='errors.errors' v-for='error in errors.errors.name') {{ error }}
           .row
             .col-md-12
-              button.button-primary Login
+              button.button-primary Send
 </template>
 
 <script>
@@ -32,8 +30,7 @@
      */
     data () {
       return {
-        email: '',
-        password: '',
+        name: '',
         errors: {
           errors: {}
         }
@@ -64,18 +61,17 @@
     methods: {
 
       ...mapActions([
-        'login'
+        'makeArtistRequest'
       ]),
 
       /**
-       * Make tyhe login Attempt.
+       * Make the register Attempt.
        * ------------------------------
-       * @member {Function} loginAttempt
+       * @member {Function} registerAttempt
        */
-      loginAttempt () {
-        this.login(this.$data)
-        .then(user => {
-          this.$router.push(!user.is_admin ? '/Dashboard' : '/Admin/Dashboard')
+      registerAttempt () {
+        this.makeArtistRequest(this.$data).then(request => {
+          alert(request)
         }).catch(({ response }) => {
           this.errors = response.data
         })

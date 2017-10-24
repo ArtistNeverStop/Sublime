@@ -1,6 +1,6 @@
 <template lang="pug">
   .container-fluid
-    .row
+    .row.center-xs
       .col-md-12
         h1 Register
         form.container-fluid(@submit.prevent='registerAttempt' role='form')
@@ -8,22 +8,22 @@
             .col-md-12
               label(for='name-input') Name
               input#name-input(v-model='name' name='name' placeholder='Name' type='text')
-              span.error-message(v-if='errors.errors' v-for='error in errors.errors.name') {{ error }}
+              span.center-xs.error-message(v-if='errors.errors' v-for='error in errors.errors.name') {{ error }}
             .col-md-12
               label(for='user-name-input') User Name
               input#user-name-input(v-model='user_name' name='user_name' placeholder='User Name' type='text')
-              span.error-message(v-if='errors.errors' v-for='error in errors.errors.user_name') {{ error }}
+              span.center-xs.error-message(v-if='errors.errors' v-for='error in errors.errors.user_name') {{ error }}
             .col-md-12
               label(for='email-input') Email
               input#email-input(v-model='email' name='email' placeholder='E-mail' type='email')
-              span.error-message(v-if='errors.errors' v-for='error in errors.errors.email') {{ error }}
+              span.center-xs.error-message(v-if='errors.errors' v-for='error in errors.errors.email') {{ error }}
             .col-md-12
               label(for='password-input') Password
               input#password-input(v-model='password' name='password' placeholder='Password' type='password')
             .col-md-12
               label(for='password-confirmation-input') Password Confirmation
               input#password-confirmation-input(v-model='password_confirmation' name='password_confirmation' placeholder='Password Confirmation' type='password')
-              span.error-message(v-if='errors.errors' v-for='error in errors.errors.password') {{ error }}
+              span.center-xs.error-message(v-if='errors.errors' v-for='error in errors.errors.password') {{ error }}
           .row
             .col-md-12
               button.button-primary Register
@@ -88,8 +88,7 @@
        * @member {Function} registerAttempt
        */
       registerAttempt () {
-        this.register(this.$data)
-        .then(user => {
+        this.register(this.$data).then(user => {
           this.$router.push(!user.is_admin ? '/Dashboard' : '/Admin/Dashboard')
         }).catch(({ response }) => {
           this.errors = response.data

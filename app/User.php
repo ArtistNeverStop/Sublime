@@ -50,12 +50,15 @@ class User extends Authenticatable
     protected $appends = [
         'is_admin',
         'is_staff',
+        'is_user',
         // 'avatar',
         // 'image_url'
     ];
 
+    # ------------------------------ RELATIONS ------------------------------ #
+
     /**
-     * The user belongsToMany roles
+     * The user belongs to many roles
      *
      * @return Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
@@ -63,6 +66,28 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Role', 'user_has_role');
     }
+
+    /**
+     * The user has many requests
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function requests()
+    {
+        return $this->hasMany('App\Request');
+    }
+
+    /**
+     * The user has many artists
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function artists()
+    {
+        return $this->hasMany('App\Artist');
+    }
+
+    # ------------------------------ SERIALIZATION ------------------------------ #
 
     /**
      * Define if the user is the plataform admin
@@ -82,5 +107,15 @@ class User extends Authenticatable
     public function getIsStaffAttribute()
     {
         return !!$this->roles()->where('name', Role::STAFF)->count();
+    }
+
+    /**
+     * Define if the user is staff of the plataform
+     *
+     * @return boolean
+     */
+    public function getIsUserAttribute()
+    {
+        return !$this->is_admin && !$this->is_staff;
     }
 }

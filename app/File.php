@@ -12,7 +12,7 @@ class File extends Model
 	 * related must declare their on constant types
 	 * to group their files
 	 *
-	 * @var integer
+	 * @var int
 	 */
     const DEFAULT_TYPE = 0;
 

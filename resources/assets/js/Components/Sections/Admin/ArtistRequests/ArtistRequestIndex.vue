@@ -1,20 +1,27 @@
 <template lang="pug">
   .container(v-if='User.me')
-    .row
-      .col-md-12
-        h1 Admin Dashboard
-        p {{ User.me.name }}
-    .row
-      .col-md-12
-      table.table
-        tr
-          th id
-          th Name
-          th Email
-        tr(v-for='user in users')
-          td {{ user.id }}
-          td {{ user.name }}
-          td {{ user.email }}
+    h1 Artist Requests
+    table.table
+      tr
+        th id
+        th User Name
+        th User Email
+        th Artist Name
+        th Status
+        th 
+      tr(v-for='request in Request.all')
+        td {{ request.id }}
+        td {{ request.user.name }}
+        td {{ request.user.email }}
+        td {{ request.artist.name }}
+        td {{ request.status_string }}
+        td
+          span
+            i.fa.fa-check.fa-fw(@click='updateRequest({id: request.id, status: 1})' aria-hidden="true")
+          span
+            i.fa.fa-commenting.fa-fw(@click='updateRequest({id: request.id, status: 0})' aria-hidden="true")
+          span
+            i.fa.fa-trash.fa-fw(@click='updateRequest({id: request.id, status: 2})' aria-hidden="true")
 </template>
 
 <script>
@@ -31,7 +38,6 @@
      */
     data () {
       return {
-        users: []
       }
     },
 
@@ -45,7 +51,8 @@
     computed: {
 
       ...mapState([
-        'User'
+        'User',
+        'Request'
       ])
     },
 
@@ -59,7 +66,8 @@
     methods: {
 
       ...mapActions([
-        'getUsers'
+        'getRequests',
+        'updateRequest',
       ])
     },
 
@@ -71,9 +79,7 @@
      */
     mounted () {
       console.log(`${this.$options.__file.split('/').slice(-1).pop()} Component Mounted!`)
-      this.getUsers(['id', 'name', 'email']).then(users => {
-        this.users = users.data.users
-      })
+      this.getRequests(['id', 'name', 'email'])
     }
   }
 </script>
