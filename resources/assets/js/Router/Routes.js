@@ -15,7 +15,7 @@ export default [
 	  	Route('Requests', Site.Admin.Requests.Index, 'admin.artists.requests.requests.index')
 	  ])
   ]),
-  // Route('/Artists', Site.Artist., 'artists'),
+  Route('/Artists', Site.Artists.Index, 'artists'),
   Route('/Become-an-artist', Site.User.BecomeAnArtist, 'user.become.an.artist', { auth: true }),
   Route('/Dashboard', Site.User.Dashboard, 'dashboard', { auth: true }),
   Route('/Login', Site.Login, 'login', { guest: true }),

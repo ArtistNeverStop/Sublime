@@ -2,6 +2,9 @@
   nav#navbar.container-fluid.navbar
     .row.end-xs
       .col-md-6
+        .flex.start-xs
+          h1.sublime-logo S
+      .col-md-6
       transition(appear mode='out-in' name='fade')
         ul#navbar-site-menu.navbar-site-menu.flex(v-if='!User.me')
           li

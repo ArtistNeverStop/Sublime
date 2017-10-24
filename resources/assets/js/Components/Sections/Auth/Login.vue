@@ -1,9 +1,9 @@
 <template lang="pug">
   .container-fluid
-    .row.center-xs
-      .col-md-12
-        h1 Login
+    .row.center-xs.middle-xs.full
+      .col-md-6.col-lg-4
         form.container-fluid(@submit.prevent='loginAttempt' role='form')
+          h1 Login
           .row
             .col-md-12
               label(for='email-input') Email
@@ -16,6 +16,17 @@
             .col-md-12
               button.button-primary Login
 </template>
+
+<style type="text/css">
+  form {
+    transition: all .4s;
+    min-height: 500px;
+  }
+  form:hover {
+    -webkit-box-shadow: 0 14px 32px 0 rgba(0,0,0,.3);
+    box-shadow: 0 14px 32px 0 rgba(0,0,0,.3);
+  }
+</style>
 
 <script>
   
