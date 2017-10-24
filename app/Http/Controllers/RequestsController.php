@@ -41,7 +41,7 @@ class RequestsController extends Controller
         return Auth::user()->requests()->firstOrCreate([
             'artist_id' => Artist::firstOrCreate(['name' => $request->name])->id,
             'user_id' => Auth::user()->id
-        ]);
+        ])->load(['artist', 'user']);
     }
 
     /**

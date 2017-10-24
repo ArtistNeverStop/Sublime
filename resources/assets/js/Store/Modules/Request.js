@@ -84,6 +84,21 @@ const actions = {
       commit('fetchRequest', data)
       resolve(data)
     }).catch(err => reject(err))
+  }),
+
+  /**
+   * Make the login request and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Request and pass to make the login request.
+   * @return {Promise}
+   */
+  myRequests: ({ commit }) =>
+  new Promise((resolve, reject) => {
+    Requests.mine(request).then(({ data }) => {
+      commit('fetchRequest', data)
+      resolve(data)
+    }).catch(err => reject(err))
   })
 }
 

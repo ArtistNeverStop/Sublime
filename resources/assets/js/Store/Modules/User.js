@@ -97,6 +97,9 @@ const actions = {
       Auth.me(load).then(({ data }) => {
         // On Success action update the user
         commit('login', data)
+        if (data.requests) {
+          commit('fetchRequests', data.requests)
+        }
         resolve(data)
       }).catch(error => {
         // On UnAuthorized action clean the user

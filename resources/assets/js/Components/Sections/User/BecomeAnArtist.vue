@@ -13,6 +13,11 @@
           .row
             .col-md-12
               button.button-primary Send
+          .row
+            .col-md-12
+              p(v-for='request in Request.all')
+                strong {{ request.artist.name }}: 
+                small {{ request.status_string }}
 </template>
 
 <script>
@@ -47,7 +52,8 @@
     computed: {
 
       ...mapState([
-        'User'
+        'User',
+        'Request'
       ])
     },
 
@@ -70,12 +76,20 @@
        * @member {Function} registerAttempt
        */
       registerAttempt () {
-        this.makeArtistRequest(this.$data).then(request => {
-          alert(request)
-        }).catch(({ response }) => {
+        this.makeArtistRequest(this.$data).catch(({ response }) => {
           this.errors = response.data
         })
       }
+    },
+
+    /**
+     * The mounted hook life-cycle of
+     * the component instance.
+     * ------------------------------
+     * @member {Function}
+     */
+    mounted () {
+      console.log(`${this.$options.__file.split('/').slice(-1).pop()} Component Mounted!`)
     }
   }
 </script>

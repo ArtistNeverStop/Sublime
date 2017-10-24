@@ -12218,6 +12218,9 @@ var state = {
 
           // On Success action update the user
           commit('login', data);
+          if (data.requests) {
+            commit('fetchRequests', data.requests);
+          }
           resolve(data);
         }).catch(function (error) {
           // On UnAuthorized action clean the user
@@ -17506,6 +17509,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -17536,7 +17544,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User', 'Request'])),
 
   /**
    * The main instance methods of
@@ -17555,15 +17563,23 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     registerAttempt: function registerAttempt() {
       var _this = this;
 
-      this.makeArtistRequest(this.$data).then(function (request) {
-        alert(request);
-      }).catch(function (_ref) {
+      this.makeArtistRequest(this.$data).catch(function (_ref) {
         var response = _ref.response;
 
         _this.errors = response.data;
       });
     }
-  })
+  }),
+
+  /**
+   * The mounted hook life-cycle of
+   * the component instance.
+   * ------------------------------
+   * @member {Function}
+   */
+  mounted: function mounted() {
+    console.log(this.$options.__file.split('/').slice(-1).pop() + ' Component Mounted!');
+  }
 });
 
 /***/ }),
@@ -17640,7 +17656,19 @@ var render = function() {
                 2
               )
             ]),
-            _vm._m(0)
+            _vm._m(0),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-md-12" },
+                _vm._l(_vm.Request.all, function(request) {
+                  return _c("p", [
+                    _c("strong", [_vm._v(_vm._s(request.artist.name) + ": ")]),
+                    _c("small", [_vm._v(_vm._s(request.status_string))])
+                  ])
+                })
+              )
+            ])
           ]
         )
       ])
@@ -18624,6 +18652,27 @@ var state = {
     return new Promise(function (resolve, reject) {
       __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].update(request).then(function (_ref6) {
         var data = _ref6.data;
+
+        commit('fetchRequest', data);
+        resolve(data);
+      }).catch(function (err) {
+        return reject(err);
+      });
+    });
+  },
+
+  /**
+   * Make the login request and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Request and pass to make the login request.
+   * @return {Promise}
+   */
+  myRequests: function myRequests(_ref7) {
+    var commit = _ref7.commit;
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].mine(request).then(function (_ref8) {
+        var data = _ref8.data;
 
         commit('fetchRequest', data);
         resolve(data);
