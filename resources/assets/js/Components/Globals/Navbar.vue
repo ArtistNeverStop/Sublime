@@ -1,13 +1,15 @@
 <template lang="pug">
-  nav.container-fluid.navbar
+  nav#navbar.container-fluid.navbar
     .row.end-xs
       .col-md-6
       transition(appear mode='out-in' name='fade')
-        ul.navbar-site-menu.flex.end-xs(v-if='!User.me')
+        ul#navbar-site-menu.navbar-site-menu.flex(v-if='!User.me')
+          li
+            router-link(to='/Login') Login
           li
             router-link(to='/') Home
           li
-            router-link(to='/Login') Login
+            router-link(to='/Artists') Artists
           li
             router-link(to='/Register') Register
       transition(appear mode='out-in' name='fade')

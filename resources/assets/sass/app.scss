@@ -35,12 +35,20 @@
 .flex {
 	display: flex;
 }
-
+.column {
+	display: flex;
+	flex-direction: column;	
+}
 span.error-message {
 	display: flex;
 	margin: 10px 0;
 	&, * {
 		color: red;
+	}
+}
+.text-left {
+	&, * {
+		text-align: left;
 	}
 }
 
@@ -49,3 +57,11 @@ span.error-message {
 @import "./site/index";
 // Global Components CSS
 @import "./components/index";
+
+p.white {
+	color: white
+}
+.no-text-transform {
+	text-align: center;
+	text-transform: none;
+}

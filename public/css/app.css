@@ -4672,6 +4672,16 @@ there.
   display: flex;
 }
 
+.column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 span.error-message {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4684,9 +4694,22 @@ span.error-message * {
   color: red;
 }
 
+.text-left,
+.text-left * {
+  text-align: left;
+}
+
 .home-section-description {
-  height: 700px;
-  background-color: red;
+  height: 80vh;
+}
+
+.home-section-description h2 {
+  color: black;
+  margin: 2rem;
+  padding: 10px;
+  font-size: 10rem;
+  font-family: Chocolate;
+  position: relative;
 }
 
 .home-section {
@@ -4701,8 +4724,40 @@ span.error-message * {
   background-color: black;
 }
 
+.title-container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 5%;
+}
+
+.title-container h2 {
+  max-width: 650px;
+}
+
 .home-section-video {
+  position: relative;
   background: url("/home-video.mp4");
+}
+
+.home-section-video h2 {
+  color: white;
+  background-color: black;
+  margin: 2rem;
+  padding: 10px;
+  font-size: 10rem;
+  font-family: Chocolate;
+  position: relative;
 }
 
 @font-face {
@@ -4846,6 +4901,15 @@ span.error-message * {
   }
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .navbar {
   position: fixed;
   width: 100%;
@@ -4856,6 +4920,9 @@ span.error-message * {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   top: 300px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4879,14 +4946,20 @@ span.error-message * {
   height: 100%;
   font-size: 3rem;
   color: black;
+  border-bottom: 1px solid black;
 }
 
-li {
-  list-style: none;
+.navbar-site-menu.white a {
+  color: white;
+  border-bottom: 1px solid white;
 }
 
-a {
-  text-decoration: none;
-  cursor: pointer;
+p.white {
+  color: white;
+}
+
+.no-text-transform {
+  text-align: center;
+  text-transform: none;
 }
 

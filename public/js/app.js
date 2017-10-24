@@ -13664,6 +13664,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -13709,120 +13711,140 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("nav", { staticClass: "container-fluid navbar" }, [
-    _c(
-      "div",
-      { staticClass: "row end-xs" },
-      [
-        _c("div", { staticClass: "col-md-6" }),
-        _c(
-          "transition",
-          { attrs: { appear: "appear", mode: "out-in", name: "fade" } },
-          [
-            !_vm.User.me
-              ? _c("ul", { staticClass: "navbar-site-menu flex end-xs" }, [
-                  _c(
-                    "li",
-                    [
-                      _c("router-link", { attrs: { to: "/" } }, [
-                        _vm._v("Home")
-                      ])
-                    ],
-                    1
-                  ),
-                  _c(
-                    "li",
-                    [
-                      _c("router-link", { attrs: { to: "/Login" } }, [
-                        _vm._v("Login")
-                      ])
-                    ],
-                    1
-                  ),
-                  _c(
-                    "li",
-                    [
-                      _c("router-link", { attrs: { to: "/Register" } }, [
-                        _vm._v("Register")
-                      ])
-                    ],
-                    1
-                  )
-                ])
-              : _vm._e()
-          ]
-        ),
-        _c(
-          "transition",
-          { attrs: { appear: "appear", mode: "out-in", name: "fade" } },
-          [
-            _vm.User.me && _vm.User.me.is_user
-              ? _c("ul", { staticClass: "navbar-site-menu flex end-xs" }, [
-                  _c(
-                    "li",
-                    [
-                      _c("router-link", { attrs: { to: "/" } }, [
-                        _vm._v("Home")
-                      ])
-                    ],
-                    1
-                  ),
-                  _c(
-                    "li",
+  return _c(
+    "nav",
+    { staticClass: "container-fluid navbar", attrs: { id: "navbar" } },
+    [
+      _c(
+        "div",
+        { staticClass: "row end-xs" },
+        [
+          _c("div", { staticClass: "col-md-6" }),
+          _c(
+            "transition",
+            { attrs: { appear: "appear", mode: "out-in", name: "fade" } },
+            [
+              !_vm.User.me
+                ? _c(
+                    "ul",
+                    {
+                      staticClass: "navbar-site-menu flex",
+                      attrs: { id: "navbar-site-menu" }
+                    },
                     [
                       _c(
-                        "router-link",
-                        { attrs: { to: "/Become-an-artist" } },
-                        [_vm._v("Become an Artist")]
+                        "li",
+                        [
+                          _c("router-link", { attrs: { to: "/Login" } }, [
+                            _vm._v("Login")
+                          ])
+                        ],
+                        1
+                      ),
+                      _c(
+                        "li",
+                        [
+                          _c("router-link", { attrs: { to: "/" } }, [
+                            _vm._v("Home")
+                          ])
+                        ],
+                        1
+                      ),
+                      _c(
+                        "li",
+                        [
+                          _c("router-link", { attrs: { to: "/Artists" } }, [
+                            _vm._v("Artists")
+                          ])
+                        ],
+                        1
+                      ),
+                      _c(
+                        "li",
+                        [
+                          _c("router-link", { attrs: { to: "/Register" } }, [
+                            _vm._v("Register")
+                          ])
+                        ],
+                        1
                       )
-                    ],
-                    1
-                  ),
-                  _c(
-                    "li",
-                    [
-                      _c("router-link", { attrs: { to: "/Dashboard" } }, [
-                        _vm._v(_vm._s(_vm.User.me.name.substring(0, 6)))
-                      ])
-                    ],
-                    1
-                  ),
-                  _c(
-                    "li",
-                    [
-                      _c("router-link", { attrs: { to: "/Logout" } }, [
-                        _vm._v("Logout")
-                      ])
-                    ],
-                    1
+                    ]
                   )
-                ])
-              : _vm._e()
-          ]
-        ),
-        _c(
-          "transition",
-          { attrs: { appear: "appear", mode: "out-in", name: "fade" } },
-          [
-            _vm.User.me && !_vm.User.me.is_user
-              ? _c("ul", { staticClass: "navbar-site-menu flex end-xs" }, [
-                  _c(
-                    "li",
-                    [
-                      _c("router-link", { attrs: { to: "/Logout" } }, [
-                        _vm._v("Logout")
-                      ])
-                    ],
-                    1
-                  )
-                ])
-              : _vm._e()
-          ]
-        )
-      ],
-      1
-    )
-  ])
+                : _vm._e()
+            ]
+          ),
+          _c(
+            "transition",
+            { attrs: { appear: "appear", mode: "out-in", name: "fade" } },
+            [
+              _vm.User.me && _vm.User.me.is_user
+                ? _c("ul", { staticClass: "navbar-site-menu flex end-xs" }, [
+                    _c(
+                      "li",
+                      [
+                        _c("router-link", { attrs: { to: "/" } }, [
+                          _vm._v("Home")
+                        ])
+                      ],
+                      1
+                    ),
+                    _c(
+                      "li",
+                      [
+                        _c(
+                          "router-link",
+                          { attrs: { to: "/Become-an-artist" } },
+                          [_vm._v("Become an Artist")]
+                        )
+                      ],
+                      1
+                    ),
+                    _c(
+                      "li",
+                      [
+                        _c("router-link", { attrs: { to: "/Dashboard" } }, [
+                          _vm._v(_vm._s(_vm.User.me.name.substring(0, 6)))
+                        ])
+                      ],
+                      1
+                    ),
+                    _c(
+                      "li",
+                      [
+                        _c("router-link", { attrs: { to: "/Logout" } }, [
+                          _vm._v("Logout")
+                        ])
+                      ],
+                      1
+                    )
+                  ])
+                : _vm._e()
+            ]
+          ),
+          _c(
+            "transition",
+            { attrs: { appear: "appear", mode: "out-in", name: "fade" } },
+            [
+              _vm.User.me && !_vm.User.me.is_user
+                ? _c("ul", { staticClass: "navbar-site-menu flex end-xs" }, [
+                    _c(
+                      "li",
+                      [
+                        _c("router-link", { attrs: { to: "/Logout" } }, [
+                          _vm._v("Logout")
+                        ])
+                      ],
+                      1
+                    )
+                  ])
+                : _vm._e()
+            ]
+          )
+        ],
+        1
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -16381,7 +16403,9 @@ if (inBrowser && window.Vue) {
  * ------------------------------
  * @const {Array}
  */
-/* harmony default export */ __webpack_exports__["a"] = ([Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Admin', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Admin.Section, 'admin', { admin: true }, [Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Dashboard', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Admin.Dashboard, 'admin.dashboard'), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Artists', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Admin.Requests.Section, 'admin.artists.requests.requests', null, [Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Requests', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Admin.Requests.Index, 'admin.artists.requests.requests.index')])]), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Become-an-artist', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].User.BecomeAnArtist, 'user.become.an.artist', { auth: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Dashboard', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].User.Dashboard, 'dashboard', { auth: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Login', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Login, 'login', { guest: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Register', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Register, 'register', { guest: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Logout', '', 'logout', null, null, function () {
+/* harmony default export */ __webpack_exports__["a"] = ([Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Admin', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Admin.Section, 'admin', { admin: true }, [Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Dashboard', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Admin.Dashboard, 'admin.dashboard'), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Artists', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Admin.Requests.Section, 'admin.artists.requests.requests', null, [Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Requests', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Admin.Requests.Index, 'admin.artists.requests.requests.index')])]),
+// Route('/Artists', Site.Artist., 'artists'),
+Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Become-an-artist', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].User.BecomeAnArtist, 'user.become.an.artist', { auth: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Dashboard', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].User.Dashboard, 'dashboard', { auth: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Login', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Login, 'login', { guest: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Register', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Register, 'register', { guest: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Logout', '', 'logout', null, null, function () {
   return __WEBPACK_IMPORTED_MODULE_2__Store__["a" /* default */].dispatch('logout', '/');
 }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Home, 'home'), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('*', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Errors._404, '404')]);
 
@@ -16484,6 +16508,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -16521,6 +16567,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     onscroll: function onscroll() {
       this.showTitle = window.scrollY <= 0;
       this.showVideo = !this.showTitle;
+      if (this.showVideo) {
+        document.getElementById('navbar-site-menu').classList.add('white');
+      } else {
+        document.getElementById('navbar-site-menu').classList.remove('white');
+      }
     },
 
 
@@ -16580,7 +16631,7 @@ var render = function() {
           staticClass: "home-section-video",
           attrs: { id: "home-section-video" }
         },
-        [_vm._m(0)]
+        [_vm._m(0), _vm._m(1)]
       ),
       _c("transition", { attrs: { appear: "appear", name: "fade-down" } }, [
         _vm.showTitle
@@ -16607,11 +16658,15 @@ var render = function() {
             )
           : _vm._e()
       ]),
-      _c("section", {
-        ref: "home-section-description",
-        staticClass: "home-section-description",
-        attrs: { id: "home-section-description" }
-      })
+      _c(
+        "section",
+        {
+          ref: "home-section-description",
+          staticClass: "home-section-description",
+          attrs: { id: "home-section-description" }
+        },
+        [_vm._m(2)]
+      )
     ],
     1
   )
@@ -16621,14 +16676,99 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "video",
-      {
-        staticClass: "video",
-        attrs: { loop: "loop", muted: "muted", autoplay: "autoplay" }
-      },
-      [_c("source", { attrs: { src: "/home-video.mp4", type: "video/mp4" } })]
-    )
+    return _c("div", { staticClass: "title-container col-md-6" }, [
+      _c("h2", [_vm._v("Your favorite artist")]),
+      _c("h2", [_vm._v("When you want")]),
+      _c("h2", [_vm._v("Where you want")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "video-text col-md-6" }, [
+      _c(
+        "video",
+        {
+          staticClass: "video",
+          attrs: { loop: "loop", muted: "muted", autoplay: "autoplay" }
+        },
+        [_c("source", { attrs: { src: "/home-video.mp4", type: "video/mp4" } })]
+      ),
+      _c("p", { staticClass: "white no-text-transform" }, [
+        _vm._v(
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+        )
+      ]),
+      _c("p", { staticClass: "white no-text-transform" }, [
+        _vm._v(
+          "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
+        )
+      ]),
+      _c("p", { staticClass: "white no-text-transform" }, [
+        _vm._v(
+          "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"
+        )
+      ]),
+      _c("p", { staticClass: "white no-text-transform" }, [
+        _vm._v(
+          "consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse"
+        )
+      ]),
+      _c("p", { staticClass: "white no-text-transform" }, [
+        _vm._v(
+          "cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non"
+        )
+      ]),
+      _c("p", { staticClass: "white no-text-transform" }, [
+        _vm._v(
+          "proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "column center-xs" }, [
+          _c("h2", [_vm._v("How does")]),
+          _c("h2", [_vm._v("it work ?")]),
+          _c("p", [
+            _vm._v(
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+            )
+          ]),
+          _c("p", [
+            _vm._v(
+              "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
+            )
+          ]),
+          _c("p", [
+            _vm._v(
+              "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"
+            )
+          ]),
+          _c("p", [
+            _vm._v(
+              "consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse"
+            )
+          ]),
+          _c("p", [
+            _vm._v(
+              "cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non"
+            )
+          ]),
+          _c("p", [
+            _vm._v(
+              "proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            )
+          ])
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true

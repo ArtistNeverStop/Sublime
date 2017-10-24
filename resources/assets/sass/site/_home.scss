@@ -1,7 +1,15 @@
 .home-section-description {
-  height: 700px;
-  background-color: red;
+  height: 80vh;
+  h2 {
+    color: black;
+    margin: 2rem;
+    padding: 10px;
+    font-size: 10rem;
+    font-family: Chocolate;
+    position: relative;
+  }
 }
+
 .home-section {
   z-index: 20;
   padding-top: 100vh;
@@ -12,7 +20,30 @@
   height: 100%;
   background-color: black;
 }
+.title-container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 5%;
+  h2 {
+    max-width: 650px;
+  }
+}
+
 .home-section-video {
+  position: relative;
+  h2 {
+    color: white;
+    background-color: black;
+    margin: 2rem;
+    padding: 10px;
+    font-size: 10rem;
+    font-family: Chocolate;
+    position: relative;
+  }
   background: url('/home-video.mp4')
 }
 @font-face {
