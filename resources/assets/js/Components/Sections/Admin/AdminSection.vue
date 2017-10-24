@@ -7,8 +7,16 @@
             router-link(to='/Admin/Dashboard') Users
           li
             router-link(to='/Admin/Artists/Requests') Artist Requests
+          li
+            router-link(to='/Admin/Places') Our Places
       router-view.col-md-8
 </template>
+
+<style type="text/css">
+  aside {
+    padding-top: 60px;
+  }
+</style>
 
 <script>
   export default {

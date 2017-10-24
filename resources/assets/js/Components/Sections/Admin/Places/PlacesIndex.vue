@@ -1,21 +1,31 @@
 <template lang="pug">
   .container(v-if='User.me')
-    .row
-      .col-md-12
-        h1 Admin Dashboard
-        p {{ User.me.name }}
-    .row
-      .col-md-12
-      table.table
-        tr
-          th id
-          th Name
-          th Email
-        tr(v-for='user in users')
-          td {{ user.id }}
-          td {{ user.name }}
-          td {{ user.email }}
+    h1 Our Places
+    router-link.button-primary(to='/Admin/Places/New' tag='button') New
+    table.table
+      tr
+        th id
+        th Address
+        th People limit
+        th Area 
+          small m2
+        th Floors
+        th 
+      tr(v-for='Place in Place.all')
+        td {{ Place.id }}
+        td {{ Place.address }}
+        td {{ Place.people_limit }}
+        td {{ Place.floors }}
+        td {{ Place.area }}
+        td
+          span
+            i.fa.fa-check.fa-fw(@click='updatePlace({id: Place.id, status: 1})' aria-hidden="true")
+          span
+            i.fa.fa-commenting.fa-fw(@click='updatePlace({id: Place.id, status: 0})' aria-hidden="true")
+          span
+            i.fa.fa-trash.fa-fw(@click='updatePlace({id: Place.id, status: 2})' aria-hidden="true")
 </template>
+
 <script>
   import { mapState, mapActions } from 'vuex'
 
@@ -30,7 +40,6 @@
      */
     data () {
       return {
-        users: []
       }
     },
 
@@ -44,7 +53,8 @@
     computed: {
 
       ...mapState([
-        'User'
+        'User',
+        'Place'
       ])
     },
 
@@ -58,7 +68,8 @@
     methods: {
 
       ...mapActions([
-        'getUsers'
+        'getPlaces',
+        'updatePlace',
       ])
     },
 
@@ -70,9 +81,7 @@
      */
     mounted () {
       console.log(`${this.$options.__file.split('/').slice(-1).pop()} Component Mounted!`)
-      this.getUsers(['id', 'name', 'email']).then(users => {
-        this.users = users.data.users
-      })
+      this.getPlaces(['id', 'name', 'email'])
     }
   }
 </script>

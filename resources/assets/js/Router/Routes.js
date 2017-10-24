@@ -13,7 +13,11 @@ export default [
 	  Route('Dashboard', Site.Admin.Dashboard, 'admin.dashboard'),
 	  Route('Artists', Site.Admin.Requests.Section, 'admin.artists.requests.requests', null, [
 	  	Route('Requests', Site.Admin.Requests.Index, 'admin.artists.requests.requests.index')
-	  ])
+	  ]),
+    Route('Places', Site.Admin.Places.Index, 'admin.places.index', null, [
+      // Route('Requests', Site.Admin.Requests.Index, 'admin.artists.requests.requests.index')
+    ]),
+    Route('Places/New', Site.Admin.Places.New, 'admin.places.new')
   ]),
   Route('/Artists', Site.Artists.Index, 'artists'),
   Route('/Become-an-artist', Site.User.BecomeAnArtist, 'user.become.an.artist', { auth: true }),
