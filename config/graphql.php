@@ -5,7 +5,7 @@ return [
     /*
      * The prefix for routes
      */
-    'prefix' => 'graphql',
+    'prefix' => 'api/graphql',
 
     /*
      * The routes to make GraphQL request. Either a string that will apply

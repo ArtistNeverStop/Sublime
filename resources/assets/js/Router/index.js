@@ -26,11 +26,12 @@ const router = new VueRouter({
  */
 router.beforeEach((to, from, next) => {
   // store.commit('status', 200)
+  var user = User.state.me || JSON.parse(localStorage.getItem('User'))
   let is = n => r => r.meta[n]
   let route = [].some.bind(to.matched)
-  next(User.state.me
-    ? route(is('guest')) || (route(is('admin')) && !User.isAdmin())
-      ? '/'
+  next(user
+    ? route(is('guest')) || (route(is('admin')) && !user.is_admin)
+      ? '/Dashboard'
       : true
     : route(is('auth'))
       ? '/login'

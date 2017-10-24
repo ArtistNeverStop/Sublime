@@ -15,11 +15,20 @@
 // @import "~bootstrap-sass/assets/stylesheets/bootstrap/type";
 // @import "~bootstrap-sass/assets/stylesheets/bootstrap/code";
 
+* {
+	box-sizing: border-box;
+}
 // Variables
 @import "./variables";
-@import "~normalize.css/normalize";
-@import "~flexboxgrid/dist/flexboxgrid.min";
 @import "~skeleton-css/css/skeleton";
+@import "~flexboxgrid/dist/flexboxgrid.min";
+
+.flex {
+	display: flex;
+}
+
 
 // Site CSS
 @import "./site/index";
+// Global Components CSS
+@import "./components/index";

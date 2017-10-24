@@ -20,6 +20,7 @@
   src: url('/fonts/Chocolate.woff2');
 }
 .home-section-title, .home-section-video {
+  z-index: 0;
   position: fixed;
   bottom: 0;
   top: 0;

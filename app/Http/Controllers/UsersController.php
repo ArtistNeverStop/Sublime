@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\QueryFieldsRequest;
 use App\User;
+use Auth;
 
 class UsersController extends Controller
 {
@@ -13,7 +14,7 @@ class UsersController extends Controller
      *
      * @return \App\Http\Requests\QueryFieldsRequest
      */
-    public function index(QueryFieldsRequest $request)
+    public function index(Request $request)
     {
         return User::select($request->fields ?: '*')->get();
     }
@@ -82,5 +83,16 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function me(Request $request)
+    {
+        return Auth::user();
     }
 }

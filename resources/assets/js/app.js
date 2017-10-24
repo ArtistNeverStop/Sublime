@@ -9,10 +9,12 @@ import '@/Components/Prototype'
 import '@/Components/Globals'
 import router from '@/Router'
 import App from '@/Components/Sections/App'
-// import store from '@/Store'
+import store from '@/Store'
 // import { mapState, mapMutations } from 'vuex'
 // import App from '@/sections/App.vue'
 import Vue from 'vue'
+
+store.dispatch('me')
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -22,9 +24,16 @@ import Vue from 'vue'
 new Vue({
 
   /**
+   * The Vuex Instance.
+   * ------------------------------
+   * @member router
+   */
+  store,
+
+  /**
    * The VueRouter Instance.
    * ------------------------------
-   * @var router
+   * @member router
    */
   router,
 
@@ -32,7 +41,7 @@ new Vue({
    * The Dom element where the
    * root instance wil be render.
    * ------------------------------
-   * @var el
+   * @member el
    */
   el: '#app',
 
@@ -44,5 +53,15 @@ new Vue({
    * @param h {createElement}
    * @return {createElement}
    */
-  render: h => h(App)
+  render: h => h(App),
+
+  /**
+   * The beforeCreate hook life-cycle of
+   * the component instance.
+   * ------------------------------
+   * @member {Function}
+   */
+  beforeCreate () {
+    // this.$store.dispatch('me')
+  }
 })
