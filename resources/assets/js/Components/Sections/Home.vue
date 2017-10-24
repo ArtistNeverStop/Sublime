@@ -2,9 +2,9 @@
   .home-section(ref='home-section')
     section#home-section-video.home-section-video(v-show='showVideo' ref='home-section-video')
       .title-container.col-md-6
-        h2 Your favorite artist
-        h2 When you want
-        h2 Where you want
+        h2 Your favorite artist...
+        h2 When you want...
+        h2 Where you want...
       .video-text.col-md-6
         video.video(loop muted autoplay)
           //- poster='img/videoframe.jpg'
@@ -33,6 +33,33 @@
             p consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
             p cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             p proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        .col-md-6
+    section.home-section-description(ref='home-section-description')
+      .row
+        .col-md-6
+        .col-md-6
+          .column.center-xs
+            h2 How many
+            h2 Artists ?
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            p tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            p quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            p consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            p cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            p proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    section.black.home-section-description(ref='home-section-description')
+      .row
+        .col-md-6
+          .column.center-xs
+            h2 How much
+            h2 it cost?
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            p tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            p quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            p consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            p cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            p proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        .col-md-6
 </template>
 
 <script>
@@ -71,10 +98,12 @@
       onscroll () {
         this.showTitle = (window.scrollY <= 0)
         this.showVideo = !this.showTitle
-        if (this.showVideo) {
+        if (window.scrollY >= 800 && window.scrollY <= 1856) {
           document.getElementById('navbar-site-menu').classList.add('white')
+          document.getElementById('sublime-logo').classList.add('white')
         } else {
           document.getElementById('navbar-site-menu').classList.remove('white')
+          document.getElementById('sublime-logo').classList.remove('white')
         }
       },
 

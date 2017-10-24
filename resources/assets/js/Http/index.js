@@ -44,6 +44,25 @@ axios.web = function web (callback) {
   callback()
   axios.api()
 }
+
+
+/**
+ * Set the basic WEB config to
+ * axios and excecute the given
+ * callback and return to API
+ * basic config.
+ * ------------------------------
+ * @function api
+ * @param {Function} callback - The acttions to excecuted with the axios WEB config
+ */
+axios.flush = function flush (callback) {
+  delete axios.defaults.headers.common['X-Requested-With']
+  delete axios.defaults.headers.common['X-CSRF-TOKEN']
+  axios.defaults.baseURL = '/'
+  callback()
+  axios.api()
+}
+
 // Set the default axios configuration on API
 axios.api()
 

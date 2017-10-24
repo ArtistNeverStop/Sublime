@@ -36,6 +36,10 @@ class PlacesController extends Controller
      */
     public function store(PlacesStoreRequest $request)
     {
+        $request->merge([
+            'latitude' => $request->position['lat'],
+            'longitude' => $request->position['lng']
+        ]);
         return Place::create($request->all());
     }
 

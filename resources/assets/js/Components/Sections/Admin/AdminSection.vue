@@ -1,7 +1,7 @@
 <template lang="pug">
   .container-fluid.admin-section.flex
     .row
-      aside.col-md-4
+      aside.col-md-4.col-lg-3
         ul
           li
             router-link(to='/Admin/Dashboard') Users
@@ -9,7 +9,7 @@
             router-link(to='/Admin/Artists/Requests') Artist Requests
           li
             router-link(to='/Admin/Places') Our Places
-      router-view.col-md-8
+      router-view.col-md-8.col-lg-9
 </template>
 
 <style type="text/css">

@@ -8,6 +8,12 @@
     font-family: Chocolate;
     position: relative;
   }
+  &.black {
+    h2, p {
+      color: white;
+    }
+    background-color: black;
+  }
 }
 
 .home-section {
@@ -16,8 +22,8 @@
 }
 .video {
   margin-top: -15%;
-  width: 100%;
   height: 100%;
+  width: 100%;
   background-color: black;
 }
 .title-container {
@@ -44,13 +50,16 @@
     font-family: Chocolate;
     position: relative;
   }
+  p {
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
   background: url('/home-video.mp4')
 }
 @font-face {
   font-family: Chocolate;
   src: url('/fonts/Chocolate.woff2');
 }
-.home-section-title, .home-section-video {
+.home-section-title {
   z-index: 0;
   position: fixed;
   bottom: 0;
@@ -70,9 +79,27 @@
   transition: all 1000ms linear;
 }
 .home-section-video {
-  position: absolute;
+  height: auto;
   top: 0;
+  z-index: 0;
+  position: relative;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: Chocolate;
+  color: black;
+  text-transform: uppercase;
   background-color: black;
+  -webkit-transition: all 1000ms linear;
+  transition: all 1000ms linear;
 }
 .home-section-title h1 {
   // -webkit-transition: all 1000ms linear;

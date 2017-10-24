@@ -23,17 +23,16 @@ a {
     right: 5%;
     li {
         margin: 0;
-        max-width: 100px;
     }
     a {
         width: 100%;
         height: 100%;
-        font-size: 3rem;
+        font-size: 2.4rem;
         color: black;
         border-bottom: 1px solid black;
     }
     &.white {
-        background-color: rgba(0,0,0,.6);
+        // background-color: rgba(0,0,0,.6);
         a {
            color: white; 
            border-bottom: 1px solid white;
@@ -44,10 +43,15 @@ a {
 
 h1.sublime-logo {
     height: 50px;
+    cursor: pointer;
     width: 50px;
     border: 1px solid black;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    &.white {
+        color: white;
+        border: 1px solid white;
+    }
 }

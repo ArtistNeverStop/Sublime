@@ -3,7 +3,7 @@
     .row.end-xs
       .col-md-6
         .flex.start-xs
-          h1.sublime-logo S
+          router-link#sublime-logo.sublime-logo(to='/' tag='h1') S
       .col-md-6
       transition(appear mode='out-in' name='fade')
         ul#navbar-site-menu.navbar-site-menu.flex(v-if='!User.me')
@@ -16,17 +16,19 @@
           li
             router-link(to='/Register') Register
       transition(appear mode='out-in' name='fade')
-        ul.navbar-site-menu.flex.end-xs(v-if='User.me && User.me.is_user')
+        ul#navbar-site-menu.navbar-site-menu.flex.end-xs(v-if='User.me && User.me.is_user')
           li
             router-link(to='/') Home
-          li
-            router-link(to='/Become-an-artist') Become an Artist
           li
             router-link(to='/Dashboard') {{ User.me.name.substring(0, 6) }}
           li
             router-link(to='/Logout') Logout
+          li
+            router-link(to='/Manage') Manage Artists
+          li
+            router-link(to='/Become-an-artist') Become an Artist
       transition(appear mode='out-in' name='fade')
-        ul.navbar-site-menu.flex.end-xs(v-if='User.me && !User.me.is_user')
+        ul#navbar-site-menu.navbar-site-menu.flex.end-xs(v-if='User.me && !User.me.is_user')
           li
             router-link(to='/Logout') Logout
 </template>

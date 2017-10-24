@@ -19,6 +19,7 @@ export default [
     ]),
     Route('Places/New', Site.Admin.Places.New, 'admin.places.new')
   ]),
+  Route('/Manage-artists', Site.Artists.Manage, 'artists.manage'),
   Route('/Artists', Site.Artists.Index, 'artists'),
   Route('/Become-an-artist', Site.User.BecomeAnArtist, 'user.become.an.artist', { auth: true }),
   Route('/Dashboard', Site.User.Dashboard, 'dashboard', { auth: true }),

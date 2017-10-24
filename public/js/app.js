@@ -670,6 +670,24 @@ __WEBPACK_IMPORTED_MODULE_0_axios___default.a.web = function web(callback) {
   callback();
   __WEBPACK_IMPORTED_MODULE_0_axios___default.a.api();
 };
+
+/**
+ * Set the basic WEB config to
+ * axios and excecute the given
+ * callback and return to API
+ * basic config.
+ * ------------------------------
+ * @function api
+ * @param {Function} callback - The acttions to excecuted with the axios WEB config
+ */
+__WEBPACK_IMPORTED_MODULE_0_axios___default.a.flush = function flush(callback) {
+  delete __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['X-Requested-With'];
+  delete __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['X-CSRF-TOKEN'];
+  __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = '/';
+  callback();
+  __WEBPACK_IMPORTED_MODULE_0_axios___default.a.api();
+};
+
 // Set the default axios configuration on API
 __WEBPACK_IMPORTED_MODULE_0_axios___default.a.api();
 
@@ -24056,6 +24074,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -24109,7 +24129,23 @@ var render = function() {
         "div",
         { staticClass: "row end-xs" },
         [
-          _vm._m(0),
+          _c("div", { staticClass: "col-md-6" }, [
+            _c(
+              "div",
+              { staticClass: "flex start-xs" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "sublime-logo",
+                    attrs: { id: "sublime-logo", to: "/", tag: "h1" }
+                  },
+                  [_vm._v("S")]
+                )
+              ],
+              1
+            )
+          ]),
           _c("div", { staticClass: "col-md-6" }),
           _c(
             "transition",
@@ -24169,46 +24205,62 @@ var render = function() {
             { attrs: { appear: "appear", mode: "out-in", name: "fade" } },
             [
               _vm.User.me && _vm.User.me.is_user
-                ? _c("ul", { staticClass: "navbar-site-menu flex end-xs" }, [
-                    _c(
-                      "li",
-                      [
-                        _c("router-link", { attrs: { to: "/" } }, [
-                          _vm._v("Home")
-                        ])
-                      ],
-                      1
-                    ),
-                    _c(
-                      "li",
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: "/Become-an-artist" } },
-                          [_vm._v("Become an Artist")]
-                        )
-                      ],
-                      1
-                    ),
-                    _c(
-                      "li",
-                      [
-                        _c("router-link", { attrs: { to: "/Dashboard" } }, [
-                          _vm._v(_vm._s(_vm.User.me.name.substring(0, 6)))
-                        ])
-                      ],
-                      1
-                    ),
-                    _c(
-                      "li",
-                      [
-                        _c("router-link", { attrs: { to: "/Logout" } }, [
-                          _vm._v("Logout")
-                        ])
-                      ],
-                      1
-                    )
-                  ])
+                ? _c(
+                    "ul",
+                    {
+                      staticClass: "navbar-site-menu flex end-xs",
+                      attrs: { id: "navbar-site-menu" }
+                    },
+                    [
+                      _c(
+                        "li",
+                        [
+                          _c("router-link", { attrs: { to: "/" } }, [
+                            _vm._v("Home")
+                          ])
+                        ],
+                        1
+                      ),
+                      _c(
+                        "li",
+                        [
+                          _c("router-link", { attrs: { to: "/Dashboard" } }, [
+                            _vm._v(_vm._s(_vm.User.me.name.substring(0, 6)))
+                          ])
+                        ],
+                        1
+                      ),
+                      _c(
+                        "li",
+                        [
+                          _c("router-link", { attrs: { to: "/Logout" } }, [
+                            _vm._v("Logout")
+                          ])
+                        ],
+                        1
+                      ),
+                      _c(
+                        "li",
+                        [
+                          _c("router-link", { attrs: { to: "/Manage" } }, [
+                            _vm._v("Manage Artists")
+                          ])
+                        ],
+                        1
+                      ),
+                      _c(
+                        "li",
+                        [
+                          _c(
+                            "router-link",
+                            { attrs: { to: "/Become-an-artist" } },
+                            [_vm._v("Become an Artist")]
+                          )
+                        ],
+                        1
+                      )
+                    ]
+                  )
                 : _vm._e()
             ]
           ),
@@ -24217,17 +24269,24 @@ var render = function() {
             { attrs: { appear: "appear", mode: "out-in", name: "fade" } },
             [
               _vm.User.me && !_vm.User.me.is_user
-                ? _c("ul", { staticClass: "navbar-site-menu flex end-xs" }, [
-                    _c(
-                      "li",
-                      [
-                        _c("router-link", { attrs: { to: "/Logout" } }, [
-                          _vm._v("Logout")
-                        ])
-                      ],
-                      1
-                    )
-                  ])
+                ? _c(
+                    "ul",
+                    {
+                      staticClass: "navbar-site-menu flex end-xs",
+                      attrs: { id: "navbar-site-menu" }
+                    },
+                    [
+                      _c(
+                        "li",
+                        [
+                          _c("router-link", { attrs: { to: "/Logout" } }, [
+                            _vm._v("Logout")
+                          ])
+                        ],
+                        1
+                      )
+                    ]
+                  )
                 : _vm._e()
             ]
           )
@@ -24237,18 +24296,7 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-6" }, [
-      _c("div", { staticClass: "flex start-xs" }, [
-        _c("h1", { staticClass: "sublime-logo" }, [_vm._v("S")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -26807,7 +26855,7 @@ if (inBrowser && window.Vue) {
  */
 /* harmony default export */ __webpack_exports__["a"] = ([Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Admin', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Admin.Section, 'admin', { admin: true }, [Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Dashboard', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Admin.Dashboard, 'admin.dashboard'), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Artists', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Admin.Requests.Section, 'admin.artists.requests.requests', null, [Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Requests', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Admin.Requests.Index, 'admin.artists.requests.requests.index')]), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Places', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Admin.Places.Index, 'admin.places.index', null, [
   // Route('Requests', Site.Admin.Requests.Index, 'admin.artists.requests.requests.index')
-]), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Places/New', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Admin.Places.New, 'admin.places.new')]), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Artists', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Artists.Index, 'artists'), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Become-an-artist', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].User.BecomeAnArtist, 'user.become.an.artist', { auth: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Dashboard', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].User.Dashboard, 'dashboard', { auth: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Login', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Login, 'login', { guest: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Register', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Register, 'register', { guest: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Logout', '', 'logout', null, null, function () {
+]), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Places/New', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Admin.Places.New, 'admin.places.new')]), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Manage-artists', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Artists.Manage, 'artists.manage'), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Artists', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Artists.Index, 'artists'), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Become-an-artist', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].User.BecomeAnArtist, 'user.become.an.artist', { auth: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Dashboard', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].User.Dashboard, 'dashboard', { auth: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Login', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Login, 'login', { guest: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Register', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Register, 'register', { guest: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/Logout', '', 'logout', null, null, function () {
   return __WEBPACK_IMPORTED_MODULE_2__Store__["a" /* default */].dispatch('logout', '/');
 }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Home, 'home'), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('*', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Errors._404, '404')]);
 
@@ -26935,6 +26983,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -26972,10 +27047,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     onscroll: function onscroll() {
       this.showTitle = window.scrollY <= 0;
       this.showVideo = !this.showTitle;
-      if (this.showVideo) {
+      if (window.scrollY >= 800 && window.scrollY <= 1856) {
         document.getElementById('navbar-site-menu').classList.add('white');
+        document.getElementById('sublime-logo').classList.add('white');
       } else {
         document.getElementById('navbar-site-menu').classList.remove('white');
+        document.getElementById('sublime-logo').classList.remove('white');
       }
     },
 
@@ -27071,6 +27148,22 @@ var render = function() {
           attrs: { id: "home-section-description" }
         },
         [_vm._m(2)]
+      ),
+      _c(
+        "section",
+        {
+          ref: "home-section-description",
+          staticClass: "home-section-description"
+        },
+        [_vm._m(3)]
+      ),
+      _c(
+        "section",
+        {
+          ref: "home-section-description",
+          staticClass: "black home-section-description"
+        },
+        [_vm._m(4)]
       )
     ],
     1
@@ -27082,9 +27175,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "title-container col-md-6" }, [
-      _c("h2", [_vm._v("Your favorite artist")]),
-      _c("h2", [_vm._v("When you want")]),
-      _c("h2", [_vm._v("Where you want")])
+      _c("h2", [_vm._v("Your favorite artist...")]),
+      _c("h2", [_vm._v("When you want...")]),
+      _c("h2", [_vm._v("Where you want...")])
     ])
   },
   function() {
@@ -27172,7 +27265,96 @@ var staticRenderFns = [
             )
           ])
         ])
+      ]),
+      _c("div", { staticClass: "col-md-6" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-6" }),
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "column center-xs" }, [
+          _c("h2", [_vm._v("How many")]),
+          _c("h2", [_vm._v("Artists ?")]),
+          _c("p", [
+            _vm._v(
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+            )
+          ]),
+          _c("p", [
+            _vm._v(
+              "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
+            )
+          ]),
+          _c("p", [
+            _vm._v(
+              "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"
+            )
+          ]),
+          _c("p", [
+            _vm._v(
+              "consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse"
+            )
+          ]),
+          _c("p", [
+            _vm._v(
+              "cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non"
+            )
+          ]),
+          _c("p", [
+            _vm._v(
+              "proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            )
+          ])
+        ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "column center-xs" }, [
+          _c("h2", [_vm._v("How much")]),
+          _c("h2", [_vm._v("it cost?")]),
+          _c("p", [
+            _vm._v(
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+            )
+          ]),
+          _c("p", [
+            _vm._v(
+              "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
+            )
+          ]),
+          _c("p", [
+            _vm._v(
+              "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"
+            )
+          ]),
+          _c("p", [
+            _vm._v(
+              "consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse"
+            )
+          ]),
+          _c("p", [
+            _vm._v(
+              "cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non"
+            )
+          ]),
+          _c("p", [
+            _vm._v(
+              "proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            )
+          ])
+        ])
+      ]),
+      _c("div", { staticClass: "col-md-6" })
     ])
   }
 ]
@@ -29028,7 +29210,7 @@ var render = function() {
       "div",
       { staticClass: "row" },
       [
-        _c("aside", { staticClass: "col-md-4" }, [
+        _c("aside", { staticClass: "col-md-4 col-lg-3" }, [
           _c("ul", [
             _c(
               "li",
@@ -29061,7 +29243,7 @@ var render = function() {
             )
           ])
         ]),
-        _c("router-view", { staticClass: "col-md-8" })
+        _c("router-view", { staticClass: "col-md-8 col-lg-9" })
       ],
       1
     )
@@ -29424,6 +29606,8 @@ exports.push([module.i, "\nform {\n  -webkit-transition: all .4s;\n  transition:
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 //
@@ -29469,6 +29653,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 
@@ -29484,6 +29674,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    */
   data: function data() {
     return {
+      name: '',
       position: {
         lat: 20.68245716967531,
         lng: -103.38096618652344
@@ -29535,6 +29726,25 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
         _this.errors = response.data;
       });
+    },
+
+
+    /**
+     * Make the storePLace Attempt.
+     * ------------------------------
+     * @member {Function} store
+     */
+    updatePosition: function updatePosition($event) {
+      var _this2 = this;
+
+      this.position = $event;
+      console.log('GOOGLE SEACH!');
+      __WEBPACK_IMPORTED_MODULE_1_axios___default.a.flush(function () {
+        __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + $event.lat() + ',' + $event.lng() + '&key=AIzaSyAb-pcxVpILOwGT7ypK7s0tbGw6cBq8oUQ').then(function (result) {
+          console.log(result.data.results[0].formatted_address);
+          _this2.address = result.data.results[0].formatted_address;
+        });
+      });
     }
   })
 });
@@ -29565,6 +29775,48 @@ var render = function() {
           [
             _c("h1", [_vm._v("New Place")]),
             _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-md-12" },
+                [
+                  _c("label", { attrs: { for: "name-input" } }, [
+                    _vm._v("Name")
+                  ]),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.name,
+                        expression: "name"
+                      }
+                    ],
+                    attrs: {
+                      id: "name-input",
+                      name: "name",
+                      placeholder: "Name",
+                      type: "text"
+                    },
+                    domProps: { value: _vm.name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.name = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._l(_vm.errors.errors.address, function(error) {
+                    return _vm.errors.errors
+                      ? _c("span", { staticClass: "center-xs error-message" }, [
+                          _vm._v(_vm._s(error))
+                        ])
+                      : _vm._e()
+                  })
+                ],
+                2
+              ),
               _c(
                 "div",
                 { staticClass: "col-md-12" },
@@ -29719,36 +29971,37 @@ var render = function() {
                   }
                 })
               ]),
-              _c(
-                "div",
-                { staticClass: "col-md-12" },
-                [
-                  _c("p", [_vm._v(_vm._s(_vm.position))]),
-                  _c(
-                    "gmap-map",
-                    {
-                      staticStyle: { width: "500px", height: "300px" },
-                      attrs: { center: _vm.position, zoom: 7 }
-                    },
-                    [
-                      _c("gmap-marker", {
-                        attrs: {
-                          position: _vm.position,
-                          clickable: true,
-                          draggable: true
-                        },
-                        on: {
-                          position_changed: function($event) {
-                            _vm.position = $event
+              _c("div", { staticClass: "col-md-12" }, [
+                _c(
+                  "div",
+                  { staticClass: "flex center-xs" },
+                  [
+                    _c(
+                      "gmap-map",
+                      {
+                        staticStyle: { width: "500px", height: "300px" },
+                        attrs: { center: _vm.position, zoom: 7 }
+                      },
+                      [
+                        _c("gmap-marker", {
+                          attrs: {
+                            position: _vm.position,
+                            clickable: true,
+                            draggable: true
+                          },
+                          on: {
+                            position_changed: function($event) {
+                              _vm.updatePosition($event)
+                            }
                           }
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
+                        })
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ])
             ]),
             _vm._m(1)
           ]

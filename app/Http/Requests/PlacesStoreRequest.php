@@ -24,11 +24,14 @@ class PlacesStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'address' => 'string|required',
+            'name' => 'string|max:255',
+            'address' => 'string|required|max:255',
             'floors' => 'numeric|required',
             'area' => 'numeric|required',
-            'longitude' => 'numeric|required',
-            'latitude' => 'numeric|required',
+            'position.lat' => 'numeric|required',
+            'position.lng' => 'numeric|required',
+            // 'longitude' => 'numeric|required',
+            // 'latitude' => 'numeric|required',
         ];
     }
 }

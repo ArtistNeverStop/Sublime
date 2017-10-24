@@ -6,6 +6,10 @@
           h1 New Place
           .row
             .col-md-12
+              label(for='name-input') Name
+              input#name-input(v-model='name' name='name' placeholder='Name' type='text')
+              span.center-xs.error-message(v-if='errors.errors' v-for='error in errors.errors.address') {{ error }}
+            .col-md-12
               label(for='address-input') Address
               input#address-input(v-model='address' name='address' placeholder='Address' type='text')
               span.center-xs.error-message(v-if='errors.errors' v-for='error in errors.errors.address') {{ error }}
@@ -22,9 +26,10 @@
               label(for='floors-input') Floors
               input#floors-input(v-model='floors' name='floors' placeholder='Floors' type='number')
             .col-md-12
-              p {{ position }}
-              gmap-map(:center="position" :zoom="7" style="width: 500px; height: 300px")
-                gmap-marker(:position="position" :clickable="true" :draggable="true" @position_changed="position = $event")
+              .flex.center-xs
+                //- p {{ position }}
+                gmap-map(:center="position" :zoom="7" style="width: 500px; height: 300px")
+                  gmap-marker(:position='position' :clickable='true' :draggable='true' @position_changed='updatePosition($event)')
           .row
             .col-md-12
               button.button-primary Register
@@ -44,6 +49,7 @@
 <script>
   
   import { mapState, mapActions } from 'vuex'
+  import axios from 'axios'
 
   export default {
 
@@ -56,6 +62,7 @@
      */
     data () {
       return {
+        name: '',
         position: {
           lat: 20.68245716967531,
           lng: -103.38096618652344
@@ -111,6 +118,22 @@
           this.$router.push('/Admin/Places')
         }).catch(({ response }) => {
           this.errors = response.data
+        })
+      },
+
+      /**
+       * Make the storePLace Attempt.
+       * ------------------------------
+       * @member {Function} store
+       */
+      updatePosition ($event) {
+        this.position = $event
+        console.log('GOOGLE SEACH!')
+        axios.flush(() => {
+          axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${$event.lat()},${$event.lng()}&key=AIzaSyAb-pcxVpILOwGT7ypK7s0tbGw6cBq8oUQ`).then(result => {
+            console.log(result.data.results[0].formatted_address)
+            this.address = result.data.results[0].formatted_address
+          })
         })
       }
     }
