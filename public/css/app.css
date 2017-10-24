@@ -1608,6 +1608,18 @@ there.
   display: flex;
 }
 
+span.error-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+}
+
+span.error-message,
+span.error-message * {
+  color: red;
+}
+
 .home-section-description {
   height: 700px;
   background-color: red;

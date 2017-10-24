@@ -13,20 +13,15 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-   //      $admin = Role::create([
-   //      	'name' => 'admin'
-   //      ]);
-   //      $staff = Role::create([
-   //      	'name' => 'staff'
-   //      ]);
-   //      $worker = Role::create([
-   //      	'name' => 'worker'
-   //      ]);
-   //      $roles = [
-   //      	$admin,
-			// $staff,
-			// $worker
-   //      ];
+        $admin = Role::create([
+        	'name' => 'admin'
+        ]);
+        $staff = Role::create([
+        	'name' => 'staff'
+        ]);
+        $worker = Role::create([
+        	'name' => 'worker'
+        ]);
         User::all()->each(function ($user) {
         	$user->roles()->attach(Role::inRandomOrder()->first());
         });

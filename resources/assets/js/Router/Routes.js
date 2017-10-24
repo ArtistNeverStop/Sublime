@@ -12,7 +12,8 @@ export default [
   Route('/Admin/Dashboard', Site.Admin.AdminDashboard, 'admin.dashboard', { admin: true }),
   Route('/Dashboard', Site.User.Dashboard, 'dashboard', { auth: true }),
   Route('/Login', Site.Login, 'login', { guest: true }),
-  Route('/Logout', '', 'logout', { auth: true }, null, () => store.dispatch('logout')),
+  Route('/Register', Site.Register, 'register', { guest: true }),
+  Route('/Logout', '', 'logout', null, null, () => store.dispatch('logout', '/')),
   Route('/', Site.Home, 'home'),
   Route('*', Site.Errors._404, '404')
 ]

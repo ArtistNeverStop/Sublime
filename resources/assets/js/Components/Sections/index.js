@@ -1,5 +1,6 @@
-import Home from './Home.vue'
-import Login from './Auth/Login.vue'
+import Home from './Home'
+import Login from './Auth/Login'
+import Register from './Auth/Register'
 import User from './User'
 import Admin from './Admin'
 import Errors from './Errors'
@@ -7,6 +8,7 @@ import Errors from './Errors'
 // import Products from './Products'
 
 export default {
+  Register,
   Admin,
   User,
   Login,

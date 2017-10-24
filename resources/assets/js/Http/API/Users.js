@@ -7,6 +7,7 @@ export default {
         users {
           ${params.indexOf('id') >= 0 ? 'id,' : ''}
           ${params.indexOf('name') >= 0 ? 'name,' : ''}
+          ${params.indexOf('user_name') >= 0 ? 'user_name,' : ''}
           ${params.indexOf('email') >= 0 ? 'email,' : ''}
         }
       }`

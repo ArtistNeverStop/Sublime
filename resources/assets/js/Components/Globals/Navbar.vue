@@ -5,6 +5,8 @@
         ul.navbar-site-menu.flex.end-xs
           li(v-if='!User.me')
             router-link(to='/Login') Login
+          li(v-if='!User.me')
+            router-link(to='/Register') Register
           li(v-if='User.me')
             router-link(to='/Dashboard') {{ User.me.name }}
           li(v-if='User.me')

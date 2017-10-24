@@ -82,21 +82,21 @@ const actions = {
     })
   },
 
-//   /**
-//    * Make the regirster request and commit the 'login' mutation on success.
-//    *
-//    * @param {commit} | the mutation dispatcher of the state.
-//    * @param {user} | The user to register.
-//    * @return {Promise}
-//    */
-//   register: ({ commit }, user) => new Promise((resolve, reject) => {
-//     axios.web(() => {
-//       Auth.register(user).then(({ data }) => {
-//         commit('login', data)
-//         resolve(data)
-//       }).catch(error => reject(error))
-//     })
-//   }),
+  /**
+   * Make the regirster request and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {user} | The user to register.
+   * @return {Promise}
+   */
+  register: ({ commit }, user) => new Promise((resolve, reject) => {
+    axios.web(() => {
+      Auth.register(user).then(({ data }) => {
+        commit('login', data)
+        resolve(data)
+      }).catch(error => reject(error))
+    })
+  }),
 
   /**
    * Make a 'me' request to the api and update the 'me' object
@@ -126,10 +126,10 @@ const actions = {
    * @param {credentials} | The user and pass to make the login request.
    * @return {Promise}
    */
-  logout ({ commit }) {
+  logout ({ commit }, redirect) {
     axios.web(() => {
       Auth.logout().then(() => {
-        commit('logout')
+        commit('logout', redirect)
       })
     })
   },
@@ -195,7 +195,9 @@ const mutations = {
     }
     state.me = null
     localStorage.removeItem('User')
-    router.push(redirect || '/')
+    if (redirect) {
+      router.push(redirect)
+    }
   },
 
   /**

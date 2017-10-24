@@ -27,6 +27,14 @@
 	display: flex;
 }
 
+span.error-message {
+	display: flex;
+	margin: 10px 0;
+	&, * {
+		color: red;
+	}
+}
+
 
 // Site CSS
 @import "./site/index";
