@@ -54,6 +54,36 @@ const actions = {
       commit('fetchArtists', data)
       resolve(data)
     }).catch(err => reject(err))
+  }),
+
+  /**
+   * Make the login Artist and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Artist and pass to make the login Artist.
+   * @return {Promise}
+   */
+  myArtists: ({ commit }, fields) =>
+  new Promise((resolve, reject) => {
+    Artists.mine(fields).then(({ data }) => {
+      commit('fetchArtists', data)
+      resolve(data)
+    }).catch(err => reject(err))
+  }),
+
+  /**
+   * Make the login Artist and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Artist and pass to make the login Artist.
+   * @return {Promise}
+   */
+  makeArtistAvailableOnPlace: ({ commit }, request) =>
+  new Promise((resolve, reject) => {
+    Artists.makeAvailableOnPlace(request).then(({ data }) => {
+      commit('fetchArtists', data)
+      resolve(data)
+    }).catch(err => reject(err))
   })
 }
 

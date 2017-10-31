@@ -21,4 +21,6 @@ Route::apiResource('/users', 'UsersController');
 Route::apiResource('/artists', 'ArtistsController');
 Route::apiResource('/places', 'PlacesController');
 Route::apiResource('/requests', 'RequestsController')->middleware(['auth:api,web']);
-Route::get('/me', 'UsersController@me')->middleware(['auth'])->name('users.me.api');
+Route::get('/me', 'UsersController@me')->middleware(['auth:api,web'])->name('users.me.api');
+Route::get('/me/artists', 'UsersController@artists')->middleware(['auth:api,web'])->name('users.me.api');
+Route::get('/me/artists/places', 'ArtistsController@makeAvailable')->middleware(['auth:api,web'])->name('users.me.api');

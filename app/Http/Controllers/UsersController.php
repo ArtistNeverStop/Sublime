@@ -95,4 +95,15 @@ class UsersController extends Controller
     {
         return Auth::user()->load(['requests.artist']);
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function artists(Request $request)
+    {
+        return Auth::user()->managedArtists;
+    }
 }
