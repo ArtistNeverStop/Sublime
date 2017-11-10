@@ -5,15 +5,6 @@
  */
 
 import * as VueGoogleMaps from 'vue2-google-maps'
-Vue.use(VueGoogleMaps, {
-  load: {
-    key: 'AIzaSyAb-pcxVpILOwGT7ypK7s0tbGw6cBq8oUQ',
-    libraries: 'places', // This is required if you use the Autocomplete plugin
-    // OR: libraries: 'places,drawing'
-    // OR: libraries: 'places,drawing,visualization'
-    // (as you require)
-  }
-})
 import '@/Http'
 import '@/Components/Prototype'
 // import '@/Components/Directives'
@@ -24,6 +15,16 @@ import store from '@/Store'
 // import { mapState, mapMutations } from 'vuex'
 // import App from '@/sections/App.vue'
 import Vue from 'vue'
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyAb-pcxVpILOwGT7ypK7s0tbGw6cBq8oUQ',
+    libraries: 'places' // This is required if you use the Autocomplete plugin
+    // OR: libraries: 'places,drawing'
+    // OR: libraries: 'places,drawing,visualization'
+    // (as you require)
+  }
+})
 
 store.dispatch('me')
 

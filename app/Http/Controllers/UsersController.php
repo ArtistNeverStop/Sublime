@@ -14,7 +14,7 @@ class UsersController extends Controller
      *
      * @return \App\Http\Requests\QueryFieldsRequest
      */
-    public function index(Request $request)
+    public function index(QueryFieldsRequest $request)
     {
         return User::select($request->fields ?: '*')->get();
     }

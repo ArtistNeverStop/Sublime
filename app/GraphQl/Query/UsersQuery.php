@@ -33,10 +33,10 @@ class UsersQuery extends Query {
         'name' => 'name',
         'type' => Type::string()
       ],
-      'user_name' => [
-        'name' => 'name',
-        'type' => Type::string()
-      ]
+      // 'user_name' => [
+      //   'name' => 'name',
+      //   'type' => Type::string()
+      // ]
     ];
   }
 
