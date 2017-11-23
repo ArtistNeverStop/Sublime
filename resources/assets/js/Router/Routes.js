@@ -10,10 +10,10 @@ import store from '@/Store'
  */
 export default [
   Route('/Admin', Site.Admin.Section, 'admin', { admin: true }, [
-	  Route('Dashboard', Site.Admin.Dashboard, 'admin.dashboard'),
-	  Route('Artists', Site.Admin.Requests.Section, 'admin.artists.requests.requests', null, [
-	  	Route('Requests', Site.Admin.Requests.Index, 'admin.artists.requests.requests.index')
-	  ]),
+    Route('Dashboard', Site.Admin.Dashboard, 'admin.dashboard'),
+    Route('Artists', Site.Admin.Requests.Section, 'admin.artists.requests.requests', null, [
+      Route('Requests', Site.Admin.Requests.Index, 'admin.artists.requests.requests.index')
+    ]),
     Route('Places', Site.Admin.Places.Index, 'admin.places.index', null, [
       // Route('Requests', Site.Admin.Requests.Index, 'admin.artists.requests.requests.index')
     ]),
