@@ -87,6 +87,16 @@ class User extends Authenticatable
         return $this->hasMany('App\Artist');
     }
 
+    /**
+     * The user has many artists
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function managedArtists()
+    {
+        return $this->belongsToMany('App\Artist', 'requests')->wherePivot('status', \App\Request::STATUS_ACCEPTED);
+    }
+
     # ------------------------------ SERIALIZATION ------------------------------ #
 
     /**

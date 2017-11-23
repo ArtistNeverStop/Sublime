@@ -24242,9 +24242,11 @@ var render = function() {
                       _c(
                         "li",
                         [
-                          _c("router-link", { attrs: { to: "/Manage" } }, [
-                            _vm._v("Manage Artists")
-                          ])
+                          _c(
+                            "router-link",
+                            { attrs: { to: "/Manage-artists" } },
+                            [_vm._v("Manage Artists")]
+                          )
                         ],
                         1
                       ),
@@ -30045,12 +30047,16 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ArtistIndex__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ArtistIndex___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ArtistIndex__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ArtistManage__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ArtistManage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ArtistManage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ArtistIndex__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ArtistIndex___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__ArtistIndex__);
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  Index: __WEBPACK_IMPORTED_MODULE_0__ArtistIndex___default.a
+  Index: __WEBPACK_IMPORTED_MODULE_1__ArtistIndex___default.a,
+  Manage: __WEBPACK_IMPORTED_MODULE_0__ArtistManage___default.a
 });
 
 /***/ }),
@@ -30698,6 +30704,48 @@ var state = {
         return reject(err);
       });
     });
+  },
+
+  /**
+   * Make the login Artist and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Artist and pass to make the login Artist.
+   * @return {Promise}
+   */
+  myArtists: function myArtists(_ref3, fields) {
+    var commit = _ref3.commit;
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Artists__["a" /* default */].mine(fields).then(function (_ref4) {
+        var data = _ref4.data;
+
+        commit('fetchArtists', data);
+        resolve(data);
+      }).catch(function (err) {
+        return reject(err);
+      });
+    });
+  },
+
+  /**
+   * Make the login Artist and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Artist and pass to make the login Artist.
+   * @return {Promise}
+   */
+  makeArtistAvailableOnPlace: function makeArtistAvailableOnPlace(_ref5, request) {
+    var commit = _ref5.commit;
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Artists__["a" /* default */].makeAvailableOnPlace(request).then(function (_ref6) {
+        var data = _ref6.data;
+
+        commit('fetchArtists', data);
+        resolve(data);
+      }).catch(function (err) {
+        return reject(err);
+      });
+    });
   }
 };
 
@@ -30777,6 +30825,12 @@ var mutations = {
 /* harmony default export */ __webpack_exports__["a"] = ({
   get: function get() {
     return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/artists');
+  },
+  mine: function mine() {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/me/artists');
+  },
+  makeAvailableOnPlace: function makeAvailableOnPlace(request) {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].post('/me/artists/places', request);
   }
 });
 
@@ -31142,6 +31196,414 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(335)
+/* template */
+var __vue_template__ = __webpack_require__(336)
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/Components/Sections/Artists/ArtistManage.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] ArtistManage.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-35377c83", Component.options)
+  } else {
+    hotAPI.reload("data-v-35377c83", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 335 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(5);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+  /**
+   * The main instance reactive
+   * properties of the component.
+   * ------------------------------
+   * @member {Function}
+   * @return {Object}
+   */
+  data: function data() {
+    return {
+      price: '',
+      place: null,
+      min_quantity_persons: '',
+      extra_specifications: '',
+      errors: {
+        errors: {}
+      }
+    };
+  },
+
+
+  /**
+   * The main instance computed
+   * properties of the component.
+   * ------------------------------
+   * @member {Object} methods
+   * @return {Object}
+   */
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User', 'Artist', 'Place'])),
+
+  /**
+   * The main instance methods of
+   * the component.
+   * ------------------------------
+   * @member {Object} methods
+   * @return {Object}
+   */
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['myArtists', 'getPlaces'])),
+
+  /**
+   * The mounted hook life-cycle of
+   * the component instance.
+   * ------------------------------
+   * @member {Function}
+   */
+  mounted: function mounted() {
+    console.log(this.$options.__file.split('/').slice(-1).pop() + ' Component Mounted!');
+    this.myArtists();
+    this.getPlaces();
+  }
+});
+
+/***/ }),
+/* 336 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container-fluid" }, [
+    _vm._m(0),
+    _c("div", { staticClass: "row center-xs" }, [
+      _c(
+        "div",
+        { staticClass: "col-md-12" },
+        _vm._l(_vm.Artist.all, function(artist) {
+          return _c("div", { staticClass: "container-fluid" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("h2", [_vm._v(_vm._s(artist.name))])
+              ])
+            ]),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col-md-12" },
+                [
+                  _c("label", { attrs: { for: "price" } }, [_vm._v("Price")]),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.price,
+                        expression: "price"
+                      }
+                    ],
+                    attrs: {
+                      id: "price-input",
+                      name: "price",
+                      placeholder: "Price",
+                      type: "text"
+                    },
+                    domProps: { value: _vm.price },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.price = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._l(_vm.errors.errors.price, function(error) {
+                    return _vm.errors.errors
+                      ? _c("span", { staticClass: "center-xs error-message" }, [
+                          _vm._v(_vm._s(error))
+                        ])
+                      : _vm._e()
+                  })
+                ],
+                2
+              ),
+              _c(
+                "div",
+                { staticClass: "col-md-12" },
+                [
+                  _c("label", { attrs: { for: "place" } }, [_vm._v("Place")]),
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.place,
+                          expression: "place"
+                        }
+                      ],
+                      attrs: {
+                        id: "place-input",
+                        name: "place",
+                        placeholder: "Place",
+                        type: "text"
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.place = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "option",
+                        {
+                          attrs: { disabled: "disabled", selected: "selected" }
+                        },
+                        [_vm._v("Select a Place")]
+                      ),
+                      _vm._l(_vm.Place.all, function(place) {
+                        return _c("option", { domProps: { value: place.id } }, [
+                          _vm._v(_vm._s(place.name))
+                        ])
+                      })
+                    ],
+                    2
+                  ),
+                  _vm.place
+                    ? _c("div", [
+                        _c("pre", [_vm._v(_vm._s(_vm.Place.all[_vm.place]))])
+                      ])
+                    : _vm._e(),
+                  _vm._l(_vm.errors.errors.place, function(error) {
+                    return _vm.errors.errors
+                      ? _c("span", { staticClass: "center-xs error-message" }, [
+                          _vm._v(_vm._s(error))
+                        ])
+                      : _vm._e()
+                  })
+                ],
+                2
+              ),
+              _c(
+                "div",
+                { staticClass: "col-md-12" },
+                [
+                  _c("label", { attrs: { for: "min_quantity_persons" } }, [
+                    _vm._v("Min Quantity Persons")
+                  ]),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.min_quantity_persons,
+                        expression: "min_quantity_persons"
+                      }
+                    ],
+                    attrs: {
+                      id: "min-quantity-persons-input",
+                      name: "min_quantity_persons",
+                      placeholder: " Min Quantity Persons",
+                      type: "number"
+                    },
+                    domProps: { value: _vm.min_quantity_persons },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.min_quantity_persons = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._l(_vm.errors.errors.min_quantity_persons, function(
+                    error
+                  ) {
+                    return _vm.errors.errors
+                      ? _c("span", { staticClass: "center-xs error-message" }, [
+                          _vm._v(_vm._s(error))
+                        ])
+                      : _vm._e()
+                  })
+                ],
+                2
+              ),
+              _c(
+                "div",
+                { staticClass: "col-md-12" },
+                [
+                  _c("label", { attrs: { for: "extra_specifications" } }, [
+                    _vm._v("Extra Specifications")
+                  ]),
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.extra_specifications,
+                        expression: "extra_specifications"
+                      }
+                    ],
+                    attrs: {
+                      id: "extra-specifications-input",
+                      name: "extra_specifications",
+                      placeholder: "Extra Specifications",
+                      type: "text"
+                    },
+                    domProps: { value: _vm.extra_specifications },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.extra_specifications = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._l(_vm.errors.errors.extra_specifications, function(
+                    error
+                  ) {
+                    return _vm.errors.errors
+                      ? _c("span", { staticClass: "center-xs error-message" }, [
+                          _vm._v(_vm._s(error))
+                        ])
+                      : _vm._e()
+                  })
+                ],
+                2
+              )
+            ])
+          ])
+        })
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row center-xs" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("h1", [_vm._v("My Managed Artists")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-35377c83", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

@@ -24,7 +24,7 @@
           li
             router-link(to='/Logout') Logout
           li
-            router-link(to='/Manage') Manage Artists
+            router-link(to='/Manage-artists') Manage Artists
           li
             router-link(to='/Become-an-artist') Become an Artist
       transition(appear mode='out-in' name='fade')

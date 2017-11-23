@@ -21,4 +21,16 @@ class Place extends Model
         'longitude',
         'latitude'
     ];
+
+    # ------------------------------ RELATIONS ------------------------------ #
+
+    /**
+     * The user belongs to many user
+     *
+     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function artistsAvailable()
+    {
+        return $this->belongsToMany('App\Places', 'artist_available_places');
+    }
 }
