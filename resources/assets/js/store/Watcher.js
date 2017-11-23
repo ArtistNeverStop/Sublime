@@ -11,7 +11,8 @@ class Watcher {
     // Console debug for explictly know that this is instanced once.
     console.log('Wathcer constructor')
     if(! Watcher.instance){
-      this.$models = {}
+      // this.$models = new WeakMap()
+      this.models = {}
       Watcher.instance = new Proxy(this, PrivatePropertiesHandler.make())
     }
     return Watcher.instance
@@ -24,8 +25,9 @@ class Watcher {
    * @param model {Model}
    */
   add (model) {
-    this.addModelClass(model)
-    this.models[model.constructor.name].push(model)
+    // this.addModelClass(model)
+    this.models[model.constructor.name] = model
+    // this.models.set(model, model[model.key])
   }
 
   /**
@@ -47,19 +49,20 @@ class Watcher {
    * @param model {Model}
    */
   notify (model) {
-    this.models[model.constructor.name].forEach(toUpdate => {
-      if (model.is(toUpdate)) {
-        Object.assign(toUpdate, model)
-      }
-    })
+    console.log(model)
+    // this.models[model.constructor.name].forEach(toUpdate => {
+    //   if (model.is(toUpdate)) {
+    //     Object.assign(toUpdate, model)
+    //   }
+    // })
   }
 
-  get models () {
-    return this.$models
-  }
+  // get models () {
+  //   return this.models
+  // }
 
-  // set model () {
-  //   this.$models
+  // set models (models) {
+  //   this.models = models
   // }
 }
 const WatcherInstance = new Watcher()

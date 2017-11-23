@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,8 +70,8 @@
 "use strict";
 
 
-var bind = __webpack_require__(4);
-var isBuffer = __webpack_require__(19);
+var bind = __webpack_require__(6);
+var isBuffer = __webpack_require__(21);
 
 /*global toString:true*/
 
@@ -375,13 +375,110 @@ module.exports = {
 
 /***/ }),
 /* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PrivatePropertiesHandler__ = __webpack_require__(4);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+var Watcher = function () {
+
+  /**
+   * The Watcher Singleton.
+   * ------------------------------
+   * {constructor}
+   */
+  function Watcher() {
+    _classCallCheck(this, Watcher);
+
+    // Console debug for explictly know that this is instanced once.
+    console.log('Wathcer constructor');
+    if (!Watcher.instance) {
+      // this.$models = new WeakMap()
+      this.models = {};
+      Watcher.instance = new Proxy(this, __WEBPACK_IMPORTED_MODULE_0__PrivatePropertiesHandler__["a" /* default */].make());
+    }
+    return Watcher.instance;
+  }
+
+  /**
+   * Order and store the model
+   * instances.
+   * ------------------------------
+   * @param model {Model}
+   */
+
+
+  _createClass(Watcher, [{
+    key: 'add',
+    value: function add(model) {
+      // this.addModelClass(model)
+      this.models[model.constructor.name] = model;
+      // this.models.set(model, model[model.key])
+    }
+
+    /**
+     * Add the model class to the
+     * instance array.
+     * ------------------------------
+     * @param model {Model}
+     */
+
+  }, {
+    key: 'addModelClass',
+    value: function addModelClass(model) {
+      if (!this.models[model.constructor.name]) {
+        this.models[model.constructor.name] = [];
+      }
+    }
+
+    /**
+     * Update the instances on the
+     * instance array.
+     * ------------------------------
+     * @param model {Model}
+     */
+
+  }, {
+    key: 'notify',
+    value: function notify(model) {
+      console.log(model);
+      // this.models[model.constructor.name].forEach(toUpdate => {
+      //   if (model.is(toUpdate)) {
+      //     Object.assign(toUpdate, model)
+      //   }
+      // })
+    }
+
+    // get models () {
+    //   return this.models
+    // }
+
+    // set models (models) {
+    //   this.models = models
+    // }
+
+  }]);
+
+  return Watcher;
+}();
+
+var WatcherInstance = new Watcher();
+/* harmony default export */ __webpack_exports__["a"] = (WatcherInstance);
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(0);
-var normalizeHeaderName = __webpack_require__(22);
+var normalizeHeaderName = __webpack_require__(24);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -397,10 +494,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(5);
+    adapter = __webpack_require__(7);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(5);
+    adapter = __webpack_require__(7);
   }
   return adapter;
 }
@@ -471,105 +568,98 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(21)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(23)))
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PrivatePropertiesHandler__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model__ = __webpack_require__(13);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var User = function (_Model) {
+  _inherits(User, _Model);
+
+  /**
+   * The User of the system.
+   * ------------------------------
+   * {constructor}
+   */
+  function User(attributes) {
+    _classCallCheck(this, User);
+
+    return _possibleConstructorReturn(this, (User.__proto__ || Object.getPrototypeOf(User)).call(this, attributes));
+  }
+
+  return User;
+}(__WEBPACK_IMPORTED_MODULE_0__Model__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (User);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-
-
-var Watcher = function () {
+var PrivatePropertiesHandler = function () {
 
   /**
-   * The Watcher Singleton.
+   * The PrivatePropertiesHandler Object
    * ------------------------------
    * {constructor}
    */
-  function Watcher() {
-    _classCallCheck(this, Watcher);
+  function PrivatePropertiesHandler() {
+    //
 
-    // Console debug for explictly know that this is instanced once.
-    console.log('Wathcer constructor');
-    if (!Watcher.instance) {
-      this.$models = {};
-      Watcher.instance = new Proxy(this, __WEBPACK_IMPORTED_MODULE_0__PrivatePropertiesHandler__["a" /* default */].make());
-    }
-    return Watcher.instance;
+    _classCallCheck(this, PrivatePropertiesHandler);
   }
 
-  /**
-   * Order and store the model
-   * instances.
-   * ------------------------------
-   * @param model {Model}
-   */
-
-
-  _createClass(Watcher, [{
-    key: 'add',
-    value: function add(model) {
-      this.addModelClass(model);
-      this.models[model.constructor.name].push(model);
+  _createClass(PrivatePropertiesHandler, null, [{
+    key: 'make',
+    value: function make() {
+      return {
+        get: this.get,
+        set: this.set
+      };
     }
-
-    /**
-     * Add the model class to the
-     * instance array.
-     * ------------------------------
-     * @param model {Model}
-     */
-
   }, {
-    key: 'addModelClass',
-    value: function addModelClass(model) {
-      if (!this.models[model.constructor.name]) {
-        this.models[model.constructor.name] = [];
+    key: 'get',
+    value: function get(target, property, receiver) {
+      // If prevent error for [[Symbols]].
+      if (typeof property !== 'string') {
+        return target[property];
+      } else if (!property.startsWith('$')) {
+        return target[property];
       }
     }
-
-    /**
-     * Update the instances on the
-     * instance array.
-     * ------------------------------
-     * @param model {Model}
-     */
-
   }, {
-    key: 'notify',
-    value: function notify(model) {
-      this.models[model.constructor.name].forEach(function (toUpdate) {
-        if (model.is(toUpdate)) {
-          Object.assign(toUpdate, model);
-        }
-      });
+    key: 'set',
+    value: function set(target, property, value, receiver) {
+      console.debug('SET!!', property, value);
+      if (!property.startsWith('$')) {
+        return target[property] = value;
+      }
     }
-  }, {
-    key: 'models',
-    get: function get() {
-      return this.$models;
-    }
-
-    // set model () {
-    //   this.$models
-    // }
-
   }]);
 
-  return Watcher;
+  return PrivatePropertiesHandler;
 }();
 
-var WatcherInstance = new Watcher();
-/* harmony default export */ __webpack_exports__["a"] = (WatcherInstance);
+/* harmony default export */ __webpack_exports__["a"] = (PrivatePropertiesHandler);
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, exports) {
 
 var g;
@@ -596,7 +686,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 4 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -614,19 +704,19 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 5 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var settle = __webpack_require__(23);
-var buildURL = __webpack_require__(25);
-var parseHeaders = __webpack_require__(26);
-var isURLSameOrigin = __webpack_require__(27);
-var createError = __webpack_require__(6);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(28);
+var settle = __webpack_require__(25);
+var buildURL = __webpack_require__(27);
+var parseHeaders = __webpack_require__(28);
+var isURLSameOrigin = __webpack_require__(29);
+var createError = __webpack_require__(8);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(30);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -723,7 +813,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(29);
+      var cookies = __webpack_require__(31);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -801,13 +891,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(24);
+var enhanceError = __webpack_require__(26);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -826,7 +916,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -838,7 +928,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -864,85 +954,39 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 9 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var PrivatePropertiesHandler = function () {
-
-  /**
-   * The PrivatePropertiesHandler Object
-   * ------------------------------
-   * {constructor}
-   */
-  function PrivatePropertiesHandler() {
-    //
-
-    _classCallCheck(this, PrivatePropertiesHandler);
-  }
-
-  _createClass(PrivatePropertiesHandler, null, [{
-    key: 'make',
-    value: function make() {
-      return {
-        get: this.get,
-        set: this.set
-      };
-    }
-  }, {
-    key: 'get',
-    value: function get(target, property, receiver) {
-      // If prevent error for [[Symbols]].
-      if (typeof property !== 'string') {
-        return target[property];
-      } else if (!property.startsWith('$')) {
-        return target[property];
-      }
-    }
-  }, {
-    key: 'set',
-    value: function set(target, property, value, receiver) {
-      console.debug('SET!!', property, value);
-      if (!property.startsWith('$')) {
-        return target[property] = value;
-      }
-    }
-  }]);
-
-  return PrivatePropertiesHandler;
-}();
-
-/* harmony default export */ __webpack_exports__["a"] = (PrivatePropertiesHandler);
-
-/***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(11);
+__webpack_require__(12);
 module.exports = __webpack_require__(44);
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_User__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_Watcher__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_User__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_Watcher__ = __webpack_require__(1);
 
 
 
-var user = new __WEBPACK_IMPORTED_MODULE_0__store_User__["a" /* default */]({ id: 1, name: 'Diego' });
-var user2 = new __WEBPACK_IMPORTED_MODULE_0__store_User__["a" /* default */]({ id: 1, name: 'Liz' });
+// var user = new User({ id: 1, name: 'Diego' })
+// var user2 = new User({ id: 1, name: 'Liz' })
 
-user = null;
+// user.save()
+// user2.save()
+// console.debug('WATCHER', Watcher)
+// var [foo, bar, weakMap, _weakMap] = [{}, (new Array(10000000)).join('*').split('*'), new WeakMap(), new WeakMap()]
 
-console.debug('WATCHER', __WEBPACK_IMPORTED_MODULE_1__store_Watcher__["a" /* default */]);
+// window.foo = foo
+// window.bar = bar
+// weakMap.set(bar, true)
+// _weakMap.set(bar, true)
+// weakMap.set(foo, _weakMap)
+
+// console.log(weakMap)
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -950,9 +994,9 @@ console.debug('WATCHER', __WEBPACK_IMPORTED_MODULE_1__store_Watcher__["a" /* def
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(12);
+__webpack_require__(14);
 
-window.Vue = __webpack_require__(37);
+window.Vue = __webpack_require__(39);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -960,18 +1004,107 @@ window.Vue = __webpack_require__(37);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(38));
+Vue.component('example', __webpack_require__(40));
 
 var app = new Vue({
   el: '#app'
 });
 
 /***/ }),
-/* 12 */
+/* 13 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PrivatePropertiesHandler__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Watcher__ = __webpack_require__(1);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+var Model = function () {
+
+  /**
+   * All the properties the startwith $
+   * are protected.
+   * ------------------------------
+   * {constructor}
+   */
+  function Model(attributes) {
+    _classCallCheck(this, Model);
+
+    Object.assign(this, attributes);
+    this.definePrivateProperties({
+      '$key': 'id'
+    });
+    this.parent = __WEBPACK_IMPORTED_MODULE_1__Watcher__["a" /* default */].models[this.constructor.name];
+    this.existence();
+    __WEBPACK_IMPORTED_MODULE_1__Watcher__["a" /* default */].add(this);
+  }
+
+  _createClass(Model, [{
+    key: 'definePrivateProperties',
+    value: function definePrivateProperties(properties) {
+      for (var key in properties) {
+        Object.defineProperty(this, key, {
+          value: properties[key],
+          enumerable: false,
+          writable: true,
+          configurable: false
+        });
+      }
+    }
+  }, {
+    key: 'is',
+    value: function is(model) {
+      return model instanceof Model && this[this.key] === model[model.key];
+    }
+  }, {
+    key: 'save',
+    value: function save() {
+      this.parent && this.parent.updateIfIsMe(this);
+      // Watcher.notify(this)
+    }
+  }, {
+    key: 'updateIfIsMe',
+    value: function updateIfIsMe(model) {
+      if (this.is(model)) {
+        console.log('updateIfIsMe');
+        Object.assign(this, model);
+      }
+    }
+  }, {
+    key: 'existence',
+    value: function existence(soon) {
+      if (this.is(this.soon)) {
+        return true;
+      } else if (this.parent && this.parent.existence(this)) {
+        this.parent = this;
+      }
+    }
+  }, {
+    key: 'key',
+    set: function set(key) {
+      this.$key = key;
+    },
+    get: function get() {
+      return this.$key;
+    }
+  }]);
+
+  return Model;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (Model);
+
+/***/ }),
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(13);
+window._ = __webpack_require__(15);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -980,9 +1113,9 @@ window._ = __webpack_require__(13);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(15);
+  window.$ = window.jQuery = __webpack_require__(17);
 
-  __webpack_require__(16);
+  __webpack_require__(18);
 } catch (e) {}
 
 /**
@@ -991,7 +1124,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(17);
+window.axios = __webpack_require__(19);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -1025,7 +1158,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 13 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -18114,10 +18247,10 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(14)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(16)(module)))
 
 /***/ }),
-/* 14 */
+/* 16 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -18145,7 +18278,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 15 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -28405,7 +28538,7 @@ return jQuery;
 
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, exports) {
 
 /*!
@@ -30788,22 +30921,22 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(18);
+module.exports = __webpack_require__(20);
 
 /***/ }),
-/* 18 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var bind = __webpack_require__(4);
-var Axios = __webpack_require__(20);
-var defaults = __webpack_require__(1);
+var bind = __webpack_require__(6);
+var Axios = __webpack_require__(22);
+var defaults = __webpack_require__(2);
 
 /**
  * Create an instance of Axios
@@ -30836,15 +30969,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(8);
-axios.CancelToken = __webpack_require__(35);
-axios.isCancel = __webpack_require__(7);
+axios.Cancel = __webpack_require__(10);
+axios.CancelToken = __webpack_require__(37);
+axios.isCancel = __webpack_require__(9);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(36);
+axios.spread = __webpack_require__(38);
 
 module.exports = axios;
 
@@ -30853,7 +30986,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 19 */
+/* 21 */
 /***/ (function(module, exports) {
 
 /*!
@@ -30880,18 +31013,18 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 20 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(1);
+var defaults = __webpack_require__(2);
 var utils = __webpack_require__(0);
-var InterceptorManager = __webpack_require__(30);
-var dispatchRequest = __webpack_require__(31);
-var isAbsoluteURL = __webpack_require__(33);
-var combineURLs = __webpack_require__(34);
+var InterceptorManager = __webpack_require__(32);
+var dispatchRequest = __webpack_require__(33);
+var isAbsoluteURL = __webpack_require__(35);
+var combineURLs = __webpack_require__(36);
 
 /**
  * Create a new instance of Axios
@@ -30973,7 +31106,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 21 */
+/* 23 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -31163,7 +31296,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 22 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31182,13 +31315,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 23 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(6);
+var createError = __webpack_require__(8);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -31215,7 +31348,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31243,7 +31376,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31318,7 +31451,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31362,7 +31495,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31437,7 +31570,7 @@ module.exports = (
 
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31480,7 +31613,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31540,7 +31673,7 @@ module.exports = (
 
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31599,16 +31732,16 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 31 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var transformData = __webpack_require__(32);
-var isCancel = __webpack_require__(7);
-var defaults = __webpack_require__(1);
+var transformData = __webpack_require__(34);
+var isCancel = __webpack_require__(9);
+var defaults = __webpack_require__(2);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -31685,7 +31818,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 32 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31712,7 +31845,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 33 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31733,7 +31866,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 34 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31754,13 +31887,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 35 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(8);
+var Cancel = __webpack_require__(10);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -31818,7 +31951,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 36 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31852,7 +31985,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 37 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42049,16 +42182,16 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
-/* 38 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(39)
+var normalizeComponent = __webpack_require__(41)
 /* script */
-var __vue_script__ = __webpack_require__(40)
+var __vue_script__ = __webpack_require__(42)
 /* template */
 var __vue_template__ = __webpack_require__(43)
 /* styles */
@@ -42098,7 +42231,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 39 */
+/* 41 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -42195,13 +42328,13 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 40 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_User__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_Watcher__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_User__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store_Watcher__ = __webpack_require__(1);
 //
 //
 //
@@ -42248,109 +42381,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     console.log('Component mounted.');
   }
 });
-
-/***/ }),
-/* 41 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model__ = __webpack_require__(42);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-var User = function (_Model) {
-  _inherits(User, _Model);
-
-  /**
-   * The User of the system.
-   * ------------------------------
-   * {constructor}
-   */
-  function User(attributes) {
-    _classCallCheck(this, User);
-
-    return _possibleConstructorReturn(this, (User.__proto__ || Object.getPrototypeOf(User)).call(this, attributes));
-  }
-
-  return User;
-}(__WEBPACK_IMPORTED_MODULE_0__Model__["a" /* default */]);
-
-/* harmony default export */ __webpack_exports__["a"] = (User);
-
-/***/ }),
-/* 42 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PrivatePropertiesHandler__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Watcher__ = __webpack_require__(2);
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-
-
-
-var Model = function () {
-
-  /**
-   * All the properties the startwith $
-   * are protected.
-   * ------------------------------
-   * {constructor}
-   */
-  function Model(attributes) {
-    _classCallCheck(this, Model);
-
-    Object.assign(this, attributes);
-    this.definePrivateProperties({
-      '$key': 'id'
-    });
-    __WEBPACK_IMPORTED_MODULE_1__Watcher__["a" /* default */].add(this);
-    return new Proxy(this, __WEBPACK_IMPORTED_MODULE_0__PrivatePropertiesHandler__["a" /* default */].make());
-  }
-
-  _createClass(Model, [{
-    key: 'definePrivateProperties',
-    value: function definePrivateProperties(properties) {
-      for (var key in properties) {
-        Object.defineProperty(this, key, {
-          value: properties[key],
-          enumerable: false,
-          writable: true,
-          configurable: false
-        });
-      }
-    }
-  }, {
-    key: 'is',
-    value: function is(model) {
-      return model instanceof Model && this[this.key] === model[model.key];
-    }
-  }, {
-    key: 'save',
-    value: function save() {
-      __WEBPACK_IMPORTED_MODULE_1__Watcher__["a" /* default */].notify(this);
-    }
-  }, {
-    key: 'key',
-    set: function set(key) {
-      this.$key = key;
-    },
-    get: function get() {
-      return this.$key;
-    }
-  }]);
-
-  return Model;
-}();
-
-/* harmony default export */ __webpack_exports__["a"] = (Model);
 
 /***/ }),
 /* 43 */

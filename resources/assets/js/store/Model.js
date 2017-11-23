@@ -14,14 +14,15 @@ export default class Model {
     this.definePrivateProperties({
       '$key': 'id'
     })
+    this.parent = Watcher.models[this.constructor.name]
+    this.existence()
     Watcher.add(this)
-    return new Proxy(this, PrivatePropertiesHandler.make())
   }
 
   definePrivateProperties (properties) {
     for (let key in properties) {
       Object.defineProperty(this, key, {
-        value: properties[key],
+        value: properties[key],                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
         enumerable: false,
         writable: true,
         configurable: false
@@ -42,6 +43,22 @@ export default class Model {
   }
 
   save () {
-    Watcher.notify(this)
+    this.parent && this.parent.updateIfIsMe(this)
+    // Watcher.notify(this)
+  }
+
+  updateIfIsMe (model) {
+    if (this.is(model)) {
+      console.log('updateIfIsMe')
+      Object.assign(this, model)
+    }
+  }
+
+  existence (soon) {
+    if (this.is(this.soon)) {
+      return true
+    } else if (this.parent                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      && this.parent.existence(this)) {
+      this.parent = this
+    }
   }
 }

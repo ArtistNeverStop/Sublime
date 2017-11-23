@@ -1,12 +1,21 @@
 import User from './store/User'
 import Watcher from './store/Watcher'
 
-var user = new User({ id: 1, name: 'Diego' })
-var user2 = new User({ id: 1, name: 'Liz' })
+// var user = new User({ id: 1, name: 'Diego' })
+// var user2 = new User({ id: 1, name: 'Liz' })
 
-user = null
+// user.save()
+// user2.save()
+// console.debug('WATCHER', Watcher)
+// var [foo, bar, weakMap, _weakMap] = [{}, (new Array(10000000)).join('*').split('*'), new WeakMap(), new WeakMap()]
 
-console.debug('WATCHER', Watcher)
+// window.foo = foo
+// window.bar = bar
+// weakMap.set(bar, true)
+// _weakMap.set(bar, true)
+// weakMap.set(foo, _weakMap)
+
+// console.log(weakMap)
 
 /**
  * First we will load all of this project's JavaScript dependencies which
