@@ -6,6 +6,12 @@
           h1 Register
           .row
             .col-md-12
+              //- Gmail Oauth2.0
+              .oauth2-button-container
+                button.btn.gmail(@click.prevent=`OauthLogin('google')`)
+                  i.fa.fa-google(aria-hidden='true')
+                  |               Gmail
+            .col-md-12
               label(for='name-input') Name
               input#name-input(v-model='name' name='name' placeholder='Name' type='text')
               span.center-xs.error-message(v-if='errors.errors' v-for='error in errors.errors.name') {{ error }}
@@ -43,6 +49,7 @@
 <script>
   
   import { mapState, mapActions } from 'vuex'
+  import axios from 'axios'
 
   export default {
 
@@ -90,8 +97,53 @@
     methods: {
 
       ...mapActions([
-        'register'
+        'register',
+        'me'
       ]),
+
+            /**
+       * Open a new window and try
+       * the Oauth2.0
+       * ------------------------------
+       * @function
+       * @param {String} provider
+       */
+      OauthLogin (provider) {
+        axios.web(() => {
+          axios.get(`/login/${provider}`).then(({ data }) => {
+            const INTERVAL = 100
+            const popupWidth = 800
+            const popupHeight = 400
+            let top = (window.innerWidth / 2) - (popupWidth / 2)
+            let left = (window.innerHeight / 2) - (popupHeight / 2)
+            // Open the new window
+            var win = window.open(
+              data, // Url.
+              'Authorize', // Name.
+              `location=0,status=0,width=${popupWidth},height=${popupHeight},top=${top},left=${left}` // Options.
+            )
+            // Try to get the user every 100ms.
+            var timer = setInterval(() => {
+              try {
+                // console.debug('TIMER debug', win.location.href)
+                if (win.location.href.includes('sublime-user-authorized-done')) {
+                  win.close()
+                  clearInterval(timer)
+                  this.me().then(user => {
+                    if (user.is_admin) {
+                      this.$router.push({ name: 'admin' })
+                    } else {
+                      this.$router.push('dashboard')
+                    }
+                  })
+                }
+              } catch (err) {
+                console.log(err)
+              }
+            }, INTERVAL)
+          })
+        })
+      },
 
       /**
        * Make the register Attempt.

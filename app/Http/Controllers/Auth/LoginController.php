@@ -62,7 +62,7 @@ class LoginController extends Controller //FilesController
                 'user_name' => $social_user->name,
                 'gender' => array_key_exists('gender', $social_user->user) ? $social_user->user['gender'] : $social_user->gender,
                 'email' => $social_user->email,
-                'avatar' => $social_user->avatar,
+                // 'avatar' => $social_user->avatar,
                 'password' => null,
             ]);
             // if ($social_user->avatar_original) {

@@ -10,6 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+# Oautth2.0
+Route::get('/Oauth2/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+# Oautth2.0
+Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
+# Oautth2.0
+Route::get('login/{provider}/get', 'Auth\LoginController@redirectToProvider');
 # Regiter
 Route::post('/register', 'Auth\RegisterController@register')->name('regiter');
 # Logout
