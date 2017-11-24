@@ -1,8 +1,8 @@
 <template lang="pug">
   .container-fluid
     .row.center-xs.middle-xs.full
-      .col-md-6.col-lg-4
-        form.container-fluid(@submit.prevent='loginAttempt' role='form')
+      .col-xs-12
+        form.column.center-xs.middle-xs(@submit.prevent='loginAttempt' role='form')
           h1 Login
           .row
             .col-md-12

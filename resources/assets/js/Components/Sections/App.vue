@@ -3,7 +3,9 @@
   #app.app.site-wrapper
     navbar
     transition(appear mode='out-in' name='fade')
-      router-view
+      router-view.site-content
+    transition(appear mode='out-in' name='fade')
+      site-footer
 </template>
 
 <script>

@@ -60,6 +60,11 @@
             p cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             p proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         .col-md-6
+    section.home-section-description(ref='home-section-description')
+      .row
+        .col-md-6
+        .col-md-6
+          .column.center-xs
 </template>
 
 <script>

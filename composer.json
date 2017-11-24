@@ -7,7 +7,6 @@
     "require": {
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
-        "folklore/graphql": "^1.0",
         "laravel/framework": "5.5.*",
         "laravel/passport": "^4.0",
         "laravel/tinker": "~1.0"
@@ -35,7 +34,6 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Folklore\\GraphQL\\ServiceProvider"
             ],
             "dont-discover": [
             ]
