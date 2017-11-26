@@ -17,6 +17,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::any('graphql', 'GraphQLController@root');
+Route::any('graphql/{query?}', 'GraphQLController@root');
+
 Route::apiResource('/users', 'UsersController');
 Route::apiResource('/artists', 'ArtistsController');
 Route::apiResource('/places', 'PlacesController');

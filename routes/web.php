@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+# GraphiQL
+Route::get('graphiql', function () {
+    return view('graphiql');
+})->name('graphiql');
 
 # Oautth2.0
 Route::get('/Oauth2/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
@@ -25,6 +29,8 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
 # This route returns the user data
 Route::get('/me', 'UsersController@me')->middleware(['auth:api,web'])->name('users.me.web');
+# GraphQL
+Route::post('/graphql', 'GraphQLController@root')->name('graphql');
 
 # Vue capture all the routes that not match at the beigining with 'api'
 Route::get('/{all}', function () {
