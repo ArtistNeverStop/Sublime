@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Artist;
+use App\Place;
 
 class ArtistsController extends Controller
 {
@@ -88,9 +89,19 @@ class ArtistsController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-    public function makeAvailable(MakeArtistAvailableOnPlace $request, Artist $artist, Place $place)
-    {
-        return $artist->placesAvailable()->attach()
-    }
      */
+    public function makeAvailable(Request $request, Artist $artist, Place $place)
+    {
+        $artist->placesAvailable()->attach([
+            $place->id => [
+                'start_at' => new \Carbon\Carbon($request->start_at),
+                'finish_at' => new \Carbon\Carbon($request->finish_at),
+                'price' => $request->price,
+                'min_quantity_persons' => $request->min_quantity_persons,
+                'price_per_person' => $request->price_per_person,
+                'extra_specifications' => $request->extra_specifications,
+            ]
+        ]);
+        return $artist->placesAvailable;
+    }
 }

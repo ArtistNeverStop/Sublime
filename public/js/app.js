@@ -15876,9 +15876,9 @@ module.exports = Cancel;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Store_Modules_User__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Store_Modules_Request__ = __webpack_require__(331);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Store_Modules_Artist__ = __webpack_require__(333);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Store_Modules_Place__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Store_Modules_Request__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Store_Modules_Artist__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Store_Modules_Place__ = __webpack_require__(336);
 
 
 
@@ -15913,8 +15913,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Router__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Http_API_Auth__ = __webpack_require__(329);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Http_API_Users__ = __webpack_require__(330);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Http_API_Auth__ = __webpack_require__(330);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Http_API_Users__ = __webpack_require__(331);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Http__ = __webpack_require__(5);
 
 
@@ -16171,7 +16171,7 @@ var mutations = {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(95);
-module.exports = __webpack_require__(340);
+module.exports = __webpack_require__(342);
 
 
 /***/ }),
@@ -16186,7 +16186,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Components_Prototype__ = __webpack_require__(251);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Components_Globals__ = __webpack_require__(254);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Components_Sections_App__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Components_Sections_App__ = __webpack_require__(338);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Components_Sections_App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__Components_Sections_App__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Store__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vue__ = __webpack_require__(10);
@@ -16208,7 +16208,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // import App from '@/sections/App.vue'
 
 
-window.flatpickr = __webpack_require__(364);
+window.flatpickr = __webpack_require__(341);
 
 __WEBPACK_IMPORTED_MODULE_7_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
   load: {
@@ -27848,7 +27848,7 @@ if (inBrowser && window.Vue) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Components_Sections__ = __webpack_require__(266);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__ = __webpack_require__(328);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__ = __webpack_require__(329);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Store__ = __webpack_require__(92);
 
 
@@ -27880,7 +27880,7 @@ if (inBrowser && window.Vue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__User__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Admin__ = __webpack_require__(287);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Artists__ = __webpack_require__(312);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Errors__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Errors__ = __webpack_require__(325);
 
 
 
@@ -31415,7 +31415,7 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Manage__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Manage__ = __webpack_require__(313);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -31423,1033 +31423,15 @@ if (false) {
 });
 
 /***/ }),
-/* 313 */,
-/* 314 */,
-/* 315 */,
-/* 316 */,
-/* 317 */,
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */,
-/* 322 */,
-/* 323 */,
-/* 324 */
+/* 313 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Components_Sections_Errors_404__ = __webpack_require__(325);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Components_Sections_Errors_404___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Components_Sections_Errors_404__);
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  _404: __WEBPACK_IMPORTED_MODULE_0__Components_Sections_Errors_404___default.a
-});
-
-/***/ }),
-/* 325 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(326)
-/* template */
-var __vue_template__ = __webpack_require__(327)
-/* template functional */
-  var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/Components/Sections/Errors/_404.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-544c3e99", Component.options)
-  } else {
-    hotAPI.reload("data-v-544c3e99", Component.options)
-' + '  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 326 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-
-  /**
-   * The main instance reactive
-   * properties of the component.
-   * ------------------------------
-   * @member {Function}
-   * @return {Object}
-   */
-  data: function data() {
-    return {
-      //
-    };
-  }
-});
-
-/***/ }),
-/* 327 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("h1", [_vm._v("Error 404")]),
-      _c("p", [
-        _vm._v("Lo sentimos no pudimos encontrar lo que estas buscando")
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-544c3e99", module.exports)
-  }
-}
-
-/***/ }),
-/* 328 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-/**
- * Shortcut function to make a new
- * route object.
- * ------------------------------
- * @function route
- * @param path {string}
- * @param component {VueComponent}
- * @param meta {Object}
- * @param name {string}
- * @param children {array}
- * @param beforeEnter @function
- * @return {Object}
- */
-var route = function route(path, component, name, meta, children, beforeEnter) {
-  return Object.assign({
-    path: path, name: name, meta: meta, children: children, beforeEnter: beforeEnter
-  }, typeof component === 'string' ? { redirect: component } : { component: component });
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (route);
-
-/***/ }),
-/* 329 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Http__ = __webpack_require__(5);
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  me: function me() {
-    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/me');
-  },
-  login: function login(credentials) {
-    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].post('/login', credentials);
-  },
-  logout: function logout() {
-    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].post('/logout');
-  },
-  register: function register(user) {
-    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].post('/register', user);
-  }
-});
-
-/***/ }),
-/* 330 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Http__ = __webpack_require__(5);
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  get: function get() {
-    var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ['id'];
-    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/graphql', {
-      params: {
-        query: 'query {\n        users {\n          ' + (params.indexOf('id') >= 0 ? 'id,' : '') + '\n          ' + (params.indexOf('name') >= 0 ? 'name,' : '') + '\n          ' + (params.indexOf('user_name') >= 0 ? 'user_name,' : '') + '\n          ' + (params.indexOf('email') >= 0 ? 'email,' : '') + '\n        }\n      }'
-      }
-    });
-  }
-});
-
-/***/ }),
-/* 331 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Router__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Http__ = __webpack_require__(5);
-
-
-
-
-
-/**
- * The Request module state.
- * ------------------------------
- * @const state {Object}
- */
-var state = {
-
-  /**
-   * All the Requests
-   * loaded on the plataform.
-   * ------------------------------
-   * @member all {Object}
-  */
-  all: {},
-
-  /**
-   * The array of Requests id's.
-   * ------------------------------
-   * @member {array}
-   */
-  list: [],
-
-  /**
-   * The selected Request.
-   * ------------------------------
-   * @member {int}
-   */
-  selected: null
-
-  /**
-   * The Actions related to the
-   * Requests Entities.
-   * ------------------------------
-   * @const {Object} actions
-   */
-};var actions = {
-
-  /**
-   * Make the login request and commit the 'login' mutation on success.
-   *
-   * @param {commit} | the mutation dispatcher of the state.
-   * @param {credentials} | The Request and pass to make the login request.
-   * @return {Promise}
-   */
-  makeArtistRequest: function makeArtistRequest(_ref, request) {
-    var commit = _ref.commit;
-    return new Promise(function (resolve, reject) {
-      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].make(request).then(function (_ref2) {
-        var data = _ref2.data;
-
-        commit('fetchRequest', data);
-        resolve(data);
-      }).catch(function (err) {
-        return reject(err);
-      });
-    });
-  },
-
-  /**
-   * Make the login request and commit the 'login' mutation on success.
-   *
-   * @param {commit} | the mutation dispatcher of the state.
-   * @param {credentials} | The Request and pass to make the login request.
-   * @return {Promise}
-   */
-  getRequests: function getRequests(_ref3, fields) {
-    var commit = _ref3.commit;
-    return new Promise(function (resolve, reject) {
-      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].get(fields).then(function (_ref4) {
-        var data = _ref4.data;
-
-        commit('fetchRequests', data);
-        resolve(data);
-      }).catch(function (err) {
-        return reject(err);
-      });
-    });
-  },
-
-  /**
-   * Make the login request and commit the 'login' mutation on success.
-   *
-   * @param {commit} | the mutation dispatcher of the state.
-   * @param {credentials} | The Request and pass to make the login request.
-   * @return {Promise}
-   */
-  updateRequest: function updateRequest(_ref5, request) {
-    var commit = _ref5.commit;
-    return new Promise(function (resolve, reject) {
-      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].update(request).then(function (_ref6) {
-        var data = _ref6.data;
-
-        commit('fetchRequest', data);
-        resolve(data);
-      }).catch(function (err) {
-        return reject(err);
-      });
-    });
-  },
-
-  /**
-   * Make the login request and commit the 'login' mutation on success.
-   *
-   * @param {commit} | the mutation dispatcher of the state.
-   * @param {credentials} | The Request and pass to make the login request.
-   * @return {Promise}
-   */
-  myRequests: function myRequests(_ref7) {
-    var commit = _ref7.commit;
-    return new Promise(function (resolve, reject) {
-      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].mine(request).then(function (_ref8) {
-        var data = _ref8.data;
-
-        commit('fetchRequest', data);
-        resolve(data);
-      }).catch(function (err) {
-        return reject(err);
-      });
-    });
-  }
-};
-
-var mutations = {
-
-  /**
-   * Update the Request.me and the Request on localstorage.
-   *
-   * @param state {Object} The Request module state.
-   * @param Request {Object} The current logged Request data.
-   */
-  fetchRequest: function fetchRequest(state, request) {
-    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(state.all, request.id, request);
-  },
-
-
-  /**
-   * Update the Request.me and the Request on localstorage.
-   *
-   * @param state {Object} The Request module state.
-   * @param Request {Object} The current logged Request data.
-   */
-  fetchRequests: function fetchRequests(state, requests) {
-    state.list = requests.map(function (r) {
-      return r.id;
-    });
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = requests[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var request = _step.value;
-
-        __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(state.all, request.id, request);
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator.return) {
-          _iterator.return();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
-      }
-    }
-  }
-};
-
-// /**
-//  * The getters of the Request module.
-//  * @const {Object}
-//  */
-// const getters = {
-// }
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  state: state,
-  actions: actions,
-  mutations: mutations
-  // getters,
-  // isAdmin,
-});
-
-/***/ }),
-/* 332 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Http__ = __webpack_require__(5);
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  make: function make(request) {
-    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].post('/requests', request);
-  },
-  // get: (fields = ['id']) => axios.get('/graphql', {
-  //   params: {
-  //     query: `query {
-  //       requests {
-  //         ${fields.indexOf('id') >= 0 ? 'id,' : ''}
-  //         ${fields.indexOf('name') >= 0 ? 'name,' : ''}
-  //         ${fields.indexOf('user_name') >= 0 ? 'user_name,' : ''}
-  //         ${fields.indexOf('email') >= 0 ? 'email,' : ''}
-  //       }
-  //     }`
-  //   }
-  // })
-  get: function get() {
-    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/requests');
-  },
-  update: function update(request) {
-    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].put('/requests/' + request.id, request);
-  }
-});
-
-/***/ }),
-/* 333 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Router__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Http_API_Artists__ = __webpack_require__(334);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Http__ = __webpack_require__(5);
-
-
-
-
-
-/**
- * The Artist module state.
- * ------------------------------
- * @const state {Object}
- */
-var state = {
-
-  /**
-   * All the Artists
-   * loaded on the plataform.
-   * ------------------------------
-   * @member all {Object}
-  */
-  all: {},
-
-  /**
-   * The array of Artists id's.
-   * ------------------------------
-   * @member {array}
-   */
-  list: [],
-
-  /**
-   * The selected Artist.
-   * ------------------------------
-   * @member {int}
-   */
-  selected: null
-
-  /**
-   * The Actions related to the
-   * Artists Entities.
-   * ------------------------------
-   * @const {Object} actions
-   */
-};var actions = {
-
-  /**
-   * Make the login Artist and commit the 'login' mutation on success.
-   *
-   * @param {commit} | the mutation dispatcher of the state.
-   * @param {credentials} | The Artist and pass to make the login Artist.
-   * @return {Promise}
-   */
-  getArtists: function getArtists(_ref, fields) {
-    var commit = _ref.commit;
-    return new Promise(function (resolve, reject) {
-      __WEBPACK_IMPORTED_MODULE_2__Http_API_Artists__["a" /* default */].get(fields).then(function (_ref2) {
-        var data = _ref2.data;
-
-        commit('fetchArtists', data);
-        resolve(data);
-      }).catch(function (err) {
-        return reject(err);
-      });
-    });
-  },
-
-  /**
-   * Make the login Artist and commit the 'login' mutation on success.
-   *
-   * @param {commit} | the mutation dispatcher of the state.
-   * @param {credentials} | The Artist and pass to make the login Artist.
-   * @return {Promise}
-   */
-  myArtists: function myArtists(_ref3, fields) {
-    var commit = _ref3.commit;
-    return new Promise(function (resolve, reject) {
-      __WEBPACK_IMPORTED_MODULE_2__Http_API_Artists__["a" /* default */].mine(fields).then(function (_ref4) {
-        var data = _ref4.data;
-
-        commit('fetchArtists', data);
-        resolve(data);
-      }).catch(function (err) {
-        return reject(err);
-      });
-    });
-  },
-
-  /**
-   * Make the login Artist and commit the 'login' mutation on success.
-   *
-   * @param {commit} | the mutation dispatcher of the state.
-   * @param {credentials} | The Artist and pass to make the login Artist.
-   * @return {Promise}
-   */
-  makeArtistAvailableOnPlace: function makeArtistAvailableOnPlace(_ref5, request) {
-    var commit = _ref5.commit;
-    return new Promise(function (resolve, reject) {
-      __WEBPACK_IMPORTED_MODULE_2__Http_API_Artists__["a" /* default */].makeAvailableOnPlace(request).then(function (_ref6) {
-        var data = _ref6.data;
-
-        commit('fetchArtists', data);
-        resolve(data);
-      }).catch(function (err) {
-        return reject(err);
-      });
-    });
-  }
-};
-
-var mutations = {
-
-  /**
-   * Update the Artist.me and the Artist on localstorage.
-   *
-   * @param state {Object} The Artist module state.
-   * @param Artist {Object} The current logged Artist data.
-   */
-  fetchArtist: function fetchArtist(state, Artist) {
-    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(state.all, Artist.id, Artist);
-  },
-
-
-  /**
-   * Update the Artist.me and the Artist on localstorage.
-   *
-   * @param state {Object} The Artist module state.
-   * @param Artist {Object} The current logged Artist data.
-   */
-  fetchArtists: function fetchArtists(state, Artists) {
-    state.list = Artists.map(function (r) {
-      return r.id;
-    });
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = Artists[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var Artist = _step.value;
-
-        __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(state.all, Artist.id, Artist);
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator.return) {
-          _iterator.return();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
-      }
-    }
-  }
-};
-
-// /**
-//  * The getters of the Artist module.
-//  * @const {Object}
-//  */
-// const getters = {
-// }
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  state: state,
-  actions: actions,
-  mutations: mutations
-  // getters,
-  // isAdmin,
-});
-
-/***/ }),
-/* 334 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Http__ = __webpack_require__(5);
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  get: function get() {
-    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/artists');
-  },
-  mine: function mine() {
-    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/me/artists');
-  },
-  makeAvailableOnPlace: function makeAvailableOnPlace(request) {
-    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].post('/me/artists/places', request);
-  }
-});
-
-/***/ }),
-/* 335 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Router__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Http_API_Places__ = __webpack_require__(336);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Http__ = __webpack_require__(5);
-
-
-
-
-
-/**
- * The Place module state.
- * ------------------------------
- * @const state {Object}
- */
-var state = {
-
-  /**
-   * All the Places
-   * loaded on the plataform.
-   * ------------------------------
-   * @member all {Object}
-  */
-  all: {},
-
-  /**
-   * The array of Places id's.
-   * ------------------------------
-   * @member {array}
-   */
-  list: [],
-
-  /**
-   * The selected Place.
-   * ------------------------------
-   * @member {int}
-   */
-  selected: null
-
-  /**
-   * The Actions related to the
-   * Places Entities.
-   * ------------------------------
-   * @const {Object} actions
-   */
-};var actions = {
-
-  /**
-   * Make the login Place and commit the 'login' mutation on success.
-   *
-   * @param {commit} | the mutation dispatcher of the state.
-   * @param {credentials} | The Place and pass to make the login Place.
-   * @return {Promise}
-   */
-  getPlaces: function getPlaces(_ref, fields) {
-    var commit = _ref.commit;
-    return new Promise(function (resolve, reject) {
-      __WEBPACK_IMPORTED_MODULE_2__Http_API_Places__["a" /* default */].get(fields).then(function (_ref2) {
-        var data = _ref2.data;
-
-        commit('fetchPlaces', data);
-        resolve(data);
-      }).catch(function (err) {
-        return reject(err);
-      });
-    });
-  },
-
-  /**
-   * Make the login Place and commit the 'login' mutation on success.
-   *
-   * @param {commit} | the mutation dispatcher of the state.
-   * @param {credentials} | The Place and pass to make the login Place.
-   * @return {Promise}
-   */
-  storePlace: function storePlace(_ref3, place) {
-    var commit = _ref3.commit;
-    return new Promise(function (resolve, reject) {
-      __WEBPACK_IMPORTED_MODULE_2__Http_API_Places__["a" /* default */].store(place).then(function (_ref4) {
-        var data = _ref4.data;
-
-        commit('fetchPlace', data);
-        resolve(data);
-      }).catch(function (err) {
-        return reject(err);
-      });
-    });
-  },
-
-  /**
-   * Make the login Place and commit the 'login' mutation on success.
-   *
-   * @param {commit} | the mutation dispatcher of the state.
-   * @param {credentials} | The Place and pass to make the login Place.
-   * @return {Promise}
-   */
-  deletePlace: function deletePlace(_ref5, id) {
-    var commit = _ref5.commit;
-    return new Promise(function (resolve, reject) {
-      __WEBPACK_IMPORTED_MODULE_2__Http_API_Places__["a" /* default */].delete(id).then(function (_ref6) {
-        var data = _ref6.data;
-
-        commit('deletePlace', id);
-        resolve(data);
-      }).catch(function (err) {
-        return reject(err);
-      });
-    });
-  }
-};
-
-var mutations = {
-
-  /**
-   * Update the Place.me and the Place on localstorage.
-   *
-   * @param state {Object} The Place module state.
-   * @param Place {Object} The current logged Place data.
-   */
-  fetchPlace: function fetchPlace(state, Place) {
-    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(state.all, Place.id, Place);
-  },
-
-
-  /**
-   * Update the Place.me and the Place on localstorage.
-   *
-   * @param state {Object} The Place module state.
-   * @param Place {Object} The current logged Place data.
-   */
-  fetchPlaces: function fetchPlaces(state, Places) {
-    state.list = Places.map(function (r) {
-      return r.id;
-    });
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = Places[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var Place = _step.value;
-
-        __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(state.all, Place.id, Place);
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator.return) {
-          _iterator.return();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
-      }
-    }
-  },
-
-
-  /**
-   * Update the Place.me and the Place on localstorage.
-   *
-   * @param state {Object} The Place module state.
-   * @param Place {Object} The current logged Place data.
-   */
-  deletePlace: function deletePlace(state, id) {
-    state.list = state.list.filter(function (_id) {
-      return id !== id;
-    });
-    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.delete(state.all, id);
-  }
-};
-
-// /**
-//  * The getters of the Place module.
-//  * @const {Object}
-//  */
-// const getters = {
-// }
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  state: state,
-  actions: actions,
-  mutations: mutations
-  // getters,
-  // isAdmin,
-});
-
-/***/ }),
-/* 336 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Http__ = __webpack_require__(5);
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  get: function get() {
-    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/places');
-  },
-  store: function store(place) {
-    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].post('/places', place);
-  },
-  update: function update(place) {
-    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].put('/places/' + place.id, place);
-  },
-  delete: function _delete(id) {
-    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].delete('/places/' + id);
-  }
-});
-
-/***/ }),
-/* 337 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(338)
-/* template */
-var __vue_template__ = __webpack_require__(339)
-/* template functional */
-  var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/Components/Sections/App.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-43bcb61d", Component.options)
-  } else {
-    hotAPI.reload("data-v-43bcb61d", Component.options)
-' + '  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 338 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-
-  /**
-   * The main instance reactive
-   * properties of the component.
-   * ------------------------------
-   * @member {Function}
-   * @return {Object}
-   */
-  data: function data() {
-    return {};
-  },
-
-
-  /**
-   * The main instance methods of
-   * the component.
-   * ------------------------------
-   * @member {Object} methods
-   * @return {Object}
-   */
-  methods: {
-
-    /**
-     * The main instance reactive
-     * properties of the component.
-     * ------------------------------
-     * @member {Function}
-     * @return {Object}
-     */
-    test: function test() {
-      console.debug('Test');
-    }
-  },
-
-  /**
-   * The main instance computed
-   * properties of the component.
-   * ------------------------------
-   * @member {Object} computed
-   * @return {Object}
-   */
-  computed: {}
-});
-
-/***/ }),
-/* 339 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "app site-wrapper", attrs: { id: "app" } },
-    [
-      _c("navbar"),
-      _c(
-        "transition",
-        { attrs: { appear: "appear", mode: "out-in", name: "fade" } },
-        [_c("router-view", { staticClass: "site-content" })],
-        1
-      ),
-      _c(
-        "transition",
-        { attrs: { appear: "appear", mode: "out-in", name: "fade" } },
-        [_c("site-footer")],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-43bcb61d", module.exports)
-  }
-}
-
-/***/ }),
-/* 340 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 341 */,
-/* 342 */,
-/* 343 */,
-/* 344 */,
-/* 345 */,
-/* 346 */,
-/* 347 */,
-/* 348 */,
-/* 349 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ArtistDates__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ArtistDates__ = __webpack_require__(314);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ArtistDates___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ArtistDates__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ArtistIndex__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ArtistIndex__ = __webpack_require__(317);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ArtistIndex___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__ArtistIndex__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ArtistManageMap__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ArtistManageMap__ = __webpack_require__(320);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ArtistManageMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__ArtistManageMap__);
 
 
@@ -32462,18 +31444,571 @@ if (false) {
 });
 
 /***/ }),
-/* 350 */,
-/* 351 */,
-/* 352 */,
-/* 353 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(354)
+var __vue_script__ = __webpack_require__(315)
 /* template */
-var __vue_template__ = __webpack_require__(355)
+var __vue_template__ = __webpack_require__(316)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/Components/Sections/Artists/Manage/ArtistDates.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-86be292a", Component.options)
+  } else {
+    hotAPI.reload("data-v-86be292a", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 315 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+  /**
+   * The main instance reactive
+   * properties of the component.
+   * ------------------------------
+   * @member {Function}
+   * @return {Object}
+   */
+  data: function data() {
+    return {
+      start_at: null,
+      finish_at: null,
+      fakeDate: null,
+      date: null,
+      price_per_person: null,
+      place: null,
+      min_quantity_persons: null,
+      extra_specifications: null,
+      datePlaces: [],
+      errors: {
+        errors: {}
+      }
+    };
+  },
+
+
+  /**
+   * The main instance computed
+   * properties of the component.
+   * ------------------------------
+   * @member {Object} methods
+   * @return {Object}
+   */
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User', 'Artist', 'Place'])),
+
+  watch: {
+    min_quantity_persons: function min_quantity_persons(_min_quantity_persons) {
+      if (parseInt(_min_quantity_persons) > this.Place.all[this.place].people_limit) {
+        this.errors.errors.min_quantity_persons = ['The min quantity persons could not be gratter than the Place people limit '];
+        this.min_quantity_persons = 0;
+      } else {
+        this.errors.errors.min_quantity_persons = [];
+      }
+    }
+  },
+
+  /**
+   * The main instance methods of
+   * the component.
+   * ------------------------------
+   * @member {Object} methods
+   * @return {Object}
+   */
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['myArtists', 'getPlaces']), {
+    saveDate: function saveDate() {
+      var _this = this;
+
+      __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('/me/artists/' + this.$route.params.artist + '/places/' + this.place, this.$data).then(function (_ref) {
+        var data = _ref.data;
+
+        _this.datePlaces = data;
+      });
+    }
+  }),
+
+  /**
+   * The mounted hook life-cycle of
+   * the component instance.
+   * ------------------------------
+   * @member {Function}
+   */
+  mounted: function mounted() {
+    var _this2 = this;
+
+    console.log(this.$options.__file.split('/').slice(-1).pop() + ' Component Mounted!');
+    window.flatpickr(".date-range", {
+      mode: "range",
+      minDate: "today",
+      altInput: true,
+      dateFormat: "YYYY-MM-DD",
+      onChange: function onChange(selectedDates, dateStr, instance) {
+        _this2.date = selectedDates;
+        _this2.start_at = selectedDates[0];
+        _this2.finish_at = selectedDates[1];
+        console.log(selectedDates, dateStr, instance);
+      }
+    });
+    this.myArtists();
+    this.getPlaces();
+  }
+});
+
+/***/ }),
+/* 316 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container-fluid" }, [
+    _c("div", { staticClass: "row center-xs" }, [
+      _c(
+        "div",
+        { staticClass: "col-md-12" },
+        [
+          _c("h1", [_vm._v("My Managed Artists")]),
+          _c("router-link", { attrs: { to: { name: "artists.manage.map" } } }, [
+            _vm._v("MAP")
+          ])
+        ],
+        1
+      )
+    ]),
+    _c("div", { staticClass: "row center-xs" }, [
+      _c(
+        "div",
+        { staticClass: "col-md-12" },
+        [
+          _vm._l(_vm.Artist.all, function(artist) {
+            return _c("div", { staticClass: "container-fluid" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c("h2", [_vm._v(_vm._s(artist.name))])
+                ])
+              ]),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c("label", { attrs: { for: "date" } }, [_vm._v("Date")]),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.fakeDate,
+                        expression: "fakeDate"
+                      }
+                    ],
+                    staticClass: "date-range",
+                    attrs: { name: "date" },
+                    domProps: { value: _vm.fakeDate },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.fakeDate = $event.target.value
+                      }
+                    }
+                  })
+                ]),
+                _c(
+                  "div",
+                  { staticClass: "col-md-12" },
+                  [
+                    _c("label", { attrs: { for: "price" } }, [
+                      _vm._v("Price per Person")
+                    ]),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.price_per_person,
+                          expression: "price_per_person"
+                        }
+                      ],
+                      attrs: {
+                        id: "price-input",
+                        name: "price_per_person",
+                        placeholder: "Price",
+                        type: "number"
+                      },
+                      domProps: { value: _vm.price_per_person },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.price_per_person = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._l(_vm.errors.errors.price, function(error) {
+                      return _vm.errors.errors
+                        ? _c(
+                            "span",
+                            { staticClass: "center-xs error-message" },
+                            [_vm._v(_vm._s(error))]
+                          )
+                        : _vm._e()
+                    })
+                  ],
+                  2
+                ),
+                _c(
+                  "div",
+                  { staticClass: "col-md-12" },
+                  [
+                    _c("label", { attrs: { for: "place" } }, [_vm._v("Place")]),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.place,
+                            expression: "place"
+                          }
+                        ],
+                        attrs: {
+                          id: "place-input",
+                          name: "place",
+                          placeholder: "Place",
+                          type: "text"
+                        },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.place = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "option",
+                          {
+                            attrs: {
+                              disabled: "disabled",
+                              selected: "selected"
+                            }
+                          },
+                          [_vm._v("Select a Place")]
+                        ),
+                        _vm._l(_vm.Place.all, function(place) {
+                          return _c(
+                            "option",
+                            { domProps: { value: place.id } },
+                            [_vm._v(_vm._s(place.name))]
+                          )
+                        })
+                      ],
+                      2
+                    ),
+                    _vm.place
+                      ? _c("div", [
+                          _c("p", [
+                            _vm._v(
+                              "Location: " +
+                                _vm._s(_vm.Place.all[_vm.place].address)
+                            )
+                          ]),
+                          _c("p", [
+                            _vm._v(
+                              "People limit: " +
+                                _vm._s(_vm.Place.all[_vm.place].people_limit)
+                            )
+                          ]),
+                          _c("p", [
+                            _vm._v(
+                              "Name: " + _vm._s(_vm.Place.all[_vm.place].name)
+                            )
+                          ])
+                        ])
+                      : _vm._e(),
+                    _vm._l(_vm.errors.errors.place, function(error) {
+                      return _vm.errors.errors
+                        ? _c(
+                            "span",
+                            { staticClass: "center-xs error-message" },
+                            [_vm._v(_vm._s(error))]
+                          )
+                        : _vm._e()
+                    })
+                  ],
+                  2
+                ),
+                _c(
+                  "div",
+                  { staticClass: "col-md-12" },
+                  [
+                    _c("label", { attrs: { for: "min_quantity_persons" } }, [
+                      _vm._v("Min Quantity Persons")
+                    ]),
+                    _vm.place
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.min_quantity_persons,
+                              expression: "min_quantity_persons"
+                            }
+                          ],
+                          attrs: {
+                            id: "min-quantity-persons-input",
+                            min: "0",
+                            max: "place.people_limit",
+                            name: "min_quantity_persons",
+                            placeholder: "Min Quantity Persons",
+                            type: "number"
+                          },
+                          domProps: { value: _vm.min_quantity_persons },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.min_quantity_persons = $event.target.value
+                            }
+                          }
+                        })
+                      : _vm._e(),
+                    _vm._l(_vm.errors.errors.min_quantity_persons, function(
+                      error
+                    ) {
+                      return _vm.errors.errors
+                        ? _c(
+                            "span",
+                            { staticClass: "center-xs error-message" },
+                            [_vm._v(_vm._s(error))]
+                          )
+                        : _vm._e()
+                    })
+                  ],
+                  2
+                ),
+                _c(
+                  "div",
+                  { staticClass: "col-md-12" },
+                  [
+                    _c("label", { attrs: { for: "extra_specifications" } }, [
+                      _vm._v("Extra Specifications")
+                    ]),
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.extra_specifications,
+                          expression: "extra_specifications"
+                        }
+                      ],
+                      attrs: {
+                        id: "extra-specifications-input",
+                        name: "extra_specifications",
+                        placeholder: "Extra Specifications",
+                        type: "text"
+                      },
+                      domProps: { value: _vm.extra_specifications },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.extra_specifications = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._l(_vm.errors.errors.extra_specifications, function(
+                      error
+                    ) {
+                      return _vm.errors.errors
+                        ? _c(
+                            "span",
+                            { staticClass: "center-xs error-message" },
+                            [_vm._v(_vm._s(error))]
+                          )
+                        : _vm._e()
+                    })
+                  ],
+                  2
+                ),
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "button-primary",
+                      on: { click: _vm.saveDate }
+                    },
+                    [_vm._v("Save")]
+                  )
+                ])
+              ])
+            ])
+          }),
+          _vm.Artist.all[1]
+            ? _c(
+                "div",
+                { staticClass: "row" },
+                _vm._l(_vm.Artist.all[1].places_available, function(place) {
+                  return _c("div", { staticClass: "col-md-4" }, [
+                    _c("div", { staticClass: "places-available" }, [
+                      _c("p", [
+                        _c("strong", [_vm._v("Place:")]),
+                        _c("span", [_vm._v(_vm._s(place.address))])
+                      ]),
+                      _c("p", [
+                        _c("strong", [_vm._v("Since:")]),
+                        _c("span", [_vm._v(_vm._s(place.pivot.start_at))])
+                      ]),
+                      _c("p", [
+                        _c("strong", [_vm._v("Until:")]),
+                        _c("span", [_vm._v(_vm._s(place.pivot.finish_at))])
+                      ])
+                    ])
+                  ])
+                })
+              )
+            : _vm._e()
+        ],
+        2
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-86be292a", module.exports)
+  }
+}
+
+/***/ }),
+/* 317 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(318)
+/* template */
+var __vue_template__ = __webpack_require__(319)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -32513,7 +32048,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 354 */
+/* 318 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32580,7 +32115,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 });
 
 /***/ }),
-/* 355 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -32631,19 +32166,19 @@ if (false) {
 }
 
 /***/ }),
-/* 356 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(357)
+  __webpack_require__(321)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(359)
+var __vue_script__ = __webpack_require__(323)
 /* template */
-var __vue_template__ = __webpack_require__(360)
+var __vue_template__ = __webpack_require__(324)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -32683,13 +32218,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 357 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(358);
+var content = __webpack_require__(322);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -32709,7 +32244,7 @@ if(false) {
 }
 
 /***/ }),
-/* 358 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(12)(undefined);
@@ -32723,7 +32258,7 @@ exports.push([module.i, "\nhtml, body, #map { height: 100%; margin: 0; padding: 
 
 
 /***/ }),
-/* 359 */
+/* 323 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33034,7 +32569,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 360 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -33167,15 +32702,28 @@ if (false) {
 }
 
 /***/ }),
-/* 361 */
+/* 325 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Components_Sections_Errors_404__ = __webpack_require__(326);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Components_Sections_Errors_404___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Components_Sections_Errors_404__);
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  _404: __WEBPACK_IMPORTED_MODULE_0__Components_Sections_Errors_404___default.a
+});
+
+/***/ }),
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(362)
+var __vue_script__ = __webpack_require__(327)
 /* template */
-var __vue_template__ = __webpack_require__(363)
+var __vue_template__ = __webpack_require__(328)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -33192,7 +32740,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/Components/Sections/Artists/Manage/ArtistDates.vue"
+Component.options.__file = "resources/assets/js/Components/Sections/Errors/_404.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -33202,9 +32750,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-86be292a", Component.options)
+    hotAPI.createRecord("data-v-544c3e99", Component.options)
   } else {
-    hotAPI.reload("data-v-86be292a", Component.options)
+    hotAPI.reload("data-v-544c3e99", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -33215,62 +32763,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 362 */
+/* 327 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(1);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 //
 //
 //
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -33283,26 +32786,843 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    */
   data: function data() {
     return {
-      date: null,
-      price: '',
-      place: null,
-      min_quantity_persons: '',
-      extra_specifications: '',
-      errors: {
-        errors: {}
-      }
+      //
     };
+  }
+});
+
+/***/ }),
+/* 328 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("h1", [_vm._v("Error 404")]),
+      _c("p", [
+        _vm._v("Lo sentimos no pudimos encontrar lo que estas buscando")
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-544c3e99", module.exports)
+  }
+}
+
+/***/ }),
+/* 329 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+/**
+ * Shortcut function to make a new
+ * route object.
+ * ------------------------------
+ * @function route
+ * @param path {string}
+ * @param component {VueComponent}
+ * @param meta {Object}
+ * @param name {string}
+ * @param children {array}
+ * @param beforeEnter @function
+ * @return {Object}
+ */
+var route = function route(path, component, name, meta, children, beforeEnter) {
+  return Object.assign({
+    path: path, name: name, meta: meta, children: children, beforeEnter: beforeEnter
+  }, typeof component === 'string' ? { redirect: component } : { component: component });
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (route);
+
+/***/ }),
+/* 330 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Http__ = __webpack_require__(5);
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  me: function me() {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/me');
+  },
+  login: function login(credentials) {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].post('/login', credentials);
+  },
+  logout: function logout() {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].post('/logout');
+  },
+  register: function register(user) {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].post('/register', user);
+  }
+});
+
+/***/ }),
+/* 331 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Http__ = __webpack_require__(5);
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  get: function get() {
+    var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ['id'];
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/graphql', {
+      params: {
+        query: 'query {\n        users {\n          ' + (params.indexOf('id') >= 0 ? 'id,' : '') + '\n          ' + (params.indexOf('name') >= 0 ? 'name,' : '') + '\n          ' + (params.indexOf('user_name') >= 0 ? 'user_name,' : '') + '\n          ' + (params.indexOf('email') >= 0 ? 'email,' : '') + '\n        }\n      }'
+      }
+    });
+  }
+});
+
+/***/ }),
+/* 332 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Router__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Http__ = __webpack_require__(5);
+
+
+
+
+
+/**
+ * The Request module state.
+ * ------------------------------
+ * @const state {Object}
+ */
+var state = {
+
+  /**
+   * All the Requests
+   * loaded on the plataform.
+   * ------------------------------
+   * @member all {Object}
+  */
+  all: {},
+
+  /**
+   * The array of Requests id's.
+   * ------------------------------
+   * @member {array}
+   */
+  list: [],
+
+  /**
+   * The selected Request.
+   * ------------------------------
+   * @member {int}
+   */
+  selected: null
+
+  /**
+   * The Actions related to the
+   * Requests Entities.
+   * ------------------------------
+   * @const {Object} actions
+   */
+};var actions = {
+
+  /**
+   * Make the login request and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Request and pass to make the login request.
+   * @return {Promise}
+   */
+  makeArtistRequest: function makeArtistRequest(_ref, request) {
+    var commit = _ref.commit;
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].make(request).then(function (_ref2) {
+        var data = _ref2.data;
+
+        commit('fetchRequest', data);
+        resolve(data);
+      }).catch(function (err) {
+        return reject(err);
+      });
+    });
+  },
+
+  /**
+   * Make the login request and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Request and pass to make the login request.
+   * @return {Promise}
+   */
+  getRequests: function getRequests(_ref3, fields) {
+    var commit = _ref3.commit;
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].get(fields).then(function (_ref4) {
+        var data = _ref4.data;
+
+        commit('fetchRequests', data);
+        resolve(data);
+      }).catch(function (err) {
+        return reject(err);
+      });
+    });
+  },
+
+  /**
+   * Make the login request and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Request and pass to make the login request.
+   * @return {Promise}
+   */
+  updateRequest: function updateRequest(_ref5, request) {
+    var commit = _ref5.commit;
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].update(request).then(function (_ref6) {
+        var data = _ref6.data;
+
+        commit('fetchRequest', data);
+        resolve(data);
+      }).catch(function (err) {
+        return reject(err);
+      });
+    });
+  },
+
+  /**
+   * Make the login request and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Request and pass to make the login request.
+   * @return {Promise}
+   */
+  myRequests: function myRequests(_ref7) {
+    var commit = _ref7.commit;
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].mine(request).then(function (_ref8) {
+        var data = _ref8.data;
+
+        commit('fetchRequest', data);
+        resolve(data);
+      }).catch(function (err) {
+        return reject(err);
+      });
+    });
+  }
+};
+
+var mutations = {
+
+  /**
+   * Update the Request.me and the Request on localstorage.
+   *
+   * @param state {Object} The Request module state.
+   * @param Request {Object} The current logged Request data.
+   */
+  fetchRequest: function fetchRequest(state, request) {
+    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(state.all, request.id, request);
   },
 
 
   /**
-   * The main instance computed
+   * Update the Request.me and the Request on localstorage.
+   *
+   * @param state {Object} The Request module state.
+   * @param Request {Object} The current logged Request data.
+   */
+  fetchRequests: function fetchRequests(state, requests) {
+    state.list = requests.map(function (r) {
+      return r.id;
+    });
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = requests[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var request = _step.value;
+
+        __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(state.all, request.id, request);
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+  }
+};
+
+// /**
+//  * The getters of the Request module.
+//  * @const {Object}
+//  */
+// const getters = {
+// }
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  state: state,
+  actions: actions,
+  mutations: mutations
+  // getters,
+  // isAdmin,
+});
+
+/***/ }),
+/* 333 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Http__ = __webpack_require__(5);
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  make: function make(request) {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].post('/requests', request);
+  },
+  // get: (fields = ['id']) => axios.get('/graphql', {
+  //   params: {
+  //     query: `query {
+  //       requests {
+  //         ${fields.indexOf('id') >= 0 ? 'id,' : ''}
+  //         ${fields.indexOf('name') >= 0 ? 'name,' : ''}
+  //         ${fields.indexOf('user_name') >= 0 ? 'user_name,' : ''}
+  //         ${fields.indexOf('email') >= 0 ? 'email,' : ''}
+  //       }
+  //     }`
+  //   }
+  // })
+  get: function get() {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/requests');
+  },
+  update: function update(request) {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].put('/requests/' + request.id, request);
+  }
+});
+
+/***/ }),
+/* 334 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Router__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Http_API_Artists__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Http__ = __webpack_require__(5);
+
+
+
+
+
+/**
+ * The Artist module state.
+ * ------------------------------
+ * @const state {Object}
+ */
+var state = {
+
+  /**
+   * All the Artists
+   * loaded on the plataform.
+   * ------------------------------
+   * @member all {Object}
+  */
+  all: {},
+
+  /**
+   * The array of Artists id's.
+   * ------------------------------
+   * @member {array}
+   */
+  list: [],
+
+  /**
+   * The selected Artist.
+   * ------------------------------
+   * @member {int}
+   */
+  selected: null
+
+  /**
+   * The Actions related to the
+   * Artists Entities.
+   * ------------------------------
+   * @const {Object} actions
+   */
+};var actions = {
+
+  /**
+   * Make the login Artist and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Artist and pass to make the login Artist.
+   * @return {Promise}
+   */
+  getArtists: function getArtists(_ref, fields) {
+    var commit = _ref.commit;
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Artists__["a" /* default */].get(fields).then(function (_ref2) {
+        var data = _ref2.data;
+
+        commit('fetchArtists', data);
+        resolve(data);
+      }).catch(function (err) {
+        return reject(err);
+      });
+    });
+  },
+
+  /**
+   * Make the login Artist and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Artist and pass to make the login Artist.
+   * @return {Promise}
+   */
+  myArtists: function myArtists(_ref3, fields) {
+    var commit = _ref3.commit;
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Artists__["a" /* default */].mine(fields).then(function (_ref4) {
+        var data = _ref4.data;
+
+        commit('fetchArtists', data);
+        resolve(data);
+      }).catch(function (err) {
+        return reject(err);
+      });
+    });
+  },
+
+  /**
+   * Make the login Artist and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Artist and pass to make the login Artist.
+   * @return {Promise}
+   */
+  makeArtistAvailableOnPlace: function makeArtistAvailableOnPlace(_ref5, request) {
+    var commit = _ref5.commit;
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Artists__["a" /* default */].makeAvailableOnPlace(request).then(function (_ref6) {
+        var data = _ref6.data;
+
+        commit('fetchArtists', data);
+        resolve(data);
+      }).catch(function (err) {
+        return reject(err);
+      });
+    });
+  }
+};
+
+var mutations = {
+
+  /**
+   * Update the Artist.me and the Artist on localstorage.
+   *
+   * @param state {Object} The Artist module state.
+   * @param Artist {Object} The current logged Artist data.
+   */
+  fetchArtist: function fetchArtist(state, Artist) {
+    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(state.all, Artist.id, Artist);
+  },
+
+
+  /**
+   * Update the Artist.me and the Artist on localstorage.
+   *
+   * @param state {Object} The Artist module state.
+   * @param Artist {Object} The current logged Artist data.
+   */
+  fetchArtists: function fetchArtists(state, Artists) {
+    state.list = Artists.map(function (r) {
+      return r.id;
+    });
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = Artists[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var Artist = _step.value;
+
+        __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(state.all, Artist.id, Artist);
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+  }
+};
+
+// /**
+//  * The getters of the Artist module.
+//  * @const {Object}
+//  */
+// const getters = {
+// }
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  state: state,
+  actions: actions,
+  mutations: mutations
+  // getters,
+  // isAdmin,
+});
+
+/***/ }),
+/* 335 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Http__ = __webpack_require__(5);
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  get: function get() {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/artists');
+  },
+  mine: function mine() {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/me/artists');
+  },
+  makeAvailableOnPlace: function makeAvailableOnPlace(request) {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].post('/me/artists/places', request);
+  }
+});
+
+/***/ }),
+/* 336 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Router__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Http_API_Places__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Http__ = __webpack_require__(5);
+
+
+
+
+
+/**
+ * The Place module state.
+ * ------------------------------
+ * @const state {Object}
+ */
+var state = {
+
+  /**
+   * All the Places
+   * loaded on the plataform.
+   * ------------------------------
+   * @member all {Object}
+  */
+  all: {},
+
+  /**
+   * The array of Places id's.
+   * ------------------------------
+   * @member {array}
+   */
+  list: [],
+
+  /**
+   * The selected Place.
+   * ------------------------------
+   * @member {int}
+   */
+  selected: null
+
+  /**
+   * The Actions related to the
+   * Places Entities.
+   * ------------------------------
+   * @const {Object} actions
+   */
+};var actions = {
+
+  /**
+   * Make the login Place and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Place and pass to make the login Place.
+   * @return {Promise}
+   */
+  getPlaces: function getPlaces(_ref, fields) {
+    var commit = _ref.commit;
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Places__["a" /* default */].get(fields).then(function (_ref2) {
+        var data = _ref2.data;
+
+        commit('fetchPlaces', data);
+        resolve(data);
+      }).catch(function (err) {
+        return reject(err);
+      });
+    });
+  },
+
+  /**
+   * Make the login Place and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Place and pass to make the login Place.
+   * @return {Promise}
+   */
+  storePlace: function storePlace(_ref3, place) {
+    var commit = _ref3.commit;
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Places__["a" /* default */].store(place).then(function (_ref4) {
+        var data = _ref4.data;
+
+        commit('fetchPlace', data);
+        resolve(data);
+      }).catch(function (err) {
+        return reject(err);
+      });
+    });
+  },
+
+  /**
+   * Make the login Place and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Place and pass to make the login Place.
+   * @return {Promise}
+   */
+  deletePlace: function deletePlace(_ref5, id) {
+    var commit = _ref5.commit;
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Places__["a" /* default */].delete(id).then(function (_ref6) {
+        var data = _ref6.data;
+
+        commit('deletePlace', id);
+        resolve(data);
+      }).catch(function (err) {
+        return reject(err);
+      });
+    });
+  }
+};
+
+var mutations = {
+
+  /**
+   * Update the Place.me and the Place on localstorage.
+   *
+   * @param state {Object} The Place module state.
+   * @param Place {Object} The current logged Place data.
+   */
+  fetchPlace: function fetchPlace(state, Place) {
+    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(state.all, Place.id, Place);
+  },
+
+
+  /**
+   * Update the Place.me and the Place on localstorage.
+   *
+   * @param state {Object} The Place module state.
+   * @param Place {Object} The current logged Place data.
+   */
+  fetchPlaces: function fetchPlaces(state, Places) {
+    state.list = Places.map(function (r) {
+      return r.id;
+    });
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = Places[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var Place = _step.value;
+
+        __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(state.all, Place.id, Place);
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+  },
+
+
+  /**
+   * Update the Place.me and the Place on localstorage.
+   *
+   * @param state {Object} The Place module state.
+   * @param Place {Object} The current logged Place data.
+   */
+  deletePlace: function deletePlace(state, id) {
+    state.list = state.list.filter(function (_id) {
+      return id !== id;
+    });
+    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.delete(state.all, id);
+  }
+};
+
+// /**
+//  * The getters of the Place module.
+//  * @const {Object}
+//  */
+// const getters = {
+// }
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  state: state,
+  actions: actions,
+  mutations: mutations
+  // getters,
+  // isAdmin,
+});
+
+/***/ }),
+/* 337 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Http__ = __webpack_require__(5);
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  get: function get() {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/places');
+  },
+  store: function store(place) {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].post('/places', place);
+  },
+  update: function update(place) {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].put('/places/' + place.id, place);
+  },
+  delete: function _delete(id) {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].delete('/places/' + id);
+  }
+});
+
+/***/ }),
+/* 338 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(339)
+/* template */
+var __vue_template__ = __webpack_require__(340)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/Components/Sections/App.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-43bcb61d", Component.options)
+  } else {
+    hotAPI.reload("data-v-43bcb61d", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 339 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+  /**
+   * The main instance reactive
    * properties of the component.
    * ------------------------------
-   * @member {Object} methods
+   * @member {Function}
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User', 'Artist', 'Place'])),
+  data: function data() {
+    return {};
+  },
+
 
   /**
    * The main instance methods of
@@ -33311,285 +33631,58 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['myArtists', 'getPlaces'])),
+  methods: {
+
+    /**
+     * The main instance reactive
+     * properties of the component.
+     * ------------------------------
+     * @member {Function}
+     * @return {Object}
+     */
+    test: function test() {
+      console.debug('Test');
+    }
+  },
 
   /**
-   * The mounted hook life-cycle of
-   * the component instance.
+   * The main instance computed
+   * properties of the component.
    * ------------------------------
-   * @member {Function}
+   * @member {Object} computed
+   * @return {Object}
    */
-  mounted: function mounted() {
-    console.log(this.$options.__file.split('/').slice(-1).pop() + ' Component Mounted!');
-    window.flatpickr(".flatpickr", {
-      mode: "range"
-    });
-    this.myArtists();
-    this.getPlaces();
-  }
+  computed: {}
 });
 
 /***/ }),
-/* 363 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
-    _c("div", { staticClass: "row center-xs" }, [
+  return _c(
+    "div",
+    { staticClass: "app site-wrapper", attrs: { id: "app" } },
+    [
+      _c("navbar"),
       _c(
-        "div",
-        { staticClass: "col-md-12" },
-        [
-          _c("h1", [_vm._v("My Managed Artists")]),
-          _c("router-link", { attrs: { to: { name: "artists.manage.map" } } }, [
-            _vm._v("MAP")
-          ])
-        ],
+        "transition",
+        { attrs: { appear: "appear", mode: "out-in", name: "fade" } },
+        [_c("router-view", { staticClass: "site-content" })],
+        1
+      ),
+      _c(
+        "transition",
+        { attrs: { appear: "appear", mode: "out-in", name: "fade" } },
+        [_c("site-footer")],
         1
       )
-    ]),
-    _c("div", { staticClass: "row center-xs" }, [
-      _c(
-        "div",
-        { staticClass: "col-md-12" },
-        _vm._l(_vm.Artist.all, function(artist) {
-          return _c("div", { staticClass: "container-fluid" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-12" }, [
-                _c("h2", [_vm._v(_vm._s(artist.name))])
-              ])
-            ]),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-12" }, [
-                _c("label", { attrs: { for: "date" } }, [_vm._v("Date")]),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.date,
-                      expression: "date"
-                    }
-                  ],
-                  staticClass: "flatpickr",
-                  attrs: { name: "date" },
-                  domProps: { value: _vm.date },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.date = $event.target.value
-                    }
-                  }
-                })
-              ]),
-              _c(
-                "div",
-                { staticClass: "col-md-12" },
-                [
-                  _c("label", { attrs: { for: "price" } }, [_vm._v("Price")]),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.price,
-                        expression: "price"
-                      }
-                    ],
-                    attrs: {
-                      id: "price-input",
-                      name: "price",
-                      placeholder: "Price",
-                      type: "text"
-                    },
-                    domProps: { value: _vm.price },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.price = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._l(_vm.errors.errors.price, function(error) {
-                    return _vm.errors.errors
-                      ? _c("span", { staticClass: "center-xs error-message" }, [
-                          _vm._v(_vm._s(error))
-                        ])
-                      : _vm._e()
-                  })
-                ],
-                2
-              ),
-              _c(
-                "div",
-                { staticClass: "col-md-12" },
-                [
-                  _c("label", { attrs: { for: "place" } }, [_vm._v("Place")]),
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.place,
-                          expression: "place"
-                        }
-                      ],
-                      attrs: {
-                        id: "place-input",
-                        name: "place",
-                        placeholder: "Place",
-                        type: "text"
-                      },
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.place = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        }
-                      }
-                    },
-                    [
-                      _c(
-                        "option",
-                        {
-                          attrs: { disabled: "disabled", selected: "selected" }
-                        },
-                        [_vm._v("Select a Place")]
-                      ),
-                      _vm._l(_vm.Place.all, function(place) {
-                        return _c("option", { domProps: { value: place.id } }, [
-                          _vm._v(_vm._s(place.name))
-                        ])
-                      })
-                    ],
-                    2
-                  ),
-                  _vm.place
-                    ? _c("div", [
-                        _c("pre", [_vm._v(_vm._s(_vm.Place.all[_vm.place]))])
-                      ])
-                    : _vm._e(),
-                  _vm._l(_vm.errors.errors.place, function(error) {
-                    return _vm.errors.errors
-                      ? _c("span", { staticClass: "center-xs error-message" }, [
-                          _vm._v(_vm._s(error))
-                        ])
-                      : _vm._e()
-                  })
-                ],
-                2
-              ),
-              _c(
-                "div",
-                { staticClass: "col-md-12" },
-                [
-                  _c("label", { attrs: { for: "min_quantity_persons" } }, [
-                    _vm._v("Min Quantity Persons")
-                  ]),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.min_quantity_persons,
-                        expression: "min_quantity_persons"
-                      }
-                    ],
-                    attrs: {
-                      id: "min-quantity-persons-input",
-                      name: "min_quantity_persons",
-                      placeholder: " Min Quantity Persons",
-                      type: "number"
-                    },
-                    domProps: { value: _vm.min_quantity_persons },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.min_quantity_persons = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._l(_vm.errors.errors.min_quantity_persons, function(
-                    error
-                  ) {
-                    return _vm.errors.errors
-                      ? _c("span", { staticClass: "center-xs error-message" }, [
-                          _vm._v(_vm._s(error))
-                        ])
-                      : _vm._e()
-                  })
-                ],
-                2
-              ),
-              _c(
-                "div",
-                { staticClass: "col-md-12" },
-                [
-                  _c("label", { attrs: { for: "extra_specifications" } }, [
-                    _vm._v("Extra Specifications")
-                  ]),
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.extra_specifications,
-                        expression: "extra_specifications"
-                      }
-                    ],
-                    attrs: {
-                      id: "extra-specifications-input",
-                      name: "extra_specifications",
-                      placeholder: "Extra Specifications",
-                      type: "text"
-                    },
-                    domProps: { value: _vm.extra_specifications },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.extra_specifications = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._l(_vm.errors.errors.extra_specifications, function(
-                    error
-                  ) {
-                    return _vm.errors.errors
-                      ? _c("span", { staticClass: "center-xs error-message" }, [
-                          _vm._v(_vm._s(error))
-                        ])
-                      : _vm._e()
-                  })
-                ],
-                2
-              )
-            ])
-          ])
-        })
-      )
-    ])
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -33597,12 +33690,12 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-86be292a", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-43bcb61d", module.exports)
   }
 }
 
 /***/ }),
-/* 364 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* flatpickr v4.1.2, @license MIT */
@@ -35742,6 +35835,12 @@ return flatpickr$1;
 
 })));
 
+
+/***/ }),
+/* 342 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

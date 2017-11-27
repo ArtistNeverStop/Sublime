@@ -104,6 +104,6 @@ class UsersController extends Controller
      */
     public function artists(Request $request)
     {
-        return Auth::user()->managedArtists;
+        return Auth::user()->managedArtists->load(['placesAvailable']);
     }
 }

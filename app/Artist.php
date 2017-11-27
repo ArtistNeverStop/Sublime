@@ -34,6 +34,13 @@ class Artist extends Model
      */
     public function placesAvailable()
     {
-        return $this->belongsToMany('App\Places', 'artist_available_places');
+        return $this->belongsToMany('App\Place', 'artist_available_place')->withPivot([
+            'start_at',
+            'finish_at',
+            'price',
+            'min_quantity_persons',
+            'price_per_person',
+            'extra_specifications'
+        ]);
     }
 }

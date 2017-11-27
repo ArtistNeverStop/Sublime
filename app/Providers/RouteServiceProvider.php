@@ -23,9 +23,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
+        Route::bind('artist', function ($value) {
+            return \App\Artist::find($value) ?: \App\Artist::where('name', $value)->first();
+        });
     }
 
     /**

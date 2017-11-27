@@ -19,8 +19,11 @@ class CreateArtistAvaliablePlaceTable extends Migration
             $table->foreign('artist_id')->references('id')->on('artists');
             $table->integer('place_id')->unsigned();
             $table->foreign('place_id')->references('id')->on('places');
-            $table->integer('price')->unsigned();
-            $table->integer('min_quantity_persons')->unsigned();
+            $table->date('start_at');
+            $table->date('finish_at');
+            $table->integer('price')->unsigned()->nullable();
+            $table->integer('min_quantity_persons')->unsigned()->default(0);
+            $table->integer('price_per_person')->unsigned();
             $table->text('extra_specifications');
             $table->timestamps();
         });
