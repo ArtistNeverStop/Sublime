@@ -3,7 +3,6 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
 import * as VueGoogleMaps from 'vue2-google-maps'
 import '@/Http'
 import '@/Components/Prototype'
@@ -15,6 +14,8 @@ import store from '@/Store'
 // import { mapState, mapMutations } from 'vuex'
 // import App from '@/sections/App.vue'
 import Vue from 'vue'
+
+window.flatpickr = require("flatpickr");
 
 Vue.use(VueGoogleMaps, {
   load: {

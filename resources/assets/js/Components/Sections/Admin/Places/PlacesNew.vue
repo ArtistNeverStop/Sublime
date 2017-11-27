@@ -63,16 +63,16 @@
     data () {
       return {
         name: '',
-        position: {
-          lat: 20.68245716967531,
-          lng: -103.38096618652344
-        },
         address: '',
         people_limit: '',
         area: '',
         floors: '',
         errors: {
           errors: {}
+        },
+        position: {
+          lat: 20.68245716967531,
+          lng: -103.38096618652344
         },
         mapOptions: {
           styles: [

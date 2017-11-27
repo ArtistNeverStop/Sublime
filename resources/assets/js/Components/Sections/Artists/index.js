@@ -1,7 +1,5 @@
-import Manage from './ArtistManage'
-import Index from './ArtistIndex'
+import Manage from './Manage'
 
 export default {
-  Index,
   Manage
 }

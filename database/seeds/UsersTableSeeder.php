@@ -12,9 +12,11 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class, 10)->create();
-        factory(User::class)->create([
-            'email' => 'diego_giova@hotmail.com'
-        ])->roles()->attach(1);
+        if  (!User::count()) {
+            factory(User::class, 10)->create();
+            factory(User::class)->create([
+                'email' => 'diego_giova@hotmail.com'
+            ])->roles()->attach(1);
+        }
     }
 }

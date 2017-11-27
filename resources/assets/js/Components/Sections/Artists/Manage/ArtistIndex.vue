@@ -5,7 +5,7 @@
         h1 Artists
     .row.center-xs
       .col-md-12
-        p(v-for='artist in Artist.all') {{ artist.name }}
+        router-link(:to=`{ name: 'artists.manage.dates', params: { artist: artist.name.split(' ').join('-') }}`, v-for='artist in Artist.all') {{ artist.name }}
 </template>
 
 <script>

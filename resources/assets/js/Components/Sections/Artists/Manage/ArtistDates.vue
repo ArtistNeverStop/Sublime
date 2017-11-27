@@ -3,6 +3,7 @@
     .row.center-xs
       .col-md-12
         h1 My Managed Artists
+        router-link(:to=`{name: 'artists.manage.map'}`) MAP
     .row.center-xs
       .col-md-12
         .container-fluid(v-for='artist in Artist.all')
@@ -10,6 +11,9 @@
             .col-md-12
               h2 {{ artist.name }}
           .row
+            .col-md-12
+              label(for='date') Date
+              input.flatpickr(name=`date`, v-model=`date`)
             .col-md-12
               label(for='price') Price
               input#price-input(v-model='price' name='price' placeholder='Price' type='text')
@@ -54,6 +58,7 @@
      */
     data () {
       return {
+        date: null,
         price: '',
         place: null,
         min_quantity_persons: '',
@@ -105,6 +110,9 @@
      */
     mounted () {
       console.log(`${this.$options.__file.split('/').slice(-1).pop()} Component Mounted!`)
+      window.flatpickr(".flatpickr", {
+        mode: "range"
+      });
       this.myArtists()
       this.getPlaces()
     }
