@@ -15,14 +15,14 @@
               button.button-primary Send
           .row
             .col-md-12
-              p(v-for='request in Request.all')
+              p(v-for='request in myRequests')
                 strong {{ request.artist.name }}: 
                 small {{ request.status_string }}
 </template>
 
 <script>
   
-  import { mapState, mapActions } from 'vuex'
+  import { mapState, mapActions, mapGetters } from 'vuex'
 
   export default {
 
@@ -54,6 +54,10 @@
       ...mapState([
         'User',
         'Request'
+      ]),
+
+      ...mapGetters([
+        'myRequests'
       ])
     },
 
@@ -67,7 +71,8 @@
     methods: {
 
       ...mapActions([
-        'makeArtistRequest'
+        'makeArtistRequest',
+        'myArtistRequest'
       ]),
 
       /**
@@ -90,6 +95,7 @@
      */
     mounted () {
       console.log(`${this.$options.__file.split('/').slice(-1).pop()} Component Mounted!`)
+      this.myArtistRequest()
     }
   }
 </script>
