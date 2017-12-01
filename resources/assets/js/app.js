@@ -11,23 +11,26 @@ import '@/Components/Globals'
 import router from '@/Router'
 import App from '@/Components/Sections/App'
 import store from '@/Store'
+import Vuetify from 'vuetify'
 // import { mapState, mapMutations } from 'vuex'
 // import App from '@/sections/App.vue'
 import Vue from 'vue'
 
-window.flatpickr = require("flatpickr");
+Vue.use(Vuetify)
 
-Vue.use(VueGoogleMaps, {
-  load: {
-    key: 'AIzaSyAb-pcxVpILOwGT7ypK7s0tbGw6cBq8oUQ',
-    libraries: 'places' // This is required if you use the Autocomplete plugin
-    // OR: libraries: 'places,drawing'
-    // OR: libraries: 'places,drawing,visualization'
-    // (as you require)
-  }
-})
+// window.flatpickr = require("flatpickr");
 
-store.dispatch('me')
+// Vue.use(VueGoogleMaps, {
+//   load: {
+//     key: 'AIzaSyAb-pcxVpILOwGT7ypK7s0tbGw6cBq8oUQ',
+//     libraries: 'places' // This is required if you use the Autocomplete plugin
+//     // OR: libraries: 'places,drawing'
+//     // OR: libraries: 'places,drawing,visualization'
+//     // (as you require)
+//   }
+// })
+
+// store.dispatch('me')
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

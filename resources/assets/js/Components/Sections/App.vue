@@ -1,57 +1,61 @@
-<template lang="pug">
-  //- Site Wrapper
-  #app.app.site-wrapper
-    navbar
-    transition(appear mode='out-in' name='fade')
-      router-view.site-content
-    transition(appear mode='out-in' name='fade')
-      site-footer
+<template lang='pug'>
+router-view#app.site
 </template>
 
 <script>
-  export default {
+export default {
 
-    /**
-     * The main instance reactive
-     * properties of the component.
-     * ------------------------------
-     * @member {Function}
-     * @return {Object}
-     */
-    data () {
-      return {
-      }
-    },
-
-    /**
-     * The main instance methods of
-     * the component.
-     * ------------------------------
-     * @member {Object} methods
-     * @return {Object}
-     */
-    methods: {
-
-      /**
-       * The main instance reactive
-       * properties of the component.
-       * ------------------------------
-       * @member {Function}
-       * @return {Object}
-       */
-      test () {
-        console.debug('Test')
-      }
-    },
-
-    /**
-     * The main instance computed
-     * properties of the component.
-     * ------------------------------
-     * @member {Object} computed
-     * @return {Object}
-     */
-    computed: {
+  /**
+   * The main instance reactive
+   * properties of the component.
+   * ------------------------------
+   * @member {Function}
+   * @return {Object}
+   */
+  data: function () {
+    return {
+      // ...
     }
+  },
+
+  /**
+   * The main instance methods of
+   * the component.
+   * ------------------------------
+   * @member {Object} methods
+   */
+  methods: {
+    //
+  },
+
+  /**
+   * The main watcher of
+   * the component instance.
+   * ------------------------------
+   * @member {Object} watcher
+   */
+  watch: {
+    //
+  },
+
+  /**
+   * The main instance computed
+   * properties of the component.
+   * ------------------------------
+   * @member {Object} computed
+   */
+  computed: {
+    //
+  },
+
+  /**
+   * The mounted hook life-cycle of
+   * the component instance.
+   * ------------------------------
+   * @member {Function}
+   */
+  mounted () {
+    console.log(`${this.$options.__file.split('/').slice(-1).pop()} Component Mounted!`)
   }
+}
 </script>

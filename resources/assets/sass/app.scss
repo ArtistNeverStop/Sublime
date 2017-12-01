@@ -16,22 +16,7 @@
 // @import "~bootstrap-sass/assets/stylesheets/bootstrap/code";
 
 // Font Awesome
-@import "~flatpickr/dist/flatpickr";
-@import "~font-awesome/css/font-awesome";
-* {
-	box-sizing: border-box;
-}
-.fa {
-	cursor: pointer;
-	transition: all .4s;
-	&:hover {
-		transform: translateY(-5px);
-	}
-}
-// Variables
-@import "./variables";
-@import "~skeleton-css/css/skeleton";
-@import "~flexboxgrid/dist/flexboxgrid.min";
+@import "~vuetify/dist/vuetify";
 
 .flex {
 	display: flex;
@@ -40,43 +25,73 @@
 	display: flex;
 	flex-direction: column;	
 }
-span.error-message {
-	display: flex;
-	margin: 10px 0;
-	&, * {
-		color: red;
-	}
-}
-.text-left {
-	&, * {
-		text-align: left;
-	}
+
+.middle {
+    align-items: center;
 }
 
+.fixed {
+	position: fixed;
+}
 
-// Site CSS
+.end {
+    justify-content: flex-end;
+}
+
+// @import "~flatpickr/dist/flatpickr";
+// @import "~font-awesome/css/font-awesome";
+// * {
+// 	box-sizing: border-box;
+// }
+// .fa {
+// 	cursor: pointer;
+// 	transition: all .4s;
+// 	&:hover {
+// 		transform: translateY(-5px);
+// 	}
+// }
+// // Variables
+@import "./variables";
+// @import "~skeleton-css/css/skeleton";
+// @import "~flexboxgrid/dist/flexboxgrid.min";
+
+// span.error-message {
+// 	display: flex;
+// 	margin: 10px 0;
+// 	&, * {
+// 		color: red;
+// 	}
+// }
+// .text-left {
+// 	&, * {
+// 		text-align: left;
+// 	}
+// }
+
+
+// // Site CSS
 @import "./site/index";
-// Global Components CSS
-@import "./components/index";
+// // Global Components CSS
+// @import "./components/index";
 
-p.white {
-	color: white
-}
-.no-text-transform {
-	text-align: center;
-	text-transform: none;
-}
+// p.white {
+// 	color: white
+// }
+// .no-text-transform {
+// 	text-align: center;
+// 	text-transform: none;
+// }
 
-.full {
-	// height: 100vh;
-}
+// .full {
+// 	// height: 100vh;
+// }
 
-.site-wrapper {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-	.site-content {
-	  flex: 1;
-	}
-}
+// .site-wrapper {
+//   display: flex;
+//   min-height: 100vh;
+//   flex-direction: column;
+// 	.site-content {
+// 	  flex: 1;
+// 	}
+// }
 

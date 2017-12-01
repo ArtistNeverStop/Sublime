@@ -1,5 +1,4 @@
 .home-section-description {
-  height: 80vh;
   h2 {
     color: black;
     margin: 2rem;
@@ -16,9 +15,10 @@
   }
 }
 
-.home-section {
-  z-index: 20;
-  padding-top: 100vh;
+section.home-section {
+  z-index: 100;
+  background-color: white;
+  padding-top: 10rem;
 }
 .video {
   margin-top: -15%;
@@ -107,7 +107,7 @@
   // transition: all 1000ms linear;
   color: black;
   margin-bottom: 10rem; 
-  font-size: 20rem;
+  font-size: 20rem !important;
   @media (--sm-viewport) {
     font-size: 30rem;
   }
