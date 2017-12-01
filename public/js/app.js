@@ -489,9 +489,9 @@ module.exports = {
 "use strict";
 /* unused harmony export Store */
 /* unused harmony export install */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return mapState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return mapState; });
 /* unused harmony export mapMutations */
-/* unused harmony export mapGetters */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return mapGetters; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return mapActions; });
 /* unused harmony export createNamespacedHelpers */
 /**
@@ -24790,7 +24790,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User'])),
 
   /**
    * The mounted hook life-cycle of
@@ -25154,7 +25154,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User']))
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User']))
 });
 
 /***/ }),
@@ -27859,7 +27859,6 @@ if (inBrowser && window.Vue) {
 
 
 
-console.log(__WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */]);
 /**
  * The Routes of the Site in a
  * Route object.
@@ -27881,13 +27880,14 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */
 // Route('/Manage-artists/:artist', Site.Artists.Manage.Dates, 'artists.manage.dates'),
 // Route('/Manage-artists/Map', Site.Artists.ManageMap, 'artists.manage.map'),
 
-// Route('/Artists', Site.Artists.Index, 'artists'),
+// Route('/Artists', Site.Artists.Index, 'artists.index'),
 // Route('/Become-an-artist', Site.User.BecomeAnArtist, 'user.become.an.artist', { auth: true }),
 // Route('/Dashboard', Site.User.Dashboard, 'dashboard', { auth: true }),
 // Route('/Login', Site.Login, 'login', { guest: true }),
 // Route('/Register', Site.Register, 'register', { guest: true }),
 // Route('/Logout', '', 'logout', null, null, () => store.dispatch('logout', '/')),
 // Route('/', Site.Home, 'home'),
+// Route('*', Site.Errors._404, '404')
 Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Client.Section, null, {}, [Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Client.Site.Welcome, 'welcome', { guest: true })]), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('*', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Errors._404, '404')]);
 
 /***/ }),
@@ -28032,7 +28032,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User'])),
 
   /**
    * The main instance methods of
@@ -28241,7 +28241,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User', 'Request'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User', 'Request'])),
 
   /**
    * The main instance methods of
@@ -28768,7 +28768,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User', 'Place'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User', 'Place'])),
 
   /**
    * The main instance methods of
@@ -29208,7 +29208,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User'])),
 
   /**
    * The main instance methods of
@@ -29767,7 +29767,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User'])),
 
   /**
    * The main instance methods of
@@ -30227,7 +30227,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User']))
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User']))
 });
 
 /***/ }),
@@ -30364,7 +30364,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User', 'Request'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User', 'Request']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['myRequests'])),
 
   /**
    * The main instance methods of
@@ -30373,7 +30373,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['makeArtistRequest']), {
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['makeArtistRequest', 'myArtistRequest']), {
 
     /**
      * Make the register Attempt.
@@ -30399,6 +30399,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    */
   mounted: function mounted() {
     console.log(this.$options.__file.split('/').slice(-1).pop() + ' Component Mounted!');
+    this.myArtistRequest();
   }
 });
 
@@ -30481,7 +30482,7 @@ var render = function() {
               _c(
                 "div",
                 { staticClass: "col-md-12" },
-                _vm._l(_vm.Request.all, function(request) {
+                _vm._l(_vm.myRequests, function(request) {
                   return _c("p", [
                     _c("strong", [_vm._v(_vm._s(request.artist.name) + ": ")]),
                     _c("small", [_vm._v(_vm._s(request.status_string))])
@@ -30522,10 +30523,13 @@ if (false) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Manage__ = __webpack_require__(306);
+throw new Error("Cannot find module \"./ArtistsIndex\"");
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  Manage: __WEBPACK_IMPORTED_MODULE_0__Manage__["a" /* default */]
+  Manage: __WEBPACK_IMPORTED_MODULE_0__Manage__["a" /* default */],
+  Index: __WEBPACK_IMPORTED_MODULE_1__ArtistsIndex___default.a
 });
 
 /***/ }),
@@ -30702,7 +30706,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User', 'Artist', 'Place'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User', 'Artist', 'Place'])),
 
   watch: {
     min_quantity_persons: function min_quantity_persons(_min_quantity_persons) {
@@ -31197,7 +31201,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapState */])(['User', 'Artist'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User', 'Artist'])),
 
   /**
    * The main instance methods of
@@ -33360,10 +33364,10 @@ var state = {
    * @param {credentials} | The Request and pass to make the login request.
    * @return {Promise}
    */
-  getRequests: function getRequests(_ref3, fields) {
+  myArtistRequest: function myArtistRequest(_ref3, fields) {
     var commit = _ref3.commit;
     return new Promise(function (resolve, reject) {
-      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].get(fields).then(function (_ref4) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].mine(fields).then(function (_ref4) {
         var data = _ref4.data;
 
         commit('fetchRequests', data);
@@ -33381,11 +33385,32 @@ var state = {
    * @param {credentials} | The Request and pass to make the login request.
    * @return {Promise}
    */
-  updateRequest: function updateRequest(_ref5, request) {
+  getRequests: function getRequests(_ref5, fields) {
     var commit = _ref5.commit;
     return new Promise(function (resolve, reject) {
-      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].update(request).then(function (_ref6) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].get(fields).then(function (_ref6) {
         var data = _ref6.data;
+
+        commit('fetchRequests', data);
+        resolve(data);
+      }).catch(function (err) {
+        return reject(err);
+      });
+    });
+  },
+
+  /**
+   * Make the login request and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Request and pass to make the login request.
+   * @return {Promise}
+   */
+  updateRequest: function updateRequest(_ref7, request) {
+    var commit = _ref7.commit;
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].update(request).then(function (_ref8) {
+        var data = _ref8.data;
 
         commit('fetchRequest', data);
         resolve(data);
@@ -33402,11 +33427,11 @@ var state = {
    * @param {credentials} | The Request and pass to make the login request.
    * @return {Promise}
    */
-  myRequests: function myRequests(_ref7) {
-    var commit = _ref7.commit;
+  myRequests: function myRequests(_ref9) {
+    var commit = _ref9.commit;
     return new Promise(function (resolve, reject) {
-      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].mine(request).then(function (_ref8) {
-        var data = _ref8.data;
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Requests__["a" /* default */].mine().then(function (_ref10) {
+        var data = _ref10.data;
 
         commit('fetchRequest', data);
         resolve(data);
@@ -33467,18 +33492,25 @@ var mutations = {
   }
 };
 
-// /**
-//  * The getters of the Request module.
-//  * @const {Object}
-//  */
-// const getters = {
-// }
+/**
+ * The getters of the Request module.
+ * @const {Object}
+ */
+var getters = {
+  myRequests: function myRequests(state, getters, rootState) {
+    return state.list.filter(function (id) {
+      return state.all[id].user_id === rootState.User.me.id;
+    }).map(function (id) {
+      return state.all[id];
+    });
+  }
+};
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   state: state,
   actions: actions,
-  mutations: mutations
-  // getters,
+  mutations: mutations,
+  getters: getters
   // isAdmin,
 });
 
@@ -33494,20 +33526,11 @@ var mutations = {
   make: function make(request) {
     return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].post('/requests', request);
   },
-  // get: (fields = ['id']) => axios.get('/graphql', {
-  //   params: {
-  //     query: `query {
-  //       requests {
-  //         ${fields.indexOf('id') >= 0 ? 'id,' : ''}
-  //         ${fields.indexOf('name') >= 0 ? 'name,' : ''}
-  //         ${fields.indexOf('user_name') >= 0 ? 'user_name,' : ''}
-  //         ${fields.indexOf('email') >= 0 ? 'email,' : ''}
-  //       }
-  //     }`
-  //   }
-  // })
   get: function get() {
     return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/requests');
+  },
+  mine: function mine() {
+    return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].get('/my/requests');
   },
   update: function update(request) {
     return __WEBPACK_IMPORTED_MODULE_0__Http__["a" /* default */].put('/requests/' + request.id, request);

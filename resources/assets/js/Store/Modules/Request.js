@@ -63,6 +63,21 @@ const actions = {
    * @param {credentials} | The Request and pass to make the login request.
    * @return {Promise}
    */
+  myArtistRequest: ({ commit }, fields) =>
+  new Promise((resolve, reject) => {
+    Requests.mine(fields).then(({ data }) => {
+      commit('fetchRequests', data)
+      resolve(data)
+    }).catch(err => reject(err))
+  }),
+
+  /**
+   * Make the login request and commit the 'login' mutation on success.
+   *
+   * @param {commit} | the mutation dispatcher of the state.
+   * @param {credentials} | The Request and pass to make the login request.
+   * @return {Promise}
+   */
   getRequests: ({ commit }, fields) =>
   new Promise((resolve, reject) => {
     Requests.get(fields).then(({ data }) => {
@@ -95,7 +110,7 @@ const actions = {
    */
   myRequests: ({ commit }) =>
   new Promise((resolve, reject) => {
-    Requests.mine(request).then(({ data }) => {
+    Requests.mine().then(({ data }) => {
       commit('fetchRequest', data)
       resolve(data)
     }).catch(err => reject(err))
@@ -128,17 +143,18 @@ const mutations = {
   }
 }
 
-// /**
-//  * The getters of the Request module.
-//  * @const {Object}
-//  */
-// const getters = {
-// }
+/**
+ * The getters of the Request module.
+ * @const {Object}
+ */
+const getters = {
+  myRequests: (state, getters, rootState) => state.list.filter(id => state.all[id].user_id === rootState.User.me.id).map(id => state.all[id])
+}
 
 export default {
   state,
   actions,
-  mutations
-  // getters,
+  mutations,
+  getters,
   // isAdmin,
 }

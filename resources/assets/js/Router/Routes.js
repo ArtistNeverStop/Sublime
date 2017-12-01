@@ -2,7 +2,6 @@ import App from '@/Components/Sections'
 import Route from '@/Router/RouteMaker'
 import store from '@/Store'
 
-console.log(App)
 /**
  * The Routes of the Site in a
  * Route object.
@@ -24,13 +23,14 @@ export default [
   // Route('/Manage-artists/:artist', Site.Artists.Manage.Dates, 'artists.manage.dates'),
   // Route('/Manage-artists/Map', Site.Artists.ManageMap, 'artists.manage.map'),
 
-  // Route('/Artists', Site.Artists.Index, 'artists'),
+  // Route('/Artists', Site.Artists.Index, 'artists.index'),
   // Route('/Become-an-artist', Site.User.BecomeAnArtist, 'user.become.an.artist', { auth: true }),
   // Route('/Dashboard', Site.User.Dashboard, 'dashboard', { auth: true }),
   // Route('/Login', Site.Login, 'login', { guest: true }),
   // Route('/Register', Site.Register, 'register', { guest: true }),
   // Route('/Logout', '', 'logout', null, null, () => store.dispatch('logout', '/')),
   // Route('/', Site.Home, 'home'),
+  // Route('*', Site.Errors._404, '404')
   Route('/', App.Client.Section, null, {}, [
     Route('', App.Client.Site.Welcome, 'welcome', { guest: true }),
   ]),
