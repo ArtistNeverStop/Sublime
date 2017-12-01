@@ -15879,14 +15879,16 @@ module.exports = Cancel;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Store_Modules_Request__ = __webpack_require__(332);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Store_Modules_Artist__ = __webpack_require__(334);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Store_Modules_Place__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Mutations__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Actions__ = __webpack_require__(347);
 
 
 
 
 
 
-// import mutations from './mutations'
-// import actions from './actions'
+
+
 // import getters from './getters'
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
@@ -15894,8 +15896,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
   strict: true,
   state: {},
-  // mutations,
-  // actions,
+  mutations: __WEBPACK_IMPORTED_MODULE_6__Mutations__["a" /* default */],
+  actions: __WEBPACK_IMPORTED_MODULE_7__Actions__["a" /* default */],
   // getters,
   modules: {
     Request: __WEBPACK_IMPORTED_MODULE_3__Store_Modules_Request__["a" /* default */],
@@ -51090,6 +51092,642 @@ function unbind(el, binding) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+
+
+/**
+ * The Mutations related to the Entities.
+ * ------------------------------
+ * @const action {Object}
+ */
+var mutations = {
+
+  /**
+   * Set the selected property on an Entity Module state.
+   * ------------------------------
+   * @member {Function}
+   * @param state {Object} The main state of the App.
+   * @param entity {Object|string} The Entity Module name.
+   * @param value {integer} The id value to select.
+   */
+  selectEntity: function selectEntity(state, entity) {
+    var value = entity.value || entity.id;
+    entity = entity._entity || entity.entity;
+    state[entity].selected = value;
+  },
+
+
+  /**
+   * ------------------------------
+   * @function
+   */
+  removeEntity: function removeEntity(state, entity) {
+    // console.log('removeEntity', entity)
+    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.delete(state[entity._entity].all, entity.id);
+    state[entity._entity].list.splice(state[entity._entity].list.indexOf(entity.id), 1);
+  },
+
+
+  /**
+   * ------------------------------
+   * @function
+   * @param {Object} state
+   * @param {Object} entity
+   */
+  loadEntity: function loadEntity(state, entity) {
+    // console.log('loadEntity', entity)
+    // DB.insert(entity._entity, entity)
+    if (entity._entity === 'ProductAttribute') {
+      entity.value = entity[entity.column];
+    }
+    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(state[entity._entity].all, entity.id, _extends({}, state[entity._entity].all[entity.id], entity));
+    if (state[entity._entity].list.indexOf(entity.id) < 0) {
+      state[entity._entity].list.push(entity.id);
+    }
+  },
+
+
+  /**
+   * ------------------------------
+   * @function
+   * @param {Object} state
+   * @param {Object} relation
+   */
+  pushToEntity: function pushToEntity(state, relation) {
+    var field = state[relation.entity].all[relation.id][relation.field];
+    if (!field) {
+      __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(state[relation.entity].all[relation.id], relation.field, []);
+    }
+    if (field instanceof Array && field.indexOf(relation.child) < 0) {
+      field.push(relation.child);
+    }
+  },
+
+
+  /**
+   * ------------------------------
+   * @function
+   * @param {Object} state
+   * @param {String} entity
+   * @param {String} key
+   * @param {String} field
+   * @param {int} id
+   * @param {String} parent
+   */
+  removeEntityFromRelation: function removeEntityFromRelation(state, _ref) {
+    var entity = _ref.entity,
+        key = _ref.key,
+        field = _ref.field,
+        id = _ref.id,
+        parent = _ref.parent;
+
+    state[entity].all[parent[key]][field].splice(state[entity].all[parent[key]][field].indexOf(id), 1);
+  },
+
+
+  /**
+   * ------------------------------
+   * @function
+   * @param {Object} state
+   * @param {String} entity
+   * @param {String} key
+   * @param {int} id
+   */
+  nullifyEntityFromRelation: function nullifyEntityFromRelation(state, _ref2) {
+    var entity = _ref2.entity,
+        key = _ref2.key,
+        id = _ref2.id;
+
+    if (state[entity].all[id]) {
+      state[entity].all[id][key] = null;
+    }
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (mutations);
+
+/***/ }),
+/* 347 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Store_EntityMap__ = __webpack_require__(348);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Http__ = __webpack_require__(5);
+throw new Error("Cannot find module \"@/Http/API/Files\"");
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+
+
+
+
+/**
+ * The Actions related to the Entities.
+ * ------------------------------
+ * @const action {Object}
+ */
+var actions = {
+
+  /**
+   * Get Entities From the GraphQL
+   * server.
+   * ------------------------------
+   * @member
+   * @param {Object} store
+   * @param {string} type - The Entity Type (Category, Product, Uesr, etc..).
+   * @param {Object} wheres - Object that describes the parameters to the graphql query.
+   * @param {array} load - The sub Entities to load.
+   * @param {array} parent - The object to attach the query result on VUex.
+   */
+  fetch: function fetch(store, _ref) {
+    var _this = this;
+
+    var _ref2 = _slicedToArray(_ref, 4),
+        type = _ref2[0],
+        wheres = _ref2[1],
+        _ref2$ = _ref2[2],
+        load = _ref2$ === undefined ? [] : _ref2$,
+        _ref2$2 = _ref2[3],
+        parent = _ref2$2 === undefined ? null : _ref2$2;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      var entity;
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* default */].query(type, wheres, load);
+
+            case 2:
+              entity = _context.sent.data.data;
+
+              if (parent) {
+                entity = _extends({}, parent, entity);
+              } else {
+                entity = entity[type];
+              }
+              _context.next = 6;
+              return store.dispatch('loadEntities', entity);
+
+            case 6:
+              return _context.abrupt('return', entity);
+
+            case 7:
+            case 'end':
+              return _context.stop();
+          }
+        }
+      }, _callee, _this);
+    }))();
+  },
+
+
+  /**
+   * ------------------------------
+   * @function
+   * @param {Object} state
+   * @param {Object} getters
+   * @return {Function}
+   */
+  loadEntities: function loadEntities(_ref3, data) {
+    var state = _ref3.state,
+        commit = _ref3.commit;
+
+    // console.log('loadEntities', data);
+    /**
+     * ------------------------------
+     * @function
+     * @param {Object} state
+     * @param {Object} getters
+     * @return {Function}
+     */
+    (function pushEntity(entity) {
+      var parent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      var field = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+      var index = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+      var insideArray = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : null;
+
+      if (Array.isArray(entity) && entity.length > 0) {
+        entity.map(function (item, index) {
+          pushEntity(item, parent, field, index, true);
+        });
+      } else if (entity instanceof Object && entity._entity) {
+        // console.log('pushEntity', entity)
+        // Process the Entity if is an Object and has the Entity field
+        var entityInfo = __WEBPACK_IMPORTED_MODULE_0__Store_EntityMap__["a" /* default */][entity._entity];
+        // Process the parent Entity
+        if (parent) {
+          // var parentStateInfo = EntityMap[parent._entity]
+          if (insideArray) {
+            parent[field][index] = entity.id;
+          } else {
+            parent[field] = entity.id;
+          }
+        }
+        // Analize objects
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+          for (var _iterator = Object.entries(entity)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var _ref4 = _step.value;
+
+            var _ref5 = _slicedToArray(_ref4, 2);
+
+            var key = _ref5[0];
+            var value = _ref5[1];
+
+            pushEntity(value, entity, key, index);
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+              _iterator.return();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+
+        commit('loadEntity', entity);
+        // BELONGS TO Aattch the id to the father object in the state
+        entityInfo.belongsTo.forEach(function (r) {
+          var rParent = state[r.entity].all[entity[r.key]];
+          if (!rParent) {
+            commit('loadEntity', _defineProperty({ _entity: r.entity, id: entity[r.key] }, r.field, []));
+          }
+          commit('pushToEntity', { entity: r.entity, field: r.field, id: entity[r.key], child: entity.id });
+        });
+      }
+    })(data);
+  },
+
+
+  /**
+   * ------------------------------
+   * @function
+   * @param {Object} state
+   * @param {Object} getters
+   * @return {Function}
+   */
+  removeEntities: function removeEntities(_ref6, data) {
+    var state = _ref6.state,
+        commit = _ref6.commit;
+
+    /**
+     * ------------------------------
+     * @function
+     * @param {Object} state
+     * @param {Object} getters
+     * @return {Function}
+     */
+    (function removeEntity(entity) {
+      var parent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      var field = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+      var index = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+      var insideArray = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : null;
+
+      // console.log('removeEntity', entity)
+      if (Array.isArray(entity) && entity.length > 0) {
+        entity.map(function (item, index) {
+          removeEntity(item, parent, field, index, true);
+        });
+        // Process the Entity if is an Object and has the Entity field
+      } else if (entity instanceof Object && entity._entity) {
+        var entityInfo = __WEBPACK_IMPORTED_MODULE_0__Store_EntityMap__["a" /* default */][entity._entity];
+        // BELONGS TO Detach the id to the father object in the state
+        entityInfo.belongsTo.forEach(function (r) {
+          var rParent = state[r.entity].all[entity[r.key]];
+          if (parent != rParent) {
+            commit('removeEntityFromRelation', { entity: r.entity, id: entity.id, key: r.key, field: r.field, parent: entity });
+          }
+        });
+        // HAS MANY Detach the id to the father object in the state
+        entityInfo.hasMany.forEach(function (r) {
+          if (entity[r.field]) {
+            entity[r.field].forEach(function (child) {
+              if (r.cascade) {
+                removeEntity(state[r.entity].all[child], entity);
+              } else {
+                commit('nullifyEntityFromRelation', { entity: r.entity, id: child, key: r.key });
+              }
+            });
+          }
+        });
+        commit('removeEntity', entity);
+      }
+    })(data);
+  },
+
+
+  /**
+   * Make a request to Store a File on the server.
+   *
+   * @function
+   * @param commit {Object} The store mutation commiter.
+   * @param data {FormData} The FormData instance data container to upload.
+   * @param resource {string} The name of the resource to attach the file ex:('products', 'categories').
+   * @param id {integer} The id of the resource to attach the file.
+   * @return {Promise}.
+  */
+  storeResourceFile: function storeResourceFile(_ref7, _ref8) {
+    var commit = _ref7.commit;
+    var data = _ref8.data,
+        resource = _ref8.resource,
+        id = _ref8.id;
+
+    return __WEBPACK_IMPORTED_MODULE_2__Http_API_Files___default.a.store(data, resource, id);
+  },
+
+
+  /**
+   * Make a request to order a array of files on the server.
+   *
+   * @function
+   * @param commit {Object} The store mutation commiter.
+   * @param ids {array} The array of files ids to order in order on the server.
+   * @return {Promise}.
+  */
+  orderRemoteFiles: function orderRemoteFiles(_ref9, ids) {
+    var commit = _ref9.commit;
+
+    return __WEBPACK_IMPORTED_MODULE_2__Http_API_Files___default.a.order(ids);
+  },
+
+
+  /**
+   * ------------------------------
+   * @function
+   * @param {Object} state
+   * @param {Object} getters
+   * @return {Function}
+   */
+  deleteFile: function deleteFile(_ref10, _ref11) {
+    var dispatch = _ref10.dispatch;
+    var resource = _ref11.resource,
+        id = _ref11.id;
+
+    return new Promise(function (resolve, reject) {
+      __WEBPACK_IMPORTED_MODULE_2__Http_API_Files___default.a.delete(resource, id).then(function (_ref12) {
+        var data = _ref12.data;
+
+        dispatch('loadEntities', data);
+        resolve(id);
+      }).catch(reject);
+    });
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (actions);
+
+/***/ }),
+/* 348 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+
+  /**
+   * The data of the Aplication Users
+   * ------------------------------
+   * @member {Object}
+   */
+  User: {
+    hasMany: [
+      // {
+      //   entity: 'Review',
+      //   field: 'reviews',
+      //   key: 'user_id'
+      // }
+    ],
+    belongsTo: [
+      //
+    ]
+  }
+
+  // /**
+  //  * The state module maped by it resource name.
+  //  */
+  // categories: 'Category',
+  // subcategories: 'Subcategory',
+  // departments: 'Department',
+  // users: 'User',
+  // banners: 'Banner',
+  // answers: 'Answer',
+  // producttopics: 'ProductTopic',
+  // products: 'Product',
+  // productattributes: 'ProductAttribute',
+  // specs: 'Spec',
+  // specoptions: 'SpecOption',
+  // specGroups: 'SpecGroup',
+  // features: 'Feature',
+  // reviews: 'Review',
+
+  // /**
+  //  * The Resource module maped by it Entity name.
+  //  */
+  // CategoryResource: 'categories',
+  // SubcategoryResource: 'subcategories',
+  // DepartmentResource: 'departments',
+  // UserResource: 'users',
+  // BannerResource: 'banners',
+  // AnswerResource: 'answers',
+  // ProductTopicResource: 'producttopics',
+  // ProductResource: 'products',
+  // ProductAttributeResource: 'productattributes',
+  // SpecResource: 'specs',
+  // SpecOptionResource: 'specoptions',
+  // SpecGroupResource: 'specGroups',
+  // FeatureResource: 'features',
+  // ReviewResource: 'reviews',
+
+  // /**
+  //  * Map the Graph relations to the form:
+  //  */
+  // Banner: {
+  //   hasMany: [],
+  //   belongsTo: []
+  // },
+  // Answer: {
+  //   hasMany: [],
+  //   belongsTo: [
+  //     {
+  //       entity: 'ProductTopic',
+  //       field: 'answers',
+  //       key: 'topic_id'
+  //     }
+  //   ]
+  // },
+  // ProductTopic: {
+  //   hasMany: [],
+  //   belongsTo: [
+  //     {
+  //       entity: 'Product',
+  //       field: 'topics',
+  //       key: 'product_id'
+  //     },
+  //     {
+  //       entity: 'User',
+  //       field: 'topics',
+  //       key: 'user_id'
+  //     }
+  //   ]
+  // },
+  // Product: {
+  //   hasMany: [
+  //     {
+  //       entity: 'Specs',
+  //       field: 'specs',
+  //       key: 'product_id'
+  //     },
+  //     {
+  //       entity: 'Review',
+  //       field: 'reviews',
+  //       key: 'product_id'
+  //     }
+  //   ],
+  //   belongsTo: [
+  //     {
+  //       entity: 'Subcategory',
+  //       field: 'category',
+  //       key: 'subcategory_id'
+  //     }
+  //   ]
+  // },
+  // ProductAttribute: {
+  //   hasMany: [],
+  //   belongsTo: [
+  //     {
+  //       entity: 'Product',
+  //       field: 'attributes',
+  //       key: 'product_id'
+  //     }
+  //   ]
+  // },
+  // Department: {
+  //   hasMany: [
+  //     {
+  //       entity: 'Category',
+  //       field: 'categories',
+  //       key: 'department_id'
+  //     }
+  //   ],
+  //   belongsTo: []
+  // },
+  // Category: {
+  //   hasMany: [
+  //     {
+  //       entity: 'Subcategory',
+  //       field: 'subcategories',
+  //       key: 'category_id',
+  //       cascade: true
+  //     }
+  //   ],
+  //   belongsTo: [
+  //     {
+  //       entity: 'Department',
+  //       field: 'subcategories',
+  //       key: 'category_id'
+  //     }
+  //   ]
+  // },
+  // Subcategory: {
+  //   hasMany: [],
+  //   belongsTo: [
+  //     {
+  //       entity: 'Category',
+  //       field: 'subcategories',
+  //       key: 'category_id'
+  //     }
+  //   ]
+  // },
+  // Spec: {
+  //   hasMany: [],
+  //   belongsTo: [
+  //     {
+  //       entity: 'Subcategory',
+  //       field: 'specs',
+  //       key: 'subcategory_id'
+  //     }
+  //   ]
+  // },
+  // SpecOption: {
+  //   hasMany: [],
+  //   belongsTo: [
+  //     {
+  //       entity: 'Spec',
+  //       field: 'options',
+  //       key: 'spec_id',
+  //       cascade: false
+  //     }
+  //   ]
+  // },
+  // SpecGroup: {
+  //   hasMany: [
+  //     {
+  //       entity: 'Spec',
+  //       field: 'specs',
+  //       key: 'group_id'
+  //     }
+  //   ],
+  //   belongsTo: [
+  //     {
+  //       entity: 'Subcategory',
+  //       field: 'specGroups',
+  //       key: 'subcategory_id'
+  //     }
+  //   ]
+  // },
+  // Feature: {
+  //   hasMany: [],
+  //   belongsTo: [
+  //     {
+  //       entity: 'Subcategory',
+  //       field: 'features',
+  //       key: 'subcategory_id'
+  //     }
+  //   ]
+  // },
+  // Review: {
+  //   hasMany: [],
+  //   belongsTo: [
+  //     // {
+  //     //   entity: 'Product',
+  //     //   field: 'reviews',
+  //     //   key: 'product_id',
+  //     // }
+  //     {
+  //       entity: 'User',
+  //       field: 'reviews',
+  //       key: 'user_id'
+  //     }
+  //   ]
+  // }
+});
 
 /***/ })
 /******/ ]);
