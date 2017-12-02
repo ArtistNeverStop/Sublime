@@ -32779,6 +32779,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             WARP = false;
         });
 
+        window.addEventListener("touchstart", function () {
+            WARP = 4;
+        }, false);
+        window.addEventListener("touchend", function () {
+            WARP = false;
+        }, false);
+        window.addEventListener("touchcancel", function () {
+            WARP = false;
+        }, false);
+        window.addEventListener("touchmove", function (e) {
+            mousePos = {
+                x: e.clientX * dpr,
+                y: e.clientY * dpr
+            };
+        }, false);
         var Confetti = function () {
             function Confetti(x, y, ctx) {
                 _classCallCheck(this, Confetti);
@@ -32955,9 +32970,7 @@ var render = function() {
                       attrs: { id: "home-section-title" }
                     },
                     [
-                      _c("h1", { ref: "title", staticClass: "title" }, [
-                        _vm._v("Sublime")
-                      ]),
+                      _c("h1", { ref: "title" }, [_vm._v("Sublime")]),
                       _c("div", {
                         staticClass: "arrow-down",
                         on: {

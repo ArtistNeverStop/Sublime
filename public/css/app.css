@@ -14676,12 +14676,19 @@ section.home-section {
 .home-section-title h1 {
   color: #010121;
   margin-bottom: 10rem;
-  font-size: 20rem !important;
+  font-size: 20rem;
+  /* Portrait */
 }
 
 @media (--sm-viewport) {
   .home-section-title h1 {
     font-size: 30rem;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  .home-section-title h1 {
+    font-size: 7rem;
   }
 }
 

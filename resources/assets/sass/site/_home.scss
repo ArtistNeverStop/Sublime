@@ -101,15 +101,22 @@ section.home-section {
   -webkit-transition: all 1000ms linear;
   transition: all 1000ms linear;
 }
-.home-section-title h1 {
+.home-section-title h1  {
   // -webkit-transition: all 1000ms linear;
   // -ms-transition: all 1000ms linear;
   // transition: all 1000ms linear;
   color: #010121;
   margin-bottom: 10rem; 
-  font-size: 20rem !important;
+  font-size: 20rem;
   @media (--sm-viewport) {
     font-size: 30rem;
+  }
+  /* Portrait */
+  @media only screen 
+    and (min-device-width: 320px) 
+    and (max-device-width: 568px)
+    and (orientation: portrait) {
+      font-size: 7rem;
   }
 }
 .fade-down-enter-active, .fade-down-leave-active {

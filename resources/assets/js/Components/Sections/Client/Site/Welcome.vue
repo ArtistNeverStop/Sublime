@@ -6,7 +6,7 @@ main
     section#home-section-video.home-section.home-section-video(ref='home-section-video')
       transition(appear name='fade-down',  mode="out-in")
         section#home-section-title.home-section-title(v-show='showTitle' ref='home-section-title')
-          h1.title(ref='title') Sublime
+          h1(ref='title') Sublime
           div.arrow-down(@click='scrollTo(5)')
     transition(appear, mode="out-in", name='fade')
       .welcome-content(v-show='!showTitle')
@@ -270,6 +270,7 @@ export default {
         y: canvas.height / 2
     };
 
+
     window.addEventListener('mousemove', function (e) {
         mousePos = {
             x: e.clientX * dpr,
@@ -286,6 +287,21 @@ export default {
         WARP = false;
     });
 
+    window.addEventListener("touchstart",  function () {
+        WARP = 4;
+    }, false);
+    window.addEventListener("touchend",  function () {
+        WARP = false;
+    }, false);
+    window.addEventListener("touchcancel",  function () {
+        WARP = false;
+    }, false);
+    window.addEventListener("touchmove",  function (e) {
+        mousePos = {
+            x: e.clientX * dpr,
+            y: e.clientY * dpr
+        };
+    }, false);
     var Confetti = function () {
         function Confetti(x, y, ctx) {
             _classCallCheck(this, Confetti);
