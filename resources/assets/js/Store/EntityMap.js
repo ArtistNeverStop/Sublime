@@ -16,7 +16,8 @@ export default {
     belongsTo: [
       //
     ]
-  },
+  }
+}
 
   // /**
   //  * The state module maped by it resource name.
@@ -216,4 +217,3 @@ export default {
   //     }
   //   ]
   // }
-}

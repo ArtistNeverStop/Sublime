@@ -5,29 +5,31 @@ v-app#app.app-client.wihte(light='')
       v-list.pa-1
         v-list-tile(avatar='')
           v-list-tile-avatar
-            img(src='https://randomuser.me/api/portraits/men/85.jpg')
+            img(:src=`!User.me ? '/sublime-logo.png' : 'https://randomuser.me/api/portraits/men/85.jpg'`)
           v-list-tile-content
-            v-list-tile-title John Leider
+            v-list-tile-title.title {{ User.me ? 'John Leider' : 'SUBLIME' }}
       v-list.pt-0(dense='')
         v-divider
-        v-list-tile(v-for='item in items', :key='item.title', @click='')
+        v-list-tile(v-for='item in items', :key='item.title', @click=`$go(item.route)`)
           v-list-tile-action
             v-icon {{ item.icon }}
           v-list-tile-content
             v-list-tile-title {{ item.title }}
-  v-toolbar(:fixed=`true`, light='')
-     v-layout(row wrap)
+  v-toolbar(:fixed=`true`, light='', v-show=`navbarShow`)
+    v-layout(row wrap)
       v-flex.middle(xs6)
-        img(src='sublime-logo.png', alt='Vuetify.js', height='50')
+        img(@click=`$go('welcome')`, src='/sublime-logo.png', alt='Vuetify.js', height='50')
         v-toolbar-title(v-text="title")
       v-flex.middle.end(xs6)
         v-icon.dark--text(x-large='', @click.stop='drawer = !drawer') menu
-  router-view
+  router-view(@hiddeNavbar=`navbarShow = false`, @showNavbar=`navbarShow = true`)
   //- .toasts
   //-   toast(v-for=`toast in $root.toasts`, :data=`toast`)
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
 
   /**
@@ -39,11 +41,14 @@ export default {
    */
   data: function () {
     return {
-      title: 'Sublime',
+      navbarShow: true,
+      title: 'SUBLIME',
       drawer: null,
       items: [
-        { title: 'Home', icon: 'dashboard' },
-        { title: 'About', icon: 'question_answer' }
+        { title: 'Welcome', icon: 'dashboard', route: 'welcome' },
+        { title: 'About', icon: 'question_answer', route: 'about' },
+        { title: 'Register', icon: 'question_answer', route: 'register' },
+        { title: 'Login', icon: 'question_answer', route: 'login' }
       ]
     }
   },
@@ -75,7 +80,9 @@ export default {
    * @member {Object} computed
    */
   computed: {
-    //
+    ...mapState([
+      'User'
+    ])
   },
 
   /**

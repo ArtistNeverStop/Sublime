@@ -18,7 +18,7 @@
 section.home-section {
   z-index: 100;
   background-color: white;
-  padding-top: 10rem;
+  // padding-top: 10rem;
 }
 .video {
   margin-top: -15%;
@@ -73,7 +73,7 @@ section.home-section {
   color: black;
   text-transform: uppercase;
   /*background-color: black;*/
-  background-color: white;
+  // background-color: white;
   -webkit-transition: all 1000ms linear;
   -ms-transition: all 1000ms linear;
   transition: all 1000ms linear;
@@ -105,7 +105,7 @@ section.home-section {
   // -webkit-transition: all 1000ms linear;
   // -ms-transition: all 1000ms linear;
   // transition: all 1000ms linear;
-  color: black;
+  color: #010121;
   margin-bottom: 10rem; 
   font-size: 20rem !important;
   @media (--sm-viewport) {
@@ -121,7 +121,7 @@ section.home-section {
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: all .8s
+  transition: all 3s
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
@@ -130,7 +130,7 @@ section.home-section {
 .arrow-down {
   cursor: pointer;
   transform: scale(2);
-  color: #000;
+  color: #010121;
   position: absolute;
   margin-left: 10px;
   margin-top: 2px;
@@ -164,4 +164,8 @@ section.home-section {
   100% {
     transform: translateY(-10px) rotate(135deg);
   }
+}
+
+body {
+  background-color:  #010121;
 }

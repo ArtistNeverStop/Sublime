@@ -16,3 +16,13 @@ Vue.$http = axios
 Vue.prototype.$adminRoute = function () {
   return this.$route.name && this.$route.name.includes('admin')
 }
+
+/**
+ * Go to a nnamed route.
+ * ------------------------------
+ * @member {Function}
+ * @return {boolean}
+ */
+Vue.prototype.$go = function (name) {
+  return this.$router.push({name})
+}

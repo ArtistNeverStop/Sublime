@@ -1,4 +1,4 @@
-import Auth from './Auth/Register'
+import Auth from './Auth'
 import Users from './Users'
 import Artists from './Artists'
 import Site from './Site'
