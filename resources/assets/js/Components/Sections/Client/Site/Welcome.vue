@@ -8,7 +8,7 @@ main
         section#home-section-title.home-section-title(v-show='showTitle' ref='home-section-title')
           h1.title(ref='title') Sublime
           div.arrow-down(@click='scrollTo(5)')
-    transition(mode="out-in", name='fade')
+    transition(appear, mode="out-in", name='fade')
       .welcome-content(v-show='!showTitle')
         section
           v-parallax(src='images/party-croud.jpg', height='600')

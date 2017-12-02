@@ -32973,626 +32973,661 @@ var render = function() {
             ],
             1
           ),
-          _c("transition", { attrs: { mode: "out-in", name: "fade" } }, [
-            _c(
-              "div",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.showTitle,
-                    expression: "!showTitle"
-                  }
-                ],
-                staticClass: "welcome-content"
-              },
-              [
-                _c(
-                  "section",
-                  [
-                    _c(
-                      "v-parallax",
-                      {
-                        attrs: { src: "images/party-croud.jpg", height: "600" }
-                      },
-                      [
-                        _c(
-                          "v-layout",
-                          {
-                            staticClass: "white--text",
-                            attrs: {
-                              column: "",
-                              "align-center": "",
-                              "justify-center": ""
-                            }
-                          },
-                          [
-                            _c("img", {
+          _c(
+            "transition",
+            { attrs: { appear: "appear", mode: "out-in", name: "fade" } },
+            [
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: !_vm.showTitle,
+                      expression: "!showTitle"
+                    }
+                  ],
+                  staticClass: "welcome-content"
+                },
+                [
+                  _c(
+                    "section",
+                    [
+                      _c(
+                        "v-parallax",
+                        {
+                          attrs: {
+                            src: "images/party-croud.jpg",
+                            height: "600"
+                          }
+                        },
+                        [
+                          _c(
+                            "v-layout",
+                            {
+                              staticClass: "white--text",
                               attrs: {
-                                src: "",
-                                alt: "Vuetify.js",
-                                height: "200"
+                                column: "",
+                                "align-center": "",
+                                "justify-center": ""
                               }
-                            }),
-                            _c(
-                              "h1",
-                              {
-                                staticClass:
-                                  "white--text mb-2 display-1 text-xs-center"
-                              },
-                              [_vm._v("SUBLIME")]
-                            ),
-                            _c(
-                              "div",
-                              { staticClass: "subheading mb-3 text-xs-center" },
-                              [
-                                _vm._v(
-                                  "La web definitiva de Crowfunding para eventos."
-                                )
-                              ]
-                            ),
-                            _c(
-                              "v-btn",
-                              {
-                                staticClass: "lighten-2 mt-5",
+                            },
+                            [
+                              _c("img", {
                                 attrs: {
-                                  dark: "",
-                                  large: "",
-                                  href: "/pre-made-themes"
+                                  src: "",
+                                  alt: "Vuetify.js",
+                                  height: "200"
                                 }
-                              },
-                              [_vm._v("Crear una cuenta")]
-                            )
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                ),
-                _c(
-                  "section",
-                  [
-                    _c(
-                      "v-layout",
-                      {
-                        staticClass: "my-5",
-                        attrs: { column: "", wrap: "", "align-center": "" }
-                      },
-                      [
-                        _c(
-                          "v-flex",
-                          { staticClass: "my-3", attrs: { xs12: "", sm4: "" } },
-                          [
-                            _c("div", { staticClass: "text-xs-center" }, [
-                              _c("h2", { staticClass: "headline" }, [
-                                _vm._v("La mejor manera de disfrutar eventos.")
-                              ]),
-                              _c("span", { staticClass: "subheading" }, [
-                                _vm._v(
-                                  "Tu decides cuando y donde, nosotros lo hacemos posible."
-                                )
-                              ])
-                            ])
-                          ]
-                        ),
-                        _c(
-                          "v-flex",
-                          { attrs: { xs12: "" } },
-                          [
-                            _c(
-                              "v-container",
-                              { attrs: { "grid-list-xl": "" } },
-                              [
-                                _c(
-                                  "v-layout",
-                                  {
-                                    attrs: {
-                                      row: "",
-                                      wrap: "",
-                                      "align-center": ""
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "v-flex",
-                                      { attrs: { xs12: "", md4: "" } },
-                                      [
-                                        _c(
-                                          "v-card",
-                                          {
-                                            staticClass:
-                                              "elevation-0 transparent"
-                                          },
-                                          [
-                                            _c(
-                                              "v-card-text",
-                                              { staticClass: "text-xs-center" },
-                                              [
-                                                _c(
-                                                  "v-icon",
-                                                  {
-                                                    staticClass: "dark--text",
-                                                    attrs: { "x-large": "" }
-                                                  },
-                                                  [_vm._v("local_bar")]
-                                                )
-                                              ],
-                                              1
-                                            ),
-                                            _c(
-                                              "v-card-title",
-                                              {
-                                                staticClass:
-                                                  "layout justify-center",
-                                                attrs: { "primary-title": "" }
-                                              },
-                                              [
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "headline text-xs-center"
-                                                  },
-                                                  [_vm._v("Consumo mas facil")]
-                                                )
-                                              ]
-                                            ),
-                                            _c("v-card-text", [
-                                              _vm._v(
-                                                "Las compras dentro de Sublime no pueden ser mas faciles, solo selecciones el producto y aceptas.\nEl manejo de stock productos de consumo es por evento con los patrocinadores que tu eligas.\nLos distintos patrocinadores administras sus propios productos por cada evento."
-                                              )
-                                            ])
-                                          ],
-                                          1
-                                        )
-                                      ],
-                                      1
-                                    ),
-                                    _c(
-                                      "v-flex",
-                                      { attrs: { xs12: "", md4: "" } },
-                                      [
-                                        _c(
-                                          "v-card",
-                                          {
-                                            staticClass:
-                                              "elevation-0 transparent"
-                                          },
-                                          [
-                                            _c(
-                                              "v-card-text",
-                                              { staticClass: "text-xs-center" },
-                                              [
-                                                _c(
-                                                  "v-icon",
-                                                  {
-                                                    staticClass: "dark--text",
-                                                    attrs: { "x-large": "" }
-                                                  },
-                                                  [_vm._v("monetization_on")]
-                                                )
-                                              ],
-                                              1
-                                            ),
-                                            _c(
-                                              "v-card-title",
-                                              {
-                                                staticClass:
-                                                  "layout justify-center",
-                                                attrs: { "primary-title": "" }
-                                              },
-                                              [
-                                                _c(
-                                                  "div",
-                                                  { staticClass: "headline" },
-                                                  [
-                                                    _vm._v(
-                                                      "No necesitas efectivo."
-                                                    )
-                                                  ]
-                                                )
-                                              ]
-                                            ),
-                                            _c("v-card-text", [
-                                              _vm._v(
-                                                "No necesitas llevar dinero el dia del evento, solo tu y tu celular, o solo tu codigo de boleto. \nDentro del evento podras realizar compras con tu credito de la aplicacion.\nNullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti."
-                                              )
-                                            ])
-                                          ],
-                                          1
-                                        )
-                                      ],
-                                      1
-                                    ),
-                                    _c(
-                                      "v-flex",
-                                      { attrs: { xs12: "", md4: "" } },
-                                      [
-                                        _c(
-                                          "v-card",
-                                          {
-                                            staticClass:
-                                              "elevation-0 transparent"
-                                          },
-                                          [
-                                            _c(
-                                              "v-card-text",
-                                              { staticClass: "text-xs-center" },
-                                              [
-                                                _c(
-                                                  "v-icon",
-                                                  {
-                                                    staticClass: "dark--text",
-                                                    attrs: { "x-large": "" }
-                                                  },
-                                                  [_vm._v("public")]
-                                                )
-                                              ],
-                                              1
-                                            ),
-                                            _c(
-                                              "v-card-title",
-                                              {
-                                                staticClass:
-                                                  "layout justify-center",
-                                                attrs: { "primary-title": "" }
-                                              },
-                                              [
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "headline text-xs-center"
-                                                  },
-                                                  [_vm._v("API publica.")]
-                                                )
-                                              ]
-                                            ),
-                                            _c("v-card-text", [
-                                              _vm._v(
-                                                "SUBLIME tiene la mejor conectividad para aplicaciones terceras.\nTu tienes control de tus datos e informacion.\nGraphQL y su documentacion abierta para desarrolladores."
-                                              )
-                                            ])
-                                          ],
-                                          1
-                                        )
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                ),
-                _c(
-                  "section",
-                  [
-                    _c(
-                      "v-parallax",
-                      {
-                        attrs: { src: "images/party-croud2.jpg", height: "380" }
-                      },
-                      [
-                        _c(
-                          "v-layout",
-                          {
-                            attrs: {
-                              column: "",
-                              "align-center": "",
-                              "justify-center": ""
-                            }
-                          },
-                          [
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "headline white--text mb-3 text-xs-center"
-                              },
-                              [
-                                _vm._v(
-                                  "Manejar eventos nunca habia sido tan facil."
-                                )
-                              ]
-                            ),
-                            _c("em", [_vm._v("Inicia tu cuanta ahora!.")]),
-                            _c(
-                              "v-btn",
-                              {
-                                staticClass: "lighten-2 mt-5",
-                                attrs: {
-                                  dark: "",
-                                  large: "",
-                                  href: "/pre-made-themes"
-                                }
-                              },
-                              [_vm._v("Crear una cuenta")]
-                            )
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                ),
-                _c(
-                  "section",
-                  [
-                    _c(
-                      "v-container",
-                      { attrs: { "grid-list-xl": "" } },
-                      [
-                        _c(
-                          "v-layout",
-                          {
-                            staticClass: "my-5",
-                            staticStyle: { position: "relative" },
-                            attrs: { row: "", wrap: "", "justify-center": "" }
-                          },
-                          [
-                            _c(
-                              "div",
-                              {
-                                staticClass: "cell-phone children_ a8 l5 l6 l7",
-                                staticStyle: {
-                                  position: "absolute",
-                                  top: "-300px",
-                                  right: "0px",
-                                  transform: "rotate(-10deg)"
+                              }),
+                              _c(
+                                "h1",
+                                {
+                                  staticClass:
+                                    "white--text mb-2 display-1 text-xs-center"
                                 },
-                                attrs: { "data-reactid": "146" }
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "base_ mg mh l8 l9 la lb lc ld base_ an m fl fm",
-                                    staticStyle: { position: "relative" },
-                                    attrs: { "data-reactid": "147" }
-                                  },
-                                  [
-                                    _c("iframe", {
-                                      staticClass: "content_ c0 a8 le lf",
-                                      staticStyle: {
-                                        top: "100.0002px",
-                                        height: "462px",
-                                        left: "37.9866px",
-                                        width: "260.906px",
-                                        position: "absolute"
-                                      },
-                                      attrs: { "data-reactid": "148", src: "/" }
-                                    }),
-                                    _c("img", {
-                                      staticClass: "shell_ a8 c f",
+                                [_vm._v("SUBLIME")]
+                              ),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "subheading mb-3 text-xs-center"
+                                },
+                                [
+                                  _vm._v(
+                                    "La web definitiva de Crowfunding para eventos."
+                                  )
+                                ]
+                              ),
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass: "lighten-2 mt-5",
+                                  attrs: {
+                                    dark: "",
+                                    large: "",
+                                    href: "/pre-made-themes"
+                                  }
+                                },
+                                [_vm._v("Crear una cuenta")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _c(
+                    "section",
+                    [
+                      _c(
+                        "v-layout",
+                        {
+                          staticClass: "my-5",
+                          attrs: { column: "", wrap: "", "align-center": "" }
+                        },
+                        [
+                          _c(
+                            "v-flex",
+                            {
+                              staticClass: "my-3",
+                              attrs: { xs12: "", sm4: "" }
+                            },
+                            [
+                              _c("div", { staticClass: "text-xs-center" }, [
+                                _c("h2", { staticClass: "headline" }, [
+                                  _vm._v(
+                                    "La mejor manera de disfrutar eventos."
+                                  )
+                                ]),
+                                _c("span", { staticClass: "subheading" }, [
+                                  _vm._v(
+                                    "Tu decides cuando y donde, nosotros lo hacemos posible."
+                                  )
+                                ])
+                              ])
+                            ]
+                          ),
+                          _c(
+                            "v-flex",
+                            { attrs: { xs12: "" } },
+                            [
+                              _c(
+                                "v-container",
+                                { attrs: { "grid-list-xl": "" } },
+                                [
+                                  _c(
+                                    "v-layout",
+                                    {
                                       attrs: {
-                                        src:
-                                          "https://d3i4yxtzktqr9n.cloudfront.net/web-eats/static/images/components/iphone-preview/phone-shell-2d1c99172b.png",
-                                        width: "340",
-                                        height: "654",
-                                        "data-reactid": "152"
+                                        row: "",
+                                        wrap: "",
+                                        "align-center": ""
                                       }
-                                    }),
-                                    _c("img", {
-                                      staticClass: "shadow_ lg",
-                                      staticStyle: {
-                                        left: "0px",
-                                        position: "absolute"
-                                      },
-                                      attrs: {
-                                        src:
-                                          "https://d3i4yxtzktqr9n.cloudfront.net/web-eats/static/images/components/iphone-preview/phone-shadow-67119ef839.png",
-                                        width: "340",
-                                        height: "654",
-                                        "data-reactid": "153"
-                                      }
-                                    })
-                                  ]
-                                )
-                              ]
-                            ),
-                            _c(
-                              "v-flex",
-                              { attrs: { xs12: "", sm4: "" } },
-                              [
-                                _c(
-                                  "v-card",
-                                  { staticClass: "elevation-0 transparent" },
-                                  [
-                                    _c(
-                                      "v-card-title",
-                                      {
-                                        staticClass: "layout justify-center",
-                                        attrs: { "primary-title": "" }
-                                      },
-                                      [
-                                        _c("div", { staticClass: "headline" }, [
-                                          _vm._v("Company info")
-                                        ])
-                                      ]
-                                    ),
-                                    _c("v-card-text", [
-                                      _vm._v(
-                                        "Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\nNullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti."
-                                      )
-                                    ])
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            ),
-                            _c(
-                              "v-flex",
-                              {
-                                attrs: { xs12: "", sm4: "", "offset-sm1": "" }
-                              },
-                              [
-                                _c(
-                                  "v-card",
-                                  { staticClass: "elevation-0 transparent" },
-                                  [
-                                    _c(
-                                      "v-card-title",
-                                      {
-                                        staticClass: "layout justify-center",
-                                        attrs: { "primary-title": "" }
-                                      },
-                                      [
-                                        _c("div", { staticClass: "headline" }, [
-                                          _vm._v("Contact us")
-                                        ])
-                                      ]
-                                    ),
-                                    _c("v-card-text", [
-                                      _vm._v(
-                                        "Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare."
-                                      )
-                                    ]),
-                                    _c(
-                                      "v-list",
-                                      { staticClass: "transparent" },
-                                      [
-                                        _c(
-                                          "v-list-tile",
-                                          [
-                                            _c(
-                                              "v-list-tile-action",
-                                              [
-                                                _c(
-                                                  "v-icon",
-                                                  {
-                                                    staticClass:
-                                                      "blue--text text--lighten-2"
-                                                  },
-                                                  [_vm._v("phone")]
-                                                )
-                                              ],
-                                              1
-                                            ),
-                                            _c(
-                                              "v-list-tile-content",
-                                              [
-                                                _c("v-list-tile-title", [
-                                                  _vm._v("777-867-5309")
-                                                ])
-                                              ],
-                                              1
-                                            )
-                                          ],
-                                          1
-                                        ),
-                                        _c(
-                                          "v-list-tile",
-                                          [
-                                            _c(
-                                              "v-list-tile-action",
-                                              [
-                                                _c(
-                                                  "v-icon",
-                                                  {
-                                                    staticClass:
-                                                      "blue--text text--lighten-2"
-                                                  },
-                                                  [_vm._v("place")]
-                                                )
-                                              ],
-                                              1
-                                            ),
-                                            _c(
-                                              "v-list-tile-content",
-                                              [
-                                                _c("v-list-tile-title", [
-                                                  _vm._v("Chicago, US")
-                                                ])
-                                              ],
-                                              1
-                                            )
-                                          ],
-                                          1
-                                        ),
-                                        _c(
-                                          "v-list-tile",
-                                          [
-                                            _c(
-                                              "v-list-tile-action",
-                                              [
-                                                _c(
-                                                  "v-icon",
-                                                  {
-                                                    staticClass:
-                                                      "blue--text text--lighten-2"
-                                                  },
-                                                  [_vm._v("email")]
-                                                )
-                                              ],
-                                              1
-                                            ),
-                                            _c(
-                                              "v-list-tile-content",
-                                              [
-                                                _c("v-list-tile-title", [
-                                                  _vm._v(
-                                                    "diego@wearesublime.com"
+                                    },
+                                    [
+                                      _c(
+                                        "v-flex",
+                                        { attrs: { xs12: "", md4: "" } },
+                                        [
+                                          _c(
+                                            "v-card",
+                                            {
+                                              staticClass:
+                                                "elevation-0 transparent"
+                                            },
+                                            [
+                                              _c(
+                                                "v-card-text",
+                                                {
+                                                  staticClass: "text-xs-center"
+                                                },
+                                                [
+                                                  _c(
+                                                    "v-icon",
+                                                    {
+                                                      staticClass: "dark--text",
+                                                      attrs: { "x-large": "" }
+                                                    },
+                                                    [_vm._v("local_bar")]
                                                   )
-                                                ])
-                                              ],
-                                              1
-                                            )
-                                          ],
-                                          1
+                                                ],
+                                                1
+                                              ),
+                                              _c(
+                                                "v-card-title",
+                                                {
+                                                  staticClass:
+                                                    "layout justify-center",
+                                                  attrs: { "primary-title": "" }
+                                                },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "headline text-xs-center"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "Consumo mas facil"
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _c("v-card-text", [
+                                                _vm._v(
+                                                  "Las compras dentro de Sublime no pueden ser mas faciles, solo selecciones el producto y aceptas.\nEl manejo de stock productos de consumo es por evento con los patrocinadores que tu eligas.\nLos distintos patrocinadores administras sus propios productos por cada evento."
+                                                )
+                                              ])
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _c(
+                                        "v-flex",
+                                        { attrs: { xs12: "", md4: "" } },
+                                        [
+                                          _c(
+                                            "v-card",
+                                            {
+                                              staticClass:
+                                                "elevation-0 transparent"
+                                            },
+                                            [
+                                              _c(
+                                                "v-card-text",
+                                                {
+                                                  staticClass: "text-xs-center"
+                                                },
+                                                [
+                                                  _c(
+                                                    "v-icon",
+                                                    {
+                                                      staticClass: "dark--text",
+                                                      attrs: { "x-large": "" }
+                                                    },
+                                                    [_vm._v("monetization_on")]
+                                                  )
+                                                ],
+                                                1
+                                              ),
+                                              _c(
+                                                "v-card-title",
+                                                {
+                                                  staticClass:
+                                                    "layout justify-center",
+                                                  attrs: { "primary-title": "" }
+                                                },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    { staticClass: "headline" },
+                                                    [
+                                                      _vm._v(
+                                                        "No necesitas efectivo."
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _c("v-card-text", [
+                                                _vm._v(
+                                                  "No necesitas llevar dinero el dia del evento, solo tu y tu celular, o solo tu codigo de boleto. \nDentro del evento podras realizar compras con tu credito de la aplicacion.\nNullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti."
+                                                )
+                                              ])
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _c(
+                                        "v-flex",
+                                        { attrs: { xs12: "", md4: "" } },
+                                        [
+                                          _c(
+                                            "v-card",
+                                            {
+                                              staticClass:
+                                                "elevation-0 transparent"
+                                            },
+                                            [
+                                              _c(
+                                                "v-card-text",
+                                                {
+                                                  staticClass: "text-xs-center"
+                                                },
+                                                [
+                                                  _c(
+                                                    "v-icon",
+                                                    {
+                                                      staticClass: "dark--text",
+                                                      attrs: { "x-large": "" }
+                                                    },
+                                                    [_vm._v("public")]
+                                                  )
+                                                ],
+                                                1
+                                              ),
+                                              _c(
+                                                "v-card-title",
+                                                {
+                                                  staticClass:
+                                                    "layout justify-center",
+                                                  attrs: { "primary-title": "" }
+                                                },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "headline text-xs-center"
+                                                    },
+                                                    [_vm._v("API publica.")]
+                                                  )
+                                                ]
+                                              ),
+                                              _c("v-card-text", [
+                                                _vm._v(
+                                                  "SUBLIME tiene la mejor conectividad para aplicaciones terceras.\nTu tienes control de tus datos e informacion.\nGraphQL y su documentacion abierta para desarrolladores."
+                                                )
+                                              ])
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _c(
+                    "section",
+                    [
+                      _c(
+                        "v-parallax",
+                        {
+                          attrs: {
+                            src: "images/party-croud2.jpg",
+                            height: "380"
+                          }
+                        },
+                        [
+                          _c(
+                            "v-layout",
+                            {
+                              attrs: {
+                                column: "",
+                                "align-center": "",
+                                "justify-center": ""
+                              }
+                            },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "headline white--text mb-3 text-xs-center"
+                                },
+                                [
+                                  _vm._v(
+                                    "Manejar eventos nunca habia sido tan facil."
+                                  )
+                                ]
+                              ),
+                              _c("em", [_vm._v("Inicia tu cuanta ahora!.")]),
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass: "lighten-2 mt-5",
+                                  attrs: {
+                                    dark: "",
+                                    large: "",
+                                    href: "/pre-made-themes"
+                                  }
+                                },
+                                [_vm._v("Crear una cuenta")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _c(
+                    "section",
+                    [
+                      _c(
+                        "v-container",
+                        { attrs: { "grid-list-xl": "" } },
+                        [
+                          _c(
+                            "v-layout",
+                            {
+                              staticClass: "my-5",
+                              staticStyle: { position: "relative" },
+                              attrs: { row: "", wrap: "", "justify-center": "" }
+                            },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "cell-phone children_ a8 l5 l6 l7",
+                                  staticStyle: {
+                                    position: "absolute",
+                                    top: "-300px",
+                                    right: "0px",
+                                    transform: "rotate(-10deg)"
+                                  },
+                                  attrs: { "data-reactid": "146" }
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "base_ mg mh l8 l9 la lb lc ld base_ an m fl fm",
+                                      staticStyle: { position: "relative" },
+                                      attrs: { "data-reactid": "147" }
+                                    },
+                                    [
+                                      _c("iframe", {
+                                        staticClass: "content_ c0 a8 le lf",
+                                        staticStyle: {
+                                          top: "100.0002px",
+                                          height: "462px",
+                                          left: "37.9866px",
+                                          width: "260.906px",
+                                          position: "absolute"
+                                        },
+                                        attrs: {
+                                          "data-reactid": "148",
+                                          src: "/"
+                                        }
+                                      }),
+                                      _c("img", {
+                                        staticClass: "shell_ a8 c f",
+                                        attrs: {
+                                          src:
+                                            "https://d3i4yxtzktqr9n.cloudfront.net/web-eats/static/images/components/iphone-preview/phone-shell-2d1c99172b.png",
+                                          width: "340",
+                                          height: "654",
+                                          "data-reactid": "152"
+                                        }
+                                      }),
+                                      _c("img", {
+                                        staticClass: "shadow_ lg",
+                                        staticStyle: {
+                                          left: "0px",
+                                          position: "absolute"
+                                        },
+                                        attrs: {
+                                          src:
+                                            "https://d3i4yxtzktqr9n.cloudfront.net/web-eats/static/images/components/iphone-preview/phone-shadow-67119ef839.png",
+                                          width: "340",
+                                          height: "654",
+                                          "data-reactid": "153"
+                                        }
+                                      })
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _c(
+                                "v-flex",
+                                { attrs: { xs12: "", sm4: "" } },
+                                [
+                                  _c(
+                                    "v-card",
+                                    { staticClass: "elevation-0 transparent" },
+                                    [
+                                      _c(
+                                        "v-card-title",
+                                        {
+                                          staticClass: "layout justify-center",
+                                          attrs: { "primary-title": "" }
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            { staticClass: "headline" },
+                                            [_vm._v("Company info")]
+                                          )
+                                        ]
+                                      ),
+                                      _c("v-card-text", [
+                                        _vm._v(
+                                          "Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\nNullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti."
                                         )
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            )
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                ),
-                _c(
-                  "v-footer",
-                  { staticClass: "blue darken-2" },
-                  [
-                    _c(
-                      "v-layout",
-                      { attrs: { row: "", wrap: "", "align-center": "" } },
-                      [_c("v-flex", { attrs: { xs12: "" } })],
-                      1
-                    )
-                  ],
-                  1
-                )
-              ],
-              1
-            )
-          ])
+                                      ])
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _c(
+                                "v-flex",
+                                {
+                                  attrs: { xs12: "", sm4: "", "offset-sm1": "" }
+                                },
+                                [
+                                  _c(
+                                    "v-card",
+                                    { staticClass: "elevation-0 transparent" },
+                                    [
+                                      _c(
+                                        "v-card-title",
+                                        {
+                                          staticClass: "layout justify-center",
+                                          attrs: { "primary-title": "" }
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            { staticClass: "headline" },
+                                            [_vm._v("Contact us")]
+                                          )
+                                        ]
+                                      ),
+                                      _c("v-card-text", [
+                                        _vm._v(
+                                          "Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare."
+                                        )
+                                      ]),
+                                      _c(
+                                        "v-list",
+                                        { staticClass: "transparent" },
+                                        [
+                                          _c(
+                                            "v-list-tile",
+                                            [
+                                              _c(
+                                                "v-list-tile-action",
+                                                [
+                                                  _c(
+                                                    "v-icon",
+                                                    {
+                                                      staticClass:
+                                                        "blue--text text--lighten-2"
+                                                    },
+                                                    [_vm._v("phone")]
+                                                  )
+                                                ],
+                                                1
+                                              ),
+                                              _c(
+                                                "v-list-tile-content",
+                                                [
+                                                  _c("v-list-tile-title", [
+                                                    _vm._v("777-867-5309")
+                                                  ])
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _c(
+                                            "v-list-tile",
+                                            [
+                                              _c(
+                                                "v-list-tile-action",
+                                                [
+                                                  _c(
+                                                    "v-icon",
+                                                    {
+                                                      staticClass:
+                                                        "blue--text text--lighten-2"
+                                                    },
+                                                    [_vm._v("place")]
+                                                  )
+                                                ],
+                                                1
+                                              ),
+                                              _c(
+                                                "v-list-tile-content",
+                                                [
+                                                  _c("v-list-tile-title", [
+                                                    _vm._v("Chicago, US")
+                                                  ])
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _c(
+                                            "v-list-tile",
+                                            [
+                                              _c(
+                                                "v-list-tile-action",
+                                                [
+                                                  _c(
+                                                    "v-icon",
+                                                    {
+                                                      staticClass:
+                                                        "blue--text text--lighten-2"
+                                                    },
+                                                    [_vm._v("email")]
+                                                  )
+                                                ],
+                                                1
+                                              ),
+                                              _c(
+                                                "v-list-tile-content",
+                                                [
+                                                  _c("v-list-tile-title", [
+                                                    _vm._v(
+                                                      "diego@wearesublime.com"
+                                                    )
+                                                  ])
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _c(
+                    "v-footer",
+                    { staticClass: "blue darken-2" },
+                    [
+                      _c(
+                        "v-layout",
+                        { attrs: { row: "", wrap: "", "align-center": "" } },
+                        [_c("v-flex", { attrs: { xs12: "" } })],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ]
+          )
         ],
         1
       )
