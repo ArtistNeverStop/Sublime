@@ -1,6 +1,6 @@
 <template lang="pug">
 v-content
-  .sublime(hidden-md-and-down)
+  .sublime.hidden-md-and-down
     transition(appear, mode="out-in", name='fade-down')
       canvas#canvas(v-show='showTitle')
     section#home-section-video.home-section.home-section-video(ref='home-section-video')
@@ -9,7 +9,7 @@ v-content
           h1(ref='title') Sublime
           div.arrow-down(@click='scrollTo(5)')
   transition(appear, mode="out-in", name='fade')
-    .welcome-content(v-show='!showTitle')
+    .welcome-content
       section
         v-parallax(src='images/party-croud.jpg', height='600')
           v-layout.white--text(column='', align-center='', justify-center='')
@@ -66,9 +66,9 @@ v-content
             v-btn.lighten-2.mt-5(dark='', large='', href='/pre-made-themes')
               | Crear una cuenta
       section
-        v-container(grid-list-xl='', hidden-md-and-down)
+        v-container(grid-list-xl='')
           v-layout.my-5(row='', wrap='', justify-center='', style="position: relative;")
-            .cell-phone.children_.a8.l5.l6.l7(data-reactid='146', style="position: absolute; top: -300px; right: 0px; transform: rotate(-10deg);")
+            .cell-phone.hidden-md-and-down.children_.a8.l5.l6.l7(data-reactid='146', style="position: absolute; top: -300px; right: 0px; transform: rotate(-10deg);")
               .base_.mg.mh.l8.l9.la.lb.lc.ld.base_.an.m.fl.fm(data-reactid='147', style="position: relative;")
                 iframe.content_.c0.a8.le.lf(style='top: 100.0002px; height: 462px; left: 37.9866px; width: 260.906px; position: absolute; background-color:', data-reactid='148', src="/")
                   //- div(data-reactid='149')

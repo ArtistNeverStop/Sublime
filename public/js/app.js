@@ -32954,10 +32954,7 @@ var render = function() {
     [
       _c(
         "div",
-        {
-          staticClass: "sublime",
-          attrs: { "hidden-md-and-down": "hidden-md-and-down" }
-        },
+        { staticClass: "sublime hidden-md-and-down" },
         [
           _c(
             "transition",
@@ -33031,17 +33028,7 @@ var render = function() {
         [
           _c(
             "div",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: !_vm.showTitle,
-                  expression: "!showTitle"
-                }
-              ],
-              staticClass: "welcome-content"
-            },
+            { staticClass: "welcome-content" },
             [
               _c(
                 "section",
@@ -33382,12 +33369,7 @@ var render = function() {
                 [
                   _c(
                     "v-container",
-                    {
-                      attrs: {
-                        "grid-list-xl": "",
-                        "hidden-md-and-down": "hidden-md-and-down"
-                      }
-                    },
+                    { attrs: { "grid-list-xl": "" } },
                     [
                       _c(
                         "v-layout",
@@ -33400,7 +33382,8 @@ var render = function() {
                           _c(
                             "div",
                             {
-                              staticClass: "cell-phone children_ a8 l5 l6 l7",
+                              staticClass:
+                                "cell-phone hidden-md-and-down children_ a8 l5 l6 l7",
                               staticStyle: {
                                 position: "absolute",
                                 top: "-300px",
