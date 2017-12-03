@@ -32663,6 +32663,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -32952,62 +32953,74 @@ var render = function() {
     "v-content",
     [
       _c(
-        "transition",
-        { attrs: { appear: "appear", mode: "out-in", name: "fade-down" } },
-        [
-          _c("canvas", {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.showTitle,
-                expression: "showTitle"
-              }
-            ],
-            attrs: { id: "canvas" }
-          })
-        ]
-      ),
-      _c(
-        "section",
+        "div",
         {
-          ref: "home-section-video",
-          staticClass: "home-section home-section-video",
-          attrs: { id: "home-section-video" }
+          staticClass: "sublime",
+          attrs: { "hidden-md-and-down": "hidden-md-and-down" }
         },
         [
           _c(
             "transition",
-            { attrs: { appear: "appear", name: "fade-down", mode: "out-in" } },
+            { attrs: { appear: "appear", mode: "out-in", name: "fade-down" } },
+            [
+              _c("canvas", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.showTitle,
+                    expression: "showTitle"
+                  }
+                ],
+                attrs: { id: "canvas" }
+              })
+            ]
+          ),
+          _c(
+            "section",
+            {
+              ref: "home-section-video",
+              staticClass: "home-section home-section-video",
+              attrs: { id: "home-section-video" }
+            },
             [
               _c(
-                "section",
+                "transition",
                 {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.showTitle,
-                      expression: "showTitle"
-                    }
-                  ],
-                  ref: "home-section-title",
-                  staticClass: "home-section-title",
-                  attrs: { id: "home-section-title" }
+                  attrs: { appear: "appear", name: "fade-down", mode: "out-in" }
                 },
                 [
-                  _c("h1", { ref: "title" }, [_vm._v("Sublime")]),
-                  _c("div", {
-                    staticClass: "arrow-down",
-                    on: {
-                      click: function($event) {
-                        _vm.scrollTo(5)
-                      }
-                    }
-                  })
+                  _c(
+                    "section",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.showTitle,
+                          expression: "showTitle"
+                        }
+                      ],
+                      ref: "home-section-title",
+                      staticClass: "home-section-title",
+                      attrs: { id: "home-section-title" }
+                    },
+                    [
+                      _c("h1", { ref: "title" }, [_vm._v("Sublime")]),
+                      _c("div", {
+                        staticClass: "arrow-down",
+                        on: {
+                          click: function($event) {
+                            _vm.scrollTo(5)
+                          }
+                        }
+                      })
+                    ]
+                  )
                 ]
               )
-            ]
+            ],
+            1
           )
         ],
         1

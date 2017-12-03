@@ -1,12 +1,13 @@
 <template lang="pug">
 v-content
-  transition(appear, mode="out-in", name='fade-down')
-    canvas#canvas(v-show='showTitle')
-  section#home-section-video.home-section.home-section-video(ref='home-section-video')
-    transition(appear name='fade-down',  mode="out-in")
-      section#home-section-title.home-section-title(v-show='showTitle' ref='home-section-title')
-        h1(ref='title') Sublime
-        div.arrow-down(@click='scrollTo(5)')
+  .sublime(hidden-md-and-down)
+    transition(appear, mode="out-in", name='fade-down')
+      canvas#canvas(v-show='showTitle')
+    section#home-section-video.home-section.home-section-video(ref='home-section-video')
+      transition(appear name='fade-down',  mode="out-in")
+        section#home-section-title.home-section-title(v-show='showTitle' ref='home-section-title')
+          h1(ref='title') Sublime
+          div.arrow-down(@click='scrollTo(5)')
   transition(appear, mode="out-in", name='fade')
     .welcome-content(v-show='!showTitle')
       section
