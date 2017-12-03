@@ -4,6 +4,8 @@
       .col-xs-12
         form.column.center-xs.middle-xs(@submit.prevent='loginAttempt' role='form')
           h1 Login
+          v-text-field(label='E-mail', v-model='email', required='')
+          v-text-field(label='Password', v-model='password', required='')
           .row
             //- Facebook Oauth2.0
             .oauth2-button-container

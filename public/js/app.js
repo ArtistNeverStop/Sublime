@@ -24674,16 +24674,19 @@ exports.clearImmediate = clearImmediate;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Globals_Navbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Components_Globals_Navbar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Components_Globals_SiteFooter__ = __webpack_require__(258);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Components_Globals_SiteFooter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Components_Globals_SiteFooter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Helpers__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Components_Globals_v_Navbar__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Components_Globals_v_Navbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Components_Globals_v_Navbar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Helpers__ = __webpack_require__(263);
 
 
 
 
 
-var _arr = [__WEBPACK_IMPORTED_MODULE_1__Components_Globals_Navbar___default.a, __WEBPACK_IMPORTED_MODULE_2__Components_Globals_SiteFooter___default.a];
+
+var _arr = [__WEBPACK_IMPORTED_MODULE_1__Components_Globals_Navbar___default.a, __WEBPACK_IMPORTED_MODULE_2__Components_Globals_SiteFooter___default.a, __WEBPACK_IMPORTED_MODULE_3__Components_Globals_v_Navbar___default.a];
 for (var _i = 0; _i < _arr.length; _i++) {
   var c = _arr[_i];
-  __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(Object(__WEBPACK_IMPORTED_MODULE_3__Helpers__["a" /* kebapizeCamel */])(c.__file.substring(c.__file.lastIndexOf('/') + 1)).slice(0, -4), c);
+  __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(Object(__WEBPACK_IMPORTED_MODULE_4__Helpers__["a" /* kebapizeCamel */])(c.__file.substring(c.__file.lastIndexOf('/') + 1)).slice(0, -4), c);
 }
 
 /***/ }),
@@ -27896,10 +27899,11 @@ if (inBrowser && window.Vue) {
 // Route('/Become-an-artist', Site.User.BecomeAnArtist, 'user.become.an.artist', { auth: true }),
 // Route('/Dashboard', Site.User.Dashboard, 'dashboard', { auth: true }),
 // Route('/Register', Site.Register, 'register', { guest: true }),
-// Route('/Logout', '', 'logout', null, null, () => store.dispatch('logout', '/')),
 // Route('/', Site.Home, 'home'),
 // Route('*', Site.Errors._404, '404')
-Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Client.Section, null, {}, [Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Client.Site.Welcome, 'welcome', { guest: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('About', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Client.Site.About, 'about', { guest: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Login', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Client.Auth.Login, 'login', { guest: true })]), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('*', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Errors._404, '404')]);
+Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('/', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Client.Section, null, {}, [Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Client.Site.Welcome, 'welcome', { guest: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('About', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Client.Site.About, 'about', { guest: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Login', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Client.Auth.Login, 'login', { guest: true }), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Logout', '', 'logout', null, null, function () {
+  return __WEBPACK_IMPORTED_MODULE_2__Store__["a" /* default */].dispatch('logout', '/');
+}), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('Dashboard', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Client.Users.Dashboard, 'dashboard', { auth: true })]), Object(__WEBPACK_IMPORTED_MODULE_1__Router_RouteMaker__["a" /* default */])('*', __WEBPACK_IMPORTED_MODULE_0__Components_Sections__["a" /* default */].Errors._404, '404')]);
 
 /***/ }),
 /* 266 */
@@ -30295,6 +30299,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -30430,6 +30436,26 @@ var render = function() {
           },
           [
             _c("h1", [_vm._v("Login")]),
+            _c("v-text-field", {
+              attrs: { label: "E-mail", required: "" },
+              model: {
+                value: _vm.email,
+                callback: function($$v) {
+                  _vm.email = $$v
+                },
+                expression: "email"
+              }
+            }),
+            _c("v-text-field", {
+              attrs: { label: "Password", required: "" },
+              model: {
+                value: _vm.password,
+                callback: function($$v) {
+                  _vm.password = $$v
+                },
+                expression: "password"
+              }
+            }),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "oauth2-button-container" }, [
                 _c(
@@ -30551,7 +30577,8 @@ var render = function() {
               ])
             ]),
             _vm._m(0)
-          ]
+          ],
+          1
         )
       ])
     ])
@@ -32636,7 +32663,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -32790,8 +32816,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }, false);
         window.addEventListener("touchmove", function (e) {
             mousePos = {
-                x: e.clientX * dpr,
-                y: e.clientY * dpr
+                x: e.touches[0].clientX * dpr,
+                y: e.touches[0].clientY * dpr
             };
         }, false);
         var Confetti = function () {
@@ -32868,7 +32894,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         function draw() {
             var offset = 100;
             ctx.globalCompositeOperation = WARP ? 'lighten' : 'source-over';
-            var gradient = ctx.createRadialGradient(mousePos.x, mousePos.y, canvas.width / 2, mousePos.x, mousePos.y, 0);
+            try {
+
+                var gradient = ctx.createRadialGradient(mousePos.x, mousePos.y, canvas.width / 2, mousePos.x, mousePos.y, 0);
+            } catch (error) {
+                console.log(mousePos.x, mousePos.y, canvas.width / 2, mousePos.x, mousePos.y, 0);
+            }
 
             if (WARP) {
                 gradient.addColorStop(0.5, '#ffffff');
@@ -32918,719 +32949,138 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "main",
+    "v-content",
     [
       _c(
-        "v-content",
+        "transition",
+        { attrs: { appear: "appear", mode: "out-in", name: "fade-down" } },
+        [
+          _c("canvas", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.showTitle,
+                expression: "showTitle"
+              }
+            ],
+            attrs: { id: "canvas" }
+          })
+        ]
+      ),
+      _c(
+        "section",
+        {
+          ref: "home-section-video",
+          staticClass: "home-section home-section-video",
+          attrs: { id: "home-section-video" }
+        },
         [
           _c(
             "transition",
-            { attrs: { appear: "appear", mode: "out-in", name: "fade-down" } },
-            [
-              _c("canvas", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.showTitle,
-                    expression: "showTitle"
-                  }
-                ],
-                attrs: { id: "canvas" }
-              })
-            ]
-          ),
-          _c(
-            "section",
-            {
-              ref: "home-section-video",
-              staticClass: "home-section home-section-video",
-              attrs: { id: "home-section-video" }
-            },
+            { attrs: { appear: "appear", name: "fade-down", mode: "out-in" } },
             [
               _c(
-                "transition",
-                {
-                  attrs: { appear: "appear", name: "fade-down", mode: "out-in" }
-                },
-                [
-                  _c(
-                    "section",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.showTitle,
-                          expression: "showTitle"
-                        }
-                      ],
-                      ref: "home-section-title",
-                      staticClass: "home-section-title",
-                      attrs: { id: "home-section-title" }
-                    },
-                    [
-                      _c("h1", { ref: "title" }, [_vm._v("Sublime")]),
-                      _c("div", {
-                        staticClass: "arrow-down",
-                        on: {
-                          click: function($event) {
-                            _vm.scrollTo(5)
-                          }
-                        }
-                      })
-                    ]
-                  )
-                ]
-              )
-            ],
-            1
-          ),
-          _c(
-            "transition",
-            { attrs: { appear: "appear", mode: "out-in", name: "fade" } },
-            [
-              _c(
-                "div",
+                "section",
                 {
                   directives: [
                     {
                       name: "show",
                       rawName: "v-show",
-                      value: !_vm.showTitle,
-                      expression: "!showTitle"
+                      value: _vm.showTitle,
+                      expression: "showTitle"
                     }
                   ],
-                  staticClass: "welcome-content"
+                  ref: "home-section-title",
+                  staticClass: "home-section-title",
+                  attrs: { id: "home-section-title" }
                 },
                 [
+                  _c("h1", { ref: "title" }, [_vm._v("Sublime")]),
+                  _c("div", {
+                    staticClass: "arrow-down",
+                    on: {
+                      click: function($event) {
+                        _vm.scrollTo(5)
+                      }
+                    }
+                  })
+                ]
+              )
+            ]
+          )
+        ],
+        1
+      ),
+      _c(
+        "transition",
+        { attrs: { appear: "appear", mode: "out-in", name: "fade" } },
+        [
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.showTitle,
+                  expression: "!showTitle"
+                }
+              ],
+              staticClass: "welcome-content"
+            },
+            [
+              _c(
+                "section",
+                [
                   _c(
-                    "section",
-                    [
-                      _c(
-                        "v-parallax",
-                        {
-                          attrs: {
-                            src: "images/party-croud.jpg",
-                            height: "600"
-                          }
-                        },
-                        [
-                          _c(
-                            "v-layout",
-                            {
-                              staticClass: "white--text",
-                              attrs: {
-                                column: "",
-                                "align-center": "",
-                                "justify-center": ""
-                              }
-                            },
-                            [
-                              _c("img", {
-                                attrs: {
-                                  src: "",
-                                  alt: "Vuetify.js",
-                                  height: "200"
-                                }
-                              }),
-                              _c(
-                                "h1",
-                                {
-                                  staticClass:
-                                    "white--text mb-2 display-1 text-xs-center"
-                                },
-                                [_vm._v("SUBLIME")]
-                              ),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "subheading mb-3 text-xs-center"
-                                },
-                                [
-                                  _vm._v(
-                                    "La web definitiva de Crowfunding para eventos."
-                                  )
-                                ]
-                              ),
-                              _c(
-                                "v-btn",
-                                {
-                                  staticClass: "lighten-2 mt-5",
-                                  attrs: {
-                                    dark: "",
-                                    large: "",
-                                    href: "/pre-made-themes"
-                                  }
-                                },
-                                [_vm._v("Crear una cuenta")]
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _c(
-                    "section",
+                    "v-parallax",
+                    { attrs: { src: "images/party-croud.jpg", height: "600" } },
                     [
                       _c(
                         "v-layout",
                         {
-                          staticClass: "my-5",
-                          attrs: { column: "", wrap: "", "align-center": "" }
+                          staticClass: "white--text",
+                          attrs: {
+                            column: "",
+                            "align-center": "",
+                            "justify-center": ""
+                          }
                         },
                         [
+                          _c("img", {
+                            attrs: { src: "", alt: "Vuetify.js", height: "200" }
+                          }),
                           _c(
-                            "v-flex",
+                            "h1",
                             {
-                              staticClass: "my-3",
-                              attrs: { xs12: "", sm4: "" }
+                              staticClass:
+                                "white--text mb-2 display-1 text-xs-center"
                             },
+                            [_vm._v("SUBLIME")]
+                          ),
+                          _c(
+                            "div",
+                            { staticClass: "subheading mb-3 text-xs-center" },
                             [
-                              _c("div", { staticClass: "text-xs-center" }, [
-                                _c("h2", { staticClass: "headline" }, [
-                                  _vm._v(
-                                    "La mejor manera de disfrutar eventos."
-                                  )
-                                ]),
-                                _c("span", { staticClass: "subheading" }, [
-                                  _vm._v(
-                                    "Tu decides cuando y donde, nosotros lo hacemos posible."
-                                  )
-                                ])
-                              ])
+                              _vm._v(
+                                "La web definitiva de Crowfunding para eventos."
+                              )
                             ]
                           ),
                           _c(
-                            "v-flex",
-                            { attrs: { xs12: "" } },
-                            [
-                              _c(
-                                "v-container",
-                                { attrs: { "grid-list-xl": "" } },
-                                [
-                                  _c(
-                                    "v-layout",
-                                    {
-                                      attrs: {
-                                        row: "",
-                                        wrap: "",
-                                        "align-center": ""
-                                      }
-                                    },
-                                    [
-                                      _c(
-                                        "v-flex",
-                                        { attrs: { xs12: "", md4: "" } },
-                                        [
-                                          _c(
-                                            "v-card",
-                                            {
-                                              staticClass:
-                                                "elevation-0 transparent"
-                                            },
-                                            [
-                                              _c(
-                                                "v-card-text",
-                                                {
-                                                  staticClass: "text-xs-center"
-                                                },
-                                                [
-                                                  _c(
-                                                    "v-icon",
-                                                    {
-                                                      staticClass: "dark--text",
-                                                      attrs: { "x-large": "" }
-                                                    },
-                                                    [_vm._v("local_bar")]
-                                                  )
-                                                ],
-                                                1
-                                              ),
-                                              _c(
-                                                "v-card-title",
-                                                {
-                                                  staticClass:
-                                                    "layout justify-center",
-                                                  attrs: { "primary-title": "" }
-                                                },
-                                                [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "headline text-xs-center"
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        "Consumo mas facil"
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              ),
-                                              _c("v-card-text", [
-                                                _vm._v(
-                                                  "Las compras dentro de Sublime no pueden ser mas faciles, solo selecciones el producto y aceptas.\nEl manejo de stock productos de consumo es por evento con los patrocinadores que tu eligas.\nLos distintos patrocinadores administras sus propios productos por cada evento."
-                                                )
-                                              ])
-                                            ],
-                                            1
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _c(
-                                        "v-flex",
-                                        { attrs: { xs12: "", md4: "" } },
-                                        [
-                                          _c(
-                                            "v-card",
-                                            {
-                                              staticClass:
-                                                "elevation-0 transparent"
-                                            },
-                                            [
-                                              _c(
-                                                "v-card-text",
-                                                {
-                                                  staticClass: "text-xs-center"
-                                                },
-                                                [
-                                                  _c(
-                                                    "v-icon",
-                                                    {
-                                                      staticClass: "dark--text",
-                                                      attrs: { "x-large": "" }
-                                                    },
-                                                    [_vm._v("monetization_on")]
-                                                  )
-                                                ],
-                                                1
-                                              ),
-                                              _c(
-                                                "v-card-title",
-                                                {
-                                                  staticClass:
-                                                    "layout justify-center",
-                                                  attrs: { "primary-title": "" }
-                                                },
-                                                [
-                                                  _c(
-                                                    "div",
-                                                    { staticClass: "headline" },
-                                                    [
-                                                      _vm._v(
-                                                        "No necesitas efectivo."
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              ),
-                                              _c("v-card-text", [
-                                                _vm._v(
-                                                  "No necesitas llevar dinero el dia del evento, solo tu y tu celular, o solo tu codigo de boleto. \nDentro del evento podras realizar compras con tu credito de la aplicacion.\nNullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti."
-                                                )
-                                              ])
-                                            ],
-                                            1
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _c(
-                                        "v-flex",
-                                        { attrs: { xs12: "", md4: "" } },
-                                        [
-                                          _c(
-                                            "v-card",
-                                            {
-                                              staticClass:
-                                                "elevation-0 transparent"
-                                            },
-                                            [
-                                              _c(
-                                                "v-card-text",
-                                                {
-                                                  staticClass: "text-xs-center"
-                                                },
-                                                [
-                                                  _c(
-                                                    "v-icon",
-                                                    {
-                                                      staticClass: "dark--text",
-                                                      attrs: { "x-large": "" }
-                                                    },
-                                                    [_vm._v("public")]
-                                                  )
-                                                ],
-                                                1
-                                              ),
-                                              _c(
-                                                "v-card-title",
-                                                {
-                                                  staticClass:
-                                                    "layout justify-center",
-                                                  attrs: { "primary-title": "" }
-                                                },
-                                                [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "headline text-xs-center"
-                                                    },
-                                                    [_vm._v("API publica.")]
-                                                  )
-                                                ]
-                                              ),
-                                              _c("v-card-text", [
-                                                _vm._v(
-                                                  "SUBLIME tiene la mejor conectividad para aplicaciones terceras.\nTu tienes control de tus datos e informacion.\nGraphQL y su documentacion abierta para desarrolladores."
-                                                )
-                                              ])
-                                            ],
-                                            1
-                                          )
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _c(
-                    "section",
-                    [
-                      _c(
-                        "v-parallax",
-                        {
-                          attrs: {
-                            src: "images/party-croud2.jpg",
-                            height: "380"
-                          }
-                        },
-                        [
-                          _c(
-                            "v-layout",
+                            "v-btn",
                             {
+                              staticClass: "lighten-2 mt-5",
                               attrs: {
-                                column: "",
-                                "align-center": "",
-                                "justify-center": ""
+                                dark: "",
+                                large: "",
+                                href: "/pre-made-themes"
                               }
                             },
-                            [
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "headline white--text mb-3 text-xs-center"
-                                },
-                                [
-                                  _vm._v(
-                                    "Manejar eventos nunca habia sido tan facil."
-                                  )
-                                ]
-                              ),
-                              _c("em", [_vm._v("Inicia tu cuanta ahora!.")]),
-                              _c(
-                                "v-btn",
-                                {
-                                  staticClass: "lighten-2 mt-5",
-                                  attrs: {
-                                    dark: "",
-                                    large: "",
-                                    href: "/pre-made-themes"
-                                  }
-                                },
-                                [_vm._v("Crear una cuenta")]
-                              )
-                            ],
-                            1
+                            [_vm._v("Crear una cuenta")]
                           )
                         ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _c(
-                    "section",
-                    [
-                      _c(
-                        "v-container",
-                        { attrs: { "grid-list-xl": "" } },
-                        [
-                          _c(
-                            "v-layout",
-                            {
-                              staticClass: "my-5",
-                              staticStyle: { position: "relative" },
-                              attrs: { row: "", wrap: "", "justify-center": "" }
-                            },
-                            [
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "cell-phone children_ a8 l5 l6 l7",
-                                  staticStyle: {
-                                    position: "absolute",
-                                    top: "-300px",
-                                    right: "0px",
-                                    transform: "rotate(-10deg)"
-                                  },
-                                  attrs: { "data-reactid": "146" }
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "base_ mg mh l8 l9 la lb lc ld base_ an m fl fm",
-                                      staticStyle: { position: "relative" },
-                                      attrs: { "data-reactid": "147" }
-                                    },
-                                    [
-                                      _c("iframe", {
-                                        staticClass: "content_ c0 a8 le lf",
-                                        staticStyle: {
-                                          top: "100.0002px",
-                                          height: "462px",
-                                          left: "37.9866px",
-                                          width: "260.906px",
-                                          position: "absolute"
-                                        },
-                                        attrs: {
-                                          "data-reactid": "148",
-                                          src: "/"
-                                        }
-                                      }),
-                                      _c("img", {
-                                        staticClass: "shell_ a8 c f",
-                                        attrs: {
-                                          src:
-                                            "https://d3i4yxtzktqr9n.cloudfront.net/web-eats/static/images/components/iphone-preview/phone-shell-2d1c99172b.png",
-                                          width: "340",
-                                          height: "654",
-                                          "data-reactid": "152"
-                                        }
-                                      }),
-                                      _c("img", {
-                                        staticClass: "shadow_ lg",
-                                        staticStyle: {
-                                          left: "0px",
-                                          position: "absolute"
-                                        },
-                                        attrs: {
-                                          src:
-                                            "https://d3i4yxtzktqr9n.cloudfront.net/web-eats/static/images/components/iphone-preview/phone-shadow-67119ef839.png",
-                                          width: "340",
-                                          height: "654",
-                                          "data-reactid": "153"
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ]
-                              ),
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "", sm4: "" } },
-                                [
-                                  _c(
-                                    "v-card",
-                                    { staticClass: "elevation-0 transparent" },
-                                    [
-                                      _c(
-                                        "v-card-title",
-                                        {
-                                          staticClass: "layout justify-center",
-                                          attrs: { "primary-title": "" }
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "headline" },
-                                            [_vm._v("Company info")]
-                                          )
-                                        ]
-                                      ),
-                                      _c("v-card-text", [
-                                        _vm._v(
-                                          "Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\nNullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti."
-                                        )
-                                      ])
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              ),
-                              _c(
-                                "v-flex",
-                                {
-                                  attrs: { xs12: "", sm4: "", "offset-sm1": "" }
-                                },
-                                [
-                                  _c(
-                                    "v-card",
-                                    { staticClass: "elevation-0 transparent" },
-                                    [
-                                      _c(
-                                        "v-card-title",
-                                        {
-                                          staticClass: "layout justify-center",
-                                          attrs: { "primary-title": "" }
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "headline" },
-                                            [_vm._v("Contact us")]
-                                          )
-                                        ]
-                                      ),
-                                      _c("v-card-text", [
-                                        _vm._v(
-                                          "Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare."
-                                        )
-                                      ]),
-                                      _c(
-                                        "v-list",
-                                        { staticClass: "transparent" },
-                                        [
-                                          _c(
-                                            "v-list-tile",
-                                            [
-                                              _c(
-                                                "v-list-tile-action",
-                                                [
-                                                  _c(
-                                                    "v-icon",
-                                                    {
-                                                      staticClass:
-                                                        "blue--text text--lighten-2"
-                                                    },
-                                                    [_vm._v("phone")]
-                                                  )
-                                                ],
-                                                1
-                                              ),
-                                              _c(
-                                                "v-list-tile-content",
-                                                [
-                                                  _c("v-list-tile-title", [
-                                                    _vm._v("777-867-5309")
-                                                  ])
-                                                ],
-                                                1
-                                              )
-                                            ],
-                                            1
-                                          ),
-                                          _c(
-                                            "v-list-tile",
-                                            [
-                                              _c(
-                                                "v-list-tile-action",
-                                                [
-                                                  _c(
-                                                    "v-icon",
-                                                    {
-                                                      staticClass:
-                                                        "blue--text text--lighten-2"
-                                                    },
-                                                    [_vm._v("place")]
-                                                  )
-                                                ],
-                                                1
-                                              ),
-                                              _c(
-                                                "v-list-tile-content",
-                                                [
-                                                  _c("v-list-tile-title", [
-                                                    _vm._v("Chicago, US")
-                                                  ])
-                                                ],
-                                                1
-                                              )
-                                            ],
-                                            1
-                                          ),
-                                          _c(
-                                            "v-list-tile",
-                                            [
-                                              _c(
-                                                "v-list-tile-action",
-                                                [
-                                                  _c(
-                                                    "v-icon",
-                                                    {
-                                                      staticClass:
-                                                        "blue--text text--lighten-2"
-                                                    },
-                                                    [_vm._v("email")]
-                                                  )
-                                                ],
-                                                1
-                                              ),
-                                              _c(
-                                                "v-list-tile-content",
-                                                [
-                                                  _c("v-list-tile-title", [
-                                                    _vm._v(
-                                                      "diego@wearesublime.com"
-                                                    )
-                                                  ])
-                                                ],
-                                                1
-                                              )
-                                            ],
-                                            1
-                                          )
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _c(
-                    "v-footer",
-                    { staticClass: "blue darken-2" },
-                    [
-                      _c(
-                        "v-layout",
-                        { attrs: { row: "", wrap: "", "align-center": "" } },
-                        [_c("v-flex", { attrs: { xs12: "" } })],
                         1
                       )
                     ],
@@ -33638,11 +33088,540 @@ var render = function() {
                   )
                 ],
                 1
+              ),
+              _c(
+                "section",
+                [
+                  _c(
+                    "v-layout",
+                    {
+                      staticClass: "my-5",
+                      attrs: { column: "", wrap: "", "align-center": "" }
+                    },
+                    [
+                      _c(
+                        "v-flex",
+                        { staticClass: "my-3", attrs: { xs12: "", sm4: "" } },
+                        [
+                          _c("div", { staticClass: "text-xs-center" }, [
+                            _c("h2", { staticClass: "headline" }, [
+                              _vm._v("La mejor manera de disfrutar eventos.")
+                            ]),
+                            _c("span", { staticClass: "subheading" }, [
+                              _vm._v(
+                                "Tu decides cuando y donde, nosotros lo hacemos posible."
+                              )
+                            ])
+                          ])
+                        ]
+                      ),
+                      _c(
+                        "v-flex",
+                        { attrs: { xs12: "" } },
+                        [
+                          _c(
+                            "v-container",
+                            { attrs: { "grid-list-xl": "" } },
+                            [
+                              _c(
+                                "v-layout",
+                                {
+                                  attrs: {
+                                    row: "",
+                                    wrap: "",
+                                    "align-center": ""
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md4: "" } },
+                                    [
+                                      _c(
+                                        "v-card",
+                                        {
+                                          staticClass: "elevation-0 transparent"
+                                        },
+                                        [
+                                          _c(
+                                            "v-card-text",
+                                            { staticClass: "text-xs-center" },
+                                            [
+                                              _c(
+                                                "v-icon",
+                                                {
+                                                  staticClass: "dark--text",
+                                                  attrs: { "x-large": "" }
+                                                },
+                                                [_vm._v("local_bar")]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _c(
+                                            "v-card-title",
+                                            {
+                                              staticClass:
+                                                "layout justify-center",
+                                              attrs: { "primary-title": "" }
+                                            },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "headline text-xs-center"
+                                                },
+                                                [_vm._v("Consumo mas facil")]
+                                              )
+                                            ]
+                                          ),
+                                          _c("v-card-text", [
+                                            _vm._v(
+                                              "Las compras dentro de Sublime no pueden ser mas faciles, solo selecciones el producto y aceptas.\nEl manejo de stock productos de consumo es por evento con los patrocinadores que tu eligas.\nLos distintos patrocinadores administras sus propios productos por cada evento."
+                                            )
+                                          ])
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md4: "" } },
+                                    [
+                                      _c(
+                                        "v-card",
+                                        {
+                                          staticClass: "elevation-0 transparent"
+                                        },
+                                        [
+                                          _c(
+                                            "v-card-text",
+                                            { staticClass: "text-xs-center" },
+                                            [
+                                              _c(
+                                                "v-icon",
+                                                {
+                                                  staticClass: "dark--text",
+                                                  attrs: { "x-large": "" }
+                                                },
+                                                [_vm._v("monetization_on")]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _c(
+                                            "v-card-title",
+                                            {
+                                              staticClass:
+                                                "layout justify-center",
+                                              attrs: { "primary-title": "" }
+                                            },
+                                            [
+                                              _c(
+                                                "div",
+                                                { staticClass: "headline" },
+                                                [
+                                                  _vm._v(
+                                                    "No necesitas efectivo."
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          ),
+                                          _c("v-card-text", [
+                                            _vm._v(
+                                              "No necesitas llevar dinero el dia del evento, solo tu y tu celular, o solo tu codigo de boleto. \nDentro del evento podras realizar compras con tu credito de la aplicacion.\nNullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti."
+                                            )
+                                          ])
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _c(
+                                    "v-flex",
+                                    { attrs: { xs12: "", md4: "" } },
+                                    [
+                                      _c(
+                                        "v-card",
+                                        {
+                                          staticClass: "elevation-0 transparent"
+                                        },
+                                        [
+                                          _c(
+                                            "v-card-text",
+                                            { staticClass: "text-xs-center" },
+                                            [
+                                              _c(
+                                                "v-icon",
+                                                {
+                                                  staticClass: "dark--text",
+                                                  attrs: { "x-large": "" }
+                                                },
+                                                [_vm._v("public")]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _c(
+                                            "v-card-title",
+                                            {
+                                              staticClass:
+                                                "layout justify-center",
+                                              attrs: { "primary-title": "" }
+                                            },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "headline text-xs-center"
+                                                },
+                                                [_vm._v("API publica.")]
+                                              )
+                                            ]
+                                          ),
+                                          _c("v-card-text", [
+                                            _vm._v(
+                                              "SUBLIME tiene la mejor conectividad para aplicaciones terceras.\nTu tienes control de tus datos e informacion.\nGraphQL y su documentacion abierta para desarrolladores."
+                                            )
+                                          ])
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _c(
+                "section",
+                [
+                  _c(
+                    "v-parallax",
+                    {
+                      attrs: { src: "images/party-croud2.jpg", height: "380" }
+                    },
+                    [
+                      _c(
+                        "v-layout",
+                        {
+                          attrs: {
+                            column: "",
+                            "align-center": "",
+                            "justify-center": ""
+                          }
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "headline white--text mb-3 text-xs-center"
+                            },
+                            [
+                              _vm._v(
+                                "Manejar eventos nunca habia sido tan facil."
+                              )
+                            ]
+                          ),
+                          _c("em", [_vm._v("Inicia tu cuanta ahora!.")]),
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: "lighten-2 mt-5",
+                              attrs: {
+                                dark: "",
+                                large: "",
+                                href: "/pre-made-themes"
+                              }
+                            },
+                            [_vm._v("Crear una cuenta")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _c(
+                "section",
+                [
+                  _c(
+                    "v-container",
+                    { attrs: { "grid-list-xl": "" } },
+                    [
+                      _c(
+                        "v-layout",
+                        {
+                          staticClass: "my-5",
+                          staticStyle: { position: "relative" },
+                          attrs: { row: "", wrap: "", "justify-center": "" }
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "cell-phone children_ a8 l5 l6 l7",
+                              staticStyle: {
+                                position: "absolute",
+                                top: "-300px",
+                                right: "0px",
+                                transform: "rotate(-10deg)"
+                              },
+                              attrs: { "data-reactid": "146" }
+                            },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "base_ mg mh l8 l9 la lb lc ld base_ an m fl fm",
+                                  staticStyle: { position: "relative" },
+                                  attrs: { "data-reactid": "147" }
+                                },
+                                [
+                                  _c("iframe", {
+                                    staticClass: "content_ c0 a8 le lf",
+                                    staticStyle: {
+                                      top: "100.0002px",
+                                      height: "462px",
+                                      left: "37.9866px",
+                                      width: "260.906px",
+                                      position: "absolute"
+                                    },
+                                    attrs: { "data-reactid": "148", src: "/" }
+                                  }),
+                                  _c("img", {
+                                    staticClass: "shell_ a8 c f",
+                                    attrs: {
+                                      src:
+                                        "https://d3i4yxtzktqr9n.cloudfront.net/web-eats/static/images/components/iphone-preview/phone-shell-2d1c99172b.png",
+                                      width: "340",
+                                      height: "654",
+                                      "data-reactid": "152"
+                                    }
+                                  }),
+                                  _c("img", {
+                                    staticClass: "shadow_ lg",
+                                    staticStyle: {
+                                      left: "0px",
+                                      position: "absolute"
+                                    },
+                                    attrs: {
+                                      src:
+                                        "https://d3i4yxtzktqr9n.cloudfront.net/web-eats/static/images/components/iphone-preview/phone-shadow-67119ef839.png",
+                                      width: "340",
+                                      height: "654",
+                                      "data-reactid": "153"
+                                    }
+                                  })
+                                ]
+                              )
+                            ]
+                          ),
+                          _c(
+                            "v-flex",
+                            { attrs: { xs12: "", sm4: "" } },
+                            [
+                              _c(
+                                "v-card",
+                                { staticClass: "elevation-0 transparent" },
+                                [
+                                  _c(
+                                    "v-card-title",
+                                    {
+                                      staticClass: "layout justify-center",
+                                      attrs: { "primary-title": "" }
+                                    },
+                                    [
+                                      _c("div", { staticClass: "headline" }, [
+                                        _vm._v("Company info")
+                                      ])
+                                    ]
+                                  ),
+                                  _c("v-card-text", [
+                                    _vm._v(
+                                      "Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.\nNullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti."
+                                    )
+                                  ])
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _c(
+                            "v-flex",
+                            { attrs: { xs12: "", sm4: "", "offset-sm1": "" } },
+                            [
+                              _c(
+                                "v-card",
+                                { staticClass: "elevation-0 transparent" },
+                                [
+                                  _c(
+                                    "v-card-title",
+                                    {
+                                      staticClass: "layout justify-center",
+                                      attrs: { "primary-title": "" }
+                                    },
+                                    [
+                                      _c("div", { staticClass: "headline" }, [
+                                        _vm._v("Contact us")
+                                      ])
+                                    ]
+                                  ),
+                                  _c("v-card-text", [
+                                    _vm._v(
+                                      "Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare."
+                                    )
+                                  ]),
+                                  _c(
+                                    "v-list",
+                                    { staticClass: "transparent" },
+                                    [
+                                      _c(
+                                        "v-list-tile",
+                                        [
+                                          _c(
+                                            "v-list-tile-action",
+                                            [
+                                              _c(
+                                                "v-icon",
+                                                {
+                                                  staticClass:
+                                                    "blue--text text--lighten-2"
+                                                },
+                                                [_vm._v("phone")]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _c(
+                                            "v-list-tile-content",
+                                            [
+                                              _c("v-list-tile-title", [
+                                                _vm._v("777-867-5309")
+                                              ])
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _c(
+                                        "v-list-tile",
+                                        [
+                                          _c(
+                                            "v-list-tile-action",
+                                            [
+                                              _c(
+                                                "v-icon",
+                                                {
+                                                  staticClass:
+                                                    "blue--text text--lighten-2"
+                                                },
+                                                [_vm._v("place")]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _c(
+                                            "v-list-tile-content",
+                                            [
+                                              _c("v-list-tile-title", [
+                                                _vm._v("Chicago, US")
+                                              ])
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _c(
+                                        "v-list-tile",
+                                        [
+                                          _c(
+                                            "v-list-tile-action",
+                                            [
+                                              _c(
+                                                "v-icon",
+                                                {
+                                                  staticClass:
+                                                    "blue--text text--lighten-2"
+                                                },
+                                                [_vm._v("email")]
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _c(
+                                            "v-list-tile-content",
+                                            [
+                                              _c("v-list-tile-title", [
+                                                _vm._v("diego@wearesublime.com")
+                                              ])
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _c(
+                "v-footer",
+                { staticClass: "blue darken-2" },
+                [
+                  _c(
+                    "v-layout",
+                    { attrs: { row: "", wrap: "", "align-center": "" } },
+                    [_c("v-flex", { attrs: { xs12: "" } })],
+                    1
+                  )
+                ],
+                1
               )
-            ]
+            ],
+            1
           )
-        ],
-        1
+        ]
       )
     ],
     1
@@ -33723,27 +33702,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -33813,177 +33771,10 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-app",
-    { staticClass: "app-client wihte", attrs: { id: "app", light: "" } },
+    "div",
+    { staticClass: "app-client wihte", attrs: { light: "" } },
     [
-      _c(
-        "v-layout",
-        { attrs: { wrap: "" } },
-        [
-          _c(
-            "v-navigation-drawer",
-            {
-              attrs: {
-                fixed: true,
-                temporary: "",
-                light: "",
-                absolute: "",
-                right: true
-              },
-              model: {
-                value: _vm.drawer,
-                callback: function($$v) {
-                  _vm.drawer = $$v
-                },
-                expression: "drawer"
-              }
-            },
-            [
-              _c(
-                "v-list",
-                { staticClass: "pa-1" },
-                [
-                  _c(
-                    "v-list-tile",
-                    { attrs: { avatar: "" } },
-                    [
-                      _c("v-list-tile-avatar", [
-                        _c("img", {
-                          attrs: {
-                            src: !_vm.User.me
-                              ? "/sublime-logo.png"
-                              : "https://randomuser.me/api/portraits/men/85.jpg"
-                          }
-                        })
-                      ]),
-                      _c(
-                        "v-list-tile-content",
-                        [
-                          _c("v-list-tile-title", { staticClass: "title" }, [
-                            _vm._v(
-                              _vm._s(_vm.User.me ? "John Leider" : "SUBLIME")
-                            )
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _c(
-                "v-list",
-                { staticClass: "pt-0", attrs: { dense: "" } },
-                [
-                  _c("v-divider"),
-                  _vm._l(_vm.items, function(item) {
-                    return _c(
-                      "v-list-tile",
-                      {
-                        key: item.title,
-                        on: {
-                          click: function($event) {
-                            _vm.$go(item.route)
-                          }
-                        }
-                      },
-                      [
-                        _c(
-                          "v-list-tile-action",
-                          [_c("v-icon", [_vm._v(_vm._s(item.icon))])],
-                          1
-                        ),
-                        _c(
-                          "v-list-tile-content",
-                          [
-                            _c("v-list-tile-title", [
-                              _vm._v(_vm._s(item.title))
-                            ])
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    )
-                  })
-                ],
-                2
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _c(
-        "v-toolbar",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.navbarShow,
-              expression: "navbarShow"
-            }
-          ],
-          attrs: { fixed: true, light: "" }
-        },
-        [
-          _c(
-            "v-layout",
-            { attrs: { row: "row", wrap: "wrap" } },
-            [
-              _c(
-                "v-flex",
-                { staticClass: "middle", attrs: { xs6: "xs6" } },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: "/sublime-logo.png",
-                      alt: "Vuetify.js",
-                      height: "50"
-                    },
-                    on: {
-                      click: function($event) {
-                        _vm.$go("welcome")
-                      }
-                    }
-                  }),
-                  _c("v-toolbar-title", {
-                    domProps: { textContent: _vm._s(_vm.title) }
-                  })
-                ],
-                1
-              ),
-              _c(
-                "v-flex",
-                { staticClass: "middle end", attrs: { xs6: "xs6" } },
-                [
-                  _c(
-                    "v-icon",
-                    {
-                      staticClass: "dark--text",
-                      attrs: { "x-large": "" },
-                      on: {
-                        click: function($event) {
-                          $event.stopPropagation()
-                          _vm.drawer = !_vm.drawer
-                        }
-                      }
-                    },
-                    [_vm._v("menu")]
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
+      _c("v-navbar"),
       _c("router-view", {
         on: {
           hiddeNavbar: function($event) {
@@ -35584,6 +35375,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -35649,7 +35441,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("router-view", { staticClass: "site", attrs: { id: "app" } })
+  return _c(
+    "v-app",
+    { staticClass: "site", attrs: { id: "app" } },
+    [_c("router-view")],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -52660,6 +52457,356 @@ function unbind(el, binding) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(363)
+/* template */
+var __vue_template__ = __webpack_require__(362)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/Components/Globals/v-Navbar.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-bbdf4d3a", Component.options)
+  } else {
+    hotAPI.reload("data-v-bbdf4d3a", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 362 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-container",
+    { attrs: { fluid: true } },
+    [
+      _c(
+        "v-layout",
+        { attrs: { wrap: "" } },
+        [
+          _c(
+            "v-navigation-drawer",
+            {
+              attrs: {
+                fixed: true,
+                temporary: "",
+                light: "",
+                absolute: "",
+                right: true
+              },
+              model: {
+                value: _vm.drawer,
+                callback: function($$v) {
+                  _vm.drawer = $$v
+                },
+                expression: "drawer"
+              }
+            },
+            [
+              _c(
+                "v-list",
+                { staticClass: "pa-1" },
+                [
+                  _c(
+                    "v-list-tile",
+                    { attrs: { avatar: "" } },
+                    [
+                      _c("v-list-tile-avatar", [
+                        _c("img", {
+                          attrs: {
+                            src: !_vm.User.me
+                              ? "/sublime-logo.png"
+                              : "https://randomuser.me/api/portraits/men/85.jpg"
+                          }
+                        })
+                      ]),
+                      _c(
+                        "v-list-tile-content",
+                        [
+                          _c("v-list-tile-title", { staticClass: "title" }, [
+                            _vm._v(
+                              _vm._s(_vm.User.me ? "John Leider" : "SUBLIME")
+                            )
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _c(
+                "v-list",
+                { staticClass: "pt-0", attrs: { dense: "" } },
+                [
+                  _c("v-divider"),
+                  _vm._l(_vm.items, function(item) {
+                    return _c(
+                      "v-list-tile",
+                      {
+                        key: item.title,
+                        on: {
+                          click: function($event) {
+                            _vm.$go(item.route)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-list-tile-action",
+                          [_c("v-icon", [_vm._v(_vm._s(item.icon))])],
+                          1
+                        ),
+                        _c(
+                          "v-list-tile-content",
+                          [
+                            _c("v-list-tile-title", [
+                              _vm._v(_vm._s(item.title))
+                            ])
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  })
+                ],
+                2
+              )
+            ],
+            1
+          ),
+          _c(
+            "v-toolbar",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.navbarShow,
+                  expression: "navbarShow"
+                }
+              ],
+              attrs: { fixed: true, light: "" }
+            },
+            [
+              _c(
+                "v-toolbar-side-icon",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.$go("welcome")
+                    }
+                  }
+                },
+                [
+                  _c("img", {
+                    attrs: {
+                      src: "/sublime-logo.png",
+                      alt: "Vuetify.js",
+                      height: "50"
+                    }
+                  })
+                ]
+              ),
+              _c("v-toolbar-title", [_vm._v(_vm._s(_vm.title))]),
+              _c("v-spacer"),
+              _c("v-toolbar-side-icon", { staticClass: "hidden-md-and-up" }),
+              _c(
+                "v-toolbar-items",
+                { staticClass: "hidden-sm-and-down" },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { icon: "icon" },
+                      on: {
+                        click: function($event) {
+                          _vm.drawer = !_vm.drawer
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "v-icon",
+                        { staticClass: "dark--text", attrs: { "x-large": "" } },
+                        [_vm._v("menu ")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-bbdf4d3a", module.exports)
+  }
+}
+
+/***/ }),
+/* 363 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(1);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+  /**
+   * The main instance reactive
+   * properties of the component.
+   * ------------------------------
+   * @member {Function}
+   * @return {Object}
+   */
+  data: function data() {
+    return {
+      navbarShow: true,
+      title: 'SUBLIME',
+      drawer: null,
+      items: [{ title: 'Welcome', icon: 'dashboard', route: 'welcome' }, { title: 'About', icon: 'question_answer', route: 'about' }, { title: 'Register', icon: 'question_answer', route: 'register' }, { title: 'Login', icon: 'question_answer', route: 'login' }]
+    };
+  },
+
+  /**
+   * The main instance methods of
+   * the component.
+   * ------------------------------
+   * @member {Object} methods
+   */
+  methods: {
+    //
+  },
+
+  /**
+   * The main watcher of
+   * the component instance.
+   * ------------------------------
+   * @member {Object} watcher
+   */
+  watch: {
+    //
+  },
+
+  /**
+   * The main instance computed
+   * properties of the component.
+   * ------------------------------
+   * @member {Object} computed
+   */
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User'])),
+
+  /**
+   * The mounted hook life-cycle of
+   * the component instance.
+   * ------------------------------
+   * @member {Function}
+   */
+  mounted: function mounted() {
+    console.log(this.$options.__file.split('/').slice(-1).pop() + ' Component Mounted!');
+  }
+});
 
 /***/ })
 /******/ ]);

@@ -27,13 +27,14 @@ export default [
   // Route('/Become-an-artist', Site.User.BecomeAnArtist, 'user.become.an.artist', { auth: true }),
   // Route('/Dashboard', Site.User.Dashboard, 'dashboard', { auth: true }),
   // Route('/Register', Site.Register, 'register', { guest: true }),
-  // Route('/Logout', '', 'logout', null, null, () => store.dispatch('logout', '/')),
   // Route('/', Site.Home, 'home'),
   // Route('*', Site.Errors._404, '404')
   Route('/', Site.Client.Section, null, {}, [
     Route('', Site.Client.Site.Welcome, 'welcome', { guest: true }),
     Route('About', Site.Client.Site.About, 'about', { guest: true }),
     Route('Login', Site.Client.Auth.Login, 'login', { guest: true }),
+    Route('Logout', '', 'logout', null, null, () => store.dispatch('logout', '/')),
+    Route('Dashboard', Site.Client.Users.Dashboard, 'dashboard', { auth: true }),
   ]),
   Route('*', Site.Errors._404, '404')
 ]

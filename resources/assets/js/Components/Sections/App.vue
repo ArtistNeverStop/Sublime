@@ -1,5 +1,6 @@
 <template lang='pug'>
-router-view#app.site
+v-app#app.site
+  router-view
 </template>
 
 <script>
