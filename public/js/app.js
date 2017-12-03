@@ -33770,7 +33770,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "app-client wihte", attrs: { light: "" } },
+    {
+      staticClass: "app-client wihte",
+      class: { "navbar-fixed-container": _vm.navbarShow },
+      attrs: { light: "" }
+    },
     [
       _c("v-navbar", { attrs: { "navbar-show": _vm.navbarShow } }),
       _c("router-view", {

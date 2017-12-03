@@ -15878,3 +15878,7 @@ p.white {
           flex: 1;
 }
 
+.navbar-fixed-container {
+  padding-top: 64px;
+}
+
