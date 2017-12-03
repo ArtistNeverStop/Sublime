@@ -126,7 +126,7 @@
                     if (user.is_admin) {
                       this.$router.push({ name: 'admin' })
                     } else {
-                      this.$router.push('dashboard')
+                      this.$router.push({name:'dashboard'})
                     }
                   })
                 }

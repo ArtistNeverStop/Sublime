@@ -13,7 +13,7 @@ v-content
       section
         v-parallax(src='images/party-croud.jpg', height='600')
           v-layout.white--text(column='', align-center='', justify-center='')
-            img(src='', alt='Vuetify.js', height='200')
+            img(src='sublime-logo-white.png', alt='SUBLIME', height='200')
             h1.white--text.mb-2.display-1.text-xs-center SUBLIME
             .subheading.mb-3.text-xs-center La web definitiva de Crowfunding para eventos.
             v-btn.lighten-2.mt-5(dark='', large='', href='/pre-made-themes')
@@ -116,7 +116,10 @@ v-content
                   | Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
                   | Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                   | Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
+
             v-flex(xs12='', sm4='', offset-sm1='')
+
+            v-flex(xs12='', sm6='')
               v-card.elevation-0.transparent
                 v-card-title.layout.justify-center(primary-title='')
                   .headline Contact us

@@ -7,11 +7,11 @@ v-container(:fluid=`true`, v-show=`navbarShow`)
           v-list-tile-avatar
             img(:src=`!User.me ? '/sublime-logo.png' : 'https://randomuser.me/api/portraits/men/85.jpg'`)
           v-list-tile-content
-            v-list-tile-title.title {{ User.me ? 'John Leider' : 'SUBLIME' }}
+            v-list-tile-title.title {{ User.me ? User.me.name : 'SUBLIME' }}
       v-list.pt-0(dense='')
         v-divider
-        v-list-tile(v-for='item in items', :key='item.title', @click=`$go(item.route)`)
-          v-list-tile-action
+        v-list-tile(v-for='item in menuItems', :key='item.title', @click=`$go(item.route)`)
+          v-list-tile-action(v-if=`item.icon`)
             v-icon {{ item.icon }}
           v-list-tile-content
             v-list-tile-title {{ item.title }}
@@ -19,8 +19,8 @@ v-container(:fluid=`true`, v-show=`navbarShow`)
       img(@click=`$go('welcome')`, src='/sublime-logo.png', alt='Vuetify.js', height='50')  
       v-toolbar-title {{ title }}
       v-spacer
-      //- v-toolbar-side-icon.hidden-md-and-up
-      v-toolbar-items
+      v-toolbar-side-icon(@click='drawer = !drawer')
+      //- v-toolbar-items
         v-btn(icon, @click='drawer = !drawer') 
           v-icon.dark--text(x-large='') menu 
 
@@ -56,12 +56,6 @@ export default {
     return {
       title: 'SUBLIME',
       drawer: null,
-      items: [
-        { title: 'Welcome', icon: 'dashboard', route: 'welcome' },
-        { title: 'About', icon: 'question_answer', route: 'about' },
-        { title: 'Register', icon: 'question_answer', route: 'register' },
-        { title: 'Login', icon: 'question_answer', route: 'login' }
-      ]
     }
   },
 
@@ -94,7 +88,21 @@ export default {
   computed: {
     ...mapState([
       'User'
-    ])
+    ]),
+
+    menuItems ()  {
+      return this.User.me ? 
+        [
+          { title: 'Dashboard', icon: 'dashboard', route: 'dashboard'},
+          { title: 'Logout', route: 'logout' }
+        ] :
+        [
+          { title: 'Welcome', icon: 'dashboard', route: 'welcome'},
+          { title: 'About', icon: 'question_answer', route: 'about' },
+          { title: 'Register', icon: 'question_answer', route: 'register' },
+          { title: 'Login', icon: 'question_answer', route: 'login' }
+        ]
+    }
   },
 
   /**

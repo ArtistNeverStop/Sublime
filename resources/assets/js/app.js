@@ -18,19 +18,19 @@ import Vue from 'vue'
 
 Vue.use(Vuetify)
 
-// window.flatpickr = require("flatpickr");
+window.flatpickr = require("flatpickr");
 
-// Vue.use(VueGoogleMaps, {
-//   load: {
-//     key: 'AIzaSyAb-pcxVpILOwGT7ypK7s0tbGw6cBq8oUQ',
-//     libraries: 'places' // This is required if you use the Autocomplete plugin
-//     // OR: libraries: 'places,drawing'
-//     // OR: libraries: 'places,drawing,visualization'
-//     // (as you require)
-//   }
-// })
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyAb-pcxVpILOwGT7ypK7s0tbGw6cBq8oUQ',
+    libraries: 'places' // This is required if you use the Autocomplete plugin
+    // OR: libraries: 'places,drawing'
+    // OR: libraries: 'places,drawing,visualization'
+    // (as you require)
+  }
+})
 
-// store.dispatch('me')
+store.dispatch('me')
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

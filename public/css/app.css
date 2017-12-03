@@ -15882,3 +15882,7 @@ p.white {
   padding-top: 64px;
 }
 
+.cell-phone iframe {
+  background-color: white;
+}
+
