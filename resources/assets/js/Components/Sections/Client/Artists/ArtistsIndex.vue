@@ -3,7 +3,9 @@
   .row.center-xs
     .col-md-12
       h1 Artists
-      p(v-for='artist in Artist.all') {{ artist.name }}
+      .artist(v-for='artist in Artist.all')
+        h2 {{ artist.name }}
+        .soundcloud(v-if='artist.soundcloud_embed', v-html=`artist.soundcloud_embed`)
 </template>
 
 <script>

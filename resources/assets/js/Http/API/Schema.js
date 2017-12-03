@@ -2,9 +2,9 @@ var schema = {
   artist: `
 _entity: entity
 id
+user_id
 background_image
 avatar
-user_id
 name
 real_name
 record_label
@@ -135,7 +135,6 @@ id
 url
 `
 }
-schema.artists = schema.artist
 schema.images = schema.image
 schema.attributes = schema.attribute
 schema.unique_attribute = schema.attribute

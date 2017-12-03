@@ -19,6 +19,8 @@ class CreateResourceHasFileTable extends Migration
             $table->foreign('file_id')->references('id')->on('files')->onDelete('cascade');
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('artist_id')->unsigned()->nullable();
+            $table->foreign('artist_id')->references('id')->on('artists');
             $table->tinyInteger('type')->default(File::DEFAULT_TYPE);
         });
     }

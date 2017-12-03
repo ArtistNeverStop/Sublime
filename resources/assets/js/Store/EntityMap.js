@@ -16,6 +16,19 @@ export default {
     belongsTo: [
       //
     ]
+  },
+
+  Artist: {
+    hasMany: [
+      // {
+      //   entity: 'Review',
+      //   field: 'reviews',
+      //   key: 'user_id'
+      // }
+    ],
+    belongsTo: [
+      //
+    ]
   }
 }
 

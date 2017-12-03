@@ -1,5 +1,5 @@
-import EntityMap from '@/Store/EntityMap'
 import axios from '@/Http'
+import EntityMap from '@/Store/EntityMap'
 import files from '@/Http/API/Files'
 
 /**

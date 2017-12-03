@@ -7,10 +7,11 @@ use Illuminate\Notifications\Notifiable;
 use App\Traits\EagerLoadeable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Traits\Support\HasFiles;
+use App\Traits\Support\EntitySerializableAttribute;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, Notifiable, EagerLoadeable, HasFiles;
+    use HasApiTokens, Notifiable, EagerLoadeable, HasFiles, EntitySerializableAttribute;
 
     /**
      * The default value in db, the Resource class

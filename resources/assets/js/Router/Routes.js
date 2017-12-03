@@ -40,6 +40,7 @@ export default [
     Route('Dashboard', Site.Client.Users.Dashboard, 'dashboard', { auth: true }),
 
     Route('Artistas', Site.Client.Artists.Index, 'artists.index'),
+    Route('Artistas/:artist', Site.Client.Artists.Detail, 'artists.detail'),
   ]),
   Route('*', Site.Errors._404, '404')
 ]

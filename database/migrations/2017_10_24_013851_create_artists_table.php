@@ -18,6 +18,11 @@ class CreateArtistsTable extends Migration
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('name')->unique();
+            $table->string('real_name')->nullable();
+            $table->string('record_label')->nullable();
+            $table->text('description')->nullable();
+            $table->text('soundcloud_embed')->nullable();
+            $table->string('country')->nullable();
             $table->timestamps();
         });
     }

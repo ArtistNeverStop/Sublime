@@ -4,6 +4,7 @@
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 import axios from 'axios'
+import { query, mutation } from '@/Http/API/Schema'
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
@@ -65,5 +66,40 @@ axios.flush = function flush (callback) {
 
 // Set the default axios configuration on API
 axios.api()
+
+/**
+ * Set the basic API config to
+ * axios.
+ * ------------------------------
+ * @function api
+ */
+axios.query = function axiosQuery (type, params, load = [], variables) {
+  return axios.get(`/graphql`, {
+    params: {
+      query: `{
+        ${query(type, load, params)}
+      }`,
+      variables
+    }
+  })
+}
+
+/**
+ * Set the basic API config to
+ * axios.
+ * ------------------------------
+ * @function api
+ */
+axios.mutation = function axiosMutation (type, variables = null, load = []) {
+  return axios.post(`/graphql`, {
+    query: `{
+      mutation ${type} ${variables ? `(${Object.keys(variables).map(v => '$' + v).join(', ')})` : ''} {
+        ${mutation(type, variables, load)}
+      }
+    }`,
+    variables,
+    operationName: type
+  })
+}
 
 export default axios

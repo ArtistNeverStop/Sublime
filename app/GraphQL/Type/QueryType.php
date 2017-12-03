@@ -34,6 +34,9 @@ class QueryType extends Type
         Query\Users\MeQuery::class,
         Query\Users\UserQuery::class,
         Query\Users\UsersQuery::class,
+
+        Query\Artists\ArtistQuery::class,
+        // Query\Artists\ArtistsQuery::class,
         // # ---------- Departments ---------- #
         // Query\Departments\DepartmentsConnectionQuery::class,
         // Query\Departments\DepartmentsQuery::class,

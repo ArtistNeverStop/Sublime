@@ -11,6 +11,7 @@ class Type extends ObjectType
      * Object types:
      */
     private static $user;
+    private static $artist;
     private static $product;
     private static $query;
     private static $mutation;

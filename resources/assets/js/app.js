@@ -3,8 +3,9 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-import * as VueGoogleMaps from 'vue2-google-maps'
+ import 'babel-polyfill'
 import '@/Http'
+import * as VueGoogleMaps from 'vue2-google-maps'
 import '@/Components/Prototype'
 // import '@/Components/Directives'
 import '@/Components/Globals'
