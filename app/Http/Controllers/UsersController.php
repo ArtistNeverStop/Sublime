@@ -106,4 +106,15 @@ class UsersController extends Controller
     {
         return Auth::user()->managedArtists->load(['placesAvailable']);
     }
+
+    /**
+     * Remove the current user.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function selfDestruct(Request $request)
+    {
+        Auth::user()->delete();
+    }
 }

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Auth;
 
-// use App\Http\Controllers\FilesController;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -11,7 +10,7 @@ use Socialite;
 use App\User;
 use Auth;
 
-class LoginController extends Controller //FilesController
+class LoginController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -65,11 +64,11 @@ class LoginController extends Controller //FilesController
                 // 'avatar' => $social_user->avatar,
                 'password' => null,
             ]);
-            // if ($social_user->avatar_original) {
-            //     $temp = tempnam(sys_get_temp_dir(), 'TMP_');
-            //     file_put_contents($temp, file_get_contents($social_user->avatar_original));
-            //     $this->storeFile(new UploadedFile($temp, 'FacebookAvatar'), 'users', $user, null, $user);
-            // }
+            if ($social_user->avatar_original) {
+                $temp = tempnam(sys_get_temp_dir(), 'TMP_');
+                file_put_contents($temp, file_get_contents($social_user->avatar_original));
+                $this->storeFile(new UploadedFile($temp, 'FacebookAvatar'), 'users', $user, null, $user);
+            }
             return $this->authAndRedirect($user, $provider);
         }
     }

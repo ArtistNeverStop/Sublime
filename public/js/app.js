@@ -179,8 +179,8 @@ module.exports = function normalizeComponent (
 "use strict";
 /* unused harmony export Store */
 /* unused harmony export install */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return mapState; });
-/* unused harmony export mapMutations */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return mapState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return mapMutations; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return mapGetters; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return mapActions; });
 /* unused harmony export createNamespacedHelpers */
@@ -24388,7 +24388,7 @@ module.exports = function spread(callback) {
 /**
  * Set the Helpers on Vue instances Adding Instance Properties.
  */
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.$http = __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* default */];
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.$http = __WEBPACK_IMPORTED_MODULE_1__Http__["a" /* default */];
 
 /**
  * Return true if the current route
@@ -24805,7 +24805,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User'])),
 
   /**
    * The mounted hook life-cycle of
@@ -25169,7 +25169,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User']))
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User']))
 });
 
 /***/ }),
@@ -28047,7 +28047,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User'])),
 
   /**
    * The main instance methods of
@@ -28256,7 +28256,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User', 'Request'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User', 'Request'])),
 
   /**
    * The main instance methods of
@@ -28783,7 +28783,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User', 'Place'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User', 'Place'])),
 
   /**
    * The main instance methods of
@@ -29223,7 +29223,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User'])),
 
   /**
    * The main instance methods of
@@ -29798,7 +29798,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User'])),
 
   /**
    * The main instance methods of
@@ -30333,7 +30333,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User'])),
 
   /**
    * The main instance methods of
@@ -30685,6 +30685,94 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -30698,7 +30786,24 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @return {Object}
    */
   data: function data() {
-    return {};
+    return {
+      deleteDialog: false,
+      dialog: false,
+      dialog2: false,
+      notifications: false,
+      sound: true,
+      widgets: false,
+      items: [{
+        title: 'Click Me'
+      }, {
+        title: 'Click Me'
+      }, {
+        title: 'Click Me'
+      }, {
+        title: 'Click Me 2'
+      }],
+      select: [{ text: 'State 1' }, { text: 'State 2' }, { text: 'State 3' }, { text: 'State 4' }, { text: 'State 5' }, { text: 'State 6' }, { text: 'State 7' }]
+    };
   },
 
 
@@ -30709,7 +30814,18 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User']))
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapMutations */])(['logout'])),
+
+  methods: {
+    deleteAcount: function deleteAcount() {
+      var _this = this;
+
+      this.$http.delete('me').then(function () {
+        _this.logout('/');
+      });
+    }
+  }
+
 });
 
 /***/ }),
@@ -30722,8 +30838,597 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _vm.User.me
     ? _c("div", { staticClass: "container" }, [
-        _c("h1", [_vm._v("Dashboard")]),
-        _c("p", [_vm._v(_vm._s(_vm.User.me.name))])
+        _c(
+          "div",
+          { staticClass: "row" },
+          [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("h1", [_vm._v("Dashboard")]),
+              _c("p", [_vm._v(_vm._s(_vm.User.me.name))])
+            ]),
+            _c(
+              "v-container",
+              { staticClass: "user-setings" },
+              [
+                _c(
+                  "v-layout",
+                  { attrs: { row: "", "justify-center": "" } },
+                  [
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: { color: "primary", dark: "" },
+                        on: {
+                          click: function($event) {
+                            $event.stopPropagation()
+                            _vm.dialog = true
+                          }
+                        }
+                      },
+                      [_vm._v("Configuracion")]
+                    ),
+                    _c(
+                      "v-dialog",
+                      {
+                        attrs: {
+                          fullscreen: "",
+                          transition: "dialog-bottom-transition",
+                          overlay: false,
+                          scrollable: ""
+                        },
+                        model: {
+                          value: _vm.dialog,
+                          callback: function($$v) {
+                            _vm.dialog = $$v
+                          },
+                          expression: "dialog"
+                        }
+                      },
+                      [
+                        _c(
+                          "v-card",
+                          [
+                            _c(
+                              "v-toolbar",
+                              {
+                                staticClass: "primary",
+                                staticStyle: { flex: "0 0 auto" },
+                                attrs: { dark: "" }
+                              },
+                              [
+                                _c(
+                                  "v-btn",
+                                  {
+                                    attrs: { icon: "", dark: "" },
+                                    nativeOn: {
+                                      click: function($event) {
+                                        _vm.dialog = false
+                                      }
+                                    }
+                                  },
+                                  [_c("v-icon", [_vm._v("close")])],
+                                  1
+                                ),
+                                _c("v-toolbar-title", [_vm._v("Settings")]),
+                                _c("v-spacer"),
+                                _c(
+                                  "v-toolbar-items",
+                                  [
+                                    _c(
+                                      "v-btn",
+                                      {
+                                        attrs: { dark: "", flat: "" },
+                                        nativeOn: {
+                                          click: function($event) {
+                                            _vm.dialog = false
+                                          }
+                                        }
+                                      },
+                                      [_vm._v("Save")]
+                                    ),
+                                    _c(
+                                      "v-menu",
+                                      {
+                                        attrs: {
+                                          bottom: "",
+                                          right: "",
+                                          "offset-y": ""
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-btn",
+                                          {
+                                            attrs: {
+                                              slot: "activator",
+                                              dark: "",
+                                              icon: ""
+                                            },
+                                            slot: "activator"
+                                          },
+                                          [_c("v-icon", [_vm._v("more_vert")])],
+                                          1
+                                        ),
+                                        _c(
+                                          "v-list",
+                                          _vm._l(_vm.items, function(item) {
+                                            return _c(
+                                              "v-list-tile",
+                                              {
+                                                key: item.title,
+                                                on: {
+                                                  click: function($event) {}
+                                                }
+                                              },
+                                              [
+                                                _c("v-list-tile-title", [
+                                                  _vm._v(_vm._s(item.title))
+                                                ])
+                                              ],
+                                              1
+                                            )
+                                          })
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _c(
+                              "v-card-text",
+                              [
+                                _c(
+                                  "v-btn",
+                                  {
+                                    attrs: { color: "primary", dark: "" },
+                                    on: {
+                                      click: function($event) {
+                                        $event.stopPropagation()
+                                        _vm.dialog2 = !_vm.dialog2
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("Open Dialog 2")]
+                                ),
+                                _c(
+                                  "v-tooltip",
+                                  { attrs: { right: "" } },
+                                  [
+                                    _c(
+                                      "v-btn",
+                                      {
+                                        attrs: { slot: "activator" },
+                                        slot: "activator"
+                                      },
+                                      [_vm._v("Tool Tip Activator")]
+                                    ),
+                                    _vm._v("            Tool Tip")
+                                  ],
+                                  1
+                                ),
+                                _c(
+                                  "v-list",
+                                  {
+                                    attrs: { "three-line": "", subheader: "" }
+                                  },
+                                  [
+                                    _c("v-subheader", [
+                                      _vm._v("User Controls")
+                                    ]),
+                                    _c(
+                                      "v-list-tile",
+                                      { attrs: { avatar: "" } },
+                                      [
+                                        _c(
+                                          "v-list-tile-content",
+                                          [
+                                            _c("v-list-tile-title", [
+                                              _vm._v("Content filtering")
+                                            ]),
+                                            _c("v-list-tile-sub-title", [
+                                              _vm._v(
+                                                "Set the content filtering level to restrict apps that can be downloaded"
+                                              )
+                                            ])
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _c(
+                                      "v-list-tile",
+                                      { attrs: { avatar: "" } },
+                                      [
+                                        _c(
+                                          "v-list-tile-content",
+                                          [
+                                            _c("v-list-tile-title", [
+                                              _vm._v("Password")
+                                            ]),
+                                            _c("v-list-tile-sub-title", [
+                                              _vm._v(
+                                                "Require password for purchase or use password to restrict purchase"
+                                              )
+                                            ])
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _c("v-divider"),
+                                _c(
+                                  "v-list",
+                                  {
+                                    attrs: { "three-line": "", subheader: "" }
+                                  },
+                                  [
+                                    _c("v-subheader", [_vm._v("General")]),
+                                    _c(
+                                      "v-list-tile",
+                                      { attrs: { avatar: "" } },
+                                      [
+                                        _c(
+                                          "v-list-tile-action",
+                                          [
+                                            _c("v-checkbox", {
+                                              model: {
+                                                value: _vm.notifications,
+                                                callback: function($$v) {
+                                                  _vm.notifications = $$v
+                                                },
+                                                expression: "notifications"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _c(
+                                          "v-list-tile-content",
+                                          [
+                                            _c("v-list-tile-title", [
+                                              _vm._v("Notifications")
+                                            ]),
+                                            _c("v-list-tile-sub-title", [
+                                              _vm._v(
+                                                "Notify me about updates to apps or games that I downloaded"
+                                              )
+                                            ])
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _c(
+                                      "v-list-tile",
+                                      { attrs: { avatar: "" } },
+                                      [
+                                        _c(
+                                          "v-list-tile-action",
+                                          [
+                                            _c("v-checkbox", {
+                                              model: {
+                                                value: _vm.sound,
+                                                callback: function($$v) {
+                                                  _vm.sound = $$v
+                                                },
+                                                expression: "sound"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _c(
+                                          "v-list-tile-content",
+                                          [
+                                            _c("v-list-tile-title", [
+                                              _vm._v("Sound")
+                                            ]),
+                                            _c("v-list-tile-sub-title", [
+                                              _vm._v(
+                                                "Auto-update apps at any time. Data charges may apply"
+                                              )
+                                            ])
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _c(
+                                      "v-list-tile",
+                                      { attrs: { avatar: "" } },
+                                      [
+                                        _c(
+                                          "v-list-tile-action",
+                                          [
+                                            _c("v-checkbox", {
+                                              model: {
+                                                value: _vm.widgets,
+                                                callback: function($$v) {
+                                                  _vm.widgets = $$v
+                                                },
+                                                expression: "widgets"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _c(
+                                          "v-list-tile-content",
+                                          [
+                                            _c("v-list-tile-title", [
+                                              _vm._v("Auto-add widgets")
+                                            ]),
+                                            _c("v-list-tile-sub-title", [
+                                              _vm._v(
+                                                "Automatically add home screen widgets"
+                                              )
+                                            ])
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _c("v-divider"),
+                                _c(
+                                  "v-list",
+                                  {
+                                    attrs: { "three-line": "", subheader: "" }
+                                  },
+                                  [
+                                    _c("v-subheader", [
+                                      _vm._v("Uso de la Cuenta")
+                                    ]),
+                                    _c(
+                                      "v-list-tile",
+                                      { attrs: { avatar: "" } },
+                                      [
+                                        _c(
+                                          "v-list-tile-content",
+                                          [
+                                            _c("v-list-tile-title", [
+                                              _vm._v("Bloquear Cuenta")
+                                            ]),
+                                            _c(
+                                              "v-list-tile-sub-title",
+                                              [
+                                                _vm._v(
+                                                  "Colocar la cuenta en estado de bloqueo"
+                                                ),
+                                                _c(
+                                                  "v-btn",
+                                                  { staticClass: "error" },
+                                                  [_vm._v("bloquear")]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _c(
+                                      "v-list-tile",
+                                      { attrs: { avatar: "" } },
+                                      [
+                                        _c(
+                                          "v-list-tile-content",
+                                          [
+                                            _c("v-list-tile-title", [
+                                              _vm._v("Eliminar Cuenta")
+                                            ]),
+                                            _c(
+                                              "v-list-tile-sub-title",
+                                              [
+                                                _vm._v(
+                                                  "Eliminar por completo la cuenta."
+                                                ),
+                                                _c(
+                                                  "v-btn",
+                                                  {
+                                                    staticClass: "error",
+                                                    on: {
+                                                      click: function($event) {
+                                                        _vm.deleteDialog = true
+                                                      }
+                                                    }
+                                                  },
+                                                  [_vm._v("eliminar")]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    ),
+                    _c(
+                      "v-dialog",
+                      {
+                        attrs: { "max-width": "500px" },
+                        model: {
+                          value: _vm.dialog2,
+                          callback: function($$v) {
+                            _vm.dialog2 = $$v
+                          },
+                          expression: "dialog2"
+                        }
+                      },
+                      [
+                        _c(
+                          "v-card",
+                          [
+                            _c("v-card-title", [_vm._v("Dialog 2")]),
+                            _c(
+                              "v-card-text",
+                              [
+                                _c(
+                                  "v-btn",
+                                  {
+                                    attrs: { color: "primary", dark: "" },
+                                    on: {
+                                      click: function($event) {
+                                        $event.stopPropagation()
+                                        _vm.dialog3 = !_vm.dialog3
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("Open Dialog 3")]
+                                ),
+                                _c("v-select", {
+                                  attrs: {
+                                    items: _vm.select,
+                                    label: "A Select List",
+                                    "item-value": "text"
+                                  }
+                                })
+                              ],
+                              1
+                            ),
+                            _c(
+                              "v-card-actions",
+                              [
+                                _c(
+                                  "v-btn",
+                                  {
+                                    attrs: { color: "primary", flat: "" },
+                                    on: {
+                                      click: function($event) {
+                                        $event.stopPropagation()
+                                        _vm.dialog2 = false
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("Close")]
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    ),
+                    _c(
+                      "v-dialog",
+                      {
+                        attrs: { "max-width": "500px" },
+                        model: {
+                          value: _vm.deleteDialog,
+                          callback: function($$v) {
+                            _vm.deleteDialog = $$v
+                          },
+                          expression: "deleteDialog"
+                        }
+                      },
+                      [
+                        _c(
+                          "v-card",
+                          [
+                            _c(
+                              "v-card-title",
+                              [
+                                _c(
+                                  "v-alert",
+                                  {
+                                    attrs: {
+                                      outline: "outline",
+                                      color: "error",
+                                      icon: "warning",
+                                      value: true
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "Se borrara toda la informacion de tu cuenta."
+                                    )
+                                  ]
+                                ),
+                                _c("v-spacer"),
+                                _c("v-menu", {
+                                  attrs: { bottom: "", left: "" }
+                                })
+                              ],
+                              1
+                            ),
+                            _c(
+                              "v-card-actions",
+                              [
+                                _c(
+                                  "v-btn",
+                                  {
+                                    attrs: { color: "error", flat: "" },
+                                    on: {
+                                      click: function($event) {
+                                        $event.stopPropagation()
+                                        _vm.deleteAcount($event)
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("ELIMINAR")]
+                                ),
+                                _c(
+                                  "v-btn",
+                                  {
+                                    attrs: { color: "primary", flat: "" },
+                                    on: {
+                                      click: function($event) {
+                                        $event.stopPropagation()
+                                        _vm.deleteDialog = false
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("cancelar")]
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
       ])
     : _vm._e()
 }
@@ -30846,7 +31551,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User', 'Request']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['myRequests'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User', 'Request']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["c" /* mapGetters */])(['myRequests'])),
 
   /**
    * The main instance methods of
@@ -31189,7 +31894,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User', 'Artist', 'Place'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User', 'Artist', 'Place'])),
 
   watch: {
     min_quantity_persons: function min_quantity_persons(_min_quantity_persons) {
@@ -31684,7 +32389,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User', 'Artist'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User', 'Artist'])),
 
   /**
    * The main instance methods of
@@ -32385,7 +33090,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User', 'Artist', 'Place'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User', 'Artist', 'Place'])),
 
   watch: {
     //
@@ -33757,7 +34462,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * ------------------------------
    * @member {Object} computed
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User'])),
 
   /**
    * The mounted hook life-cycle of
@@ -52786,7 +53491,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * ------------------------------
    * @member {Object} computed
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapState */])(['User']), {
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User']), {
     menuItems: function menuItems() {
       return this.User.me ? [{ title: 'Dashboard', icon: 'dashboard', route: 'dashboard' }, { title: 'Logout', route: 'logout' }] : [{ title: 'Welcome', icon: 'dashboard', route: 'welcome' }, { title: 'About', icon: 'question_answer', route: 'about' }, { title: 'Register', icon: 'question_answer', route: 'register' }, { title: 'Login', icon: 'question_answer', route: 'login' }];
     }

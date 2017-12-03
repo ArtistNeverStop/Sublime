@@ -26,5 +26,6 @@ Route::apiResource('/places', 'PlacesController');
 Route::apiResource('/requests', 'RequestsController')->middleware(['auth:api,web']);
 Route::get('/my/requests', 'RequestsController@mine')->middleware(['auth:api,web']);
 Route::get('/me', 'UsersController@me')->middleware(['auth:api,web'])->name('users.me.api');
+Route::delete('/me', 'UsersController@selfDestruct')->middleware(['auth:api,web'])->name('users.me.api');
 Route::get('/me/artists', 'UsersController@artists')->middleware(['auth:api,web'])->name('users.me.api');
 Route::post('/me/artists/{artist}/places/{place}', 'ArtistsController@makeAvailable')->middleware(['auth:api,web'])->name('users.me.api');

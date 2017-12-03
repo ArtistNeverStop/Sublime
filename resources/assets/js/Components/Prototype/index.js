@@ -4,7 +4,7 @@ import axios from '@/Http'
 /**
  * Set the Helpers on Vue instances Adding Instance Properties.
  */
-Vue.$http = axios
+Vue.prototype.$http = axios
 
 /**
  * Return true if the current route
