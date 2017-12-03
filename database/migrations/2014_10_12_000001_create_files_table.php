@@ -19,6 +19,7 @@ class CreateFilesTable extends Migration
             $table->string('mime_type');
             $table->integer('uploader_id')->unsigned()->nullable();
             $table->foreign('uploader_id')->references('id')->on('users')->onDelete('set null');
+            $table->double('order')->unsigned();
             $table->timestamps();
         });
     }

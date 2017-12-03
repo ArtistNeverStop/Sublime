@@ -151,12 +151,14 @@
         'User'
       ]),
 
-      ...mapMutations([
-        'logout'
-      ])
     },
 
     methods: {
+
+      ...mapMutations([
+        'logout'
+      ]),
+      
       deleteAcount () {
         this.$http.delete('me').then(() => {
           this.logout('/')

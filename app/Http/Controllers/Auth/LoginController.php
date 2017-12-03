@@ -9,6 +9,7 @@ use Illuminate\Http\UploadedFile;
 use Socialite;
 use App\User;
 use Auth;
+use App\File;
 
 class LoginController extends Controller
 {
@@ -67,7 +68,7 @@ class LoginController extends Controller
             if ($social_user->avatar_original) {
                 $temp = tempnam(sys_get_temp_dir(), 'TMP_');
                 file_put_contents($temp, file_get_contents($social_user->avatar_original));
-                $this->storeFile(new UploadedFile($temp, 'FacebookAvatar'), 'users', $user, null, $user);
+                $this->storeFile(new UploadedFile($temp, 'FacebookAvatar'), 'users', $user, User::AVATAR_FILE_TYPE, $user);
             }
             return $this->authAndRedirect($user, $provider);
         }

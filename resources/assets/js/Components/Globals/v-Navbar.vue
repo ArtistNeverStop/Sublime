@@ -5,7 +5,7 @@ v-container(:fluid=`true`, v-show=`navbarShow`)
       v-list.pa-1
         v-list-tile(avatar='')
           v-list-tile-avatar
-            img(:src=`!User.me ? '/sublime-logo.png' : 'https://randomuser.me/api/portraits/men/85.jpg'`)
+            img(:src=`!User.me ? '/sublime-logo.png' : User.me.avatar`)
           v-list-tile-content
             v-list-tile-title.title {{ User.me ? User.me.name : 'SUBLIME' }}
       v-list.pt-0(dense='')

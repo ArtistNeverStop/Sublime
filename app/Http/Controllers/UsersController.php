@@ -93,7 +93,7 @@ class UsersController extends Controller
      */
     public function me(Request $request)
     {
-        return Auth::user()->load(['requests.artist']);
+        return Auth::user()->load(['images', 'requests.artist']);
     }
 
     /**

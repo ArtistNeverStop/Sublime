@@ -30814,9 +30814,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    * @member {Object} methods
    * @return {Object}
    */
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User']), Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapMutations */])(['logout'])),
+  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User'])),
 
-  methods: {
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["d" /* mapMutations */])(['logout']), {
     deleteAcount: function deleteAcount() {
       var _this = this;
 
@@ -30824,7 +30824,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         _this.logout('/');
       });
     }
-  }
+  })
 
 });
 
@@ -53286,7 +53286,7 @@ var render = function() {
                           attrs: {
                             src: !_vm.User.me
                               ? "/sublime-logo.png"
-                              : "https://randomuser.me/api/portraits/men/85.jpg"
+                              : _vm.User.me.avatar
                           }
                         })
                       ]),

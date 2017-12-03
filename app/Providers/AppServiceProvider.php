@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\User;
+use App\File;
+use Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +16,21 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        User::deleting(function ($user) {
+            $user->files()->delete();
+        });
+
+        /**
+         * If there is a user in the session and the uploader_id
+         * was not specified then set the current user as uploader.
+         * @event
+         */
+        File::creating(function ($file) {
+            $file->order = microtime(true);
+            if (!$file->uploader_id && Auth::user()) {
+                $file->uploader_id = Auth::user()->id;
+            }
+        });
     }
 
     /**

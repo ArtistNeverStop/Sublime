@@ -6,10 +6,20 @@ use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use App\Traits\EagerLoadeable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Traits\Support\HasFiles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, Notifiable, EagerLoadeable;
+    use HasApiTokens, Notifiable, EagerLoadeable, HasFiles;
+
+    /**
+     * The default value in db, the Resource class
+     * related must declare their on constant types
+     * to group their files
+     *
+     * @var int
+     */
+    const AVATAR_FILE_TYPE = 2;
 
     /**
      * The attributes that are mass assignable.
@@ -51,7 +61,7 @@ class User extends Authenticatable
         'is_admin',
         'is_staff',
         'is_user',
-        // 'avatar',
+        'avatar',
         // 'image_url'
     ];
 
@@ -127,5 +137,16 @@ class User extends Authenticatable
     public function getIsUserAttribute()
     {
         return !$this->is_admin && !$this->is_staff;
+    }
+
+    /**
+     * Define if the user is staff of the plataform
+     *
+     * @return boolean
+     */
+    public function getAvatarAttribute()
+    {
+        $avatar = $this->images()->wherePivot('type', self::AVATAR_FILE_TYPE)->first();
+        return $avatar ? $avatar->url : null;
     }
 }
