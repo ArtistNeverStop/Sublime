@@ -52651,10 +52651,8 @@ var render = function() {
               }),
               _c("v-toolbar-title", [_vm._v(_vm._s(_vm.title))]),
               _c("v-spacer"),
-              _c("v-toolbar-side-icon", { staticClass: "hidden-md-and-up" }),
               _c(
                 "v-toolbar-items",
-                { staticClass: "hidden-sm-and-down" },
                 [
                   _c(
                     "v-btn",

@@ -19,8 +19,8 @@ v-container(:fluid=`true`, v-show=`navbarShow`)
       img(@click=`$go('welcome')`, src='/sublime-logo.png', alt='Vuetify.js', height='50')  
       v-toolbar-title {{ title }}
       v-spacer
-      v-toolbar-side-icon.hidden-md-and-up
-      v-toolbar-items.hidden-sm-and-down
+      //- v-toolbar-side-icon.hidden-md-and-up
+      v-toolbar-items
         v-btn(icon, @click='drawer = !drawer') 
           v-icon.dark--text(x-large='') menu 
 
