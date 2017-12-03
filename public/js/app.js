@@ -42280,6 +42280,10 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -42432,10 +42436,15 @@ var render = function() {
                   _c("v-card-title", { attrs: { "primary-title": "" } }, [
                     _c("div", [
                       _c("div", { staticClass: "headline" }, [
-                        _vm._v("Top western road trips")
+                        _vm._v(_vm._s(_vm.artist.name))
                       ]),
                       _c("span", { staticClass: "grey--text" }, [
-                        _vm._v("1,000 miles of wonder")
+                        _vm._v(
+                          _vm._s(_vm.artist.real_name) +
+                            " " +
+                            _vm._s(_vm.artist.record_label) +
+                            " "
+                        )
                       ])
                     ])
                   ]),
@@ -42501,7 +42510,26 @@ var render = function() {
           )
         ],
         1
-      )
+      ),
+      _vm.artist.soundcloud_embed
+        ? _c(
+            "v-layout",
+            { attrs: { row: "" } },
+            [
+              _c("v-flex", { attrs: { xs12: "" } }, [
+                _vm.artist.soundcloud_embed
+                  ? _c("div", {
+                      staticClass: "soundcloud",
+                      domProps: {
+                        innerHTML: _vm._s(_vm.artist.soundcloud_embed)
+                      }
+                    })
+                  : _vm._e()
+              ])
+            ],
+            1
+          )
+        : _vm._e()
     ],
     1
   )

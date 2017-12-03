@@ -16,8 +16,8 @@ v-content(:fluid=`true`)
         v-card-media(:src='artist.avatar', height='200px')
         v-card-title(primary-title='')
           div
-            .headline Top western road trips
-            span.grey--text 1,000 miles of wonder
+            .headline {{artist.name}}
+            span.grey--text {{artist.real_name}} {{artist.record_label}} 
         v-card-actions
           v-btn(flat='') Share
           v-btn(flat='', color='purple') Explore
@@ -26,7 +26,11 @@ v-content(:fluid=`true`)
             v-icon {{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}
         v-slide-y-transition
           v-card-text(v-show='show')
-            | {{artist.description}}
+            | {{artist.description }}
+  v-layout(row='', v-if=`artist.soundcloud_embed`)
+    v-flex(xs12='')
+      //- p {{artist.soundcloud_embed}}
+      .soundcloud(v-if='artist.soundcloud_embed', v-html=`artist.soundcloud_embed`)
 </template>
 <style>
   .artist-card {
