@@ -16,8 +16,8 @@ v-container(:fluid=`true`)
           v-list-tile-content
             v-list-tile-title {{ item.title }}
     v-toolbar(:fixed=`true`, light='', v-show=`navbarShow`)
-      v-toolbar-side-icon(@click=`$go('welcome')`)
-        img(src='/sublime-logo.png', alt='Vuetify.js', height='50')  
+      v-toolbar-side-icon
+        img(@click=`$go('welcome')`, src='/sublime-logo.png', alt='Vuetify.js', height='50')  
       v-toolbar-title {{ title }}
       v-spacer
       v-toolbar-side-icon.hidden-md-and-up

@@ -65,7 +65,7 @@ v-content
             v-btn.lighten-2.mt-5(dark='', large='', href='/pre-made-themes')
               | Crear una cuenta
       section
-        v-container(grid-list-xl='')
+        v-container(grid-list-xl='', hidden-md-and-down)
           v-layout.my-5(row='', wrap='', justify-center='', style="position: relative;")
             .cell-phone.children_.a8.l5.l6.l7(data-reactid='146', style="position: absolute; top: -300px; right: 0px; transform: rotate(-10deg);")
               .base_.mg.mh.l8.l9.la.lb.lc.ld.base_.an.m.fl.fm(data-reactid='147', style="position: relative;")

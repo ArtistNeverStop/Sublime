@@ -33369,7 +33369,12 @@ var render = function() {
                 [
                   _c(
                     "v-container",
-                    { attrs: { "grid-list-xl": "" } },
+                    {
+                      attrs: {
+                        "grid-list-xl": "",
+                        "hidden-md-and-down": "hidden-md-and-down"
+                      }
+                    },
                     [
                       _c(
                         "v-layout",
@@ -52635,25 +52640,20 @@ var render = function() {
               attrs: { fixed: true, light: "" }
             },
             [
-              _c(
-                "v-toolbar-side-icon",
-                {
+              _c("v-toolbar-side-icon", [
+                _c("img", {
+                  attrs: {
+                    src: "/sublime-logo.png",
+                    alt: "Vuetify.js",
+                    height: "50"
+                  },
                   on: {
                     click: function($event) {
                       _vm.$go("welcome")
                     }
                   }
-                },
-                [
-                  _c("img", {
-                    attrs: {
-                      src: "/sublime-logo.png",
-                      alt: "Vuetify.js",
-                      height: "50"
-                    }
-                  })
-                ]
-              ),
+                })
+              ]),
               _c("v-toolbar-title", [_vm._v(_vm._s(_vm.title))]),
               _c("v-spacer"),
               _c("v-toolbar-side-icon", { staticClass: "hidden-md-and-up" }),
