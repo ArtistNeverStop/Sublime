@@ -13,7 +13,7 @@ v-content(:fluid=`true`)
   v-layout(row='')
     v-flex(xs12='', sm6='', offset-sm1='')
       v-card.artist-card(:class=`{showing: show}`)
-        v-card-media(src='/static/doc-images/cards/sunshine.jpg', height='200px')
+        v-card-media(:src='artist.avatar', height='200px')
         v-card-title(primary-title='')
           div
             .headline Top western road trips
@@ -26,7 +26,7 @@ v-content(:fluid=`true`)
             v-icon {{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}
         v-slide-y-transition
           v-card-text(v-show='show')
-            | I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+            | {{artist.description}}
 </template>
 <style>
   .artist-card {

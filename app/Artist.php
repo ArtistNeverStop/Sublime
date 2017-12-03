@@ -17,7 +17,7 @@ class Artist extends Model
      *
      * @var int
      */
-    const BACKGROUND_IMAGE_FILE_TYPE = 2;
+    const BACKGROUND_IMAGE_FILE_TYPE = 1;
 
     /**
      * The default value in db, the Resource class
