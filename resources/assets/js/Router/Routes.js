@@ -31,10 +31,15 @@ export default [
   // Route('*', Site.Errors._404, '404')
   Route('/', Site.Client.Section, null, {}, [
     Route('', Site.Client.Site.Welcome, 'welcome', { guest: true }),
-    Route('About', Site.Client.Site.About, 'about', { guest: true }),
+    Route('About', 'Acerca-de-nosotros'),
+    Route('Acerca-de-nosotros', Site.Client.Site.About, 'about', { guest: true }),
     Route('Login', Site.Client.Auth.Login, 'login', { guest: true }),
+    Route('Register', 'Registrate'),
+    Route('Registrate', Site.Client.Auth.Login, 'register', { guest: true }),
     Route('Logout', '', 'logout', null, null, () => store.dispatch('logout', '/')),
     Route('Dashboard', Site.Client.Users.Dashboard, 'dashboard', { auth: true }),
+
+    Route('Artistas', Site.Client.Artists.Index, 'artists.index'),
   ]),
   Route('*', Site.Errors._404, '404')
 ]

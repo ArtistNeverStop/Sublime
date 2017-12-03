@@ -9,14 +9,14 @@ v-content
           h1(ref='title') Sublime
           div.arrow-down(@click='scrollTo(5)')
   transition(appear, mode="out-in", name='fade')
-    .welcome-content
+    .welcome-content(v-show='!showTitle')
       section
         v-parallax(src='images/party-croud.jpg', height='600')
           v-layout.white--text(column='', align-center='', justify-center='')
             img(src='sublime-logo-white.png', alt='SUBLIME', height='200')
             h1.white--text.mb-2.display-1.text-xs-center SUBLIME
             .subheading.mb-3.text-xs-center La web definitiva de Crowfunding para eventos.
-            v-btn.lighten-2.mt-5(dark='', large='', href='/pre-made-themes')
+            v-btn.lighten-2.mt-5(dark='', large='', @click=`$go('register')`)
               | Crear una cuenta
       section
         v-layout.my-5(column='', wrap='', align-center='')

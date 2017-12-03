@@ -104,3 +104,13 @@ p.white {
 		background-color: white;
 	}
 }
+
+.shadow-background {
+	padding: 10px;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.shadow-background-invert {
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.4);
+	color: black;	
+}

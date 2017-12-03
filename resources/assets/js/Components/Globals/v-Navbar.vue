@@ -1,5 +1,5 @@
 <template lang="pug">
-v-container(:fluid=`true`, v-show=`navbarShow`)
+.navbar-wraper(v-show=`navbarShow`)
   v-layout(wrap='')
     v-navigation-drawer(:fixed=`true`, temporary='', v-model='drawer', light='', absolute='', :right=`true`)
       v-list.pa-1
