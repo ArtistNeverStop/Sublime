@@ -1,6 +1,6 @@
 <template lang="pug">
 .app-client.wihte(light='')
-  v-navbar
+  v-navbar(:navbar-show=`navbarShow`)
   router-view(@hiddeNavbar=`navbarShow = false`, @showNavbar=`navbarShow = true`)
   //- .toasts
   //-   toast(v-for=`toast in $root.toasts`, :data=`toast`)
@@ -20,15 +20,7 @@ export default {
    */
   data: function () {
     return {
-      navbarShow: true,
-      title: 'SUBLIME',
-      drawer: null,
-      items: [
-        { title: 'Welcome', icon: 'dashboard', route: 'welcome' },
-        { title: 'About', icon: 'question_answer', route: 'about' },
-        { title: 'Register', icon: 'question_answer', route: 'register' },
-        { title: 'Login', icon: 'question_answer', route: 'login' }
-      ]
+      navbarShow: true
     }
   },
 

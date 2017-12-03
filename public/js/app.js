@@ -33717,10 +33717,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    */
   data: function data() {
     return {
-      navbarShow: true,
-      title: 'SUBLIME',
-      drawer: null,
-      items: [{ title: 'Welcome', icon: 'dashboard', route: 'welcome' }, { title: 'About', icon: 'question_answer', route: 'about' }, { title: 'Register', icon: 'question_answer', route: 'register' }, { title: 'Login', icon: 'question_answer', route: 'login' }]
+      navbarShow: true
     };
   },
 
@@ -33775,7 +33772,7 @@ var render = function() {
     "div",
     { staticClass: "app-client wihte", attrs: { light: "" } },
     [
-      _c("v-navbar"),
+      _c("v-navbar", { attrs: { "navbar-show": _vm.navbarShow } }),
       _c("router-view", {
         on: {
           hiddeNavbar: function($event) {
@@ -52522,7 +52519,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-container",
-    { attrs: { fluid: true } },
+    {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.navbarShow,
+          expression: "navbarShow"
+        }
+      ],
+      attrs: { fluid: true }
+    },
     [
       _c(
         "v-layout",
@@ -52624,32 +52631,20 @@ var render = function() {
           ),
           _c(
             "v-toolbar",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.navbarShow,
-                  expression: "navbarShow"
-                }
-              ],
-              attrs: { fixed: true, light: "" }
-            },
+            { attrs: { fixed: true, light: "" } },
             [
-              _c("v-toolbar-side-icon", [
-                _c("img", {
-                  attrs: {
-                    src: "/sublime-logo.png",
-                    alt: "Vuetify.js",
-                    height: "50"
-                  },
-                  on: {
-                    click: function($event) {
-                      _vm.$go("welcome")
-                    }
+              _c("img", {
+                attrs: {
+                  src: "/sublime-logo.png",
+                  alt: "Vuetify.js",
+                  height: "50"
+                },
+                on: {
+                  click: function($event) {
+                    _vm.$go("welcome")
                   }
-                })
-              ]),
+                }
+              }),
               _c("v-toolbar-title", [_vm._v(_vm._s(_vm.title))]),
               _c("v-spacer"),
               _c("v-toolbar-side-icon", { staticClass: "hidden-md-and-up" }),
@@ -52743,11 +52738,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+
+  props: {
+    navbarShow: {
+      type: Boolean,
+      default: true
+    }
+  },
 
   /**
    * The main instance reactive
@@ -52758,7 +52759,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    */
   data: function data() {
     return {
-      navbarShow: true,
       title: 'SUBLIME',
       drawer: null,
       items: [{ title: 'Welcome', icon: 'dashboard', route: 'welcome' }, { title: 'About', icon: 'question_answer', route: 'about' }, { title: 'Register', icon: 'question_answer', route: 'register' }, { title: 'Login', icon: 'question_answer', route: 'login' }]

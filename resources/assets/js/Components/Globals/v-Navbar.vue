@@ -1,5 +1,5 @@
 <template lang="pug">
-v-container(:fluid=`true`)
+v-container(:fluid=`true`, v-show=`navbarShow`)
   v-layout(wrap='')
     v-navigation-drawer(:fixed=`true`, temporary='', v-model='drawer', light='', absolute='', :right=`true`)
       v-list.pa-1
@@ -15,9 +15,8 @@ v-container(:fluid=`true`)
             v-icon {{ item.icon }}
           v-list-tile-content
             v-list-tile-title {{ item.title }}
-    v-toolbar(:fixed=`true`, light='', v-show=`navbarShow`)
-      v-toolbar-side-icon
-        img(@click=`$go('welcome')`, src='/sublime-logo.png', alt='Vuetify.js', height='50')  
+    v-toolbar(:fixed=`true`, light='')
+      img(@click=`$go('welcome')`, src='/sublime-logo.png', alt='Vuetify.js', height='50')  
       v-toolbar-title {{ title }}
       v-spacer
       v-toolbar-side-icon.hidden-md-and-up
@@ -39,6 +38,13 @@ import { mapState } from 'vuex'
 
 export default {
 
+  props: {
+    navbarShow: {
+      type: Boolean,
+      default: true
+    }
+  },
+
   /**
    * The main instance reactive
    * properties of the component.
@@ -48,7 +54,6 @@ export default {
    */
   data: function () {
     return {
-      navbarShow: true,
       title: 'SUBLIME',
       drawer: null,
       items: [
