@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\User;
 use App\File;
+use App\Ticket;
 use Auth;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,6 +23,20 @@ class AppServiceProvider extends ServiceProvider
 
         User::created(function ($user) {
             $user->wallet()->create([]);
+        });
+        Ticket::creating(function ($ticket) {
+            if (!$ticket->uid) {
+                $ticket->uid = str_random(5)
+            }
+        });
+        Ticket::created(function ($ticket) {
+            if ($ticket->artistPlace->persons_remeaning === 0) {
+                foreach ($ticket->artistPlace->tickets as $ticket) {
+                    $ticket->user->wallet->update([
+                        'credit' => $ticket->user->wallet->credit - $ticket->artistPlace->price_per_person,
+                    ]);
+                }
+            }
         });
 
         /**

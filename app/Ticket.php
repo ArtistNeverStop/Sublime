@@ -10,6 +10,7 @@ class Ticket extends Model
         'artist_available_place',
         'finish_at',
         'user_id',
+        'uid',
     ];
 
      /**
