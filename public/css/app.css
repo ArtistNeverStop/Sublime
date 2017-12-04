@@ -14550,6 +14550,10 @@ table.table tfoot tr {
           justify-content: flex-end;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .fa {
   cursor: pointer;
   -webkit-transition: all .4s;

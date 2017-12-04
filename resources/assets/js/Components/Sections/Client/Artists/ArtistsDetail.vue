@@ -1,17 +1,21 @@
 <template lang="pug">
 v-content(:fluid=`true`)
   section#artists-background(v-if=`artist`)
-    v-parallax(:src='artist.background_image', height='300')
+    v-parallax(:src='artist.background_image', height='260')
       v-layout.white--text(column='', align-center='', justify-center='')
-        //- img(src='sublime-logo-white.png', alt='SUBLIME', height='200')
+        v-flex(xs1='', offset-xs11=``)
+          .back.pointer(@click=`$go('artists.index')`)
+            v-icon.white--text(x-large='') fast_rewind
+            p Artistas
         h1.white--text.mb-2.display-1.text-xs-center.shadow-background {{artist.name}}
         .subheading.mb-3.text-xs-center
-          strong.shadow-background {{artist.real_name}}
+          //- strong.shadow-background {{artist.real_name}}
+          strong.shadow-background {{artist.country}}
           //- strong.shadow-background y traelos a tu ciudad!.
         //- v-btn.lighten-2.mt-5(dark='', large='', @click=`$go('artists.index')`)
           | Explorar
   v-layout(row='')
-    v-flex(xs12='', sm6='', offset-sm1='')
+    v-flex(xs12='', sm6='', :offset-sm1='!show')
       v-card.artist-card(:class=`{showing: show}`)
         v-card-media(:src='artist.avatar', height='200px')
         v-card-title(primary-title='')
@@ -27,12 +31,14 @@ v-content(:fluid=`true`)
         v-slide-y-transition
           v-card-text(v-show='show')
             | {{artist.description }}
-  v-layout(row='', v-if=`artist.soundcloud_embed`)
-    v-flex(xs12='')
+    v-flex(xs12='', sm5='')
+      p {{artist.description }}
+  .soundcloud(v-if='artist.soundcloud_embed', v-html=`artist.soundcloud_embed`)
       //- p {{artist.soundcloud_embed}}
-      .soundcloud(v-if='artist.soundcloud_embed', v-html=`artist.soundcloud_embed`)
+  gmap-map(:center="position", :zoom="7", style="width: 100%; height: 300px", :options="mapOptions")
+    gmap-marker(:position='position' :clickable='true' :draggable='true' @position_changed='updatePosition($event)')
 </template>
-<style>
+<style scoped>
   .artist-card {
     top: -50%;
     transition: 1s all;
@@ -61,7 +67,11 @@ export default {
   data: function () {
     return {
       artist: {},
-      show: false
+      show: false,
+      position: {
+        lat: 20.68245716967531,
+        lng: -103.38096618652344
+      },
     }
   },
 

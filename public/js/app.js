@@ -33364,8 +33364,139 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.$adminRoute = function () 
  * @member {Function}
  * @return {boolean}
  */
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.$go = function (name) {
-  return this.$router.push({ name: name });
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.$go = function (name, params) {
+  return this.$router.push({ name: name, params: params });
+};
+
+/**
+ * Go to a nnamed route.
+ * ------------------------------
+ * @member {Function}
+ * @return {boolean}
+ */
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.mapOptions = {
+  styles: [{
+    'elementType': 'geometry',
+    'stylers': [{
+      'color': '#212121'
+    }]
+  }, {
+    'elementType': 'labels.icon',
+    'stylers': [{
+      'visibility': 'off'
+    }]
+  }, {
+    'elementType': 'labels.text.fill',
+    'stylers': [{
+      'color': '#757575'
+    }]
+  }, {
+    'elementType': 'labels.text.stroke',
+    'stylers': [{
+      'color': '#212121'
+    }]
+  }, {
+    'featureType': 'administrative',
+    'elementType': 'geometry',
+    'stylers': [{
+      'color': '#757575'
+    }]
+  }, {
+    'featureType': 'administrative.country',
+    'elementType': 'labels.text.fill',
+    'stylers': [{
+      'color': '#9e9e9e'
+    }]
+  }, {
+    'featureType': 'administrative.land_parcel',
+    'stylers': [{
+      'visibility': 'off'
+    }]
+  }, {
+    'featureType': 'administrative.locality',
+    'elementType': 'labels.text.fill',
+    'stylers': [{
+      'color': '#bdbdbd'
+    }]
+  }, {
+    'featureType': 'poi',
+    'elementType': 'labels.text.fill',
+    'stylers': [{
+      'color': '#757575'
+    }]
+  }, {
+    'featureType': 'poi.park',
+    'elementType': 'geometry',
+    'stylers': [{
+      'color': '#181818'
+    }]
+  }, {
+    'featureType': 'poi.park',
+    'elementType': 'labels.text.fill',
+    'stylers': [{
+      'color': '#616161'
+    }]
+  }, {
+    'featureType': 'poi.park',
+    'elementType': 'labels.text.stroke',
+    'stylers': [{
+      'color': '#1b1b1b'
+    }]
+  }, {
+    'featureType': 'road',
+    'elementType': 'geometry.fill',
+    'stylers': [{
+      'color': '#2c2c2c'
+    }]
+  }, {
+    'featureType': 'road',
+    'elementType': 'labels.text.fill',
+    'stylers': [{
+      'color': '#8a8a8a'
+    }]
+  }, {
+    'featureType': 'road.arterial',
+    'elementType': 'geometry',
+    'stylers': [{
+      'color': '#373737'
+    }]
+  }, {
+    'featureType': 'road.highway',
+    'elementType': 'geometry',
+    'stylers': [{
+      'color': '#3c3c3c'
+    }]
+  }, {
+    'featureType': 'road.highway.controlled_access',
+    'elementType': 'geometry',
+    'stylers': [{
+      'color': '#4e4e4e'
+    }]
+  }, {
+    'featureType': 'road.local',
+    'elementType': 'labels.text.fill',
+    'stylers': [{
+      'color': '#616161'
+    }]
+  }, {
+    'featureType': 'transit',
+    'elementType': 'labels.text.fill',
+    'stylers': [{
+      'color': '#757575'
+    }]
+  }, {
+    'featureType': 'water',
+    'elementType': 'geometry',
+    'stylers': [{
+      'color': '#000000'
+    }]
+  }, {
+    'featureType': 'water',
+    'elementType': 'labels.text.fill',
+    'stylers': [{
+      'color': '#3d3d3d'
+    }]
+  }]
 };
 
 /***/ }),
@@ -34318,7 +34449,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
    */
   computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["e" /* mapState */])(['User']), {
     menuItems: function menuItems() {
-      return this.User.me ? [{ title: 'Dashboard', icon: 'dashboard', route: 'dashboard' }, { title: 'Logout', route: 'logout' }] : [{ title: 'Welcome', icon: 'dashboard', route: 'welcome' }, { title: 'About', icon: 'question_answer', route: 'about' }, { title: 'Register', icon: 'question_answer', route: 'register' }, { title: 'Login', icon: 'question_answer', route: 'login' }];
+      return this.User.me ? [{ title: 'Dashboard', icon: 'dashboard', route: 'dashboard' }, { title: 'Logout', route: 'logout' }] : [{ title: 'Welcome', icon: 'dashboard', route: 'welcome' }, { title: 'Artistas', icon: 'dashboard', route: 'artists.index' }, { title: 'About', icon: 'question_answer', route: 'about' }, { title: 'Register', icon: 'question_answer', route: 'register' }, { title: 'Login', icon: 'question_answer', route: 'login' }];
     }
   }),
 
@@ -38372,130 +38503,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       position: {
         lat: 20.68245716967531,
         lng: -103.38096618652344
-      },
-      mapOptions: {
-        styles: [{
-          'elementType': 'geometry',
-          'stylers': [{
-            'color': '#212121'
-          }]
-        }, {
-          'elementType': 'labels.icon',
-          'stylers': [{
-            'visibility': 'off'
-          }]
-        }, {
-          'elementType': 'labels.text.fill',
-          'stylers': [{
-            'color': '#757575'
-          }]
-        }, {
-          'elementType': 'labels.text.stroke',
-          'stylers': [{
-            'color': '#212121'
-          }]
-        }, {
-          'featureType': 'administrative',
-          'elementType': 'geometry',
-          'stylers': [{
-            'color': '#757575'
-          }]
-        }, {
-          'featureType': 'administrative.country',
-          'elementType': 'labels.text.fill',
-          'stylers': [{
-            'color': '#9e9e9e'
-          }]
-        }, {
-          'featureType': 'administrative.land_parcel',
-          'stylers': [{
-            'visibility': 'off'
-          }]
-        }, {
-          'featureType': 'administrative.locality',
-          'elementType': 'labels.text.fill',
-          'stylers': [{
-            'color': '#bdbdbd'
-          }]
-        }, {
-          'featureType': 'poi',
-          'elementType': 'labels.text.fill',
-          'stylers': [{
-            'color': '#757575'
-          }]
-        }, {
-          'featureType': 'poi.park',
-          'elementType': 'geometry',
-          'stylers': [{
-            'color': '#181818'
-          }]
-        }, {
-          'featureType': 'poi.park',
-          'elementType': 'labels.text.fill',
-          'stylers': [{
-            'color': '#616161'
-          }]
-        }, {
-          'featureType': 'poi.park',
-          'elementType': 'labels.text.stroke',
-          'stylers': [{
-            'color': '#1b1b1b'
-          }]
-        }, {
-          'featureType': 'road',
-          'elementType': 'geometry.fill',
-          'stylers': [{
-            'color': '#2c2c2c'
-          }]
-        }, {
-          'featureType': 'road',
-          'elementType': 'labels.text.fill',
-          'stylers': [{
-            'color': '#8a8a8a'
-          }]
-        }, {
-          'featureType': 'road.arterial',
-          'elementType': 'geometry',
-          'stylers': [{
-            'color': '#373737'
-          }]
-        }, {
-          'featureType': 'road.highway',
-          'elementType': 'geometry',
-          'stylers': [{
-            'color': '#3c3c3c'
-          }]
-        }, {
-          'featureType': 'road.highway.controlled_access',
-          'elementType': 'geometry',
-          'stylers': [{
-            'color': '#4e4e4e'
-          }]
-        }, {
-          'featureType': 'road.local',
-          'elementType': 'labels.text.fill',
-          'stylers': [{
-            'color': '#616161'
-          }]
-        }, {
-          'featureType': 'transit',
-          'elementType': 'labels.text.fill',
-          'stylers': [{
-            'color': '#757575'
-          }]
-        }, {
-          'featureType': 'water',
-          'elementType': 'geometry',
-          'stylers': [{
-            'color': '#000000'
-          }]
-        }, {
-          'featureType': 'water',
-          'elementType': 'labels.text.fill',
-          'stylers': [{
-            'color': '#3d3d3d'
-          }]
-        }]
       }
     };
   },
@@ -41376,6 +41383,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -41432,40 +41444,56 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
-    _vm._m(0),
-    _c("div", { staticClass: "row center-xs" }, [
-      _c(
-        "div",
-        { staticClass: "col-md-12" },
-        _vm._l(_vm.Artist.all, function(artist) {
-          return _c(
-            "router-link",
-            {
-              attrs: {
-                to: {
-                  name: "artists.manage.dates",
-                  params: { artist: artist.name.split(" ").join("-") }
-                }
-              }
-            },
-            [_vm._v(_vm._s(artist.name))]
-          )
-        })
-      )
-    ])
+  return _c("v-content", { attrs: { fluid: true } }, [
+    _vm.artist
+      ? _c(
+          "section",
+          { attrs: { id: "artists-background" } },
+          [
+            _c(
+              "v-parallax",
+              { attrs: { src: _vm.artist.background_image, height: "260" } },
+              [
+                _c(
+                  "v-layout",
+                  {
+                    staticClass: "white--text",
+                    attrs: {
+                      column: "",
+                      "align-center": "",
+                      "justify-center": ""
+                    }
+                  },
+                  [
+                    _c(
+                      "h1",
+                      {
+                        staticClass:
+                          "white--text mb-2 display-1 text-xs-center shadow-background"
+                      },
+                      [_vm._v("Artistas")]
+                    ),
+                    _c(
+                      "div",
+                      { staticClass: "subheading mb-3 text-xs-center" },
+                      [
+                        _c("strong", { staticClass: "shadow-background" }, [
+                          _vm._v(_vm._s(_vm.artist.country))
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
+      : _vm._e()
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row center-xs" }, [
-      _c("div", { staticClass: "col-md-12" }, [_c("h1", [_vm._v("Artists")])])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -42078,6 +42106,30 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -42139,29 +42191,164 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
-    _c("div", { staticClass: "row center-xs" }, [
+  return _c(
+    "v-content",
+    { attrs: { fluid: true } },
+    [
       _c(
-        "div",
-        { staticClass: "col-md-12" },
+        "section",
+        { attrs: { id: "artists-background" } },
         [
-          _c("h1", [_vm._v("Artists")]),
-          _vm._l(_vm.Artist.all, function(artist) {
-            return _c("div", { staticClass: "artist" }, [
-              _c("h2", [_vm._v(_vm._s(artist.name))]),
-              artist.soundcloud_embed
-                ? _c("div", {
-                    staticClass: "soundcloud",
-                    domProps: { innerHTML: _vm._s(artist.soundcloud_embed) }
-                  })
-                : _vm._e()
-            ])
-          })
+          _c(
+            "v-parallax",
+            { attrs: { src: "/images/artists-index.jpg", height: "600" } },
+            [
+              _c(
+                "v-layout",
+                {
+                  staticClass: "white--text",
+                  attrs: {
+                    column: "",
+                    "align-center": "",
+                    "justify-center": ""
+                  }
+                },
+                [
+                  _c(
+                    "h1",
+                    {
+                      staticClass:
+                        "white--text mb-2 display-1 text-xs-center shadow-background"
+                    },
+                    [_vm._v("Artistas")]
+                  ),
+                  _c("div", { staticClass: "subheading mb-3 text-xs-center" }, [
+                    _c("br"),
+                    _c("strong", { staticClass: "shadow-background" }, [
+                      _vm._v("Explora nevos Artistas y nuevos Generos")
+                    ]),
+                    _c("br"),
+                    _c("br"),
+                    _c("strong", { staticClass: "shadow-background" }, [
+                      _vm._v(
+                        "Aqui tienes todo el listado, consulta su disponibilidad y vota por ellos!."
+                      )
+                    ])
+                  ]),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "lighten-2 mt-5",
+                      attrs: { dark: "", large: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.$go("artists.index")
+                        }
+                      }
+                    },
+                    [_vm._v("Eres Manager ? ")]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
         ],
-        2
+        1
+      ),
+      _c(
+        "v-layout",
+        { attrs: { row: "" } },
+        _vm._l(_vm.Artist.all, function(artist) {
+          return _c(
+            "v-flex",
+            { attrs: { xs12: "", sm4: "" } },
+            [
+              _c(
+                "v-card",
+                { staticClass: "artist-card" },
+                [
+                  _c("v-card-media", {
+                    attrs: { src: artist.avatar, height: "200px" }
+                  }),
+                  _c("v-card-title", { attrs: { "primary-title": "" } }, [
+                    _c("div", [
+                      _c("div", { staticClass: "headline" }, [
+                        _vm._v(_vm._s(artist.name))
+                      ]),
+                      _c("span", { staticClass: "grey--text" }, [
+                        _vm._v(
+                          _vm._s(artist.real_name) +
+                            " " +
+                            _vm._s(artist.record_label) +
+                            " "
+                        )
+                      ])
+                    ])
+                  ]),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { flat: "" },
+                          on: {
+                            click: function($event) {
+                              _vm.$go("artists.detail", { artist: artist.name })
+                            }
+                          }
+                        },
+                        [_vm._v("Vota por el!")]
+                      ),
+                      _c("v-btn", { attrs: { flat: "", color: "purple" } }, [
+                        _vm._v("Explorar")
+                      ]),
+                      _c("v-spacer"),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { icon: "" },
+                          nativeOn: { click: function($event) {} }
+                        },
+                        [_c("v-icon", [_vm._v("keyboard_arrow_up")])],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _c(
+                    "v-slide-y-transition",
+                    [
+                      _c(
+                        "v-card-text",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: true,
+                              expression: "true"
+                            }
+                          ]
+                        },
+                        [_vm._v(_vm._s(artist.description))]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        })
       )
-    ])
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -42180,19 +42367,19 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(692)
+  __webpack_require__(694)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
 var __vue_script__ = __webpack_require__(656)
 /* template */
-var __vue_template__ = __webpack_require__(657)
+var __vue_template__ = __webpack_require__(696)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-062ba96a"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -42284,6 +42471,12 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -42299,7 +42492,11 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
   data: function data() {
     return {
       artist: {},
-      show: false
+      show: false,
+      position: {
+        lat: 20.68245716967531,
+        lng: -103.38096618652344
+      }
     };
   },
 
@@ -42361,190 +42558,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 });
 
 /***/ }),
-/* 657 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "v-content",
-    { attrs: { fluid: true } },
-    [
-      _vm.artist
-        ? _c(
-            "section",
-            { attrs: { id: "artists-background" } },
-            [
-              _c(
-                "v-parallax",
-                { attrs: { src: _vm.artist.background_image, height: "300" } },
-                [
-                  _c(
-                    "v-layout",
-                    {
-                      staticClass: "white--text",
-                      attrs: {
-                        column: "",
-                        "align-center": "",
-                        "justify-center": ""
-                      }
-                    },
-                    [
-                      _c(
-                        "h1",
-                        {
-                          staticClass:
-                            "white--text mb-2 display-1 text-xs-center shadow-background"
-                        },
-                        [_vm._v(_vm._s(_vm.artist.name))]
-                      ),
-                      _c(
-                        "div",
-                        { staticClass: "subheading mb-3 text-xs-center" },
-                        [
-                          _c("strong", { staticClass: "shadow-background" }, [
-                            _vm._v(_vm._s(_vm.artist.real_name))
-                          ])
-                        ]
-                      )
-                    ]
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        : _vm._e(),
-      _c(
-        "v-layout",
-        { attrs: { row: "" } },
-        [
-          _c(
-            "v-flex",
-            { attrs: { xs12: "", sm6: "", "offset-sm1": "" } },
-            [
-              _c(
-                "v-card",
-                { staticClass: "artist-card", class: { showing: _vm.show } },
-                [
-                  _c("v-card-media", {
-                    attrs: { src: _vm.artist.avatar, height: "200px" }
-                  }),
-                  _c("v-card-title", { attrs: { "primary-title": "" } }, [
-                    _c("div", [
-                      _c("div", { staticClass: "headline" }, [
-                        _vm._v(_vm._s(_vm.artist.name))
-                      ]),
-                      _c("span", { staticClass: "grey--text" }, [
-                        _vm._v(
-                          _vm._s(_vm.artist.real_name) +
-                            " " +
-                            _vm._s(_vm.artist.record_label) +
-                            " "
-                        )
-                      ])
-                    ])
-                  ]),
-                  _c(
-                    "v-card-actions",
-                    [
-                      _c("v-btn", { attrs: { flat: "" } }, [_vm._v("Share")]),
-                      _c("v-btn", { attrs: { flat: "", color: "purple" } }, [
-                        _vm._v("Explore")
-                      ]),
-                      _c("v-spacer"),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { icon: "" },
-                          nativeOn: {
-                            click: function($event) {
-                              _vm.show = !_vm.show
-                            }
-                          }
-                        },
-                        [
-                          _c("v-icon", [
-                            _vm._v(
-                              _vm._s(
-                                _vm.show
-                                  ? "keyboard_arrow_down"
-                                  : "keyboard_arrow_up"
-                              )
-                            )
-                          ])
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _c(
-                    "v-slide-y-transition",
-                    [
-                      _c(
-                        "v-card-text",
-                        {
-                          directives: [
-                            {
-                              name: "show",
-                              rawName: "v-show",
-                              value: _vm.show,
-                              expression: "show"
-                            }
-                          ]
-                        },
-                        [_vm._v(_vm._s(_vm.artist.description))]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm.artist.soundcloud_embed
-        ? _c(
-            "v-layout",
-            { attrs: { row: "" } },
-            [
-              _c("v-flex", { attrs: { xs12: "" } }, [
-                _vm.artist.soundcloud_embed
-                  ? _c("div", {
-                      staticClass: "soundcloud",
-                      domProps: {
-                        innerHTML: _vm._s(_vm.artist.soundcloud_embed)
-                      }
-                    })
-                  : _vm._e()
-              ])
-            ],
-            1
-          )
-        : _vm._e()
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-062ba96a", module.exports)
-  }
-}
-
-/***/ }),
+/* 657 */,
 /* 658 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -64813,23 +64827,25 @@ function mutation(type) {
 
 
 /***/ }),
-/* 692 */
+/* 692 */,
+/* 693 */,
+/* 694 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(693);
+var content = __webpack_require__(695);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(44)("150a8e2f", content, false);
+var update = __webpack_require__(44)("45596462", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../../node_modules/css-loader/index.js!../../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-062ba96a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./ArtistsDetail.vue", function() {
-     var newContent = require("!!../../../../../../../node_modules/css-loader/index.js!../../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-062ba96a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./ArtistsDetail.vue");
+   module.hot.accept("!!../../../../../../../node_modules/css-loader/index.js!../../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-062ba96a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./ArtistsDetail.vue", function() {
+     var newContent = require("!!../../../../../../../node_modules/css-loader/index.js!../../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-062ba96a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./ArtistsDetail.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -64839,7 +64855,7 @@ if(false) {
 }
 
 /***/ }),
-/* 693 */
+/* 695 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(43)(undefined);
@@ -64847,10 +64863,228 @@ exports = module.exports = __webpack_require__(43)(undefined);
 
 
 // module
-exports.push([module.i, "\n.artist-card {\n  top: -50%;\n  -webkit-transition: 1s all;\n  transition: 1s all;\n}\n@media only screen and (max-width: 600px)  {\n.artist-card {\n    top: 0;\n}\n}\n.artist-card.showing {\n  top: 0;\n}\n", ""]);
+exports.push([module.i, "\n.artist-card[data-v-062ba96a] {\n  top: -50%;\n  -webkit-transition: 1s all;\n  transition: 1s all;\n}\n@media only screen and (max-width: 600px)  {\n.artist-card[data-v-062ba96a] {\n    top: 0;\n}\n}\n.artist-card.showing[data-v-062ba96a] {\n  top: 0;\n}\n", ""]);
 
 // exports
 
+
+/***/ }),
+/* 696 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-content",
+    { attrs: { fluid: true } },
+    [
+      _vm.artist
+        ? _c(
+            "section",
+            { attrs: { id: "artists-background" } },
+            [
+              _c(
+                "v-parallax",
+                { attrs: { src: _vm.artist.background_image, height: "260" } },
+                [
+                  _c(
+                    "v-layout",
+                    {
+                      staticClass: "white--text",
+                      attrs: {
+                        column: "",
+                        "align-center": "",
+                        "justify-center": ""
+                      }
+                    },
+                    [
+                      _c("v-flex", { attrs: { xs1: "", "offset-xs11": "" } }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "back pointer",
+                            on: {
+                              click: function($event) {
+                                _vm.$go("artists.index")
+                              }
+                            }
+                          },
+                          [
+                            _c(
+                              "v-icon",
+                              {
+                                staticClass: "white--text",
+                                attrs: { "x-large": "" }
+                              },
+                              [_vm._v("fast_rewind")]
+                            ),
+                            _c("p", [_vm._v("Artistas")])
+                          ],
+                          1
+                        )
+                      ]),
+                      _c(
+                        "h1",
+                        {
+                          staticClass:
+                            "white--text mb-2 display-1 text-xs-center shadow-background"
+                        },
+                        [_vm._v(_vm._s(_vm.artist.name))]
+                      ),
+                      _c(
+                        "div",
+                        { staticClass: "subheading mb-3 text-xs-center" },
+                        [
+                          _c("strong", { staticClass: "shadow-background" }, [
+                            _vm._v(_vm._s(_vm.artist.country))
+                          ])
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        : _vm._e(),
+      _c(
+        "v-layout",
+        { attrs: { row: "" } },
+        [
+          _c(
+            "v-flex",
+            { attrs: { xs12: "", sm6: "", "offset-sm1": !_vm.show } },
+            [
+              _c(
+                "v-card",
+                { staticClass: "artist-card", class: { showing: _vm.show } },
+                [
+                  _c("v-card-media", {
+                    attrs: { src: _vm.artist.avatar, height: "200px" }
+                  }),
+                  _c("v-card-title", { attrs: { "primary-title": "" } }, [
+                    _c("div", [
+                      _c("div", { staticClass: "headline" }, [
+                        _vm._v(_vm._s(_vm.artist.name))
+                      ]),
+                      _c("span", { staticClass: "grey--text" }, [
+                        _vm._v(
+                          _vm._s(_vm.artist.real_name) +
+                            " " +
+                            _vm._s(_vm.artist.record_label) +
+                            " "
+                        )
+                      ])
+                    ])
+                  ]),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c("v-btn", { attrs: { flat: "" } }, [_vm._v("Share")]),
+                      _c("v-btn", { attrs: { flat: "", color: "purple" } }, [
+                        _vm._v("Explore")
+                      ]),
+                      _c("v-spacer"),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { icon: "" },
+                          nativeOn: {
+                            click: function($event) {
+                              _vm.show = !_vm.show
+                            }
+                          }
+                        },
+                        [
+                          _c("v-icon", [
+                            _vm._v(
+                              _vm._s(
+                                _vm.show
+                                  ? "keyboard_arrow_down"
+                                  : "keyboard_arrow_up"
+                              )
+                            )
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _c(
+                    "v-slide-y-transition",
+                    [
+                      _c(
+                        "v-card-text",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.show,
+                              expression: "show"
+                            }
+                          ]
+                        },
+                        [_vm._v(_vm._s(_vm.artist.description))]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _c("v-flex", { attrs: { xs12: "", sm5: "" } }, [
+            _c("p", [_vm._v(_vm._s(_vm.artist.description))])
+          ])
+        ],
+        1
+      ),
+      _vm.artist.soundcloud_embed
+        ? _c("div", {
+            staticClass: "soundcloud",
+            domProps: { innerHTML: _vm._s(_vm.artist.soundcloud_embed) }
+          })
+        : _vm._e(),
+      _c(
+        "gmap-map",
+        {
+          staticStyle: { width: "100%", height: "300px" },
+          attrs: { center: _vm.position, zoom: 7, options: _vm.mapOptions }
+        },
+        [
+          _c("gmap-marker", {
+            attrs: { position: _vm.position, clickable: true, draggable: true },
+            on: {
+              position_changed: function($event) {
+                _vm.updatePosition($event)
+              }
+            }
+          })
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-062ba96a", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

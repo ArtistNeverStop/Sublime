@@ -1,11 +1,16 @@
 <template lang="pug">
-  .container-fluid
-    .row.center-xs
-      .col-md-12
-        h1 Artists
-    .row.center-xs
-      .col-md-12
-        router-link(:to=`{ name: 'artists.manage.dates', params: { artist: artist.name.split(' ').join('-') }}`, v-for='artist in Artist.all') {{ artist.name }}
+v-content(:fluid=`true`)
+  section#artists-background(v-if=`artist`)
+    v-parallax(:src='artist.background_image', height='260')
+      v-layout.white--text(column='', align-center='', justify-center='')
+        //- img(src='sublime-logo-white.png', alt='SUBLIME', height='200')
+        h1.white--text.mb-2.display-1.text-xs-center.shadow-background Artistas
+        .subheading.mb-3.text-xs-center
+          //- strong.shadow-background {{artist.real_name}}
+          strong.shadow-background {{artist.country}}
+          //- strong.shadow-background y traelos a tu ciudad!.
+        //- v-btn.lighten-2.mt-5(dark='', large='', @click=`$go('artists.index')`)
+          | Explorar
 </template>
 
 <script>

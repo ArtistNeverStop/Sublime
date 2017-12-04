@@ -98,6 +98,7 @@ export default {
         ] :
         [
           { title: 'Welcome', icon: 'dashboard', route: 'welcome'},
+          { title: 'Artistas', icon: 'dashboard', route: 'artists.index'},
           { title: 'About', icon: 'question_answer', route: 'about' },
           { title: 'Register', icon: 'question_answer', route: 'register' },
           { title: 'Login', icon: 'question_answer', route: 'login' }

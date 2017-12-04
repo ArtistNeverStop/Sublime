@@ -33,22 +33,53 @@ class ArtistsTableSeeder extends Seeder
             ]);
             $Pomo->files()->attach($avatar->id, ['type' => App\Artist::AVATAR_IMAGE_FILE_TYPE]);
             $Pomo->files()->attach($background->id, ['type' => App\Artist::BACKGROUND_IMAGE_FILE_TYPE]);
-            // $TigerAndWoods = App\Artist::create([
-            //     'user_id' => App\User::inrandomOrder()->first()->id,
-            //     'name' => 'Tiger & Woods',
-            //     'real_name' => 'Larry Tiger & David Woods',
-            //     'record_label' => 'Editainment',// Sello discográfico
-            //     'description' => 'Shrouded in mystery! No one knows where it’s coming from, no one knows where it’s going.',
-            //     'country' => 'USA'
-            // ]);
-            // $KarmaKid = App\Artist::create([
-            //     'user_id' => App\User::inrandomOrder()->first()->id,
-            //     'name' => 'Karma Kid',
-            //     'real_name' => 'Sam Knowles',
-            //     'record_label' => 'Just Us Recordings, L2S',// Sello discográfico
-            //     'description' => 'Sam Knowles (born 1 August 1994), known professionally as Karma Kid, is an English electronic dance music record producer and DJ from Matlock, Derbyshire. He was educated at Highfields School and obtained a place at the University of Huddersfield which he deferred a year to concentrate on his music.',
-            //     'country' => ' Matlock, Derbyshire'
-            // ]);
+
+
+            $background = App\File::create([
+                'file_path' => 'public/artists/background-TigerAndWoods.jpg',
+                'mime_type' => 'image/jpeg',
+                'uploader_id' => 1,
+            ]);
+            $avatar = App\File::create([
+                'file_path' => 'public/artists/TigerAndWoods.jpg',
+                'mime_type' => 'image/jpeg',
+                'uploader_id' => 1,
+            ]);
+            $TigerAndWoods = App\Artist::create([
+                'user_id' => App\User::inrandomOrder()->first()->id,
+                'name' => 'Tiger & Woods',
+                'soundcloud_embed' => '<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/345291333&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>',
+                'real_name' => 'Larry Tiger & David Woods',
+                'record_label' => 'Editainment',// Sello discográfico
+                'description' => 'Shrouded in mystery! No one knows where it’s coming from, no one knows where it’s going.',
+                'country' => 'USA'
+            ]);
+            $TigerAndWoods->files()->attach($avatar->id, ['type' => App\Artist::AVATAR_IMAGE_FILE_TYPE]);
+            $TigerAndWoods->files()->attach($background->id, ['type' => App\Artist::BACKGROUND_IMAGE_FILE_TYPE]);
+
+
+            $background = App\File::create([
+                'file_path' => 'public/artists/background-KarmaKid.jpg',
+                'mime_type' => 'image/jpeg',
+                'uploader_id' => 1,
+            ]);
+            $avatar = App\File::create([
+                'file_path' => 'public/artists/KarmaKid.jpg',
+                'mime_type' => 'image/jpeg',
+                'uploader_id' => 1,
+            ]);
+            $KarmaKid = App\Artist::create([
+                'user_id' => App\User::inrandomOrder()->first()->id,
+                'name' => 'Karma Kid',
+                'soundcloud_embed' => '<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317794312&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>',
+                'real_name' => 'Sam Knowles',
+                'record_label' => 'Just Us Recordings, L2S',// Sello discográfico
+                'description' => 'Sam Knowles (born 1 August 1994), known professionally as Karma Kid, is an English electronic dance music record producer and DJ from Matlock, Derbyshire. He was educated at Highfields School and obtained a place at the University of Huddersfield which he deferred a year to concentrate on his music.',
+                'country' => ' Matlock, Derbyshire'
+            ]);
+            $KarmaKid->files()->attach($avatar->id, ['type' => App\Artist::AVATAR_IMAGE_FILE_TYPE]);
+            $KarmaKid->files()->attach($background->id, ['type' => App\Artist::BACKGROUND_IMAGE_FILE_TYPE]);
+            
             // $Disclousure = App\Artist::create([
             //     'user_id' => App\User::inrandomOrder()->first()->id,
             //     'name' => 'Disclousure ',

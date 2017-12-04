@@ -1,11 +1,35 @@
 <template lang="pug">
-.container-fluid
-  .row.center-xs
-    .col-md-12
-      h1 Artists
-      .artist(v-for='artist in Artist.all')
-        h2 {{ artist.name }}
-        .soundcloud(v-if='artist.soundcloud_embed', v-html=`artist.soundcloud_embed`)
+v-content(:fluid=`true`)
+  section#artists-background
+    v-parallax(src='/images/artists-index.jpg', height='600')
+      v-layout.white--text(column='', align-center='', justify-center='')
+        h1.white--text.mb-2.display-1.text-xs-center.shadow-background Artistas
+        .subheading.mb-3.text-xs-center
+          //- strong.shadow-background {{artist.real_name}}
+          br
+          strong.shadow-background Explora nevos Artistas y nuevos Generos
+          br
+          br
+          strong.shadow-background Aqui tienes todo el listado, consulta su disponibilidad y vota por ellos!.
+        v-btn.lighten-2.mt-5(dark='', large='', @click=`$go('artists.index')`)
+          | Eres Manager ? 
+  v-layout(row='',)
+    v-flex(xs12='', sm4='', v-for=`artist, in Artist.all`)
+      v-card.artist-card
+        v-card-media(:src='artist.avatar', height='200px')
+        v-card-title(primary-title='')
+          div
+            .headline {{artist.name}}
+            span.grey--text {{artist.real_name}} {{artist.record_label}} 
+        v-card-actions
+          v-btn(flat='', @click=`$go('artists.detail', {artist: artist.name})`) Vota por el!
+          v-btn(flat='', color='purple') Explorar
+          v-spacer
+          v-btn(icon='', @click.native='')
+            v-icon keyboard_arrow_up
+        v-slide-y-transition
+          v-card-text(v-show='true')
+            | {{artist.description }}
 </template>
 
 <script>
