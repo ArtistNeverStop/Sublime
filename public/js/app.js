@@ -44712,6 +44712,37 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -44726,6 +44757,8 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
    */
   data: function data() {
     return {
+      dialog: false,
+      placeSelected: null,
       artist: {},
       show: false,
       position: {
@@ -44741,7 +44774,17 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
    * ------------------------------
    * @member {Object} methods
    */
-  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['fetch'])),
+  methods: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapActions */])(['fetch']), {
+    selectPlace: function selectPlace(place) {
+      this.placeSelected = place;
+      this.dialog = true;
+    },
+    byTicket: function byTicket() {
+      if (this.User.me.credit >= this.placeSelected.price_per_person) {
+        this.$http.post('tickets/buy/' + this.placeSelected.id);
+      } else {}
+    }
+  }),
 
   /**
    * The main watcher of
@@ -44776,11 +44819,12 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
           switch (_context.prev = _context.next) {
             case 0:
               console.log(_this.$options.__file.split('/').slice(-1).pop() + ' Component Mounted!');
+              // this.artist = (await this.fetch(['artist', {name: `"${this.$route.params.artist}"`}, ['places']]))
               _context.next = 3;
-              return _this.fetch(['artist', { name: '"' + _this.$route.params.artist + '"' }, []]);
+              return _this.$http.get('artists/' + _this.$route.params.artist);
 
             case 3:
-              _this.artist = _context.sent;
+              _this.artist = _context.sent.data;
 
             case 4:
             case 'end':
@@ -44984,15 +45028,156 @@ var render = function() {
           staticStyle: { width: "100%", height: "300px" },
           attrs: { center: _vm.position, zoom: 7, options: _vm.mapOptions }
         },
-        [
-          _c("gmap-marker", {
-            attrs: { position: _vm.position, clickable: true, draggable: true },
+        _vm._l(_vm.artist.artist_places, function(place) {
+          return _c("gmap-marker", {
+            attrs: {
+              position: {
+                lat: place.place.latitude,
+                lng: place.place.longitude
+              },
+              clickable: true,
+              draggable: false
+            },
             on: {
-              position_changed: function($event) {
-                _vm.updatePosition($event)
+              click: function($event) {
+                _vm.selectPlace(place)
               }
             }
           })
+        })
+      ),
+      _c(
+        "v-layout",
+        { attrs: { row: "", "justify-center": "" } },
+        [
+          _vm.placeSelected
+            ? _c(
+                "v-dialog",
+                {
+                  attrs: { "max-width": "290" },
+                  model: {
+                    value: _vm.dialog,
+                    callback: function($$v) {
+                      _vm.dialog = $$v
+                    },
+                    expression: "dialog"
+                  }
+                },
+                [
+                  _c(
+                    "v-card",
+                    [
+                      _c("v-card-title", { staticClass: "headline" }, [
+                        _vm._v(
+                          _vm._s(_vm.artist.name) +
+                            " en " +
+                            _vm._s(_vm.placeSelected.place.name)
+                        )
+                      ]),
+                      _c(
+                        "v-card-text",
+                        [
+                          _c("p", [
+                            _vm._v(
+                              "Participantes Necesarias  " +
+                                _vm._s(_vm.placeSelected.min_quantity_persons)
+                            )
+                          ]),
+                          _c("p", [
+                            _vm._v(
+                              "Participantes Confirmadas  " +
+                                _vm._s(_vm.placeSelected.tickets_count)
+                            )
+                          ]),
+                          _c("p", [
+                            _vm._v(
+                              "Participantes Faltantes  " +
+                                _vm._s(_vm.placeSelected.persons_remeaning)
+                            )
+                          ]),
+                          _c(
+                            "v-progress-circular",
+                            {
+                              attrs: {
+                                size: 100,
+                                width: 15,
+                                rotate: 360,
+                                value:
+                                  _vm.placeSelected.min_quantity_persons *
+                                  _vm.placeSelected.tickets_count /
+                                  100,
+                                color: "teal"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                _vm._s(
+                                  _vm.placeSelected.min_quantity_persons *
+                                    _vm.placeSelected.tickets_count /
+                                    100
+                                ) + " %"
+                              )
+                            ]
+                          ),
+                          _c("p", [_c("strong", [_vm._v(" Direccion: ")])]),
+                          _vm._v(_vm._s(_vm.placeSelected.place.address)),
+                          _c("strong", [_vm._v(" del: ")]),
+                          _c("p", [
+                            _vm._v(" " + _vm._s(_vm.placeSelected.start_at))
+                          ]),
+                          _c("strong", [_vm._v(" al: ")]),
+                          _c("p", [
+                            _vm._v(" " + _vm._s(_vm.placeSelected.finish_at))
+                          ]),
+                          _c("strong", [_vm._v(" precio por boleto: ")]),
+                          _c("p", [
+                            _vm._v(
+                              " " +
+                                _vm._s(_vm.placeSelected.price_per_person) +
+                                " $ MXN"
+                            )
+                          ])
+                        ],
+                        1
+                      ),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c("v-spacer"),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "green darken-1", flat: "flat" },
+                              nativeOn: {
+                                click: function($event) {
+                                  _vm.byTicket()
+                                }
+                              }
+                            },
+                            [_vm._v("Financiar ticket")]
+                          ),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "green darken-1", flat: "flat" },
+                              nativeOn: {
+                                click: function($event) {
+                                  _vm.dialog = false
+                                }
+                              }
+                            },
+                            [_vm._v("cancelar")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            : _vm._e()
         ],
         1
       )

@@ -36,7 +36,38 @@ v-content(:fluid=`true`)
   .soundcloud(v-if='artist.soundcloud_embed', v-html=`artist.soundcloud_embed`)
       //- p {{artist.soundcloud_embed}}
   gmap-map(:center="position", :zoom="7", style="width: 100%; height: 300px", :options="mapOptions")
-    gmap-marker(:position='position' :clickable='true' :draggable='true' @position_changed='updatePosition($event)')
+    gmap-marker(v-for=`place in artist.artist_places`, :position='{lat:place.place.latitude, lng:place.place.longitude}', :clickable='true', @click=`selectPlace(place)`, :draggable='false')
+  v-layout(row='', justify-center='')
+    //- v-btn(color='primary', dark='', @click.native.stop='dialog = true') Open Dialog
+    v-dialog(v-if=`placeSelected`, v-model='dialog', max-width='290')
+      v-card
+        v-card-title.headline {{ artist.name }} en {{ placeSelected.place.name }}
+        v-card-text
+          p Participantes Necesarias  {{ placeSelected.min_quantity_persons }}
+          p Participantes Confirmadas  {{ placeSelected.tickets_count }}
+          p Participantes Faltantes  {{ placeSelected.persons_remeaning }}
+          v-progress-circular(
+            v-bind:size="100"
+            v-bind:width="15"
+            v-bind:rotate="360"
+            v-bind:value="(placeSelected.min_quantity_persons * placeSelected.tickets_count) / 100"
+            color="teal"
+          )
+            | {{ (placeSelected.min_quantity_persons * placeSelected.tickets_count) / 100 }} %
+          p
+            strong  Direccion: 
+          | {{ placeSelected.place.address }}
+          strong  del: 
+          p  {{ placeSelected.start_at }}
+          strong  al: 
+          p  {{ placeSelected.finish_at }}
+          strong  precio por boleto: 
+          p  {{ placeSelected.price_per_person }} $ MXN
+        v-card-actions
+          v-spacer
+          v-btn(color='green darken-1', flat='flat', @click.native='byTicket()') Financiar ticket
+          v-btn(color='green darken-1', flat='flat', @click.native='dialog = false') cancelar
+
 </template>
 <style scoped>
   .artist-card {
@@ -66,6 +97,8 @@ export default {
    */
   data: function () {
     return {
+      dialog: false,
+      placeSelected: null,
       artist: {},
       show: false,
       position: {
@@ -84,7 +117,20 @@ export default {
   methods: {
     ...mapActions([
       'fetch'
-    ])
+    ]),
+
+    selectPlace (place) {
+      this.placeSelected = place
+      this.dialog = true
+    },
+
+    byTicket () {
+      if (this.User.me.credit >= this.placeSelected.price_per_person) {
+        this.$http.post(`tickets/buy/${this.placeSelected.id}`)
+      } else {
+        
+      }
+    }
   },
 
   /**
@@ -117,7 +163,8 @@ export default {
    */
   async mounted () {
     console.log(`${this.$options.__file.split('/').slice(-1).pop()} Component Mounted!`)
-    this.artist = (await this.fetch(['artist', {name: `"${this.$route.params.artist}"`}, []]))
+    // this.artist = (await this.fetch(['artist', {name: `"${this.$route.params.artist}"`}, ['places']]))
+    this.artist = (await this.$http.get(`artists/${this.$route.params.artist}`)).data
   }
 }
 </script>

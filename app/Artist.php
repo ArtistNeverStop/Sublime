@@ -82,6 +82,16 @@ class Artist extends Model
     }
 
     /**
+     * The user belongs to many user
+     *
+     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function artistPlaces()
+    {
+        return $this->hasMany('App\ArtistPlace', 'artist_id', 'id');
+    }
+
+    /**
      * The user belongs to many roles
      *
      * @return Illuminate\Database\Eloquent\Relations\BelongsToMany
