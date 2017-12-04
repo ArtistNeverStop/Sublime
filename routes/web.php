@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::any('paypalCalback', 'PaymentsController@paypalCalback')->middleware(['auth:api,web']); 
+
 # GraphiQL
 Route::get('graphiql', function () {
     return view('graphiql');

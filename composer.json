@@ -11,6 +11,7 @@
         "laravel/passport": "^4.0",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
+        "paypal/rest-api-sdk-php": "*",
         "webonyx/graphql-php": "^0.11.2"
     },
     "require-dev": {

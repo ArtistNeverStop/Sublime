@@ -21,6 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::any('graphql', 'GraphQLController@root');
 Route::any('graphql/{query?}', 'GraphQLController@root');
 
+Route::any('paypalCalback', 'PaymentsController@paypalCalback')->middleware(['auth:api,web']); 
+Route::post('/recharge', 'PaymentsController@recharge')->middleware(['auth:api,web']);
+
 Route::apiResource('/users', 'UsersController');
 Route::apiResource('/artists', 'ArtistsController');
 Route::apiResource('/places', 'PlacesController');

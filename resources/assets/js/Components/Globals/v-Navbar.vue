@@ -95,18 +95,19 @@ export default {
       items = this.User.me ? 
         [
           { title: 'Dashboard', icon: 'dashboard', route: 'dashboard'},
-          { title: 'Artistas', icon: 'dashboard', route: 'artists.index'},
+          { title: `Credito ${this.User.me.credit}$ MXN`, icon: 'monetization_on', route: 'users.settings' },
+          { title: 'Artistas', icon: 'audiotrack', route: 'artists.index'},
           { title: 'Logout', route: 'logout' },
         ] :
         [
-          { title: 'Welcome', icon: 'dashboard', route: 'welcome'},
-          { title: 'Artistas', icon: 'dashboard', route: 'artists.index'},
-          { title: 'About', icon: 'question_answer', route: 'about' },
-          { title: 'Register', icon: 'question_answer', route: 'register' },
-          { title: 'Login', icon: 'question_answer', route: 'login' }
+          { title: 'Welcome', icon: 'view_comfy', route: 'welcome'},
+          { title: 'Artistas', icon: 'audiotrack', route: 'artists.index'},
+          { title: 'About', icon: 'subject', route: 'about' },
+          { title: 'Register', icon: 'fingerprint', route: 'register' },
+          { title: 'Login', icon: 'lock', route: 'login' }
         ]
       if (this.User.me && this.User.me.is_manager) {
-        items.push(
+        items.splice(1, 0, 
           { title: 'Manager', icon: 'question_answer', route: 'artists.manage.index' }
         )
       }

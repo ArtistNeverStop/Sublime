@@ -20,6 +20,10 @@ class AppServiceProvider extends ServiceProvider
             $user->files()->delete();
         });
 
+        User::created(function ($user) {
+            $user->wallet()->create([]);
+        });
+
         /**
          * If there is a user in the session and the uploader_id
          * was not specified then set the current user as uploader.

@@ -44,6 +44,8 @@ export default [
     Route('/Manage-artists/:artist/Dates', Site.Client.Artists.Manage.Dates, 'artists.manage.dates'),
     // Route('/Manage-artists/Map', Site.Artists.ManageMap, 'artists.manage.map'),
     Route('Become-an-artist', Site.Client.Users.BecomeAnArtist, 'user.become.an.artist', { auth: true }),
+
+    Route('Configuracion', Site.Client.Users.Settings, 'users.settings'),
   ]),
   Route('*', Site.Errors._404, '404')
 ]

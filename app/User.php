@@ -64,7 +64,7 @@ class User extends Authenticatable
         'is_user',
         'is_manager',
         'avatar',
-        // 'image_url'
+        'credit'
     ];
 
     # ------------------------------ RELATIONS ------------------------------ #
@@ -87,6 +87,16 @@ class User extends Authenticatable
     public function requests()
     {
         return $this->hasMany('App\Request');
+    }
+
+    /**
+     * The user has many wallet
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function wallet()
+    {
+        return $this->hasOne('App\Wallet');
     }
 
     /**
@@ -160,5 +170,15 @@ class User extends Authenticatable
     {
         $avatar = $this->images()->wherePivot('type', self::AVATAR_FILE_TYPE)->first();
         return $avatar ? $avatar->url : null;
+    }
+
+    /**
+     * Define if the user is staff of the plataform
+     *
+     * @return boolean
+     */
+    public function getCreditAttribute()
+    {
+        return $this->wallet->credit;
     }
 }
