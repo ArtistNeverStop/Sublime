@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
         });
         Ticket::creating(function ($ticket) {
             if (!$ticket->uid) {
-                $ticket->uid = str_random(5)
+                $ticket->uid = str_random(5);
             }
         });
         Ticket::created(function ($ticket) {
