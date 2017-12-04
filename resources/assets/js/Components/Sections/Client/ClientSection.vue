@@ -1,5 +1,6 @@
 <template lang="pug">
 .app-client.wihte(light='', :class=`{'navbar-fixed-container': navbarShow}`)
+  #stars
   v-navbar(:navbar-show=`navbarShow`)
   router-view(@hiddeNavbar=`navbarShow = false`, @showNavbar=`navbarShow = true`)
   //- .toasts

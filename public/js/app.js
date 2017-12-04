@@ -43836,6 +43836,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -43909,6 +43910,7 @@ var render = function() {
       attrs: { light: "" }
     },
     [
+      _c("div", { attrs: { id: "stars" } }),
       _c("v-navbar", { attrs: { "navbar-show": _vm.navbarShow } }),
       _c("router-view", {
         on: {

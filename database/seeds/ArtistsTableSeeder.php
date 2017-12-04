@@ -80,14 +80,29 @@ class ArtistsTableSeeder extends Seeder
             $KarmaKid->files()->attach($avatar->id, ['type' => App\Artist::AVATAR_IMAGE_FILE_TYPE]);
             $KarmaKid->files()->attach($background->id, ['type' => App\Artist::BACKGROUND_IMAGE_FILE_TYPE]);
             
-            // $Disclousure = App\Artist::create([
-            //     'user_id' => App\User::inrandomOrder()->first()->id,
-            //     'name' => 'Disclousure ',
-            //     'real_name' => 'David',
-            //     'record_label' => 'HW&W',// Sello discográfico
-            //     'description' => 'Pomo is a Canadian multi-instrumentalist and producer based in Vancouver who makes electronic beats influenced by hip hop, house, 70s and 80s funk music. He grew up in Port Moody, British Colombia and cultivated his tastes and sound through the Vancouver electronic music scene before moving for a time to Montreal and joining the likes of Kaytranada, Ta-Ku, and Stwo on the HW&W roster.',
-            //     'country' => 'Canada'
-            // ]);
+
+
+            $background = App\File::create([
+                'file_path' => 'public/artists/background-Disclousure.jpg',
+                'mime_type' => 'image/jpeg',
+                'uploader_id' => 1,
+            ]);
+            $avatar = App\File::create([
+                'file_path' => 'public/artists/Disclousure.jpeg',
+                'mime_type' => 'image/jpeg',
+                'uploader_id' => 1,
+            ]);
+            $Disclousure = App\Artist::create([
+                'user_id' => App\User::inrandomOrder()->first()->id,
+                'name' => 'Disclosure',
+                'soundcloud_embed' => '<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/153132578&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>',
+                'real_name' => 'Guy Lawrence y  Howard Lawrence',
+                'record_label' => 'Island Records, Interscope Records, Moshi Moshi Records, PMR Records, Cherrytree Records',// Sello discográfico
+                'description' => 'Disclosure es un dúo británico de música electrónica orientado al género deep house y garage house. Está conformado por los hermanos Guy y Howard Lawrence oriundos de Reigate, Surrey situado al Sudeste de Inglaterra. Su primer álbum de estudio, Settle , liberado el 3 de junio de 2013 mediante PMR, fue nominado ...',
+                'country' => ' Surrey, Reino Unido'
+            ]);
+            $Disclousure->files()->attach($avatar->id, ['type' => App\Artist::AVATAR_IMAGE_FILE_TYPE]);
+            $Disclousure->files()->attach($background->id, ['type' => App\Artist::BACKGROUND_IMAGE_FILE_TYPE]);
         }
     }
 }
