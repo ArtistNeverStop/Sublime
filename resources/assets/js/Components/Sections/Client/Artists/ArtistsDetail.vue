@@ -128,7 +128,7 @@ export default {
       if (this.User.me.credit >= this.placeSelected.price_per_person) {
         this.$http.post(`tickets/buy/${this.placeSelected.id}`)
       } else {
-        
+
       }
     }
   },
@@ -167,4 +167,4 @@ export default {
     this.artist = (await this.$http.get(`artists/${this.$route.params.artist}`)).data
   }
 }
-</script>
+</script> 

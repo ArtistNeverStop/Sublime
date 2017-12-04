@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
             }
         });
         Ticket::created(function ($ticket) {
-            if ($ticket->artistPlace->persons_remeaning === 0) {
+            if ($ticket->artistPlace && $ticket->artistPlace->persons_remeaning === 0) {
                 foreach ($ticket->artistPlace->tickets as $ticket) {
                     $ticket->user->wallet->update([
                         'credit' => $ticket->user->wallet->credit - $ticket->artistPlace->price_per_person,
