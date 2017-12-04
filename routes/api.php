@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,10 @@ Route::get('/me', 'UsersController@me')->middleware(['auth:api,web'])->name('use
 Route::delete('/me', 'UsersController@selfDestruct')->middleware(['auth:api,web'])->name('users.me.api');
 Route::get('/me/artists', 'UsersController@artists')->middleware(['auth:api,web'])->name('users.me.api');
 Route::post('/me/artists/{artist}/places/{place}', 'ArtistsController@makeAvailable')->middleware(['auth:api,web'])->name('users.me.api');
+
+/**
+ * Files resources
+ */
+Route::post('files/{resource}/{id}', 'Controller@storeFilesRoute')->where('resource', Controller::resourceRegex())->middleware(['auth:api,web']);
+Route::delete('files/{resource}/{file}', 'Controller@destroyFile')->where('resource', Controller::resourceRegex())->middleware(['auth:api,web']);
+Route::put('files/order', 'Controller@orderFile');

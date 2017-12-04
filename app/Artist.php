@@ -34,7 +34,12 @@ class Artist extends Model
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name',
+        'real_name',
+        'record_label',
+        'description',
+        'soundcloud_embed',
+        'country',
     ];
 
         /**

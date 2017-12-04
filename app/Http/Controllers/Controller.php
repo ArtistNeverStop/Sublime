@@ -10,6 +10,10 @@ use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Product;
 use App\File;
+use App\Artist;
+use App\Place;
+use App\Http\Requests\FilesStoreRequest;
+use Auth;
 
 class Controller extends BaseController
 {
@@ -23,6 +27,8 @@ class Controller extends BaseController
     const RESOURCES = [
         'users' => User::class,
         'products' => Product::class,
+        'artists' => Artist::class,
+        'places' => Place::class,
     ];
 
     /**

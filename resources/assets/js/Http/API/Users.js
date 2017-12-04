@@ -12,5 +12,8 @@ export default {
         }
       }`
     }
-  })
+  }),
+
+  save: user => axios[user.id ? 'put': 'post']('/users' + (user.id ? `/${users.id}`: '')),
+  delete: id => axios.delete('/users/' + id)
 }

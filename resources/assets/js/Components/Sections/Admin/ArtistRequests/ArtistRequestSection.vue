@@ -2,6 +2,9 @@
   router-view
 </template>
 
+<style lang="sass" scoped>
+  @import "~skeleton-css/css/skeleton";
+</style>
 <script>
   export default {
 

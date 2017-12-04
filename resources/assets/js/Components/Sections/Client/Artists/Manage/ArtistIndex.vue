@@ -1,18 +1,18 @@
 <template lang="pug">
-v-content(:fluid=`true`)
-  section#artists-background(v-if=`artist`)
-    v-parallax(:src='artist.background_image', height='260')
-      v-layout.white--text(column='', align-center='', justify-center='')
-        //- img(src='sublime-logo-white.png', alt='SUBLIME', height='200')
-        h1.white--text.mb-2.display-1.text-xs-center.shadow-background Artistas
-        .subheading.mb-3.text-xs-center
-          //- strong.shadow-background {{artist.real_name}}
-          strong.shadow-background {{artist.country}}
-          //- strong.shadow-background y traelos a tu ciudad!.
-        //- v-btn.lighten-2.mt-5(dark='', large='', @click=`$go('artists.index')`)
-          | Explorar
+.container-fluid
+    .row.center-xs
+      .col-md-12
+        h1 Artistas a mi nombre
+    .row.center-xs
+      .col-md-12
+        .artist-managable.column(v-for='artist in artists')
+          strong {{ artist.name }}
+          router-link(:to=`{ name: 'artists.manage.dates', params: { artist: artist.name.split(' ').join('-') }}`) Disponibilidad
+          router-link(:to=`{ name: 'artists.manage.info', params: { artist: artist.name.split(' ').join('-') }}`) Información
 </template>
-
+<style lang="sass" scoped>
+  @import "~skeleton-css/css/skeleton";
+</style>
 <script>
   
   import { mapState, mapActions } from 'vuex'
@@ -28,6 +28,7 @@ v-content(:fluid=`true`)
      */
     data () {
       return {
+        artists: []
       }
     },
 
@@ -56,7 +57,7 @@ v-content(:fluid=`true`)
     methods: {
 
       ...mapActions([
-        'getArtists'
+        'myArtists'
       ])
     },
 
@@ -68,7 +69,7 @@ v-content(:fluid=`true`)
      */
     mounted () {
       console.log(`${this.$options.__file.split('/').slice(-1).pop()} Component Mounted!`)
-      this.getArtists()
+      this.myArtists().then(artists => (this.artists = artists))
     }
   }
 </script>

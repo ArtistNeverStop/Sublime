@@ -3,7 +3,17 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
- import 'babel-polyfill'
+ /**
+ * Kebapize a CamelCase String.
+ * ------------------------------
+ * @function kebapizeCamel
+ * @param {string} str
+ * @return {string}
+ */
+String.prototype.ucfirst = function () {
+  return this.charAt(0).toUpperCase() + this.slice(1)
+}
+import 'babel-polyfill'
 import '@/Http'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import '@/Components/Prototype'
@@ -19,7 +29,7 @@ import Vue from 'vue'
 
 Vue.use(Vuetify)
 
-window.flatpickr = require("flatpickr");
+// window.flatpickr = require("flatpickr");
 
 Vue.use(VueGoogleMaps, {
   load: {

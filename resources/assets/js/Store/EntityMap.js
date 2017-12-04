@@ -1,4 +1,6 @@
 export default {
+  UserResource: 'users',
+  ArtistResource: 'artists',
 
   /**
    * The data of the Aplication Users

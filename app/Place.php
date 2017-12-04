@@ -19,7 +19,8 @@ class Place extends Model
         'area',
         'people_limit',
         'longitude',
-        'latitude'
+        'latitude',
+        'description'
     ];
 
     # ------------------------------ RELATIONS ------------------------------ #

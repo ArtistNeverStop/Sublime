@@ -62,6 +62,7 @@ class User extends Authenticatable
         'is_admin',
         'is_staff',
         'is_user',
+        'is_manager',
         'avatar',
         // 'image_url'
     ];
@@ -138,6 +139,16 @@ class User extends Authenticatable
     public function getIsUserAttribute()
     {
         return !$this->is_admin && !$this->is_staff;
+    }
+
+    /**
+     * Define if the user is staff of the plataform
+     *
+     * @return boolean
+     */
+    public function getIsManagerAttribute()
+    {
+        return !!$this->managedArtists()->count();
     }
 
     /**

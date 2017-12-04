@@ -1,5 +1,19 @@
 import Vue from 'vue'
 import axios from '@/Http'
+import API from '@/Http/API'
+import Files from '@/Http/API/Files'
+import EntityMap from '@/Store/EntityMap'
+
+ /**
+ * Kebapize a CamelCase String.
+ * ------------------------------
+ * @function kebapizeCamel
+ * @param {string} str
+ * @return {string}
+ */
+String.prototype.ucfirst = function () {
+  return this.charAt(0).toUpperCase() + this.slice(1)
+}
 
 /**
  * Set the Helpers on Vue instances Adding Instance Properties.
@@ -15,6 +29,49 @@ Vue.prototype.$http = axios
  */
 Vue.prototype.$adminRoute = function () {
   return this.$route.name && this.$route.name.includes('admin')
+}
+
+console.log(API)
+/**
+ * Atach the main HTTP actions to
+ * store and destroy Resources from
+ * the server.
+ * ------------------------------
+ */
+for (let resource in API) {
+  console.log(resource)
+  Vue.prototype[`$persist${resource.ucfirst()}`] =
+    async function persist (toPersist, files = null, replace = false, message = null) {
+      var [entity, data] = [(await API[resource].save(toPersist)).data, files && (new FormData())]
+      if (files) {
+        for (var [index, file] of files.entries()) {
+          if (file && file.file && file.file.size) {
+            data.append(`files[${index}]`, file.file, file.file.name)
+            data.append(`types[${index}]`, file.type)
+          }
+        }
+        data.append('replace', replace)
+        entity = {
+          ...entity,
+          ...((await Files.store(
+            data,
+            EntityMap[`${entity._entity}Resource`],
+            entity.id
+          )).data)
+        }
+      }
+      Store.dispatch('loadEntities', entity)
+      var name = toPersist.name || toPersist.id
+      // this.$toast(message || `${resource.slice(0, -1).ucfirst()} ${name} guardado correctamente`, name)
+      return entity
+    }
+  Vue.prototype[`$destroy${resource.ucfirst()}`] =
+    async function destroy (toDestroy, message = null) {
+      await API[resource].delete(toDestroy.id)
+      Store.dispatch('removeEntities', toDestroy)
+      var name = toDestroy.name || toDestroy.id
+      // this.$toast(message || `${resource.slice(0, -1).ucfirst()} ${name} eliminado correctamente`, name)
+    }
 }
 
 /**

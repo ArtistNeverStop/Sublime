@@ -5,5 +5,5 @@ import Detail from './ArtistsDetail'
 export default {
   Manage,
   Index,
-  Detail
+  Detail,
 }

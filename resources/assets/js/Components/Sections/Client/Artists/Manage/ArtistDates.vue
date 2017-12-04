@@ -6,10 +6,15 @@
         router-link(:to=`{name: 'artists.manage.map'}`) MAP
     .row.center-xs
       .col-md-12
-        .container-fluid(v-for='artist in Artist.all')
+        .container-fluid(v-for='artist in artists')
           .row
             .col-md-12
               h2 {{ artist.name }}
+          v-layout.center-xs(row='', wrap='')
+            v-flex(md12='', lg4='')
+              v-date-picker(v-model='start_at')
+            v-flex.hidden-xs-only(md12='', lg8='')
+              v-date-picker(v-model='finish_at', landscape='')
           .row
             .col-md-12
               label(for='date') Date
@@ -39,20 +44,37 @@
               span.center-xs.error-message(v-if='errors.errors' v-for='error in errors.errors.extra_specifications') {{ error }}
             .col-md-12
               button.button-primary(@click=`saveDate`) Save
-        .row(v-if=`Artist.all[1]`)
-          .col-md-4(v-for=`place in Artist.all[1].places_available`)
-            .places-available
-              p
-                strong Place:
-                span {{ place.address }}
-              p
-                strong Since:
-                span {{ place.pivot.start_at }}
-              p
-                strong Until:
-                span {{ place.pivot.finish_at }}
-</template>
+          v-layout
+            v-flex(xs12='', sm4='', v-for=`place in artist.places_available`)
+              v-card
+                v-card-media(src='/static/doc-images/cards/desert.jpg', height='200px')
+                v-card-title(primary-title='')
+                  div
+                    h3.headline.mb-0 {{ place.name }}
+                    div
+                      | {{ place.address }} 
+                      br
+                      | Southern Highlands of New South Wales, ...
+                v-card-actions
+                  v-btn(flat='', color='orange') Share
+                  v-btn(flat='', color='orange') Explore
 
+          //- .row(v-if=`Artist.all[1]`)
+          //-   .col-md-4(v-for=`place in Artist.all[1].places_available`)
+          //-     .places-available
+          //-       p
+          //-         strong Place:
+          //-         span {{ place.address }}
+          //-       p
+          //-         strong Since:
+          //-         span {{ place.pivot.start_at }}
+          //-       p
+          //-         strong Until:
+          //-         span {{ place.pivot.finish_at }}
+</template>
+<style lang="sass" scoped>
+  @import "~skeleton-css/css/skeleton";
+</style>
 <script>
   
   import { mapState, mapActions } from 'vuex'
@@ -69,6 +91,7 @@
      */
     data () {
       return {
+        artists: [],
         start_at: null,
         finish_at: null,
         fakeDate: null,
@@ -142,19 +165,19 @@
      */
     mounted () {
       console.log(`${this.$options.__file.split('/').slice(-1).pop()} Component Mounted!`)
-      window.flatpickr(".date-range", {
-        mode: "range",
-        minDate: "today",
-        altInput: true,
-        dateFormat: "YYYY-MM-DD",
-        onChange: (selectedDates, dateStr, instance) => {
-          this.date = selectedDates
-          this.start_at = selectedDates[0]
-          this.finish_at = selectedDates[1]
-          console.log(selectedDates, dateStr, instance)
-        }
-      });
-      this.myArtists()
+      // window.flatpickr(".date-range", {
+      //   mode: "range",
+      //   minDate: "today",
+      //   altInput: true,
+      //   dateFormat: "YYYY-MM-DD",
+      //   onChange: (selectedDates, dateStr, instance) => {
+      //     this.date = selectedDates
+      //     this.start_at = selectedDates[0]
+      //     this.finish_at = selectedDates[1]
+      //     console.log(selectedDates, dateStr, instance)
+      //   }
+      // });
+      this.myArtists().then(artists => (this.artists = artists))
       this.getPlaces()
     }
   }

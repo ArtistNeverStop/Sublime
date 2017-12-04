@@ -24,6 +24,9 @@
             i.fa.fa-trash.fa-fw(@click='updateRequest({id: request.id, status: 2})' aria-hidden="true")
 </template>
 
+<style lang="sass" scoped>
+  @import "~skeleton-css/css/skeleton";
+</style>
 <script>
   import { mapState, mapActions } from 'vuex'
 

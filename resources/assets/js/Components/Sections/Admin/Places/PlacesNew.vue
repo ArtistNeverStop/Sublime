@@ -18,6 +18,10 @@
               input#people-limit-input(v-model='people_limit' name='people_limit' placeholder='People Limit' type='number')
               span.center-xs.error-message(v-if='errors.errors' v-for='error in errors.errors.people_limit') {{ error }}
             .col-md-12
+              label(for='people-limit-input') Description
+              textarea#description-input(v-model='description' name='description' placeholder='Description')
+              span.center-xs.error-message(v-if='errors.errors' v-for='error in errors.errors.description') {{ error }}
+            .col-md-12
               label(for='area-input') Area 
                 small m2
               input#area-input(v-model='area' name='area' placeholder='Area' type='number')
@@ -29,7 +33,7 @@
               .flex.center-xs
                 //- p {{ position }}
                 gmap-map(:center="position", :zoom="7", style="width: 500px; height: 300px", :options="mapOptions")
-                  gmap-marker(:position='position' :clickable='true' :draggable='true' @position_changed='updatePosition($event)')
+                  gmap-marker(:position='position', :clickable='true', :draggable='true' @position_changed='updatePosition($event)')
           .row
             .col-md-12
               button.button-primary Register
@@ -46,6 +50,9 @@
   }
 </style>
 
+<style lang="sass" scoped>
+  @import "~skeleton-css/css/skeleton";
+</style>
 <script>
   
   import { mapState, mapActions } from 'vuex'
@@ -62,6 +69,7 @@
      */
     data () {
       return {
+        description: '',
         name: '',
         address: '',
         people_limit: '',

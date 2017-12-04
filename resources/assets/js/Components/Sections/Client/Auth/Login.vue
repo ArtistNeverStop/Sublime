@@ -1,40 +1,39 @@
 <template lang="pug">
-  .container-fluid
-    .row.center-xs.middle-xs.full
-      .col-xs-12
-        form.column.center-xs.middle-xs(@submit.prevent='loginAttempt' role='form')
-          h1 Login
-          v-text-field(label='E-mail', v-model='email', required='')
-          v-text-field(label='Password', v-model='password', required='')
-          .row
-            //- Facebook Oauth2.0
-            .oauth2-button-container
-              button.btn.facebook(@click.prevent=`OauthLogin('facebook')`)
-                i.fa.fa-facebook(aria-hidden='true')
-                |                 Facebook
-          .row
-            //- Gmail Oauth2.0
-            .oauth2-button-container
-              button.btn.gmail(@click.prevent=`OauthLogin('google')`)
-                i.fa.fa-google(aria-hidden='true')
-                |               Gmail
-          .row
-            .col-md-12
-              label(for='email-input') Email
-              input#email-input(v-model='email' name='email' placeholder='E-mail' type='email')
-              span.center-xs.error-message(v-if='errors.errors' v-for='error in errors.errors.email') {{ error }}
-            .col-md-12
-              label(for='password-input') Password
-              input#password-input(v-model='password' name='password' placeholder='Password' type='password')
-          .row
-            .col-md-12
-              button.button-primary Login
+v-container
+  form(@submit.prevent='loginAttempt' role='form')
+    v-layout(align-center='', justify-center='')
+      v-flex.column(xs10='', sm6='', align-center='', justify-center='')
+        h1 Login
+        v-btn.facebook.white--text.blue.darken-4(@click.prevent=`OauthLogin('facebook')`)
+          i.mr-2.fa.fa-facebook(aria-hidden='true')
+          |                 Facebook
+        v-btn.gmail.white--text.orange.darken-4(@click.prevent=`OauthLogin('google')`)
+          i.mr-2.fa.fa-google(aria-hidden='true')
+          |               Gmail
+        v-text-field(label='E-mail', v-model='email', required='')
+        v-text-field(label='Password', v-model='password', required='', type=`password`)
+        span.center-xs.error-message(v-if='errors.errors' v-for='error in errors.errors.email') {{ error }}
+        v-btn(primary=``, @click=`loginAttempt`, @keydown.enter=`loginAttempt`) Login
+  //- .container-fluid
+  //-   .row.center-xs.middle-xs.full
+  //-     .col-xs-12
+  //-       form.column.center-xs.middle-xs(@submit.prevent='loginAttempt' role='form')
+  //-         h1 Login
+  //-         .row
+  //-           .col-md-12
+  //-             label(for='email-input') Email
+  //-             input#email-input(v-model='email' name='email' placeholder='E-mail' type='email')
+  //-           .col-md-12
+  //-             label(for='password-input') Password
+  //-             input#password-input(v-model='password' name='password' placeholder='Password' type='password')
+  //-         .row
+  //-           .col-md-12
+  //-             button.button-primary Login
 </template>
 
 <style type="text/css">
   form {
     transition: all .4s;
-    min-height: 500px;
   }
   form:hover {
     -webkit-box-shadow: 0 14px 32px 0 rgba(0,0,0,.3);
@@ -58,8 +57,8 @@
      */
     data () {
       return {
-        email: '',
-        password: '',
+        email: 'diego_giova@hotmail.com',
+        password: 'secret',
         errors: {
           errors: {}
         }

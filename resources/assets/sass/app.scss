@@ -16,6 +16,7 @@
 // @import "~bootstrap-sass/assets/stylesheets/bootstrap/code";
 
 // Font Awesome
+@import "~font-awesome/css/font-awesome";
 @import "~vuetify/dist/vuetify";
 
 .flex {
@@ -43,7 +44,6 @@
 }
 
 // @import "~flatpickr/dist/flatpickr";
-// @import "~font-awesome/css/font-awesome";
 // * {
 // 	box-sizing: border-box;
 // }
@@ -147,4 +147,12 @@ p.white {
   to {
     transform: translateY(-2000px);
   }
+}
+
+.white--text {
+	color: white;
+}
+
+.input-file {
+	visibility: hidden;
 }

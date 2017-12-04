@@ -90,11 +90,13 @@ export default {
       'User'
     ]),
 
-    menuItems ()  {
-      return this.User.me ? 
+    menuItems () {
+      var items = []
+      items = this.User.me ? 
         [
           { title: 'Dashboard', icon: 'dashboard', route: 'dashboard'},
-          { title: 'Logout', route: 'logout' }
+          { title: 'Artistas', icon: 'dashboard', route: 'artists.index'},
+          { title: 'Logout', route: 'logout' },
         ] :
         [
           { title: 'Welcome', icon: 'dashboard', route: 'welcome'},
@@ -103,6 +105,12 @@ export default {
           { title: 'Register', icon: 'question_answer', route: 'register' },
           { title: 'Login', icon: 'question_answer', route: 'login' }
         ]
+      if (this.User.me && this.User.me.is_manager) {
+        items.push(
+          { title: 'Manager', icon: 'question_answer', route: 'artists.manage.index' }
+        )
+      }
+      return items
     }
   },
 

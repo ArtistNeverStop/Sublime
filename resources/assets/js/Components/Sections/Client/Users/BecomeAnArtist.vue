@@ -20,6 +20,9 @@
                 small {{ request.status_string }}
 </template>
 
+<style lang="sass" scoped>
+  @import "~skeleton-css/css/skeleton";
+</style>
 <script>
   
   import { mapState, mapActions, mapGetters } from 'vuex'

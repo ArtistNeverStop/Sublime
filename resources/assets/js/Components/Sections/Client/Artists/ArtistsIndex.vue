@@ -11,7 +11,7 @@ v-content(:fluid=`true`)
           br
           br
           strong.shadow-background Aqui tienes todo el listado, consulta su disponibilidad y vota por ellos!.
-        v-btn.lighten-2.mt-5(dark='', large='', @click=`$go('artists.index')`)
+        v-btn.lighten-2.mt-5(dark='', large='', @click=`$go('user.become.an.artist')`)
           | Eres Manager ? 
   v-layout(row='',)
     v-flex(xs12='', sm4='', v-for=`artist, in Artist.all`)
